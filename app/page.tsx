@@ -86,27 +86,38 @@ export default function Home() {
       <section className="section light">
         <div className="wrap">
           <div className="section-head"><span>01 — MỘT CÂU CHUYỆN RẤT QUEN</span><h2>Mọi chuyện thường bắt đầu bằng một lời hứa.</h2><p>“Hết gói này tôi sẽ bỏ.” Bạn nói thật lòng. Nhưng rồi cuộc sống tiếp tục diễn ra.</p></div>
-          <div className="story-opening">
-            <p>Sáng hôm sau, ly cà phê vẫn ở đó. Buổi trưa là một cuộc họp căng thẳng. Tối đến, bạn bè lại rủ đi nhậu. Trong những khoảnh khắc ấy, điếu thuốc không còn chỉ là một điếu thuốc — nó giống như nút nghỉ, cách lấy lại tập trung, hay một thứ giúp bạn không thấy mình lạc lõng.</p>
-            <p>Và trước khi kịp nghĩ, bạn đã quay lại phản ứng cũ.</p>
+          <div className="narrative">
+            <p>Bạn có thể đã hứa điều đó với chính mình. Có thể bạn còn hứa với vợ, với con, hoặc với một người thực sự lo cho bạn.</p>
+            <p>Và bạn không nói cho có.</p>
+            <p>Bạn từng giảm số điếu mỗi ngày. Từng không mua thuốc. Từng né những người hay rủ hút. Có lần bạn dừng được vài ngày. Cũng có thể từng dừng được vài tháng.</p>
+            <div className="story-scene">
+              <small>RỒI MỘT NGÀY BÌNH THƯỜNG XẢY RA</small>
+              <p>Sáng là một ly cà phê. Trưa là cuộc họp kéo dài. Chiều có một deadline gấp. Tối đến, ai đó đưa cho bạn một điếu thuốc và nói: “Một điếu thôi mà.”</p>
+            </div>
+            <p>Trước khi bạn kịp cân nhắc lại tất cả những lý do mình muốn bỏ, bàn tay đã làm điều nó quen làm.</p>
+            <p>Điếu thuốc được châm lên.</p>
+            <p>Và sau vài phút dễ chịu ngắn ngủi, một cảm giác khác xuất hiện: <b>“Mình lại thất bại rồi.”</b></p>
+            <div className="thoughts">
+              <span>“Có lẽ tôi không đủ ý chí.”</span>
+              <span>“Tôi hút lâu quá rồi, chắc không bỏ được.”</span>
+              <span>“Thôi, để tuần sau bắt đầu lại.”</span>
+            </div>
+            <p>Mình biết — đến đây có thể bạn đang nghĩ: <b>“Đúng, câu chuyện của tôi gần như vậy.”</b></p>
+            <p>Nhưng có một điều rất quan trọng bạn cần biết.</p>
           </div>
-          <div className="problem-grid">
-            {[
-              ["Bạn chọn một ngày bắt đầu","Nhưng deadline, stress hay một cuộc hẹn khiến ngày ấy lại lùi thêm."],
-              ["Bạn dừng được vài ngày","Rồi một cuộc họp căng thẳng đưa bàn tay trở về thói quen cũ."],
-              ["Bạn quyết định không mua nữa","Nhưng khi người bên cạnh mời, lời từ chối bỗng khó hơn bạn tưởng."],
-              ["Bạn cần tập trung","Và trong đầu bật lên câu nói quen thuộc: “Không có thuốc thì làm sao làm việc?”"],
-              ["Bạn nhớ lời hứa với gia đình","Nhưng thay vì được nâng đỡ, cảm giác có lỗi lại khiến bạn nặng nề hơn."],
-              ["Bạn không còn thật sự thích hút","Dù vậy, điếu thuốc vẫn xuất hiện như một phản ứng không cần suy nghĩ."],
-            ].map((x,i) => <article className="problem-card" key={x[0]}><span>0{i+1}</span><div className="line-icon">{["↗","↻","—","⌁","△","○"][i]}</div><h3>{x[0]}</h3><p>{x[1]}</p></article>)}
-          </div>
-          <blockquote>Mỗi lần quay lại, bạn có thể nghĩ: “Có lẽ mình là người không thể bỏ thuốc.”<br/><b>Nhưng có thể bạn chỉ chưa nhìn thấy toàn bộ hệ thống đang khiến mình hút lại.</b></blockquote>
+          <blockquote>Vấn đề có thể không phải là bạn không muốn bỏ.<br/><b>Có thể bạn chỉ chưa nhìn thấy toàn bộ hệ thống đang khiến mình hút lại.</b></blockquote>
         </div>
       </section>
 
       <section className="section warm">
         <div className="wrap loop-layout">
-          <div className="section-head left"><span>02 — NHÌN LẠI KHOẢNH KHẮC ẤY</span><h2>Một điếu thuốc hiếm khi xuất hiện ngẫu nhiên.</h2><p>Thay vì chỉ hỏi “Làm sao để không hút điếu tiếp theo?”, hãy thử quay chậm câu chuyện lại: “Điều gì vừa xảy ra ngay trước khi tôi muốn hút?”</p>
+          <div className="section-head left"><span>02 — HÃY QUAY CHẬM CÂU CHUYỆN LẠI</span><h2>Một điếu thuốc hiếm khi xuất hiện ngẫu nhiên.</h2><p>Bạn thử nhớ lại lần gần nhất mình hút nhé. Có chuyện gì xảy ra ngay trước đó?</p>
+            <div className="mini-story">
+              <p>Có thể bạn vừa rời khỏi một cuộc họp.</p>
+              <p>Có thể ly cà phê đã được đặt lên bàn.</p>
+              <p>Hoặc bạn chỉ cần một lý do để bước ra ngoài vài phút.</p>
+            </div>
+            <p>Thay vì chỉ hỏi “Làm sao để không hút điếu tiếp theo?”, câu hỏi hữu ích hơn là: <b>“Tôi đang thật sự cần điều gì trong khoảnh khắc này?”</b></p>
             <div className="tabs">{Object.keys(loops).map(k => <button className={activeLoop === k ? "active" : ""} onClick={() => setActiveLoop(k as keyof typeof loops)} key={k}>{k}</button>)}</div>
           </div>
           <div className="loop-diagram">
@@ -114,11 +125,21 @@ export default function Home() {
             <div className="loop-result"><span>↻</span><b>VÀ CÂU CHUYỆN LẶP LẠI</b><small>Não tiếp tục ghi nhận thuốc lá là cách nhanh nhất để xử lý khoảnh khắc đó.</small></div>
           </div>
         </div>
+        <div className="wrap narrative bridge-copy">
+          <p>Bạn không chỉ hút sau khi uống cà phê. Qua thời gian, não có thể đã học rằng <b>cà phê = nghỉ ngơi = thuốc lá.</b></p>
+          <p>Bạn không chỉ hút khi stress. Thuốc lá có thể đã trở thành một nút chuyển trạng thái: <b>áp lực = hút thuốc = được dừng lại một chút.</b></p>
+          <p>Và đây là lý do chỉ cố loại bỏ điếu thuốc thường rất khó: điếu thuốc biến mất, nhưng cách cơ thể và tâm trí xử lý cà phê, stress, khoảng nghỉ và giao tiếp vẫn còn nguyên.</p>
+          <div className="turn-line">Đó là lúc câu chuyện không còn chỉ nói về một hành vi.</div>
+        </div>
       </section>
 
       <section className="section dark blueprint">
         <div className="wrap">
           <div className="section-head"><span>03 — KHI MỘT HÀNH VI TRỞ THÀNH MỘT CÁI NHÃN</span><h2>Rồi một ngày, bạn không chỉ nói về việc hút thuốc.<br/>Bạn bắt đầu nói về chính mình.</h2><p>“Tôi là người nghiện.” “Tôi không đủ ý chí.” “Tôi đã thử nhiều lần nhưng không được.” Những câu ấy dần trở thành kịch bản cho lần tiếp theo.</p></div>
+          <div className="dark-narrative">
+            <p>Mình không mong bạn chỉ đổi một câu nói rồi mọi thứ lập tức thay đổi. Identity Shift™ không phải một lời khẳng định tích cực để lặp lại trước gương.</p>
+            <p>Nó bắt đầu bằng việc tách một hành vi đã lặp lại trong quá khứ khỏi định nghĩa toàn bộ con người bạn.</p>
+          </div>
           <div className="shift-grid">
             <article><small>CÂU CHUYỆN CŨ</small><h3>“Tôi là người nghiện đang cố bỏ.”</h3><p>Mỗi cơn thèm là một cuộc chiến. Mỗi lần trượt là bằng chứng rằng bạn không thể.</p></article>
             <article className="bridge"><small>ĐIỂM CHUYỂN</small><h3>Identity Shift™</h3><p>Bạn quan sát vòng lặp, tách hành vi khỏi con người và bắt đầu viết lại phản ứng.</p></article>
@@ -126,12 +147,16 @@ export default function Home() {
           </div>
           <p className="proof-line">Bạn không cần giả vờ quá khứ chưa từng xảy ra. <b>Bạn chỉ cần ngừng dùng quá khứ để quyết định toàn bộ con người mình.</b></p>
           <div className="chips">{["Một ly cà phê không thuốc","Một cơn thèm được xử lý","Một lần từ chối","Một khoảng nghỉ mới","Trượt nhưng quay lại kế hoạch"].map(x=><span key={x}>✓ {x}</span>)}</div>
+          <div className="dark-narrative closing">
+            <p>Một lần vượt qua cơn thèm. Một cuộc họp căng thẳng nhưng không tìm thuốc. Một lần được mời và bạn có thể nói “không”.</p>
+            <p>Từng việc rất nhỏ ấy trở thành bằng chứng rằng một Smoke-Free Identity™ đang được hình thành.</p>
+          </div>
         </div>
       </section>
 
       <section className="section system">
         <div className="wrap system-grid">
-          <div className="section-head left"><span>04 — TỪ CÂU CHUYỆN ĐẾN BẢN ĐỒ</span><h2>Smoke-Free<br/>Identity System™</h2><p>Đó là lúc Bản đồ Cai thuốc 7 ngày™ xuất hiện: không yêu cầu bạn chỉ gồng lên chống lại, mà giúp bạn nhìn sáu tầng đang cùng nhau vận hành.</p><div className="system-core"><small>TRUNG TÂM</small><b>Smoke-Free<br/>Identity™</b></div></div>
+          <div className="section-head left"><span>04 — NHƯNG VẪN CÒN MỘT VẤN ĐỀ</span><h2>Biết vòng lặp tồn tại là chưa đủ.</h2><p>Bạn cần biết vòng lặp của riêng mình bắt đầu ở đâu, được nuôi bởi điều gì và phải thay phản ứng nào trong từng hoàn cảnh thật.</p><p className="system-intro">Đó là lý do <b>Bản đồ Cai thuốc 7 ngày™</b> được xây dựng — để biến câu chuyện rời rạc thành một hệ thống có thể nhìn thấy và hành động.</p><div className="system-core"><small>SMOKE-FREE</small><b>Identity<br/>System™</b></div></div>
           <div className="layers">
             {[
               ["01","IDENTITY","Bạn đang định nghĩa mình là ai?"],
@@ -147,6 +172,10 @@ export default function Home() {
 
       <section className="section light">
         <div className="wrap">
+          <div className="narrative fit-intro">
+            <p>Đến đây, có thể bạn tự hỏi: <b>“Nhưng chương trình này có thực sự dành cho tôi không?”</b></p>
+            <p>Câu trả lời không phụ thuộc vào việc bạn đã hút bao nhiêu năm hay đã thất bại bao nhiêu lần. Nó phụ thuộc vào việc bạn có sẵn sàng nhìn thẳng vào vòng lặp và thực hành một cách mới hay không.</p>
+          </div>
           <div className="fit-grid">
             <article className="fit yes"><span>✓ CÓ THỂ ĐÂY LÀ LÚC PHÙ HỢP NẾU</span><h2>Bạn đã mệt vì phải bắt đầu lại.</h2><ul>{["Bạn từng bỏ một thời gian rồi hút lại khi áp lực quay về.","Thuốc lá gắn với cà phê, công việc, khoảng nghỉ hoặc những cuộc gặp.","Bạn không còn thật sự thích hút nhưng vẫn tìm đến nó theo phản xạ.","Bạn muốn thay đổi vì sức khỏe, gia đình hoặc cảm giác làm chủ bản thân.","Bạn sẵn sàng quan sát câu chuyện của mình mà không phán xét."].map(x=><Check key={x}>{x}</Check>)}</ul></article>
             <article className="fit no"><span>— CÓ THỂ CHƯA PHẢI LÚC NẾU</span><h2>Bạn chỉ muốn một mẹo thật nhanh.</h2><ul>{["Bạn hoàn toàn chưa có ý định thay đổi.","Bạn tham gia chỉ vì người khác ép buộc.","Bạn không muốn quan sát trigger hay hoàn thành bài thực hành.","Bạn kỳ vọng chương trình thay thế bác sĩ hoặc điều trị y tế.","Bạn cần một lời bảo đảm tuyệt đối rằng sẽ không bao giờ hút lại."].map(x=><li key={x}><span>—</span>{x}</li>)}</ul></article>
@@ -156,7 +185,7 @@ export default function Home() {
 
       <section className="section warm">
         <div className="wrap">
-          <div className="section-head"><span>05 — SAU KHI CÂU CHUYỆN ĐƯỢC ĐẶT LÊN BẢN ĐỒ</span><h2>Bạn không chỉ “hiểu thêm” về cai thuốc.</h2><p>Bạn có trong tay một hệ thống được viết từ chính lịch sử, trigger và đời sống của mình.</p></div>
+          <div className="section-head"><span>05 — VẬY SAU 7 NGÀY, BẠN THỰC SỰ CÓ GÌ?</span><h2>Không phải thêm một danh sách tác hại để ghi nhớ.</h2><p>Bạn có một hệ thống được viết từ chính lịch sử, trigger và đời sống của mình.</p></div>
           <div className="asset-grid">
             {[
               ["01","Smoking Loop Map™","Hiểu hoàn cảnh, trigger và nhu cầu phía sau điếu thuốc."],
@@ -197,7 +226,7 @@ export default function Home() {
       <section className="section founder">
         <div className="wrap founder-grid">
           <div className="portrait-placeholder"><span>ĐẠT</span><div className="portrait-mark">10</div><p>NĂM TRONG VÒNG LẶP<br/>HÚT THUỐC</p></div>
-          <div><div className="section-head left"><span>08 — SELF PROOF™</span><h2>Tôi từng nghĩ mình thiếu ý chí.</h2></div>
+          <div><div className="section-head left"><span>08 — VÌ SAO TÔI TẠO RA CHƯƠNG TRÌNH NÀY?</span><h2>Tôi từng nghĩ mình thiếu ý chí.</h2></div>
             <p className="big-copy">Trong khoảng 10 năm, thuốc lá đi cùng tôi qua công việc, những lúc cần suy nghĩ, các cuộc gặp và cả những khoảnh khắc tôi không biết phải xử lý cảm xúc ra sao.</p>
             <p>Tôi từng tưởng chỉ cần quyết tâm hơn. Nhưng mỗi lần cố gồng, câu nói “Tôi là người hút thuốc đang cố bỏ” lại giữ thuốc lá ở ngay trung tâm cuộc sống của tôi.</p>
             <div className="founder-quote">“Nếu không chỉ hỏi làm sao cưỡng lại điếu thuốc, mà hỏi mình đang vận hành từ nhận dạng nào thì sao?”</div>
@@ -211,7 +240,7 @@ export default function Home() {
 
       <section className="section warm evidence">
         <div className="wrap">
-          <div className="section-head"><span>09 — MỘT MÔ THỨC XUẤT HIỆN NHIỀU LẦN</span><h2>Sau hơn 100 hành trình, tôi nhận ra kháng cự thường kể cùng một câu chuyện.</h2><p>Con người muốn thay đổi, gặp một trigger, quay lại phản ứng cũ rồi dùng chính lần thất bại ấy để gắn nhãn bản thân.</p></div>
+          <div className="section-head"><span>09 — VÀ RỒI TÔI NHẬN RA ĐÂY KHÔNG CHỈ LÀ CÂU CHUYỆN CỦA MÌNH</span><h2>Sau hơn 100 hành trình, kháng cự thường kể cùng một câu chuyện.</h2><p>Con người muốn thay đổi, gặp một trigger, quay lại phản ứng cũ rồi dùng chính lần thất bại ấy để gắn nhãn bản thân.</p></div>
           <div className="pattern-grid">{["Biết phải làm gì nhưng không hành động","Bắt đầu mạnh nhưng không duy trì","Gặp áp lực và quay lại phản ứng cũ","Dùng thất bại để định nghĩa bản thân"].map((x,i)=><article key={x}><span>0{i+1}</span><h3>{x}</h3></article>)}</div>
           <div className="pattern-flow">{["MUỐN THAY ĐỔI","GẶP TRIGGER","PHẢN ỨNG CŨ","TỰ TRÁCH","GẮN NHÃN","MẤT NIỀM TIN","LẶP LẠI"].map((x,i)=><span key={x}>{x}{i<6&&<i>→</i>}</span>)}</div>
           <div className="trust-note"><b>GHI CHÚ MINH BẠCH</b><p>Đây không phải hơn 100 case cai thuốc. Đây là kinh nghiệm thực tế với những vòng lặp trì hoãn, tự phá, mất niềm tin và quay lại hành vi cũ — nền tảng được hệ thống hóa cho vấn đề cụ thể này.</p></div>
@@ -230,6 +259,7 @@ export default function Home() {
           <span className="offer-badge">MỞ BÁN GIAI ĐOẠN ĐẦU</span>
           <small>SMOKE-FREE IDENTITY SYSTEM™</small>
           <h2>BẢN ĐỒ CAI THUỐC<br/>7 NGÀY™</h2>
+          <p className="offer-story">7 ngày để chuyển từ “Tôi biết mình nên bỏ” sang “Tôi hiểu vì sao mình hút và biết mình cần làm gì khi trigger xuất hiện.”</p>
           <ul className="check-list two-col">
             {["7 video bài học","7 workbook thực hành","Smoke-Free Identity Canvas™","Trigger Replacement Map™","Craving & State Reset Protocol™","Kế hoạch hành động 21 ngày","Relapse Prevention Map™","Bộ công cụ hỗ trợ đi kèm"].map(x=><Check key={x}>{x}</Check>)}
           </ul>
@@ -250,7 +280,7 @@ export default function Home() {
         <div className="wrap final-inner">
           <span>BẠN CÓ THỂ VIẾT TIẾP CÂU CHUYỆN NÀY THEO HAI CÁCH</span>
           <h2>Bạn có thể tiếp tục chờ một tuần ít stress hơn.</h2>
-          <p>Hoặc dành 7 ngày để nhìn lại câu chuyện của mình, đặt nó lên một bản đồ và chuẩn bị cho những khoảnh khắc trigger thật sự xuất hiện.</p>
+          <p>Tiếp tục tự hứa “lần sau mình sẽ quyết tâm hơn”. Hoặc dành 7 ngày để nhìn lại câu chuyện của mình, đặt nó lên một bản đồ và chuẩn bị cho những khoảnh khắc trigger thật sự xuất hiện.</p>
           <div className="from-to"><div><small>TỪ</small><b>“Tôi biết mình nên bỏ.”</b></div><i>→</i><div><small>SANG</small><b>“Tôi hiểu vòng lặp và có kế hoạch để bắt đầu.”</b></div></div>
           <strong>457.000 VNĐ</strong>
           <a className="button" href="#offer">BẮT ĐẦU HÀNH TRÌNH KHÔNG KHÓI THUỐC →</a>
