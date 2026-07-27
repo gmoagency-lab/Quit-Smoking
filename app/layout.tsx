@@ -7,8 +7,20 @@ const display = Manrope({ variable: "--font-display", subsets: ["latin","vietnam
 
 export const metadata: Metadata = {
   title: "Bản Đồ Cai Thuốc 7 Ngày™ | Identity Shift™",
-  description: "Xây bản đồ cá nhân giúp nhận diện trigger, xử lý cơn thèm và bắt đầu hành trình không khói thuốc bằng Identity Shift™.",
+  description: "Bạn không thiếu ý chí. Hãy nhìn lại câu chuyện, nhận diện trigger và xây bản đồ hành động không khói thuốc bằng Identity Shift™.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  openGraph: {
+    title: "Bản Đồ Cai Thuốc 7 Ngày™",
+    description: "Bạn không thiếu ý chí. Bạn cần một bản đồ.",
+    type: "website",
+    images: [{ url: "/og.png", width: 1734, height: 907, alt: "Bản Đồ Cai Thuốc 7 Ngày™" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bản Đồ Cai Thuốc 7 Ngày™",
+    description: "Bạn không thiếu ý chí. Bạn cần một bản đồ.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
