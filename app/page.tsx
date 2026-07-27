@@ -413,12 +413,75 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section warm evidence">
+      <section className="section warm evidence evidence-detailed">
         <div className="wrap">
-          <div className="section-head"><span>09 — VÀ RỒI TÔI NHẬN RA ĐÂY KHÔNG CHỈ LÀ CÂU CHUYỆN CỦA MÌNH</span><h2>Sau hơn 100 hành trình, kháng cự thường kể cùng một câu chuyện.</h2><p>Con người muốn thay đổi, gặp một trigger, quay lại phản ứng cũ rồi dùng chính lần thất bại ấy để gắn nhãn bản thân.</p></div>
-          <div className="pattern-grid">{["Biết phải làm gì nhưng không hành động","Bắt đầu mạnh nhưng không duy trì","Gặp áp lực và quay lại phản ứng cũ","Dùng thất bại để định nghĩa bản thân"].map((x,i)=><article key={x}><span>0{i+1}</span><h3>{x}</h3></article>)}</div>
-          <div className="pattern-flow">{["MUỐN THAY ĐỔI","GẶP TRIGGER","PHẢN ỨNG CŨ","TỰ TRÁCH","GẮN NHÃN","MẤT NIỀM TIN","LẶP LẠI"].map((x,i)=><span key={x}>{x}{i<6&&<i>→</i>}</span>)}</div>
-          <div className="trust-note"><b>GHI CHÚ MINH BẠCH</b><p>Đây không phải hơn 100 case cai thuốc. Đây là kinh nghiệm thực tế với những vòng lặp trì hoãn, tự phá, mất niềm tin và quay lại hành vi cũ — nền tảng được hệ thống hóa cho vấn đề cụ thể này.</p></div>
+          <div className="evidence-opening">
+            <div className="section-head left">
+              <span>09 — VÀ RỒI TÔI NHẬN RA ĐÂY KHÔNG CHỈ LÀ CÂU CHUYỆN CỦA MÌNH</span>
+              <h2>Hành vi có thể khác nhau.<br/>Nhưng kháng cự thường kể cùng một câu chuyện.</h2>
+            </div>
+            <div className="evidence-opening-copy">
+              <p>Sau khi nhìn thấy vòng lặp của chính mình, tôi bắt đầu nhận ra cùng một cấu trúc trong những hành trình thay đổi khác.</p>
+              <p>Có người muốn ngừng trì hoãn. Có người muốn thoát khỏi thói quen tự phá. Có người đã biết rất rõ mình nên làm gì nhưng cứ đến khoảnh khắc áp lực là quay về phản ứng cũ.</p>
+              <p><b>Điểm chung không nằm ở việc họ thiếu kiến thức.</b> Nó nằm ở cách một trigger rất đời thường có thể kéo trạng thái, hành vi và câu chuyện về bản thân đi theo cùng một hướng.</p>
+            </div>
+          </div>
+
+          <div className="evidence-observation">
+            <div className="observation-number"><b>100+</b><span>HÀNH TRÌNH<br/>THAY ĐỔI HÀNH VI*</span></div>
+            <div>
+              <span>MỘT MẪU LẶP XUẤT HIỆN NHIỀU LẦN</span>
+              <h3>Người ta thường không dừng lại vì không muốn thay đổi.</h3>
+              <p>Họ dừng lại ở đúng khoảnh khắc kế hoạch gặp đời sống thật: một ngày thiếu ngủ, một deadline gấp, một cảm xúc khó chịu hoặc một lần làm chưa tốt như kỳ vọng.</p>
+              <p>Khi không có hệ thống để xử lý khoảnh khắc đó, phản ứng cũ quay lại. Và điều gây tổn thương nhất thường đến ngay sau đó: <b>họ dùng một hành vi để kết luận mình là người như thế nào.</b></p>
+            </div>
+          </div>
+
+          <div className="composite-case">
+            <div className="composite-case-head">
+              <span>TÌNH HUỐNG TỔNG HỢP — KHÔNG PHẢI LỜI CHỨNG THỰC</span>
+              <h3>Hãy nhìn một lần “bắt đầu lại” diễn ra chậm hơn.</h3>
+              <p>Tình huống dưới đây ghép từ những mẫu hành vi thường gặp để bạn nhìn thấy cơ chế, không đại diện cho kết quả của một cá nhân cụ thể.</p>
+            </div>
+            <div className="resistance-sequence">
+              {[
+                ["01","Ý ĐỊNH","Tối Chủ nhật, bạn viết ra mọi lý do mình muốn thay đổi. Lần này bạn thực sự nghiêm túc."],
+                ["02","TRIGGER","Đến giữa tuần, một cuộc họp kéo dài. Ly cà phê ở trên bàn. Cơ thể bắt đầu bồn chồn."],
+                ["03","PHẢN ỨNG CŨ","Bạn tìm đến điều quen thuộc để được dừng lại, dễ chịu hơn hoặc tập trung trở lại trong vài phút."],
+                ["04","TỰ TRÁCH","Ngay sau đó là câu nói: “Mình lại làm hỏng rồi. Bao nhiêu cố gắng coi như mất hết.”"],
+                ["05","GẮN NHÃN","Một hành vi trở thành một kết luận: “Tôi là người không đủ kỷ luật để thay đổi.”"],
+                ["06","VÒNG LẶP MẠNH HƠN","Lần bắt đầu tiếp theo mang theo ít niềm tin hơn — nên trigger cũ càng dễ thắng."],
+              ].map(item => <article key={item[0]}><span>{item[0]}</span><div><small>{item[1]}</small><p>{item[2]}</p></div></article>)}
+            </div>
+            <div className="sequence-insight">
+              <small>ĐIỂM QUAN TRỌNG</small>
+              <p>Thứ cần được xử lý không chỉ là <b>hành vi ở bước 03</b>. Cả chuỗi từ trigger đến cách bạn diễn giải lần trượt đều đang nuôi vòng lặp.</p>
+            </div>
+          </div>
+
+          <div className="evidence-translation">
+            <div>
+              <span>TỪ QUAN SÁT ĐẾN HỆ THỐNG</span>
+              <h3>Vì vậy, chương trình không chỉ nói “hãy cố đừng hút”.</h3>
+              <p>Mỗi điểm mắc kẹt cần một cách can thiệp khác nhau. Đây là cách những mẫu hành vi chung được chuyển thành cấu trúc thực hành dành riêng cho hành trình cai thuốc.</p>
+            </div>
+            <div className="translation-table">
+              <div className="translation-head"><span>ĐIỂM MẮC KẸT</span><span>PHẢN ỨNG THƯỜNG GẶP</span><span>HỆ THỐNG THAY ĐỔI GÌ</span></div>
+              {[
+                ["Chỉ dựa vào ý định","Chờ một ngày đủ quyết tâm","Đặt trigger và hoàn cảnh thật lên Smoking Loop Map™"],
+                ["Gặp trạng thái khó chịu","Cố nhịn hoặc phản ứng tự động","Dùng Craving & State Reset™ để tạo khoảng dừng"],
+                ["Môi trường vẫn như cũ","Tránh tạm thời rồi quay lại","Thiết kế Trigger Replacement Map™ cho từng bối cảnh"],
+                ["Một lần trượt xảy ra","Tự trách và bỏ luôn kế hoạch","Kích hoạt 24-Hour Recovery Protocol™ để quay lại"],
+              ].map((row,i) => <article key={row[0]}><b>0{i+1}</b><p>{row[0]}</p><p>{row[1]}</p><p>{row[2]}</p></article>)}
+            </div>
+          </div>
+
+          <div className="evidence-conclusion">
+            <p>Nhìn theo cách này, một lần hút lại không còn là bằng chứng rằng bạn “không thể thay đổi”.</p>
+            <b>Nó trở thành dữ liệu: trigger nào vừa xuất hiện, tầng nào chưa được chuẩn bị và hệ thống cần được điều chỉnh ở đâu.</b>
+          </div>
+
+          <div className="trust-note detailed-trust"><b>GHI CHÚ MINH BẠCH</b><div><p>Con số hơn 100 đề cập đến các hành trình thay đổi hành vi như trì hoãn, tự phá, mất niềm tin và quay lại phản ứng cũ — <strong>không phải hơn 100 ca cai thuốc</strong>.</p><p>Kinh nghiệm đó là nền tảng để hệ thống hóa cách nhìn về Identity và vòng lặp hành vi trong chương trình này. Đây không phải dữ liệu thử nghiệm lâm sàng, không phải cam kết kết quả và không thay thế hỗ trợ y khoa.</p></div></div>
         </div>
       </section>
 
