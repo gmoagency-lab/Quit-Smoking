@@ -2,12 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-const loops = {
-  "Cà phê": ["Bạn pha ly cà phê", "Cơ thể chờ một khoảng nghỉ", "Tay vô thức tìm thuốc", "Nghi thức quen thuộc hoàn tất"],
-  Stress: ["Cuộc họp vừa kết thúc", "Cơ thể vẫn còn căng", "Bạn cần được dừng lại", "Điếu thuốc cho cảm giác nhẹ đi"],
-  "Giao tiếp": ["Một người bạn châm thuốc", "Bạn không muốn khác biệt", "Bạn nhận điếu được mời", "Phản ứng xã hội cũ mạnh thêm"],
-};
-
 const days = [
   { n: 1, title: "Smoking Loop Audit™", outcome: "Nhìn rõ hoàn cảnh, trigger và vòng lặp đang duy trì hành vi.", work: "Rà soát lịch sử hút, tần suất, thời điểm, nhu cầu phía sau điếu thuốc và nguyên nhân từng quay lại.", output: "Smoking History Audit™ · Trigger Timeline™ · Smoking Loop Map™" },
   { n: 2, title: "Smoke-Free Identity Shift™", outcome: "Tách hành vi hút thuốc khỏi định nghĩa bản thân.", work: "Nhận diện nhãn dán, Identity hiện tại, Identity mong muốn và những bằng chứng hành vi cần tạo.", output: "Identity Bridge Statement™ · Identity Evidence List™" },
@@ -32,7 +26,6 @@ const faqs = [
 const Check = ({ children }: { children: React.ReactNode }) => <li><span>✓</span>{children}</li>;
 
 export default function Home() {
-  const [activeLoop, setActiveLoop] = useState<keyof typeof loops>("Cà phê");
   const [openDay, setOpenDay] = useState(1);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [showSticky, setShowSticky] = useState(false);
@@ -110,26 +103,54 @@ export default function Home() {
       </section>
 
       <section className="section warm">
-        <div className="wrap loop-layout">
-          <div className="section-head left"><span>02 — HÃY QUAY CHẬM CÂU CHUYỆN LẠI</span><h2>Một điếu thuốc hiếm khi xuất hiện ngẫu nhiên.</h2><p>Bạn thử nhớ lại lần gần nhất mình hút nhé. Có chuyện gì xảy ra ngay trước đó?</p>
+        <div className="wrap">
+          <div className="narrative story-section">
+            <span className="story-label">02 — HÃY QUAY CHẬM CÂU CHUYỆN LẠI</span>
+            <h2>Một điếu thuốc hiếm khi xuất hiện ngẫu nhiên.</h2>
+            <p>Bạn thử nhớ lại lần gần nhất mình hút nhé.</p>
+            <p>Có chuyện gì xảy ra ngay trước đó?</p>
             <div className="mini-story">
               <p>Có thể bạn vừa rời khỏi một cuộc họp.</p>
               <p>Có thể ly cà phê đã được đặt lên bàn.</p>
               <p>Hoặc bạn chỉ cần một lý do để bước ra ngoài vài phút.</p>
             </div>
-            <p>Thay vì chỉ hỏi “Làm sao để không hút điếu tiếp theo?”, câu hỏi hữu ích hơn là: <b>“Tôi đang thật sự cần điều gì trong khoảnh khắc này?”</b></p>
-            <div className="tabs">{Object.keys(loops).map(k => <button className={activeLoop === k ? "active" : ""} onClick={() => setActiveLoop(k as keyof typeof loops)} key={k}>{k}</button>)}</div>
+            <p>Thường thì câu chuyện không đi thẳng từ <b>“không hút”</b> đến <b>“hút thuốc”</b>.</p>
+            <p>Ở giữa hai điểm đó là một chuỗi phản ứng rất nhanh. Nhanh đến mức bạn gần như không nhận ra mình vừa đi qua nó.</p>
+
+            <div className="story-chain">
+              <article><span>01</span><small>BỐI CẢNH</small><p>Ly cà phê được pha xong. Cuộc họp vừa kết thúc. Một người bạn bước ra ban công.</p></article>
+              <article><span>02</span><small>TRIGGER</small><p>Một hình ảnh, cảm giác hoặc nghi thức quen thuộc báo cho cơ thể rằng: “Đến lúc hút rồi.”</p></article>
+              <article><span>03</span><small>TRẠNG THÁI</small><p>Bạn thấy bồn chồn, căng thẳng, thiếu tập trung — hoặc đơn giản chỉ muốn được nghỉ một chút.</p></article>
+              <article><span>04</span><small>SUY NGHĨ TỰ ĐỘNG</small><p>“Một điếu thôi.” “Hút xong rồi làm tiếp.” “Không có thuốc thì khó tập trung lắm.”</p></article>
+              <article><span>05</span><small>PHẢN ỨNG QUEN THUỘC</small><p>Bạn cầm điếu thuốc lên và cảm giác khó chịu tạm thời dịu xuống.</p></article>
+            </div>
+
+            <p>Não ghi nhận điều vừa xảy ra theo một cách rất đơn giản:</p>
+            <div className="story-equation">Khó chịu <i>→</i> Hút thuốc <i>→</i> Dễ chịu hơn một chút</div>
+            <p>Và thế là lần sau, khi đúng bối cảnh xuất hiện, não lại đề xuất cùng một giải pháp.</p>
+
+            <div className="story-example">
+              <small>VÍ DỤ VỚI LY CÀ PHÊ</small>
+              <p>Bạn không chỉ hút <em>sau khi uống cà phê</em>. Qua nhiều lần lặp lại, hai việc có thể đã được nối thành một nghi thức:</p>
+              <strong>Cà phê = nghỉ ngơi = thuốc lá.</strong>
+            </div>
+
+            <p>Tương tự, khi stress xuất hiện, điếu thuốc có thể trở thành một nút chuyển trạng thái:</p>
+            <div className="story-equation subtle">Áp lực <i>→</i> Hút thuốc <i>→</i> Được dừng lại một chút</div>
+
+            <p>Đây là lý do chỉ cố loại bỏ điếu thuốc thường rất khó.</p>
+            <p>Điếu thuốc có thể biến mất khỏi tay bạn trong một thời gian, nhưng cách cơ thể và tâm trí xử lý cà phê, stress, khoảng nghỉ và giao tiếp vẫn còn nguyên.</p>
+
+            <p>Vì vậy, thay vì chỉ hỏi:</p>
+            <div className="story-question muted">“Làm sao để tôi không hút điếu tiếp theo?”</div>
+            <p>Hãy thử bắt đầu bằng một câu hỏi khác:</p>
+            <div className="story-question">“Tôi đang thật sự cần điều gì trong khoảnh khắc này?”</div>
+
+            <p>Khi trả lời được câu hỏi đó, bạn không còn chỉ chống lại điếu thuốc.</p>
+            <p>Bạn bắt đầu nhìn thấy nhu cầu, trigger và phản ứng đang nằm phía sau nó.</p>
+
+            <div className="turn-line">Và đó là lúc câu chuyện không còn chỉ nói về một hành vi.</div>
           </div>
-          <div className="loop-diagram">
-            {loops[activeLoop].map((x,i) => <div className="loop-node" key={x}><span>0{i+1}</span><b>{x}</b>{i < 3 && <i>↓</i>}</div>)}
-            <div className="loop-result"><span>↻</span><b>VÀ CÂU CHUYỆN LẶP LẠI</b><small>Não tiếp tục ghi nhận thuốc lá là cách nhanh nhất để xử lý khoảnh khắc đó.</small></div>
-          </div>
-        </div>
-        <div className="wrap narrative bridge-copy">
-          <p>Bạn không chỉ hút sau khi uống cà phê. Qua thời gian, não có thể đã học rằng <b>cà phê = nghỉ ngơi = thuốc lá.</b></p>
-          <p>Bạn không chỉ hút khi stress. Thuốc lá có thể đã trở thành một nút chuyển trạng thái: <b>áp lực = hút thuốc = được dừng lại một chút.</b></p>
-          <p>Và đây là lý do chỉ cố loại bỏ điếu thuốc thường rất khó: điếu thuốc biến mất, nhưng cách cơ thể và tâm trí xử lý cà phê, stress, khoảng nghỉ và giao tiếp vẫn còn nguyên.</p>
-          <div className="turn-line">Đó là lúc câu chuyện không còn chỉ nói về một hành vi.</div>
         </div>
       </section>
 
