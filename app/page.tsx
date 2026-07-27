@@ -176,17 +176,74 @@ export default function Home() {
       </section>
 
       <section className="section system">
-        <div className="wrap system-grid">
-          <div className="section-head left"><span>04 — NHƯNG VẪN CÒN MỘT VẤN ĐỀ</span><h2>Biết vòng lặp tồn tại là chưa đủ.</h2><p>Bạn cần biết vòng lặp của riêng mình bắt đầu ở đâu, được nuôi bởi điều gì và phải thay phản ứng nào trong từng hoàn cảnh thật.</p><p className="system-intro">Đó là lý do <b>Bản đồ Cai thuốc 7 ngày™</b> được xây dựng — để biến câu chuyện rời rạc thành một hệ thống có thể nhìn thấy và hành động.</p><div className="system-core"><small>SMOKE-FREE</small><b>Identity<br/>System™</b></div></div>
-          <div className="layers">
+        <div className="wrap">
+          <div className="system-opening">
+            <div className="section-head left">
+              <span>04 — NHƯNG VẪN CÒN MỘT VẤN ĐỀ</span>
+              <h2>Biết vòng lặp tồn tại là chưa đủ.</h2>
+            </div>
+            <div className="system-opening-copy">
+              <p>Bạn cần biết <b>vòng lặp của riêng mình</b> bắt đầu ở đâu, được nuôi bởi điều gì và phải thay phản ứng nào trong từng hoàn cảnh thật.</p>
+              <p>Đó là lý do <b>Bản đồ Cai thuốc 7 ngày™</b> được xây dựng — để biến những gì đang xảy ra trong đầu, trong cơ thể và xung quanh bạn thành một hệ thống có thể nhìn thấy.</p>
+            </div>
+          </div>
+
+          <div className="system-intro-panel">
+            <div className="system-core"><small>SMOKE-FREE</small><b>Identity<br/>System™</b></div>
+            <div>
+              <span>6 TẦNG CỦA VÒNG LẶP</span>
+              <h3>Không tầng nào hoạt động một mình.</h3>
+              <p>Một trigger có thể tạo ra trạng thái khó chịu. Trạng thái ấy gọi lên hành vi cũ. Môi trường làm hành vi trở nên dễ thực hiện. Và mỗi lần lặp lại, bạn càng tin rằng đó là “con người mình”.</p>
+              <p>Vì vậy, muốn thay đổi bền hơn, cả sáu tầng cần được nhìn cùng nhau.</p>
+            </div>
+          </div>
+
+          <div className="layers detailed-layers">
             {[
-              ["01","IDENTITY","Bạn đang định nghĩa mình là ai?"],
-              ["02","TRIGGER","Điều gì xảy ra ngay trước khi muốn hút?"],
-              ["03","STATE","Bạn đang thực sự cần điều gì?"],
-              ["04","BEHAVIOR","Bạn phản ứng tự động như thế nào?"],
-              ["05","ENVIRONMENT","Điều gì đang củng cố hành vi?"],
-              ["06","EVIDENCE","Bằng chứng mới nào cần được tạo?"],
-            ].map(x=><article key={x[0]}><span>{x[0]}</span><div><b>{x[1]}</b><p>{x[2]}</p></div></article>)}
+              ["01","IDENTITY","Nhận dạng","Bạn đang kể câu chuyện gì về mình?","“Tôi là người nghiện.” “Tôi phải hút khi stress.” “Tôi không đủ ý chí.” Những câu này không chỉ mô tả quá khứ — chúng có thể âm thầm hướng dẫn quyết định tiếp theo.","Bạn sẽ tách hành vi hút thuốc khỏi định nghĩa toàn bộ con người mình và xây một Identity Bridge Statement™ thực tế."],
+              ["02","TRIGGER","Tín hiệu kích hoạt","Điều gì xảy ra ngay trước khi bạn muốn hút?","Đó có thể là ly cà phê, sau bữa ăn, cuộc họp, deadline, rượu bia, một người bạn, cảm giác buồn chán hoặc sự bồn chồn trong cơ thể.","Bạn sẽ lập Trigger Inventory™ và nhận diện các tình huống nguy cơ cao thay vì chờ đến khi cơn thèm đã xuất hiện."],
+              ["03","STATE","Trạng thái thật","Phía sau điếu thuốc, bạn đang cần điều gì?","Có thể bạn cần nghỉ, bình tĩnh lại, lấy lại tập trung, được kết nối với người khác hoặc thoát khỏi một cảm giác khó chịu trong vài phút.","Bạn sẽ gọi đúng tên nhu cầu thật và xây State Reset Protocol™ phù hợp với từng trạng thái."],
+              ["04","BEHAVIOR","Phản ứng tự động","Khi trigger xuất hiện, bạn thường làm gì tiếp theo?","Bước ra ban công. Tìm bao thuốc. Xin một điếu. Châm lửa trước khi kịp nghĩ. Đây là chuỗi hành động đã được lặp đến mức gần như tự động.","Bạn sẽ thiết kế phản ứng thay thế đủ cụ thể để có thể làm ngay trong đúng bối cảnh."],
+              ["05","ENVIRONMENT","Môi trường","Điều gì đang khiến phản ứng cũ luôn dễ hơn?","Bao thuốc trong túi, gạt tàn trên bàn, nhóm bạn cùng hút, góc ban công quen thuộc, giờ nghỉ cố định hay những buổi nhậu đều có thể củng cố vòng lặp.","Bạn sẽ điều chỉnh người, nơi chốn, đồ vật và nghi thức để lựa chọn mới không phải dựa hoàn toàn vào ý chí."],
+              ["06","EVIDENCE","Bằng chứng mới","Điều gì giúp nhận dạng mới trở nên đáng tin?","Không phải một lời khẳng định. Đó là một ly cà phê không thuốc, một lần từ chối, một cơn thèm được xử lý hoặc một lần trượt nhưng quay lại kế hoạch.","Bạn sẽ ghi lại Daily Identity Evidence™ để mỗi hành vi mới trở thành bằng chứng cho Smoke-Free Identity™."],
+            ].map(x=><article key={x[0]}>
+              <div className="layer-head"><span>{x[0]}</span><small>{x[1]}</small><b>{x[2]}</b></div>
+              <h3>{x[3]}</h3>
+              <p>{x[4]}</p>
+              <div className="layer-action"><small>TRONG CHƯƠNG TRÌNH</small><p>{x[5]}</p></div>
+            </article>)}
+          </div>
+
+          <div className="system-case">
+            <div className="case-intro">
+              <span>MỘT TÌNH HUỐNG — SÁU TẦNG</span>
+              <h3>Hãy lấy một cuộc họp căng thẳng làm ví dụ.</h3>
+              <p>Nếu chỉ nhìn vào điếu thuốc, bạn sẽ thấy một hành vi cần dừng. Nhưng khi đặt tình huống lên bản đồ, bạn nhìn thấy toàn bộ câu chuyện:</p>
+            </div>
+            <div className="case-flow">
+              {[
+                ["TRIGGER","Cuộc họp vừa kết thúc."],
+                ["STATE","Bạn căng, bồn chồn và cần một khoảng dừng."],
+                ["BEHAVIOR","Bạn bước ra chỗ quen thuộc và tìm thuốc."],
+                ["ENVIRONMENT","Đồng nghiệp đang hút; bao thuốc ở ngay trong túi."],
+                ["IDENTITY","“Tôi luôn cần thuốc để hạ stress.”"],
+                ["EVIDENCE MỚI","Bạn thực hiện một Smoke-Free Break và quay lại làm việc."],
+              ].map((x,i)=><article key={x[0]}><span>{String(i+1).padStart(2,"0")}</span><small>{x[0]}</small><p>{x[1]}</p></article>)}
+            </div>
+            <div className="case-reframe">
+              <small>ĐIỂM CHUYỂN KHÔNG PHẢI LÀ “CỐ ĐỪNG HÚT”</small>
+              <p>Mà là chuẩn bị trước một cách khác để nghỉ, hạ căng thẳng và quay lại công việc — ngay trong bối cảnh thật đã từng kích hoạt bạn.</p>
+            </div>
+          </div>
+
+          <div className="system-path">
+            <div>
+              <span>BẢN ĐỒ 7 NGÀY SẼ ĐƯA BẠN ĐI QUA</span>
+              <h3>Từ nhìn thấy vòng lặp đến có kế hoạch phản ứng.</h3>
+            </div>
+            <ol>
+              {["Nhận diện vòng lặp hiện tại","Tách hành vi khỏi Identity","Chuẩn bị thể chất và nhịp sống","Thiết kế lại trigger và môi trường","Xây protocol xử lý cơn thèm","Lập kế hoạch hành động 21 ngày","Phòng ngừa và phục hồi sau đứt gãy"].map((x,i)=><li key={x}><span>{String(i+1).padStart(2,"0")}</span>{x}</li>)}
+            </ol>
           </div>
         </div>
       </section>
