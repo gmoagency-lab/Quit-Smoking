@@ -485,10 +485,79 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section authority">
-        <div className="wrap authority-panel">
-          <article><span>VAI TRÒ CỦA TÔI</span><h2>Identity Coach</h2><p>Giúp bạn nhận diện và thiết kế lại mối liên hệ giữa Identity, trigger, trạng thái, hành vi và môi trường.</p></article>
-          <article><span>VAI TRÒ NÀY KHÔNG BAO GỒM</span><h2>Hỗ trợ y khoa</h2><ul><li>Chẩn đoán hoặc điều trị lệ thuộc.</li><li>Thay thế bác sĩ hoặc dược sĩ.</li><li>Cam kết chữa bệnh hoặc không bao giờ tái hút.</li></ul></article>
+      <section className="section authority authority-detailed">
+        <div className="wrap">
+          <div className="authority-opening">
+            <span>RANH GIỚI HỖ TRỢ — ĐỂ BẠN BIẾT MÌNH ĐANG NHẬN ĐƯỢC GÌ</span>
+            <h2>Đây không phải điều trị y khoa.<br/>Đây là một hệ thống giúp bạn nhìn rõ và thiết kế lại hành vi.</h2>
+            <p>Sự minh bạch này rất quan trọng. Khi hiểu đúng vai trò của chương trình, bạn biết phần nào mình sẽ được hướng dẫn thực hành — và khi nào nên tìm thêm sự hỗ trợ từ bác sĩ hoặc dược sĩ.</p>
+          </div>
+
+          <div className="authority-columns">
+            <article className="coach-scope">
+              <div className="scope-head">
+                <span>VAI TRÒ CỦA TÔI</span>
+                <h3>Identity Coach</h3>
+                <p>Giúp bạn chuyển một câu hỏi rất rộng — “Làm sao để bỏ thuốc?” — thành những điểm có thể quan sát, thiết kế và thực hành trong đời sống thật.</p>
+              </div>
+              <div className="role-process">
+                {[
+                  ["01","QUAN SÁT VÒNG LẶP","Đặt lịch sử hút, trigger, trạng thái và hoàn cảnh thật lên một bản đồ rõ ràng."],
+                  ["02","GIẢI MÃ NHU CẦU","Nhìn phía sau điếu thuốc để hiểu bạn đang tìm một khoảng nghỉ, sự tập trung hay cách thoát khỏi cảm giác khó chịu."],
+                  ["03","THIẾT KẾ LỰA CHỌN MỚI","Tạo phản ứng thay thế, điều chỉnh môi trường và chuẩn bị protocol cho những tình huống nguy cơ cao."],
+                  ["04","ĐƯA VÀO ĐỜI SỐNG","Biến bản đồ thành kế hoạch 21 ngày, theo dõi bằng chứng mới và điều chỉnh khi thực tế thay đổi."],
+                ].map(item => <div key={item[0]}><span>{item[0]}</span><section><b>{item[1]}</b><p>{item[2]}</p></section></div>)}
+              </div>
+              <div className="scope-result">
+                <small>BẠN NHẬN ĐƯỢC</small>
+                <p>Một cấu trúc để hiểu mình, bộ câu hỏi để tự quan sát và những công cụ giúp biến hiểu biết đó thành hành động cụ thể.</p>
+              </div>
+            </article>
+
+            <article className="medical-scope">
+              <div className="scope-head">
+                <span>VAI TRÒ NÀY KHÔNG BAO GỒM</span>
+                <h3>Chẩn đoán hoặc điều trị y khoa</h3>
+                <p>Chương trình không đánh giá mức độ lệ thuộc, không kê đơn và không thay thế kế hoạch chăm sóc của chuyên gia y tế.</p>
+              </div>
+              <ul>
+                {[
+                  ["Chẩn đoán","Đánh giá hoặc kết luận tình trạng sức khỏe và mức độ lệ thuộc nicotine."],
+                  ["Điều trị","Kê đơn, điều chỉnh thuốc hoặc chỉ định sản phẩm thay thế nicotine."],
+                  ["Xử lý triệu chứng","Theo dõi hay xử lý các triệu chứng thể chất hoặc tinh thần cần chăm sóc chuyên môn."],
+                  ["Cam kết kết quả","Hứa chữa khỏi, bảo đảm một mốc thời gian hoặc khẳng định bạn sẽ không bao giờ tái hút."],
+                ].map(item => <li key={item[0]}><span>—</span><div><b>{item[0]}</b><p>{item[1]}</p></div></li>)}
+              </ul>
+              <div className="medical-note">
+                <small>NẾU BẠN ĐANG ĐƯỢC ĐIỀU TRỊ</small>
+                <p>Hãy tiếp tục làm theo hướng dẫn của bác sĩ hoặc dược sĩ. Chương trình chỉ bổ sung phần quan sát Identity, trigger, hành vi và môi trường.</p>
+              </div>
+            </article>
+          </div>
+
+          <div className="care-path">
+            <div>
+              <span>KHI NÀO NÊN TÌM THÊM HỖ TRỢ CHUYÊN MÔN?</span>
+              <h3>Có những phần không nên tự mình đoán.</h3>
+              <p>Bác sĩ hoặc dược sĩ phù hợp hơn khi bạn cần đánh giá sức khỏe, lựa chọn hỗ trợ dùng thuốc hoặc xử lý những triệu chứng khiến bạn lo lắng.</p>
+            </div>
+            <div className="care-signals">
+              {[
+                ["01","Bạn muốn tìm hiểu thuốc hoặc liệu pháp thay thế nicotine."],
+                ["02","Bạn đang mang thai, có bệnh nền hoặc đang dùng thuốc điều trị."],
+                ["03","Bạn gặp triệu chứng thể chất hay tinh thần nghiêm trọng hoặc bất thường."],
+                ["04","Bạn cần một kế hoạch cai thuốc có theo dõi y khoa sát hơn."],
+              ].map(item => <div key={item[0]}><span>{item[0]}</span><p>{item[1]}</p></div>)}
+            </div>
+          </div>
+
+          <div className="authority-bridge">
+            <div>
+              <small>HAI HƯỚNG CÓ THỂ ĐI CÙNG NHAU</small>
+              <p>Bạn không cần chọn giữa thay đổi hành vi và hỗ trợ y khoa. Khi cần, hai hướng có thể bổ sung cho nhau.</p>
+            </div>
+            <div className="bridge-parts"><span>IDENTITY · TRIGGER · HÀNH VI · MÔI TRƯỜNG</span><i>+</i><span>SỨC KHỎE · THUỐC · THEO DÕI CHUYÊN MÔN</span></div>
+          </div>
         </div>
       </section>
 
