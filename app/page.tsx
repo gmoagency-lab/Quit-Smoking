@@ -262,19 +262,116 @@ export default function Home() {
       </section>
 
       <section className="section warm">
-        <div className="wrap">
-          <div className="section-head"><span>05 — VẬY SAU 7 NGÀY, BẠN THỰC SỰ CÓ GÌ?</span><h2>Không phải thêm một danh sách tác hại để ghi nhớ.</h2><p>Bạn có một hệ thống được viết từ chính lịch sử, trigger và đời sống của mình.</p></div>
-          <div className="asset-grid">
-            {[
-              ["01","Smoking Loop Map™","Hiểu hoàn cảnh, trigger và nhu cầu phía sau điếu thuốc."],
-              ["02","Identity Statement™","Định hướng nhận dạng mới thực tế và có thể hành động."],
-              ["03","Physical Readiness Plan™","Chuẩn bị giấc ngủ, caffeine, vận động và phục hồi."],
-              ["04","Trigger Replacement Map™","Phản ứng thay thế cho từng tình huống nguy cơ cao."],
-              ["05","Craving & State Reset™","Biết phải làm gì khi cơn thèm và stress xuất hiện."],
-              ["06","21-Day Action Plan™","Kế hoạch hành động rõ ràng cho 21 ngày tiếp theo."],
-              ["07","Relapse Prevention Map™","Phòng ngừa và quay lại lộ trình sau một lần trượt."],
-            ].map((x,i)=><article className="asset" key={x[0]}><div className="asset-paper"><span>DAY {x[0]}</span><b>{x[1].split("™")[0]}</b><i></i><i></i><i></i></div><small>HOÀN THÀNH NGÀY {i+1}</small><h3>{x[1]}</h3><p>{x[2]}</p></article>)}
+        <div className="wrap outcome-section">
+          <div className="outcome-opening">
+            <div className="section-head left">
+              <span>05 — VẬY SAU 7 NGÀY, BẠN THỰC SỰ CÓ GÌ?</span>
+              <h2>Không phải thêm một danh sách tác hại để ghi nhớ.</h2>
+            </div>
+            <div className="outcome-opening-copy">
+              <p>Hãy tưởng tượng sáng ngày thứ tám.</p>
+              <p>Bạn không thức dậy với một lời hứa mơ hồ kiểu <b>“Hôm nay mình phải cố hơn.”</b> Trước mặt bạn là một bản đồ được viết từ chính lịch sử hút thuốc, những trigger quen thuộc và nhịp sống thật của mình.</p>
+              <p>Bạn biết chuyện gì thường xảy ra trước điếu thuốc — và đã chuẩn bị sẵn một lựa chọn khác cho khoảnh khắc đó.</p>
+            </div>
           </div>
+
+          <div className="outcome-shift">
+            <div>
+              <small>TRƯỚC 7 NGÀY</small>
+              <p>“Khi thèm thuốc, tôi sẽ cố nhịn.”</p>
+            </div>
+            <i>→</i>
+            <div>
+              <small>SAU 7 NGÀY</small>
+              <p>“Tôi biết trigger nào đang xuất hiện, cơ thể cần gì và bước tiếp theo của mình là gì.”</p>
+            </div>
+          </div>
+
+          <div className="deliverable-intro">
+            <span>BẢY NGÀY — BẢY MẢNH GHÉP</span>
+            <h3>Mỗi ngày không kết thúc bằng “đã xem xong”.<br/>Nó kết thúc bằng một thứ bạn có thể mang vào đời sống thật.</h3>
+          </div>
+
+          <div className="deliverable-story">
+            {[
+              {
+                day:"01", phase:"NHÌN THẤY", name:"Smoking Loop Map™",
+                title:"Bạn thôi đoán — và nhìn thấy vòng lặp của chính mình.",
+                story:"Bạn đặt những lần hút gần đây lên một dòng thời gian: lúc nào, ở đâu, với ai, chuyện gì vừa xảy ra và điếu thuốc đã giúp bạn giải quyết cảm giác nào trong vài phút.",
+                points:["Những trigger lặp lại nhiều nhất","Nhu cầu thật phía sau từng điếu thuốc","Điểm trong vòng lặp bạn có thể can thiệp"],
+                next:"Bạn biết mình thực sự cần thay đổi điều gì — thay vì chỉ cố loại bỏ điếu thuốc."
+              },
+              {
+                day:"02", phase:"ĐỊNH NGHĨA LẠI", name:"Identity Statement™",
+                title:"Bạn tách một hành vi khỏi con người mình.",
+                story:"Thay vì tiếp tục kể “Tôi là người hút thuốc đang cố bỏ”, bạn viết một nhận dạng mới đủ thật để tin và đủ cụ thể để hành động ngay hôm nay.",
+                points:["Nhãn cũ đang giữ vòng lặp tồn tại","Câu nhận dạng mới không ép mình phải hoàn hảo","Hành vi nhỏ chứng minh nhận dạng đó"],
+                next:"Mỗi lựa chọn nhỏ bắt đầu trở thành bằng chứng, không còn là một bài kiểm tra ý chí."
+              },
+              {
+                day:"03", phase:"CHUẨN BỊ", name:"Physical Readiness Plan™",
+                title:"Bạn chuẩn bị cơ thể trước khi đòi hỏi bản thân phải mạnh.",
+                story:"Bạn nhìn vào giấc ngủ, caffeine, rượu bia, khoảng nghỉ và những giờ năng lượng xuống thấp — vì một cơ thể kiệt sức sẽ luôn tìm đường quay về phản ứng nhanh nhất.",
+                points:["Những thời điểm cơ thể dễ chao đảo","Điều chỉnh nhỏ cho ngủ, ăn, uống và vận động","Kế hoạch phục hồi cho ngày nhiều áp lực"],
+                next:"Bạn giảm bớt những trận chiến không cần thiết trước khi cơn thèm xuất hiện."
+              },
+              {
+                day:"04", phase:"THIẾT KẾ LỐI RẼ", name:"Trigger Replacement Map™",
+                title:"Mỗi trigger quen thuộc có một lối rẽ mới.",
+                story:"Ly cà phê, giờ nghỉ, cuộc họp căng thẳng hay lời mời của một người bạn không còn là những tình huống phải ứng biến. Bạn thiết kế một phản ứng thay thế phù hợp cho từng bối cảnh.",
+                points:["Phương án “Nếu… thì…” cho trigger chính","Cách thay đổi môi trường để giảm ma sát","Một nghi thức mới vẫn đáp ứng đúng nhu cầu"],
+                next:"Khi hoàn cảnh cũ quay lại, bạn đã có câu trả lời trước khi phản xạ cũ lên tiếng."
+              },
+              {
+                day:"05", phase:"XỬ LÝ KHOẢNH KHẮC KHÓ", name:"Craving & State Reset™",
+                title:"Khi cơn thèm đến, bạn không còn phải ứng biến.",
+                story:"Bạn có một chuỗi hành động ngắn để nhận diện trạng thái, tạo khoảng dừng và chuyển cơ thể sang một nhịp khác — ngay giữa một ngày làm việc bình thường.",
+                points:["Protocol phản ứng nhanh khi cơn thèm tăng","Smoke-Free Break thay cho giờ nghỉ hút thuốc","Kế hoạch riêng cho stress và mất tập trung"],
+                next:"Cơn thèm trở thành một tín hiệu cần xử lý, không phải một mệnh lệnh phải làm theo."
+              },
+              {
+                day:"06", phase:"ĐƯA VÀO ĐỜI SỐNG", name:"21-Day Action Plan™",
+                title:"Bản đồ được đặt vào 21 ngày đời sống thật.",
+                story:"Bạn chọn ngày bắt đầu, chuẩn bị người hỗ trợ, các cột mốc và cách ghi nhận tiến trình. Kế hoạch không chỉ dành cho những ngày thuận lợi, mà cả ngày bận, mệt hoặc nhiều áp lực.",
+                points:["Việc cần làm trước và trong ngày bắt đầu","Tracker cho hành vi và bằng chứng mới","Phương án hỗ trợ cho những thời điểm khó"],
+                next:"Bạn biết hôm nay cần làm gì, ngày mai tiếp tục ở đâu và tiến bộ được đo bằng điều gì."
+              },
+              {
+                day:"07", phase:"BẢO VỆ HÀNH TRÌNH", name:"Relapse Prevention Map™",
+                title:"Một lần trượt không còn đồng nghĩa quay về vạch xuất phát.",
+                story:"Bạn nhận diện dấu hiệu cảnh báo sớm, những tình huống nguy cơ cao và một kế hoạch 24 giờ để dừng chuỗi trước khi câu “Mình thất bại rồi” kéo bạn trở lại vòng lặp cũ.",
+                points:["Danh sách cảnh báo sớm của riêng bạn","Kịch bản cho tình huống nguy cơ cao","Protocol quay lại hành trình trong 24 giờ"],
+                next:"Bạn biết cách phục hồi nhanh, học từ điều vừa xảy ra và tiếp tục tạo bằng chứng mới."
+              },
+            ].map((item) => (
+              <article key={item.day}>
+                <aside>
+                  <span>NGÀY {item.day}</span>
+                  <b>{item.name}</b>
+                  <small>{item.phase}</small>
+                </aside>
+                <div className="deliverable-copy">
+                  <h3>{item.title}</h3>
+                  <p>{item.story}</p>
+                  <ul>{item.points.map(point => <li key={point}><span>✓</span>{point}</li>)}</ul>
+                  <div className="deliverable-next"><small>MẢNH GHÉP BẠN MANG ĐI</small><p>{item.next}</p></div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="outcome-finale">
+            <div>
+              <span>ĐẾN CUỐI NGÀY THỨ BẢY</span>
+              <h3>Bảy tài liệu không nằm rời rạc trong một thư mục.</h3>
+              <p>Chúng ghép thành một hệ thống duy nhất: nhìn thấy trigger, hiểu trạng thái, chọn phản ứng mới, ghi nhận bằng chứng và biết cách quay lại nếu lỡ trượt.</p>
+            </div>
+            <div className="outcome-scene">
+              <small>KHI CUỘC HỌP CĂNG THẲNG KẾT THÚC…</small>
+              <p><b>Bạn nhận ra trigger</b> → gọi tên trạng thái → dùng State Reset → chọn Smoke-Free Break → ghi lại một bằng chứng mới.</p>
+            </div>
+          </div>
+
           <div className="center-cta"><a className="button dark-button" href="#offer">XÂY BẢN ĐỒ CAI THUỐC CỦA TÔI →</a></div>
         </div>
       </section>
