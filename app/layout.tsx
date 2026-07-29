@@ -7,7 +7,7 @@ const display = Manrope({ variable: "--font-display", subsets: ["latin","vietnam
 
 export const metadata: Metadata = {
   title: "Bản Đồ Cai Thuốc Lá 7 Ngày™ | Kế hoạch cai thuốc cá nhân",
-  description: "Bạn không thiếu ý chí. Bạn đang thiếu một kế hoạch cho đúng những lúc mình dễ hút lại nhất. Chương trình 7 ngày giúp bạn chuẩn bị kế hoạch cai thuốc cá nhân 21 ngày.",
+  description: "Bạn không thiếu ý chí. Bạn đang thiếu một kế hoạch cho đúng những lúc mình dễ hút lại nhất. 7 ngày để xác định ngày bỏ thuốc, xây protocol vượt qua cơn thèm và chuẩn bị kế hoạch 21 ngày.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
     title: "Bản Đồ Cai Thuốc Lá 7 Ngày™",
