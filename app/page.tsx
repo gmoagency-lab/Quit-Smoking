@@ -3,24 +3,114 @@
 import { useEffect, useState } from "react";
 
 const days = [
-  { n: 1, title: "Smoking Loop Audit™", outcome: "Nhìn rõ hoàn cảnh, trigger và vòng lặp đang duy trì hành vi.", work: "Rà soát lịch sử hút, tần suất, thời điểm, nhu cầu phía sau điếu thuốc và nguyên nhân từng quay lại.", output: "Smoking History Audit™ · Trigger Timeline™ · Smoking Loop Map™" },
-  { n: 2, title: "Smoke-Free Identity Shift™", outcome: "Tách hành vi hút thuốc khỏi định nghĩa bản thân.", work: "Nhận diện nhãn dán, Identity hiện tại, Identity mong muốn và những bằng chứng hành vi cần tạo.", output: "Identity Bridge Statement™ · Identity Evidence List™" },
-  { n: 3, title: "Physical Readiness Audit™", outcome: "Chuẩn bị thể chất và nhịp sống cho quá trình thay đổi.", work: "Rà soát giấc ngủ, caffeine, rượu bia, vận động, khoảng nghỉ và những thời điểm năng lượng suy giảm.", output: "Withdrawal Preparation Checklist™ · Personal Recovery Plan™" },
-  { n: 4, title: "Trigger Replacement Design™", outcome: "Thiết kế lại môi trường và phản ứng.", work: "Phân loại trigger tình huống, cảm xúc, xã hội, thể chất và tạo phản ứng thay thế cho từng bối cảnh.", output: "Environment Audit™ · Personal Trigger Replacement Map™" },
-  { n: 5, title: "State Reset Protocol™", outcome: "Làm chủ cơn thèm, stress và sự tập trung.", work: "Thiết kế protocol phản ứng nhanh, Smoke-Free Break, Focus Reset và High-Stress Action Plan.", output: "Craving & State Reset Protocol™" },
-  { n: 6, title: "21-Day Smoke-Free Protocol™", outcome: "Biến bản đồ thành kế hoạch hành động.", work: "Chọn ngày bắt đầu, người hỗ trợ, tracker, milestone và phương án cho các tình huống khó.", output: "21-Day Tracker™ · Daily Identity Evidence Log™" },
-  { n: 7, title: "Relapse Prevention Map™", outcome: "Phòng ngừa tái hút và phục hồi sau một lần trượt.", work: "Nhận diện cảnh báo sớm, tình huống nguy cơ cao và kế hoạch phản ứng trong 24 giờ.", output: "24-Hour Recovery Protocol™ · Relapse Prevention Map™" },
+  {
+    n: 1,
+    title: "Giải mã Vòng lặp Hút thuốc",
+    outcome: "Nhìn rõ điều gì đang duy trì hành vi hút thuốc của riêng bạn.",
+    work: ["Lịch sử, số lượng và tần suất hút", "Điếu đầu tiên và dấu hiệu lệ thuộc", "Trigger thường gặp", "Những lần từng cai và lý do hút lại"],
+    output: "Bản đồ Vòng lặp Hút thuốc Cá nhân",
+  },
+  {
+    n: 2,
+    title: "Xác định Ngày bắt đầu",
+    outcome: "Chuyển mong muốn bỏ thuốc thành một mốc bắt đầu có chuẩn bị.",
+    work: ["Lý do muốn bỏ ở thời điểm này", "Điều bạn muốn lấy lại và bảo vệ", "Mức độ sẵn sàng hiện tại", "Ngày bắt đầu và người đồng hành"],
+    output: "Quit Date & Commitment Plan",
+  },
+  {
+    n: 3,
+    title: "Chuẩn bị cho Nicotine và Cơ thể",
+    outcome: "Giảm những tình huống cơ thể bị đẩy vào trạng thái dễ hút lại.",
+    work: ["Cơn thèm và cảm giác khó chịu", "Khả năng tập trung, giấc ngủ và năng lượng", "Caffeine, rượu bia, vận động", "Dấu hiệu cần trao đổi với chuyên gia y tế"],
+    output: "Kế hoạch Chuẩn bị Cơ thể",
+  },
+  {
+    n: 4,
+    title: "Thiết kế lại Trigger và Môi trường",
+    outcome: "Chuẩn bị phản ứng mới cho từng trigger nguy cơ cao.",
+    work: ["Trigger tình huống, cảm xúc, xã hội và thể chất", "Phản ứng cũ và nhu cầu thật", "Phản ứng thay thế", "Điều chỉnh môi trường và phương án dự phòng"],
+    output: "Bản đồ Thay thế Trigger",
+  },
+  {
+    n: 5,
+    title: "Xây Protocol Xử lý Cơn thèm",
+    outcome: "Biết cần làm gì trong vài phút đầu tiên của một cơn thèm.",
+    work: ["Sau ăn và uống cà phê", "Lái xe và làm việc căng thẳng", "Được mời thuốc hoặc đi nhậu", "Thiếu ngủ và một ngày nhiều áp lực"],
+    output: "Protocol Xử lý Cơn thèm",
+  },
+  {
+    n: 6,
+    title: "Hoàn thiện Kế hoạch 21 ngày",
+    outcome: "Biến toàn bộ phần chuẩn bị thành một kế hoạch có thể triển khai.",
+    work: ["Việc cần làm trước ngày bắt đầu", "Mục tiêu từng tuần và tracker hằng ngày", "Người hỗ trợ và mốc tiến độ", "Phương án cho các tình huống khó"],
+    output: "Kế hoạch Cai thuốc 21 ngày",
+  },
+  {
+    n: 7,
+    title: "Phòng ngừa và Phục hồi sau Tái hút",
+    outcome: "Chuẩn bị cho những ngày không hoàn hảo mà không buông xuôi.",
+    work: ["Dấu hiệu cảnh báo sớm", "Tình huống dễ làm kế hoạch đứt gãy", "Suy nghĩ thường xuất hiện trước khi hút lại", "Kế hoạch quay lại trong 24 giờ"],
+    output: "Bản đồ Phòng ngừa Tái hút",
+  },
+];
+
+const deliverables = [
+  {
+    n: "01",
+    title: "Bản đồ Vòng lặp Hút thuốc Cá nhân",
+    intro: "Thay vì chỉ nói “tôi nghiện thuốc”, bạn mô tả cụ thể vòng lặp mình cần thay đổi.",
+    bullets: ["Thời điểm và trigger xuất hiện nhiều nhất", "Cơn thèm liên quan đến nicotine hay tình huống", "Nhu cầu phía sau điếu thuốc", "Điểm đứt gãy của những lần cai trước"],
+  },
+  {
+    n: "02",
+    title: "Ngày bắt đầu & Cam kết Hành động",
+    intro: "Bạn không tiếp tục chờ một ngày “ít stress hơn” mà không biết ngày đó là khi nào.",
+    bullets: ["Lý do thật sự muốn bỏ", "Điều quan trọng muốn bảo vệ", "Ngày bắt đầu phù hợp", "Người hỗ trợ và việc cần hoàn thành trước ngày cai"],
+  },
+  {
+    n: "03",
+    title: "Kế hoạch Chuẩn bị Cơ thể",
+    intro: "Mục tiêu là giảm số tình huống cơ thể bị đẩy vào trạng thái dễ hút lại.",
+    bullets: ["Giấc ngủ, năng lượng và ăn uống", "Caffeine, rượu bia và vận động", "Những thời điểm dễ mất kiểm soát", "Mức độ cần tìm thêm hỗ trợ chuyên môn"],
+  },
+  {
+    n: "04",
+    title: "Bản đồ Thay thế Trigger",
+    intro: "Không phải lời khuyên chung “hãy làm việc khác”, mà là phản ứng cho đúng tình huống của bạn.",
+    bullets: ["Phản ứng cũ và nhu cầu thật", "Phản ứng thay thế", "Cách điều chỉnh môi trường", "Câu từ chối thuốc và phương án dự phòng"],
+  },
+  {
+    n: "05",
+    title: "Protocol Xử lý Cơn thèm",
+    intro: "Một chuỗi hành động rõ ràng cho những khoảnh khắc có nguy cơ cao nhất.",
+    bullets: ["Việc làm trong vài phút đầu", "Cách đổi trạng thái và môi trường", "Kịch bản cho cà phê, sau ăn, nhậu và stress", "Người cần liên hệ nếu cơn thèm tiếp tục tăng"],
+  },
+  {
+    n: "06",
+    title: "Kế hoạch Cai thuốc 21 ngày",
+    intro: "Biến những gì đã chuẩn bị thành một lộ trình có ngày bắt đầu, tracker và mốc tiến độ.",
+    bullets: ["Việc chuẩn bị trước ngày cai", "Loại bỏ thuốc và vật dụng liên quan", "Người hỗ trợ và tracker hằng ngày", "Phương án cho công việc, cà phê, nhậu và stress"],
+  },
+  {
+    n: "07",
+    title: "Bản đồ Phòng ngừa Tái hút",
+    intro: "Một lần trượt không cần trở thành lý do để quay lại toàn bộ vòng lặp cũ.",
+    bullets: ["Dừng chuỗi hành vi", "Nhận diện trigger vừa xuất hiện", "Điều chỉnh kế hoạch và môi trường", "Quay lại hành trình trong 24 giờ"],
+  },
 ];
 
 const faqs = [
-  ["Tôi đã hút lâu năm có phù hợp không?", "Có. Chương trình được thiết kế cho người đã hút nhiều năm và từng gặp khó khăn khi bỏ. Bạn chỉ cần sẵn sàng quan sát trung thực vòng lặp hiện tại."],
-  ["Tôi vẫn đang hút trong khi học có được không?", "Có. Chương trình bắt đầu từ việc quan sát hành vi hiện tại, thay vì yêu cầu bạn phải hoàn hảo trước khi tham gia."],
-  ["Có phải ngừng hút ngay ngày đầu không?", "Không. Bạn sẽ audit tình trạng hiện tại, chuẩn bị môi trường và xây kế hoạch phù hợp với mức độ sẵn sàng của mình."],
-  ["Tôi từng tái hút nhiều lần thì sao?", "Đây là một bài toán trung tâm của chương trình. Bạn sẽ xây Trigger Map, High-Risk Situation Plan và 24-Hour Recovery Protocol."],
-  ["Tôi hút để giảm stress thì chương trình xử lý thế nào?", "Bạn sẽ xác định nhu cầu thật phía sau điếu thuốc và thiết kế phản ứng thay thế phù hợp với từng bối cảnh."],
-  ["Chương trình có thay thế bác sĩ không?", "Không. Chương trình tập trung vào Identity, hành vi, trigger, môi trường và lối sống; không thay thế tư vấn hoặc điều trị y tế."],
-  ["Tôi cần dành bao nhiêu thời gian mỗi ngày?", "Mỗi ngày gồm một bài học tập trung và một thành phẩm cụ thể. Điều quan trọng là hoàn thành workbook và đưa kết quả vào thực tế."],
-  ["Nếu tôi hút lại một điếu thì sao?", "Một lần trượt không có nghĩa toàn bộ hành trình thất bại. Bạn sẽ dùng 24-Hour Recovery Protocol™ để dừng chuỗi, nhận diện trigger và quay lại hệ thống."],
+  ["Tôi có phải ngừng hút ngay từ ngày đầu tiên không?", "Không. Những ngày đầu giúp bạn đánh giá vòng lặp, mức độ sẵn sàng, môi trường và các tình huống nguy cơ cao. Bạn sẽ xác định ngày bắt đầu phù hợp trong kế hoạch của mình."],
+  ["Tôi vẫn đang hút trong lúc học có được không?", "Có. Chương trình bắt đầu bằng việc quan sát trung thực hành vi hiện tại. Bạn không cần giả vờ rằng mình đã bỏ thuốc trước khi tham gia."],
+  ["Chương trình có bảo đảm tôi bỏ thuốc trong 7 ngày không?", "Không. Mục tiêu là giúp bạn hoàn thiện kế hoạch cai cá nhân, xác định ngày bắt đầu và chuẩn bị protocol cho 21 ngày tiếp theo. Tốc độ và kết quả của mỗi người có thể khác nhau."],
+  ["Tôi hút đã quá lâu, chương trình có phù hợp không?", "Chương trình được thiết kế chủ yếu cho người đã hút từ 5 năm trở lên và từng gặp khó khăn khi bỏ thuốc. Bạn cần sẵn sàng quan sát vòng lặp và thực hiện kế hoạch, không cần bắt đầu với niềm tin tuyệt đối."],
+  ["Tôi hút để giảm stress. Không hút thì làm sao chịu được?", "Bạn sẽ nhận diện nhu cầu nằm phía sau điếu thuốc và chuẩn bị phản ứng thay thế cho những tình huống stress cụ thể. Nếu có vấn đề sức khỏe thể chất hoặc tâm lý cần điều trị, hãy tìm hỗ trợ chuyên môn phù hợp."],
+  ["Chương trình có thay thế thuốc hỗ trợ cai hoặc bác sĩ không?", "Không. Chương trình tập trung vào kế hoạch, trigger, hành vi, môi trường và phòng ngừa tái hút. Bạn có thể đồng thời trao đổi với bác sĩ, dược sĩ hoặc chuyên gia y tế về phương án hỗ trợ phù hợp."],
+  ["Nếu tôi đang sử dụng miếng dán hoặc kẹo nicotine thì sao?", "Bạn vẫn có thể tham gia để xử lý trigger và các vòng lặp hành vi. Việc sử dụng sản phẩm hỗ trợ nicotine nên theo hướng dẫn của chuyên gia phù hợp và thông tin sử dụng của sản phẩm."],
+  ["Nếu tôi hút lại một điếu thì sao?", "Một lần trượt không tự động có nghĩa toàn bộ hành trình thất bại. Bạn sẽ sử dụng kế hoạch phục hồi 24 giờ để dừng chuỗi, nhận diện trigger, điều chỉnh môi trường, liên hệ người hỗ trợ và quay lại kế hoạch."],
+  ["Tôi rất bận, liệu có theo được không?", "Mỗi ngày tập trung vào một bài học và một thành phẩm. Bạn không cần dành nhiều giờ học lý thuyết, nhưng cần dành thời gian hoàn thành workbook và đưa kế hoạch vào đời sống thực tế."],
+  ["Chương trình có phù hợp với nữ giới không?", "Có thể phù hợp. Tuy nhiên cohort đầu tiên ưu tiên nam giới trưởng thành hút thuốc lâu năm để nội dung, ví dụ và hoạt động hỗ trợ đủ tập trung."],
+  ["Chương trình có giúp chữa ho hoặc phục hồi phổi không?", "Không. Chương trình không chẩn đoán, chữa bệnh hoặc cam kết phục hồi cơ quan trong một khoảng thời gian cụ thể. Các triệu chứng sức khỏe cần được bác sĩ hoặc chuyên gia y tế đánh giá."],
 ];
 
 const Check = ({ children }: { children: React.ReactNode }) => <li><span>✓</span>{children}</li>;
@@ -43,561 +133,251 @@ export default function Home() {
 
   return (
     <main>
-      <div className="announcement"><b>Mở bán giai đoạn đầu — 457.000 VNĐ</b><span>Một lựa chọn · Truy cập toàn bộ 7 ngày</span></div>
+      <div className="announcement"><b>Cohort pilot — 497.000 VNĐ</b><span>Giới hạn 25 người · Có hỗ trợ nhóm trong 21 ngày</span></div>
 
-      <section className="hero blueprint">
+      <section className="hero blueprint v2-hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
-            <div className="eyebrow"><i /> CÓ THỂ BẠN ĐÃ TỪNG THỬ RẤT NHIỀU LẦN</div>
+            <div className="eyebrow"><i /> BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™</div>
             <h1>Bạn không thiếu ý chí.</h1>
-            <p className="hero-line">Có thể bạn chỉ đang cố bỏ thuốc trong khi <em>vòng lặp cũ</em> vẫn còn nguyên.</p>
-            <p className="lead">Bạn đã từng dừng được vài giờ, vài ngày, thậm chí vài tháng. Rồi một ly cà phê, một cuộc họp căng thẳng hay một buổi nhậu quen thuộc xuất hiện — và bạn lại cầm điếu thuốc lên.</p>
+            <p className="hero-line">Bạn đang thiếu một kế hoạch cho đúng những lúc mình <em>dễ hút lại nhất.</em></p>
+            <p className="lead">Chương trình thực hành 7 ngày dành cho người đã hút thuốc nhiều năm, từng muốn bỏ hoặc đã bỏ rồi hút lại — giúp bạn xác định ngày bắt đầu và chuẩn bị kế hoạch cá nhân để xử lý cơn thèm, trigger và nguy cơ tái hút.</p>
             <ul className="check-list">
-              <Check>Không phải vì bạn chưa từng nghiêm túc muốn bỏ.</Check>
-              <Check>Không phải vì bạn không biết thuốc lá có hại.</Check>
-              <Check>Có thể bạn chỉ chưa nhìn thấy cả hệ thống phía sau.</Check>
+              <Check>Xác định ngày bắt đầu phù hợp.</Check>
+              <Check>Thiết kế protocol cho cơn thèm và trigger thật.</Check>
+              <Check>Hoàn thiện kế hoạch cai thuốc 21 ngày.</Check>
             </ul>
             <div className="hero-cta">
-              <a className="button" href="#offer">XÂY BẢN ĐỒ CAI THUỐC CỦA TÔI <b>→</b></a>
-              <div><small>MỞ BÁN ĐẦU TIÊN</small><strong>457.000 VNĐ</strong><span>Một chương trình · Không gói nâng cấp</span></div>
+              <a className="button" href="#offer">TÔI MUỐN CHUẨN BỊ KẾ HOẠCH CAI THUỐC <b>→</b></a>
+              <div><small>COHORT PILOT</small><strong>497.000 VNĐ</strong><span>Giới hạn 25 người</span></div>
             </div>
           </div>
-          <div className="map-mockup" aria-label="Mô phỏng bộ công cụ Bản đồ Cai thuốc">
-            <div className="map-toolbar"><span>SMOKE-FREE OS</span><span>DAY 01 / 07</span></div>
-            <div className="map-title"><small>PERSONAL BLUEPRINT</small><b>Identity Map</b><span>62% mapped</span></div>
+
+          <div className="map-mockup" aria-label="Mô phỏng Bản đồ Cai thuốc Cá nhân">
+            <div className="map-toolbar"><span>PERSONAL QUIT PLAN</span><span>DAY 01 / 07</span></div>
+            <div className="map-title"><small>21-DAY BLUEPRINT</small><b>Quit Plan</b><span>Đang hoàn thiện</span></div>
             <div className="map-flow">
-              {["TRIGGER", "STATE", "BEHAVIOR", "EVIDENCE"].map((x, i) => <div key={x}><i>{String(i + 1).padStart(2, "0")}</i><b>{x}</b><span>{["Cà phê / Deadline", "Bồn chồn", "Smoke-free break", "1 lần vượt qua"][i]}</span></div>)}
+              {["TRIGGER", "CƠN THÈM", "PHẢN ỨNG", "HỖ TRỢ"].map((x, i) => <div key={x}><i>{String(i + 1).padStart(2, "0")}</i><b>{x}</b><span>{["Cà phê / Sau ăn", "Bồn chồn", "Protocol 5 phút", "Người đồng hành"][i]}</span></div>)}
             </div>
             <div className="map-bottom"><span>21-DAY TRACKER</span><div>{Array.from({length: 21}).map((_, i) => <i className={i < 7 ? "on" : ""} key={i} />)}</div></div>
-            <div className="float-card fc1"><small>CRAVING CARD</small><b>90s Reset</b></div>
-            <div className="float-card fc2"><small>DAY 04</small><b>Trigger Map</b></div>
+            <div className="float-card fc1"><small>CRAVING CARD</small><b>Phản ứng nhanh</b></div>
+            <div className="float-card fc2"><small>QUIT DATE</small><b>Ngày bắt đầu</b></div>
           </div>
         </div>
-        <div className="hero-foot wrap"><span>↓</span> CÂU CHUYỆN KHÔNG BẮT ĐẦU TỪ ĐIẾU THUỐC. NÓ BẮT ĐẦU TỪ NHỮNG GÌ XẢY RA NGAY TRƯỚC ĐÓ.</div>
+        <div className="hero-foot wrap"><span>GHI CHÚ</span> Chương trình giáo dục và hỗ trợ thay đổi hành vi; không thay thế tư vấn, chẩn đoán hoặc điều trị y tế.</div>
       </section>
 
       <section className="section light">
         <div className="wrap">
-          <div className="section-head"><span>01 — MỘT CÂU CHUYỆN RẤT QUEN</span><h2>Mọi chuyện thường bắt đầu bằng một lời hứa.</h2><p>“Hết gói này tôi sẽ bỏ.” Bạn nói thật lòng. Nhưng rồi cuộc sống tiếp tục diễn ra.</p></div>
+          <div className="section-head"><span>01 — CÓ THỂ BẠN ĐÃ THỰC SỰ MUỐN BỎ NHIỀU LẦN</span><h2>Một lời hứa thật lòng vẫn có thể đứt gãy khi đời sống thật quay lại.</h2></div>
           <div className="narrative">
-            <p>Bạn có thể đã hứa điều đó với chính mình. Có thể bạn còn hứa với vợ, với con, hoặc với một người thực sự lo cho bạn.</p>
-            <p>Và bạn không nói cho có.</p>
-            <p>Bạn từng giảm số điếu mỗi ngày. Từng không mua thuốc. Từng né những người hay rủ hút. Có lần bạn dừng được vài ngày. Cũng có thể từng dừng được vài tháng.</p>
-            <div className="story-scene">
-              <small>RỒI MỘT NGÀY BÌNH THƯỜNG XẢY RA</small>
-              <p>Sáng là một ly cà phê. Trưa là cuộc họp kéo dài. Chiều có một deadline gấp. Tối đến, ai đó đưa cho bạn một điếu thuốc và nói: “Một điếu thôi mà.”</p>
+            <p>Bạn đã từng tự nói: <b>“Hết gói này tôi sẽ bỏ.”</b> Hoặc: <b>“Qua đợt công việc này tôi sẽ dừng.”</b></p>
+            <p>Có lần bạn bỏ được vài giờ. Có lần được vài ngày. Thậm chí có lần không hút trong vài tuần hoặc vài tháng.</p>
+            <div className="v2-promises">
+              {["“Tôi chỉ hút khi stress.”","“Lần này tôi sẽ quyết tâm hơn.”","“Tuần sau công việc đỡ bận tôi sẽ bắt đầu.”"].map(x => <span key={x}>{x}</span>)}
             </div>
-            <p>Trước khi bạn kịp cân nhắc lại tất cả những lý do mình muốn bỏ, bàn tay đã làm điều nó quen làm.</p>
-            <p>Điếu thuốc được châm lên.</p>
-            <p>Và sau vài phút dễ chịu ngắn ngủi, một cảm giác khác xuất hiện: <b>“Mình lại thất bại rồi.”</b></p>
-            <div className="thoughts">
-              <span>“Có lẽ tôi không đủ ý chí.”</span>
-              <span>“Tôi hút lâu quá rồi, chắc không bỏ được.”</span>
-              <span>“Thôi, để tuần sau bắt đầu lại.”</span>
+            <p>Nhưng rồi một tình huống quen thuộc xuất hiện.</p>
+            <div className="trigger-wall">
+              {["Cà phê buổi sáng","Sau bữa ăn","Cuộc họp căng thẳng","Deadline dồn dập","Lái xe đường dài","Một cuộc nhậu","Một đêm thiếu ngủ","Được mời thuốc","Cảm giác bồn chồn"].map((x,i) => <span key={x}><i>{String(i+1).padStart(2,"0")}</i>{x}</span>)}
             </div>
-            <p>Mình biết — đến đây có thể bạn đang nghĩ: <b>“Đúng, câu chuyện của tôi gần như vậy.”</b></p>
-            <p>Nhưng có một điều rất quan trọng bạn cần biết.</p>
+            <p>Và bạn lại cầm điếu thuốc lên.</p>
+            <p>Không phải vì bạn chưa biết thuốc lá có hại. Không phải vì bạn chưa từng nghiêm túc muốn bỏ. Và cũng không đơn giản vì bạn thiếu ý chí.</p>
           </div>
-          <blockquote>Vấn đề có thể không phải là bạn không muốn bỏ.<br/><b>Có thể bạn chỉ chưa nhìn thấy toàn bộ hệ thống đang khiến mình hút lại.</b></blockquote>
+          <blockquote>Vấn đề là bạn đang cố chống lại điếu thuốc tiếp theo, nhưng <b>chưa có một kế hoạch đủ rõ cho những tình huống khiến mình dễ hút lại nhất.</b></blockquote>
         </div>
       </section>
 
-      <section className="section warm">
+      <section className="section warm v2-habit">
+        <div className="wrap v2-split">
+          <div className="section-head left"><span>02 — THUỐC LÁ KHÔNG CHỈ LÀ MỘT THÓI QUEN</span><h2>Sau nhiều năm, nó có thể đã trở thành một phần trong cách bạn vận hành mỗi ngày.</h2><p>Khi bỏ thuốc, bạn không chỉ loại bỏ một điếu thuốc. Bạn còn phải chuẩn bị cách phản ứng mới cho những tình huống trước đây thuốc lá là giải pháp mặc định.</p></div>
+          <div className="habit-roles">
+            {["Bắt đầu ngày mới","Nghỉ giữa giờ","Tập trung làm việc","Giảm căng thẳng","Chuyển trạng thái sau cuộc họp","Giao tiếp với đồng nghiệp","Đối diện buồn chán","Kết thúc một bữa ăn","Tham gia các cuộc nhậu","Tách khỏi áp lực vài phút"].map((x,i)=><div key={x}><span>{String(i+1).padStart(2,"0")}</span><p>{x}</p></div>)}
+          </div>
+        </div>
+        <div className="wrap v2-callout">Nếu những tình huống đó chưa được xử lý, bạn có thể bỏ được một thời gian nhưng vẫn mang theo toàn bộ vòng lặp cũ.</div>
+      </section>
+
+      <section className="section dark blueprint v2-loops">
         <div className="wrap">
-          <div className="narrative story-section">
-            <span className="story-label">02 — HÃY QUAY CHẬM CÂU CHUYỆN LẠI</span>
-            <h2>Một điếu thuốc hiếm khi xuất hiện ngẫu nhiên.</h2>
-            <p>Bạn thử nhớ lại lần gần nhất mình hút nhé.</p>
-            <p>Có chuyện gì xảy ra ngay trước đó?</p>
-            <div className="mini-story">
-              <p>Có thể bạn vừa rời khỏi một cuộc họp.</p>
-              <p>Có thể ly cà phê đã được đặt lên bàn.</p>
-              <p>Hoặc bạn chỉ cần một lý do để bước ra ngoài vài phút.</p>
-            </div>
-            <p>Thường thì câu chuyện không đi thẳng từ <b>“không hút”</b> đến <b>“hút thuốc”</b>.</p>
-            <p>Ở giữa hai điểm đó là một chuỗi phản ứng rất nhanh. Nhanh đến mức bạn gần như không nhận ra mình vừa đi qua nó.</p>
-
-            <div className="story-chain">
-              <article><span>01</span><small>BỐI CẢNH</small><p>Ly cà phê được pha xong. Cuộc họp vừa kết thúc. Một người bạn bước ra ban công.</p></article>
-              <article><span>02</span><small>TRIGGER</small><p>Một hình ảnh, cảm giác hoặc nghi thức quen thuộc báo cho cơ thể rằng: “Đến lúc hút rồi.”</p></article>
-              <article><span>03</span><small>TRẠNG THÁI</small><p>Bạn thấy bồn chồn, căng thẳng, thiếu tập trung — hoặc đơn giản chỉ muốn được nghỉ một chút.</p></article>
-              <article><span>04</span><small>SUY NGHĨ TỰ ĐỘNG</small><p>“Một điếu thôi.” “Hút xong rồi làm tiếp.” “Không có thuốc thì khó tập trung lắm.”</p></article>
-              <article><span>05</span><small>PHẢN ỨNG QUEN THUỘC</small><p>Bạn cầm điếu thuốc lên và cảm giác khó chịu tạm thời dịu xuống.</p></article>
-            </div>
-
-            <p>Não ghi nhận điều vừa xảy ra theo một cách rất đơn giản:</p>
-            <div className="story-equation">Khó chịu <i>→</i> Hút thuốc <i>→</i> Dễ chịu hơn một chút</div>
-            <p>Và thế là lần sau, khi đúng bối cảnh xuất hiện, não lại đề xuất cùng một giải pháp.</p>
-
-            <div className="story-example">
-              <small>VÍ DỤ VỚI LY CÀ PHÊ</small>
-              <p>Bạn không chỉ hút <em>sau khi uống cà phê</em>. Qua nhiều lần lặp lại, hai việc có thể đã được nối thành một nghi thức:</p>
-              <strong>Cà phê = nghỉ ngơi = thuốc lá.</strong>
-            </div>
-
-            <p>Tương tự, khi stress xuất hiện, điếu thuốc có thể trở thành một nút chuyển trạng thái:</p>
-            <div className="story-equation subtle">Áp lực <i>→</i> Hút thuốc <i>→</i> Được dừng lại một chút</div>
-
-            <p>Đây là lý do chỉ cố loại bỏ điếu thuốc thường rất khó.</p>
-            <p>Điếu thuốc có thể biến mất khỏi tay bạn trong một thời gian, nhưng cách cơ thể và tâm trí xử lý cà phê, stress, khoảng nghỉ và giao tiếp vẫn còn nguyên.</p>
-
-            <p>Vì vậy, thay vì chỉ hỏi:</p>
-            <div className="story-question muted">“Làm sao để tôi không hút điếu tiếp theo?”</div>
-            <p>Hãy thử bắt đầu bằng một câu hỏi khác:</p>
-            <div className="story-question">“Tôi đang thật sự cần điều gì trong khoảnh khắc này?”</div>
-
-            <p>Khi trả lời được câu hỏi đó, bạn không còn chỉ chống lại điếu thuốc.</p>
-            <p>Bạn bắt đầu nhìn thấy nhu cầu, trigger và phản ứng đang nằm phía sau nó.</p>
-
-            <div className="turn-line">Và đó là lúc câu chuyện không còn chỉ nói về một hành vi.</div>
+          <div className="section-head"><span>03 — HAI VÒNG LẶP ĐANG GIỮ BẠN LẠI</span><h2>Ý chí có thể giúp bạn từ chối một điếu.<br/>Một kế hoạch cần chuẩn bị cho cả nicotine và trigger.</h2></div>
+          <div className="dual-loops">
+            <article>
+              <div className="loop-card-head"><span>01</span><h3>Vòng lặp Nicotine</h3></div>
+              {["Mức nicotine giảm","Cơ thể xuất hiện cơn thèm hoặc khó chịu","Bạn hút thuốc","Khó chịu tạm thời giảm xuống","Não tiếp tục ghi nhận hút thuốc là giải pháp"].map((x,i)=><div className="loop-step-v2" key={x}><span>{String(i+1).padStart(2,"0")}</span><p>{x}</p>{i<4&&<i>↓</i>}</div>)}
+            </article>
+            <article>
+              <div className="loop-card-head"><span>02</span><h3>Vòng lặp Trigger</h3></div>
+              {["Cà phê, sau ăn, stress, nhậu hoặc deadline","Não chờ đợi một điếu thuốc","Bạn hút để nghỉ, tập trung hoặc đổi trạng thái","Cảm giác dễ chịu tạm thời xuất hiện","Liên kết giữa tình huống và thuốc lá được củng cố"].map((x,i)=><div className="loop-step-v2" key={x}><span>{String(i+1).padStart(2,"0")}</span><p>{x}</p>{i<4&&<i>↓</i>}</div>)}
+            </article>
+          </div>
+          <div className="plan-needs">
+            <small>MỘT KẾ HOẠCH CAI PHÙ HỢP PHẢI CHUẨN BỊ CHO</small>
+            <div>{["Cơn thèm nicotine","Trigger tự động","Môi trường sống","Tình huống xã hội","Nghỉ ngơi & stress","Nguy cơ tái hút","Cách quay lại nếu lỡ trượt"].map(x=><span key={x}>✓ {x}</span>)}</div>
           </div>
         </div>
       </section>
 
-      <section className="section dark blueprint">
-        <div className="wrap">
-          <div className="section-head"><span>03 — KHI MỘT HÀNH VI TRỞ THÀNH MỘT CÁI NHÃN</span><h2>Rồi một ngày, bạn không chỉ nói về việc hút thuốc.<br/>Bạn bắt đầu nói về chính mình.</h2><p>“Tôi là người nghiện.” “Tôi không đủ ý chí.” “Tôi đã thử nhiều lần nhưng không được.” Những câu ấy dần trở thành kịch bản cho lần tiếp theo.</p></div>
-          <div className="dark-narrative">
-            <p>Mình không mong bạn chỉ đổi một câu nói rồi mọi thứ lập tức thay đổi. Identity Shift™ không phải một lời khẳng định tích cực để lặp lại trước gương.</p>
-            <p>Nó bắt đầu bằng việc tách một hành vi đã lặp lại trong quá khứ khỏi định nghĩa toàn bộ con người bạn.</p>
-          </div>
-          <div className="shift-grid">
-            <article><small>CÂU CHUYỆN CŨ</small><h3>“Tôi là người nghiện đang cố bỏ.”</h3><p>Mỗi cơn thèm là một cuộc chiến. Mỗi lần trượt là bằng chứng rằng bạn không thể.</p></article>
-            <article className="bridge"><small>ĐIỂM CHUYỂN</small><h3>Identity Shift™</h3><p>Bạn quan sát vòng lặp, tách hành vi khỏi con người và bắt đầu viết lại phản ứng.</p></article>
-            <article><small>CÂU CHUYỆN MỚI</small><h3>“Tôi đang học cách điều chỉnh trạng thái mà không cần thuốc.”</h3><p>Mỗi lựa chọn mới là một bằng chứng nhỏ rằng bạn có thể vận hành khác đi.</p></article>
-          </div>
-          <p className="proof-line">Bạn không cần giả vờ quá khứ chưa từng xảy ra. <b>Bạn chỉ cần ngừng dùng quá khứ để quyết định toàn bộ con người mình.</b></p>
-          <div className="chips">{["Một ly cà phê không thuốc","Một cơn thèm được xử lý","Một lần từ chối","Một khoảng nghỉ mới","Trượt nhưng quay lại kế hoạch"].map(x=><span key={x}>✓ {x}</span>)}</div>
-          <div className="dark-narrative closing">
-            <p>Một lần vượt qua cơn thèm. Một cuộc họp căng thẳng nhưng không tìm thuốc. Một lần được mời và bạn có thể nói “không”.</p>
-            <p>Từng việc rất nhỏ ấy trở thành bằng chứng rằng một Smoke-Free Identity™ đang được hình thành.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section system">
-        <div className="wrap">
-          <div className="system-opening">
-            <div className="section-head left">
-              <span>04 — NHƯNG VẪN CÒN MỘT VẤN ĐỀ</span>
-              <h2>Biết vòng lặp tồn tại là chưa đủ.</h2>
-            </div>
-            <div className="system-opening-copy">
-              <p>Bạn cần biết <b>vòng lặp của riêng mình</b> bắt đầu ở đâu, được nuôi bởi điều gì và phải thay phản ứng nào trong từng hoàn cảnh thật.</p>
-              <p>Đó là lý do <b>Bản đồ Cai thuốc 7 ngày™</b> được xây dựng — để biến những gì đang xảy ra trong đầu, trong cơ thể và xung quanh bạn thành một hệ thống có thể nhìn thấy.</p>
-            </div>
-          </div>
-
-          <div className="system-intro-panel">
-            <div className="system-core"><small>SMOKE-FREE</small><b>Identity<br/>System™</b></div>
-            <div>
-              <span>6 TẦNG CỦA VÒNG LẶP</span>
-              <h3>Không tầng nào hoạt động một mình.</h3>
-              <p>Một trigger có thể tạo ra trạng thái khó chịu. Trạng thái ấy gọi lên hành vi cũ. Môi trường làm hành vi trở nên dễ thực hiện. Và mỗi lần lặp lại, bạn càng tin rằng đó là “con người mình”.</p>
-              <p>Vì vậy, muốn thay đổi bền hơn, cả sáu tầng cần được nhìn cùng nhau.</p>
-            </div>
-          </div>
-
-          <div className="layers detailed-layers">
+      <section className="section light v2-program">
+        <div className="wrap v2-program-grid">
+          <div className="section-head left sticky-head"><span>04 — BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™ LÀ GÌ?</span><h2>Một chương trình thực hành để chuẩn bị kế hoạch cai phù hợp với đời sống thật của bạn.</h2><p>Bạn không chỉ xem video và ghi nhớ thêm kiến thức. Mỗi ngày, bạn hoàn thành một phần trong Bản đồ Cai thuốc Cá nhân.</p></div>
+          <div className="program-roadmap">
             {[
-              ["01","IDENTITY","Nhận dạng","Bạn đang kể câu chuyện gì về mình?","“Tôi là người nghiện.” “Tôi phải hút khi stress.” “Tôi không đủ ý chí.” Những câu này không chỉ mô tả quá khứ — chúng có thể âm thầm hướng dẫn quyết định tiếp theo.","Bạn sẽ tách hành vi hút thuốc khỏi định nghĩa toàn bộ con người mình và xây một Identity Bridge Statement™ thực tế."],
-              ["02","TRIGGER","Tín hiệu kích hoạt","Điều gì xảy ra ngay trước khi bạn muốn hút?","Đó có thể là ly cà phê, sau bữa ăn, cuộc họp, deadline, rượu bia, một người bạn, cảm giác buồn chán hoặc sự bồn chồn trong cơ thể.","Bạn sẽ lập Trigger Inventory™ và nhận diện các tình huống nguy cơ cao thay vì chờ đến khi cơn thèm đã xuất hiện."],
-              ["03","STATE","Trạng thái thật","Phía sau điếu thuốc, bạn đang cần điều gì?","Có thể bạn cần nghỉ, bình tĩnh lại, lấy lại tập trung, được kết nối với người khác hoặc thoát khỏi một cảm giác khó chịu trong vài phút.","Bạn sẽ gọi đúng tên nhu cầu thật và xây State Reset Protocol™ phù hợp với từng trạng thái."],
-              ["04","BEHAVIOR","Phản ứng tự động","Khi trigger xuất hiện, bạn thường làm gì tiếp theo?","Bước ra ban công. Tìm bao thuốc. Xin một điếu. Châm lửa trước khi kịp nghĩ. Đây là chuỗi hành động đã được lặp đến mức gần như tự động.","Bạn sẽ thiết kế phản ứng thay thế đủ cụ thể để có thể làm ngay trong đúng bối cảnh."],
-              ["05","ENVIRONMENT","Môi trường","Điều gì đang khiến phản ứng cũ luôn dễ hơn?","Bao thuốc trong túi, gạt tàn trên bàn, nhóm bạn cùng hút, góc ban công quen thuộc, giờ nghỉ cố định hay những buổi nhậu đều có thể củng cố vòng lặp.","Bạn sẽ điều chỉnh người, nơi chốn, đồ vật và nghi thức để lựa chọn mới không phải dựa hoàn toàn vào ý chí."],
-              ["06","EVIDENCE","Bằng chứng mới","Điều gì giúp nhận dạng mới trở nên đáng tin?","Không phải một lời khẳng định. Đó là một ly cà phê không thuốc, một lần từ chối, một cơn thèm được xử lý hoặc một lần trượt nhưng quay lại kế hoạch.","Bạn sẽ ghi lại Daily Identity Evidence™ để mỗi hành vi mới trở thành bằng chứng cho Smoke-Free Identity™."],
-            ].map(x=><article key={x[0]}>
-              <div className="layer-head"><span>{x[0]}</span><small>{x[1]}</small><b>{x[2]}</b></div>
-              <h3>{x[3]}</h3>
-              <p>{x[4]}</p>
-              <div className="layer-action"><small>TRONG CHƯƠNG TRÌNH</small><p>{x[5]}</p></div>
-            </article>)}
-          </div>
-
-          <div className="system-case">
-            <div className="case-intro">
-              <span>MỘT TÌNH HUỐNG — SÁU TẦNG</span>
-              <h3>Hãy lấy một cuộc họp căng thẳng làm ví dụ.</h3>
-              <p>Nếu chỉ nhìn vào điếu thuốc, bạn sẽ thấy một hành vi cần dừng. Nhưng khi đặt tình huống lên bản đồ, bạn nhìn thấy toàn bộ câu chuyện:</p>
-            </div>
-            <div className="case-flow">
-              {[
-                ["TRIGGER","Cuộc họp vừa kết thúc."],
-                ["STATE","Bạn căng, bồn chồn và cần một khoảng dừng."],
-                ["BEHAVIOR","Bạn bước ra chỗ quen thuộc và tìm thuốc."],
-                ["ENVIRONMENT","Đồng nghiệp đang hút; bao thuốc ở ngay trong túi."],
-                ["IDENTITY","“Tôi luôn cần thuốc để hạ stress.”"],
-                ["EVIDENCE MỚI","Bạn thực hiện một Smoke-Free Break và quay lại làm việc."],
-              ].map((x,i)=><article key={x[0]}><span>{String(i+1).padStart(2,"0")}</span><small>{x[0]}</small><p>{x[1]}</p></article>)}
-            </div>
-            <div className="case-reframe">
-              <small>ĐIỂM CHUYỂN KHÔNG PHẢI LÀ “CỐ ĐỪNG HÚT”</small>
-              <p>Mà là chuẩn bị trước một cách khác để nghỉ, hạ căng thẳng và quay lại công việc — ngay trong bối cảnh thật đã từng kích hoạt bạn.</p>
-            </div>
-          </div>
-
-          <div className="system-path">
-            <div>
-              <span>BẢN ĐỒ 7 NGÀY SẼ ĐƯA BẠN ĐI QUA</span>
-              <h3>Từ nhìn thấy vòng lặp đến có kế hoạch phản ứng.</h3>
-            </div>
-            <ol>
-              {["Nhận diện vòng lặp hiện tại","Tách hành vi khỏi Identity","Chuẩn bị thể chất và nhịp sống","Thiết kế lại trigger và môi trường","Xây protocol xử lý cơn thèm","Lập kế hoạch hành động 21 ngày","Phòng ngừa và phục hồi sau đứt gãy"].map((x,i)=><li key={x}><span>{String(i+1).padStart(2,"0")}</span>{x}</li>)}
-            </ol>
+              "Hiểu vòng lặp đang duy trì hành vi hút thuốc.",
+              "Xác định lý do cai và ngày bắt đầu.",
+              "Chuẩn bị cho cơn thèm và những thay đổi có thể xuất hiện.",
+              "Thiết kế lại môi trường và trigger nguy cơ cao.",
+              "Xây protocol xử lý cơn thèm trong tình huống thực tế.",
+              "Hoàn thiện kế hoạch cai thuốc 21 ngày.",
+              "Chuẩn bị cách phòng ngừa và phục hồi sau tái hút.",
+            ].map((x,i)=><article key={x}><span>{String(i+1).padStart(2,"0")}</span><p>{x}</p></article>)}
           </div>
         </div>
       </section>
 
-      <section className="section light">
+      <section className="section warm v2-outcomes">
         <div className="wrap">
-          <div className="narrative fit-intro">
-            <p>Đến đây, có thể bạn tự hỏi: <b>“Nhưng chương trình này có thực sự dành cho tôi không?”</b></p>
-            <p>Câu trả lời không phụ thuộc vào việc bạn đã hút bao nhiêu năm hay đã thất bại bao nhiêu lần. Nó phụ thuộc vào việc bạn có sẵn sàng nhìn thẳng vào vòng lặp và thực hành một cách mới hay không.</p>
-          </div>
-          <div className="fit-grid">
-            <article className="fit yes"><span>✓ CÓ THỂ ĐÂY LÀ LÚC PHÙ HỢP NẾU</span><h2>Bạn đã mệt vì phải bắt đầu lại.</h2><ul>{["Bạn từng bỏ một thời gian rồi hút lại khi áp lực quay về.","Thuốc lá gắn với cà phê, công việc, khoảng nghỉ hoặc những cuộc gặp.","Bạn không còn thật sự thích hút nhưng vẫn tìm đến nó theo phản xạ.","Bạn muốn thay đổi vì sức khỏe, gia đình hoặc cảm giác làm chủ bản thân.","Bạn sẵn sàng quan sát câu chuyện của mình mà không phán xét."].map(x=><Check key={x}>{x}</Check>)}</ul></article>
-            <article className="fit no"><span>— CÓ THỂ CHƯA PHẢI LÚC NẾU</span><h2>Bạn chỉ muốn một mẹo thật nhanh.</h2><ul>{["Bạn hoàn toàn chưa có ý định thay đổi.","Bạn tham gia chỉ vì người khác ép buộc.","Bạn không muốn quan sát trigger hay hoàn thành bài thực hành.","Bạn kỳ vọng chương trình thay thế bác sĩ hoặc điều trị y tế.","Bạn cần một lời bảo đảm tuyệt đối rằng sẽ không bao giờ hút lại."].map(x=><li key={x}><span>—</span>{x}</li>)}</ul></article>
+          <div className="section-head"><span>05 — SAU 7 NGÀY, BẠN SẼ SỞ HỮU GÌ?</span><h2>Không phải thêm một danh sách tác hại.<br/>Là một kế hoạch được viết từ chính đời sống của bạn.</h2></div>
+          <div className="deliverables-v2">
+            {deliverables.map(item => <article key={item.n}><aside><span>{item.n}</span><small>THÀNH PHẨM</small></aside><div><h3>{item.title}</h3><p>{item.intro}</p><ul>{item.bullets.map(x=><li key={x}><span>✓</span>{x}</li>)}</ul></div></article>)}
           </div>
         </div>
       </section>
 
-      <section className="section warm">
-        <div className="wrap outcome-section">
-          <div className="outcome-opening">
-            <div className="section-head left">
-              <span>05 — VẬY SAU 7 NGÀY, BẠN THỰC SỰ CÓ GÌ?</span>
-              <h2>Không phải thêm một danh sách tác hại để ghi nhớ.</h2>
-            </div>
-            <div className="outcome-opening-copy">
-              <p>Hãy tưởng tượng sáng ngày thứ tám.</p>
-              <p>Bạn không thức dậy với một lời hứa mơ hồ kiểu <b>“Hôm nay mình phải cố hơn.”</b> Trước mặt bạn là một bản đồ được viết từ chính lịch sử hút thuốc, những trigger quen thuộc và nhịp sống thật của mình.</p>
-              <p>Bạn biết chuyện gì thường xảy ra trước điếu thuốc — và đã chuẩn bị sẵn một lựa chọn khác cho khoảnh khắc đó.</p>
-            </div>
-          </div>
-
-          <div className="outcome-shift">
-            <div>
-              <small>TRƯỚC 7 NGÀY</small>
-              <p>“Khi thèm thuốc, tôi sẽ cố nhịn.”</p>
-            </div>
-            <i>→</i>
-            <div>
-              <small>SAU 7 NGÀY</small>
-              <p>“Tôi biết trigger nào đang xuất hiện, cơ thể cần gì và bước tiếp theo của mình là gì.”</p>
-            </div>
-          </div>
-
-          <div className="deliverable-intro">
-            <span>BẢY NGÀY — BẢY MẢNH GHÉP</span>
-            <h3>Mỗi ngày không kết thúc bằng “đã xem xong”.<br/>Nó kết thúc bằng một thứ bạn có thể mang vào đời sống thật.</h3>
-          </div>
-
-          <div className="deliverable-story">
-            {[
-              {
-                day:"01", phase:"NHÌN THẤY", name:"Smoking Loop Map™",
-                title:"Bạn thôi đoán — và nhìn thấy vòng lặp của chính mình.",
-                story:"Bạn đặt những lần hút gần đây lên một dòng thời gian: lúc nào, ở đâu, với ai, chuyện gì vừa xảy ra và điếu thuốc đã giúp bạn giải quyết cảm giác nào trong vài phút.",
-                points:["Những trigger lặp lại nhiều nhất","Nhu cầu thật phía sau từng điếu thuốc","Điểm trong vòng lặp bạn có thể can thiệp"],
-                next:"Bạn biết mình thực sự cần thay đổi điều gì — thay vì chỉ cố loại bỏ điếu thuốc."
-              },
-              {
-                day:"02", phase:"ĐỊNH NGHĨA LẠI", name:"Identity Statement™",
-                title:"Bạn tách một hành vi khỏi con người mình.",
-                story:"Thay vì tiếp tục kể “Tôi là người hút thuốc đang cố bỏ”, bạn viết một nhận dạng mới đủ thật để tin và đủ cụ thể để hành động ngay hôm nay.",
-                points:["Nhãn cũ đang giữ vòng lặp tồn tại","Câu nhận dạng mới không ép mình phải hoàn hảo","Hành vi nhỏ chứng minh nhận dạng đó"],
-                next:"Mỗi lựa chọn nhỏ bắt đầu trở thành bằng chứng, không còn là một bài kiểm tra ý chí."
-              },
-              {
-                day:"03", phase:"CHUẨN BỊ", name:"Physical Readiness Plan™",
-                title:"Bạn chuẩn bị cơ thể trước khi đòi hỏi bản thân phải mạnh.",
-                story:"Bạn nhìn vào giấc ngủ, caffeine, rượu bia, khoảng nghỉ và những giờ năng lượng xuống thấp — vì một cơ thể kiệt sức sẽ luôn tìm đường quay về phản ứng nhanh nhất.",
-                points:["Những thời điểm cơ thể dễ chao đảo","Điều chỉnh nhỏ cho ngủ, ăn, uống và vận động","Kế hoạch phục hồi cho ngày nhiều áp lực"],
-                next:"Bạn giảm bớt những trận chiến không cần thiết trước khi cơn thèm xuất hiện."
-              },
-              {
-                day:"04", phase:"THIẾT KẾ LỐI RẼ", name:"Trigger Replacement Map™",
-                title:"Mỗi trigger quen thuộc có một lối rẽ mới.",
-                story:"Ly cà phê, giờ nghỉ, cuộc họp căng thẳng hay lời mời của một người bạn không còn là những tình huống phải ứng biến. Bạn thiết kế một phản ứng thay thế phù hợp cho từng bối cảnh.",
-                points:["Phương án “Nếu… thì…” cho trigger chính","Cách thay đổi môi trường để giảm ma sát","Một nghi thức mới vẫn đáp ứng đúng nhu cầu"],
-                next:"Khi hoàn cảnh cũ quay lại, bạn đã có câu trả lời trước khi phản xạ cũ lên tiếng."
-              },
-              {
-                day:"05", phase:"XỬ LÝ KHOẢNH KHẮC KHÓ", name:"Craving & State Reset™",
-                title:"Khi cơn thèm đến, bạn không còn phải ứng biến.",
-                story:"Bạn có một chuỗi hành động ngắn để nhận diện trạng thái, tạo khoảng dừng và chuyển cơ thể sang một nhịp khác — ngay giữa một ngày làm việc bình thường.",
-                points:["Protocol phản ứng nhanh khi cơn thèm tăng","Smoke-Free Break thay cho giờ nghỉ hút thuốc","Kế hoạch riêng cho stress và mất tập trung"],
-                next:"Cơn thèm trở thành một tín hiệu cần xử lý, không phải một mệnh lệnh phải làm theo."
-              },
-              {
-                day:"06", phase:"ĐƯA VÀO ĐỜI SỐNG", name:"21-Day Action Plan™",
-                title:"Bản đồ được đặt vào 21 ngày đời sống thật.",
-                story:"Bạn chọn ngày bắt đầu, chuẩn bị người hỗ trợ, các cột mốc và cách ghi nhận tiến trình. Kế hoạch không chỉ dành cho những ngày thuận lợi, mà cả ngày bận, mệt hoặc nhiều áp lực.",
-                points:["Việc cần làm trước và trong ngày bắt đầu","Tracker cho hành vi và bằng chứng mới","Phương án hỗ trợ cho những thời điểm khó"],
-                next:"Bạn biết hôm nay cần làm gì, ngày mai tiếp tục ở đâu và tiến bộ được đo bằng điều gì."
-              },
-              {
-                day:"07", phase:"BẢO VỆ HÀNH TRÌNH", name:"Relapse Prevention Map™",
-                title:"Một lần trượt không còn đồng nghĩa quay về vạch xuất phát.",
-                story:"Bạn nhận diện dấu hiệu cảnh báo sớm, những tình huống nguy cơ cao và một kế hoạch 24 giờ để dừng chuỗi trước khi câu “Mình thất bại rồi” kéo bạn trở lại vòng lặp cũ.",
-                points:["Danh sách cảnh báo sớm của riêng bạn","Kịch bản cho tình huống nguy cơ cao","Protocol quay lại hành trình trong 24 giờ"],
-                next:"Bạn biết cách phục hồi nhanh, học từ điều vừa xảy ra và tiếp tục tạo bằng chứng mới."
-              },
-            ].map((item) => (
-              <article key={item.day}>
-                <aside>
-                  <span>NGÀY {item.day}</span>
-                  <b>{item.name}</b>
-                  <small>{item.phase}</small>
-                </aside>
-                <div className="deliverable-copy">
-                  <h3>{item.title}</h3>
-                  <p>{item.story}</p>
-                  <ul>{item.points.map(point => <li key={point}><span>✓</span>{point}</li>)}</ul>
-                  <div className="deliverable-next"><small>MẢNH GHÉP BẠN MANG ĐI</small><p>{item.next}</p></div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="outcome-finale">
-            <div>
-              <span>ĐẾN CUỐI NGÀY THỨ BẢY</span>
-              <h3>Bảy tài liệu không nằm rời rạc trong một thư mục.</h3>
-              <p>Chúng ghép thành một hệ thống duy nhất: nhìn thấy trigger, hiểu trạng thái, chọn phản ứng mới, ghi nhận bằng chứng và biết cách quay lại nếu lỡ trượt.</p>
-            </div>
-            <div className="outcome-scene">
-              <small>KHI CUỘC HỌP CĂNG THẲNG KẾT THÚC…</small>
-              <p><b>Bạn nhận ra trigger</b> → gọi tên trạng thái → dùng State Reset → chọn Smoke-Free Break → ghi lại một bằng chứng mới.</p>
-            </div>
-          </div>
-
-          <div className="center-cta"><a className="button dark-button" href="#offer">XÂY BẢN ĐỒ CAI THUỐC CỦA TÔI →</a></div>
-        </div>
-      </section>
-
-      <section className="section curriculum">
+      <section className="section curriculum v2-curriculum">
         <div className="wrap curriculum-grid">
-          <div className="section-head left sticky-head"><span>06 — TỪ “VÌ SAO?” ĐẾN “TIẾP THEO LÀ GÌ?”</span><h2>Mỗi ngày, một mảnh của bản đồ được hoàn thiện.</h2><p>Ngày đầu tiên bạn nhìn lại. Những ngày tiếp theo bạn hiểu, chuẩn bị, thiết kế lại và bắt đầu hành động — không cần nuốt một khối lý thuyết dài.</p><div className="days-count"><b>7</b><span>NGÀY<br/>7 THÀNH PHẨM</span></div></div>
+          <div className="section-head left sticky-head"><span>06 — HÀNH TRÌNH 7 NGÀY</span><h2>Mỗi ngày, một quyết định. Mỗi ngày, một thành phẩm.</h2><p>Không kéo dài bằng kiến thức lan man. Bạn rà soát, lựa chọn, thiết kế và hoàn thiện kế hoạch từng bước.</p><div className="days-count"><b>7</b><span>NGÀY<br/>7 THÀNH PHẨM</span></div></div>
           <div className="accordion">
             {days.map(day => <article className={openDay===day.n ? "open" : ""} key={day.n}>
               <button onClick={()=>setOpenDay(openDay===day.n ? 0 : day.n)} aria-expanded={openDay===day.n}><span>NGÀY {day.n}</span><div><b>{day.title}</b><p>{day.outcome}</p></div><i>{openDay===day.n ? "−":"+"}</i></button>
-              {openDay===day.n && <div className="accordion-body"><p>{day.work}</p><small>THÀNH PHẨM</small><b>{day.output}</b></div>}
+              {openDay===day.n && <div className="accordion-body"><ul>{day.work.map(x=><li key={x}>{x}</li>)}</ul><small>THÀNH PHẨM</small><b>{day.output}</b></div>}
             </article>)}
           </div>
         </div>
       </section>
 
-      <section className="section dark experience">
+      <section className="section dark blueprint v2-identity">
         <div className="wrap">
-          <div className="section-head"><span>07 — MỘT NHỊP HỌC ĐI CÙNG ĐỜI SỐNG</span><h2>Mỗi ngày: nghe một điều — viết về mình — mang một thay đổi ra thực tế.</h2></div>
-          <div className="experience-grid">
-            {[["01","Nghe câu chuyện được giải mã","Một bài học ngắn giúp bạn nhìn vấn đề quen thuộc bằng góc nhìn mới."],["02","Viết câu chuyện của chính mình","Workbook đưa bạn về với lịch sử, trigger và những khoảnh khắc thật."],["03","Tạo một lựa chọn mới","Mỗi ngày thêm một phản ứng cụ thể vào Smoke-Free Identity Map™."]].map(x=><article key={x[0]}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></article>)}
+          <div className="section-head"><span>07 — IDENTITY SHIFT™ ĐƯỢC SỬ DỤNG NHƯ THẾ NÀO?</span><h2>Tách một hành vi đã lặp lại khỏi định nghĩa toàn bộ con người bạn.</h2><p>Identity Shift™ không phủ nhận lệ thuộc nicotine và không giả vờ rằng cơn thèm không tồn tại. Nó là lớp hỗ trợ thay đổi hành vi.</p></div>
+          <div className="identity-old-lines">{["“Tôi là người nghiện thuốc.”","“Tôi không thể làm việc nếu không hút.”","“Tôi phải hút khi stress.”","“Tôi đã thử nhiều lần nhưng không làm được.”","“Tôi không đủ ý chí.”"].map(x=><span key={x}>{x}</span>)}</div>
+          <div className="identity-shift-v2">
+            <div><small>TỪ</small><p>“Tôi là người nghiện đang cố chống lại cơn thèm.”</p></div>
+            <i>→</i>
+            <div><small>SANG</small><p>“Tôi đang học cách xử lý cơn thèm, nghỉ ngơi, tập trung và đối diện stress mà không cần hút thuốc.”</p></div>
           </div>
-          <div className="tool-strip">{["7 VIDEO","7 WORKBOOK","21-DAY TRACKER","EMERGENCY CARD","REFUSAL SCRIPT","MORNING RESET","HIGH-RISK PLAYBOOK"].map(x=><span key={x}>{x}</span>)}</div>
-        </div>
-      </section>
-
-      <section className="section founder">
-        <div className="wrap founder-grid">
-          <div className="portrait-placeholder"><span>ĐẠT</span><div className="portrait-mark">10</div><p>NĂM TRONG VÒNG LẶP<br/>HÚT THUỐC</p></div>
-          <div><div className="section-head left"><span>08 — VÌ SAO TÔI TẠO RA CHƯƠNG TRÌNH NÀY?</span><h2>Tôi từng nghĩ mình thiếu ý chí.</h2></div>
-            <p className="big-copy">Trong khoảng 10 năm, thuốc lá đi cùng tôi qua công việc, những lúc cần suy nghĩ, các cuộc gặp và cả những khoảnh khắc tôi không biết phải xử lý cảm xúc ra sao.</p>
-            <p>Tôi từng tưởng chỉ cần quyết tâm hơn. Nhưng mỗi lần cố gồng, câu nói “Tôi là người hút thuốc đang cố bỏ” lại giữ thuốc lá ở ngay trung tâm cuộc sống của tôi.</p>
-            <div className="founder-quote">“Nếu không chỉ hỏi làm sao cưỡng lại điếu thuốc, mà hỏi mình đang vận hành từ nhận dạng nào thì sao?”</div>
-            <p>Đó là lúc tôi bắt đầu nhìn lại môi trường, nhịp sinh hoạt, cách nghỉ, cách xử lý stress và từng trigger nhỏ. Không có một khoảnh khắc phép màu. Có một chuỗi lựa chọn mới được lặp lại — và từng lựa chọn trở thành bằng chứng cho một con người khác.</p>
-            <p><b>Bản đồ Cai thuốc 7 ngày™ được hình thành từ chính hành trình đó.</b></p>
-            <div className="timeline">{["HÚT KÉO DÀI","CỐ BỎ","NHẬN RA IDENTITY LOOP","THIẾT KẾ LẠI","SMOKE-FREE SYSTEM"].map((x,i)=><span key={x}>{x}{i<4&&<i>→</i>}</span>)}</div>
-            <small className="note">Câu chuyện cá nhân không bảo đảm mọi người đạt cùng kết quả trong cùng thời gian.</small>
+          <div className="identity-evidence">
+            <div><span>BẰNG CHỨNG NHỎ TẠO NHẬN DẠNG MỚI</span><h3>Không chỉ bằng lời nói — mà bằng điều bạn thực sự làm.</h3></div>
+            <div>{["Một lần vượt qua cơn thèm","Một ly cà phê không hút thuốc","Một khoảng nghỉ không cần điếu thuốc","Một lần từ chối khi được mời","Một tình huống stress dùng phản ứng mới","Một lần trượt nhưng quay lại ngay"].map(x=><p key={x}>✓ {x}</p>)}</div>
           </div>
         </div>
       </section>
 
-      <section className="section warm evidence evidence-detailed">
+      <section className="section light v2-included">
         <div className="wrap">
-          <div className="evidence-opening">
-            <div className="section-head left">
-              <span>09 — VÀ RỒI TÔI NHẬN RA ĐÂY KHÔNG CHỈ LÀ CÂU CHUYỆN CỦA MÌNH</span>
-              <h2>Hành vi có thể khác nhau.<br/>Nhưng kháng cự thường kể cùng một câu chuyện.</h2>
-            </div>
-            <div className="evidence-opening-copy">
-              <p>Sau khi nhìn thấy vòng lặp của chính mình, tôi bắt đầu nhận ra cùng một cấu trúc trong những hành trình thay đổi khác.</p>
-              <p>Có người muốn ngừng trì hoãn. Có người muốn thoát khỏi thói quen tự phá. Có người đã biết rất rõ mình nên làm gì nhưng cứ đến khoảnh khắc áp lực là quay về phản ứng cũ.</p>
-              <p><b>Điểm chung không nằm ở việc họ thiếu kiến thức.</b> Nó nằm ở cách một trigger rất đời thường có thể kéo trạng thái, hành vi và câu chuyện về bản thân đi theo cùng một hướng.</p>
-            </div>
+          <div className="section-head"><span>08 — BẠN NHẬN ĐƯỢC GÌ KHI THAM GIA?</span><h2>Một chương trình có hướng dẫn, công cụ và nhịp đồng hành để đưa kế hoạch vào thực tế.</h2></div>
+          <div className="included-grid">
+            <article><span>01</span><h3>7 video hướng dẫn</h3><p>Mỗi ngày tập trung vào một quyết định và một thành phẩm cụ thể.</p></article>
+            <article><span>02</span><h3>7 workbook thực hành</h3><p>Bạn trực tiếp xây Bản đồ Cai thuốc Cá nhân thay vì chỉ xem bài học.</p></article>
+            <article className="included-tools"><span>03</span><h3>Bộ công cụ triển khai</h3><div>{["Bản đồ Vòng lặp Hút thuốc","Bản đồ Thay thế Trigger","Protocol Xử lý Cơn thèm","Kế hoạch & Tracker 21 ngày","Thẻ Phản ứng nhanh","Mẫu câu từ chối thuốc","Kịch bản cà phê, nhậu, stress, deadline","Bản đồ Phòng ngừa Tái hút"].map(x=><p key={x}>✓ {x}</p>)}</div></article>
+            <article><span>04</span><h3>Một buổi khởi động</h3><p>Hiểu cách sử dụng chương trình và bắt đầu đánh giá vòng lặp hiện tại.</p></article>
+            <article><span>05</span><h3>Hai buổi group check-in</h3><p>Rà soát tiến độ, tháo gỡ điểm mắc, điều chỉnh kế hoạch và chuẩn bị tình huống nguy cơ cao.</p></article>
+            <article><span>06</span><h3>Cộng đồng đồng hành 21 ngày</h3><p>Nơi cập nhật tiến độ, đặt câu hỏi và quay lại hệ thống nếu gặp đứt gãy.</p></article>
           </div>
-
-          <div className="evidence-observation">
-            <div className="observation-number"><b>100+</b><span>HÀNH TRÌNH<br/>THAY ĐỔI HÀNH VI*</span></div>
-            <div>
-              <span>MỘT MẪU LẶP XUẤT HIỆN NHIỀU LẦN</span>
-              <h3>Người ta thường không dừng lại vì không muốn thay đổi.</h3>
-              <p>Họ dừng lại ở đúng khoảnh khắc kế hoạch gặp đời sống thật: một ngày thiếu ngủ, một deadline gấp, một cảm xúc khó chịu hoặc một lần làm chưa tốt như kỳ vọng.</p>
-              <p>Khi không có hệ thống để xử lý khoảnh khắc đó, phản ứng cũ quay lại. Và điều gây tổn thương nhất thường đến ngay sau đó: <b>họ dùng một hành vi để kết luận mình là người như thế nào.</b></p>
-            </div>
-          </div>
-
-          <div className="composite-case">
-            <div className="composite-case-head">
-              <span>TÌNH HUỐNG TỔNG HỢP — KHÔNG PHẢI LỜI CHỨNG THỰC</span>
-              <h3>Hãy nhìn một lần “bắt đầu lại” diễn ra chậm hơn.</h3>
-              <p>Tình huống dưới đây ghép từ những mẫu hành vi thường gặp để bạn nhìn thấy cơ chế, không đại diện cho kết quả của một cá nhân cụ thể.</p>
-            </div>
-            <div className="resistance-sequence">
-              {[
-                ["01","Ý ĐỊNH","Tối Chủ nhật, bạn viết ra mọi lý do mình muốn thay đổi. Lần này bạn thực sự nghiêm túc."],
-                ["02","TRIGGER","Đến giữa tuần, một cuộc họp kéo dài. Ly cà phê ở trên bàn. Cơ thể bắt đầu bồn chồn."],
-                ["03","PHẢN ỨNG CŨ","Bạn tìm đến điều quen thuộc để được dừng lại, dễ chịu hơn hoặc tập trung trở lại trong vài phút."],
-                ["04","TỰ TRÁCH","Ngay sau đó là câu nói: “Mình lại làm hỏng rồi. Bao nhiêu cố gắng coi như mất hết.”"],
-                ["05","GẮN NHÃN","Một hành vi trở thành một kết luận: “Tôi là người không đủ kỷ luật để thay đổi.”"],
-                ["06","VÒNG LẶP MẠNH HƠN","Lần bắt đầu tiếp theo mang theo ít niềm tin hơn — nên trigger cũ càng dễ thắng."],
-              ].map(item => <article key={item[0]}><span>{item[0]}</span><div><small>{item[1]}</small><p>{item[2]}</p></div></article>)}
-            </div>
-            <div className="sequence-insight">
-              <small>ĐIỂM QUAN TRỌNG</small>
-              <p>Thứ cần được xử lý không chỉ là <b>hành vi ở bước 03</b>. Cả chuỗi từ trigger đến cách bạn diễn giải lần trượt đều đang nuôi vòng lặp.</p>
-            </div>
-          </div>
-
-          <div className="evidence-translation">
-            <div>
-              <span>TỪ QUAN SÁT ĐẾN HỆ THỐNG</span>
-              <h3>Vì vậy, chương trình không chỉ nói “hãy cố đừng hút”.</h3>
-              <p>Mỗi điểm mắc kẹt cần một cách can thiệp khác nhau. Đây là cách những mẫu hành vi chung được chuyển thành cấu trúc thực hành dành riêng cho hành trình cai thuốc.</p>
-            </div>
-            <div className="translation-table">
-              <div className="translation-head"><span>ĐIỂM MẮC KẸT</span><span>PHẢN ỨNG THƯỜNG GẶP</span><span>HỆ THỐNG THAY ĐỔI GÌ</span></div>
-              {[
-                ["Chỉ dựa vào ý định","Chờ một ngày đủ quyết tâm","Đặt trigger và hoàn cảnh thật lên Smoking Loop Map™"],
-                ["Gặp trạng thái khó chịu","Cố nhịn hoặc phản ứng tự động","Dùng Craving & State Reset™ để tạo khoảng dừng"],
-                ["Môi trường vẫn như cũ","Tránh tạm thời rồi quay lại","Thiết kế Trigger Replacement Map™ cho từng bối cảnh"],
-                ["Một lần trượt xảy ra","Tự trách và bỏ luôn kế hoạch","Kích hoạt 24-Hour Recovery Protocol™ để quay lại"],
-              ].map((row,i) => <article key={row[0]}><b>0{i+1}</b><p>{row[0]}</p><p>{row[1]}</p><p>{row[2]}</p></article>)}
-            </div>
-          </div>
-
-          <div className="evidence-conclusion">
-            <p>Nhìn theo cách này, một lần hút lại không còn là bằng chứng rằng bạn “không thể thay đổi”.</p>
-            <b>Nó trở thành dữ liệu: trigger nào vừa xuất hiện, tầng nào chưa được chuẩn bị và hệ thống cần được điều chỉnh ở đâu.</b>
-          </div>
-
-          <div className="trust-note detailed-trust"><b>GHI CHÚ MINH BẠCH</b><div><p>Con số hơn 100 đề cập đến các hành trình thay đổi hành vi như trì hoãn, tự phá, mất niềm tin và quay lại phản ứng cũ — <strong>không phải hơn 100 ca cai thuốc</strong>.</p><p>Kinh nghiệm đó là nền tảng để hệ thống hóa cách nhìn về Identity và vòng lặp hành vi trong chương trình này. Đây không phải dữ liệu thử nghiệm lâm sàng, không phải cam kết kết quả và không thay thế hỗ trợ y khoa.</p></div></div>
         </div>
       </section>
 
-      <section className="section authority authority-detailed">
+      <section className="section warm v2-fit">
+        <div className="wrap">
+          <div className="section-head"><span>09 — CHƯƠNG TRÌNH CÓ PHÙ HỢP VỚI BẠN?</span><h2>Một lựa chọn tốt bắt đầu bằng việc nhìn đúng mức độ sẵn sàng.</h2></div>
+          <div className="fit-grid">
+            <article className="fit yes"><span>✓ PHÙ HỢP NẾU</span><h2>Bạn muốn bắt đầu cai trong thời gian gần.</h2><ul>{["Đã hút thuốc từ 5 năm trở lên.","Từng muốn bỏ nhưng liên tục trì hoãn.","Từng bỏ được một thời gian rồi hút lại.","Thường hút khi stress, cà phê, làm việc hoặc nhậu.","Bắt đầu lo ngại sức khỏe hoặc gia đình nhiều lần mong bạn bỏ.","Sẵn sàng quan sát, ghi chép và điều chỉnh môi trường."].map(x=><Check key={x}>{x}</Check>)}</ul></article>
+            <article className="fit no"><span>— CHƯA PHÙ HỢP NẾU</span><h2>Bạn chỉ muốn một mẹo nhanh nhưng không muốn thực hành.</h2><ul>{["Hoàn toàn chưa có ý định thay đổi hoặc tham gia vì bị ép.","Không sẵn sàng quan sát trigger và điều chỉnh môi trường.","Kỳ vọng chương trình thay thế bác sĩ hoặc điều trị.","Muốn được bảo đảm tuyệt đối sẽ không bao giờ hút lại.","Có triệu chứng sức khỏe đáng lo nhưng chưa tìm chuyên môn.","Đang cần hỗ trợ cấp cứu hoặc can thiệp lâm sàng."].map(x=><li key={x}><span>—</span>{x}</li>)}</ul></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section v2-cohort">
+        <div className="wrap cohort-grid">
+          <div className="section-head left"><span>10 — VÌ SAO TRIỂN KHAI THEO COHORT?</span><h2>Không chỉ cung cấp một khóa học tự xem.</h2><p>Đây là cohort pilot đầu tiên, giới hạn số người để mỗi thành viên có nhịp hướng dẫn, kiểm tra tiến độ và hỗ trợ hoàn thiện kế hoạch.</p></div>
+          <div className="cohort-details">
+            <article><small>CHƯƠNG TRÌNH CHUẨN BỊ</small><ul>{["Số lượng người tham gia giới hạn.","Một buổi hướng dẫn trực tiếp.","Hai buổi kiểm tra tiến độ.","Cộng đồng đồng hành.","Hỗ trợ hoàn thiện kế hoạch."].map(x=><li key={x}>✓ {x}</li>)}</ul></article>
+            <article><small>NGƯỜI THAM GIA ĐƯỢC MỜI</small><ul>{["Cập nhật tiến độ trung thực.","Chia sẻ điểm còn khó hiểu.","Phản hồi về công cụ và bài học.","Chỉ cho phép dùng phản hồi khi có đồng ý riêng."].map(x=><li key={x}>→ {x}</li>)}</ul></article>
+          </div>
+          <p className="cohort-note">Không có kết quả nào được giả định trước.</p>
+        </div>
+      </section>
+
+      <section className="section dark blueprint v2-guarantee">
+        <div className="wrap guarantee-grid">
+          <div>
+            <span>11 — CAM KẾT HOÀN THIỆN KẾ HOẠCH</span>
+            <h2>Nếu đã làm đủ mà kế hoạch vẫn chưa hoàn thiện, bạn có thêm 14 ngày hỗ trợ.</h2>
+            <p>Điều kiện áp dụng: hoàn thành đủ 7 bài học, thực hiện workbook, tham gia các buổi bắt buộc và cập nhật tiến độ trung thực.</p>
+          </div>
+          <div className="guarantee-card">
+            <small>SAU 7 NGÀY, BỐN PHẦN CỐT LÕI CẦN HOÀN THIỆN</small>
+            {["Bản đồ Vòng lặp Hút thuốc","Bản đồ Thay thế Trigger","Kế hoạch Cai thuốc 21 ngày","Bản đồ Phòng ngừa Tái hút"].map((x,i)=><p key={x}><span>0{i+1}</span>{x}</p>)}
+            <div><b>+14 NGÀY</b><span>hỗ trợ hoàn thiện<br/>không mất thêm phí</span></div>
+          </div>
+        </div>
+        <div className="wrap guarantee-note">Cam kết nằm ở phạm vi triển khai và hỗ trợ — không phải cam kết kết quả y khoa, không bảo đảm mọi người ngừng hút trong cùng thời gian và không cam kết không bao giờ tái hút.</div>
+      </section>
+
+      <section className="section authority authority-detailed v2-scope">
         <div className="wrap">
           <div className="authority-opening">
-            <span>RANH GIỚI HỖ TRỢ — ĐỂ BẠN BIẾT MÌNH ĐANG NHẬN ĐƯỢC GÌ</span>
-            <h2>Đây không phải điều trị y khoa.<br/>Đây là một hệ thống giúp bạn nhìn rõ và thiết kế lại hành vi.</h2>
-            <p>Sự minh bạch này rất quan trọng. Khi hiểu đúng vai trò của chương trình, bạn biết phần nào mình sẽ được hướng dẫn thực hành — và khi nào nên tìm thêm sự hỗ trợ từ bác sĩ hoặc dược sĩ.</p>
+            <span>12 — PHẠM VI HỖ TRỢ</span>
+            <h2>Thay đổi hành vi và hỗ trợ y tế có thể đi cùng nhau.</h2>
+            <p>Chương trình giúp bạn lập kế hoạch, xử lý trigger, điều chỉnh môi trường và phòng ngừa tái hút. Chương trình không chẩn đoán, kê đơn hoặc thay thế chuyên gia y tế.</p>
           </div>
-
-          <div className="authority-columns">
-            <article className="coach-scope">
-              <div className="scope-head">
-                <span>VAI TRÒ CỦA TÔI</span>
-                <h3>Identity Coach</h3>
-                <p>Giúp bạn chuyển một câu hỏi rất rộng — “Làm sao để bỏ thuốc?” — thành những điểm có thể quan sát, thiết kế và thực hành trong đời sống thật.</p>
-              </div>
-              <div className="role-process">
-                {[
-                  ["01","QUAN SÁT VÒNG LẶP","Đặt lịch sử hút, trigger, trạng thái và hoàn cảnh thật lên một bản đồ rõ ràng."],
-                  ["02","GIẢI MÃ NHU CẦU","Nhìn phía sau điếu thuốc để hiểu bạn đang tìm một khoảng nghỉ, sự tập trung hay cách thoát khỏi cảm giác khó chịu."],
-                  ["03","THIẾT KẾ LỰA CHỌN MỚI","Tạo phản ứng thay thế, điều chỉnh môi trường và chuẩn bị protocol cho những tình huống nguy cơ cao."],
-                  ["04","ĐƯA VÀO ĐỜI SỐNG","Biến bản đồ thành kế hoạch 21 ngày, theo dõi bằng chứng mới và điều chỉnh khi thực tế thay đổi."],
-                ].map(item => <div key={item[0]}><span>{item[0]}</span><section><b>{item[1]}</b><p>{item[2]}</p></section></div>)}
-              </div>
-              <div className="scope-result">
-                <small>BẠN NHẬN ĐƯỢC</small>
-                <p>Một cấu trúc để hiểu mình, bộ câu hỏi để tự quan sát và những công cụ giúp biến hiểu biết đó thành hành động cụ thể.</p>
-              </div>
-            </article>
-
-            <article className="medical-scope">
-              <div className="scope-head">
-                <span>VAI TRÒ NÀY KHÔNG BAO GỒM</span>
-                <h3>Chẩn đoán hoặc điều trị y khoa</h3>
-                <p>Chương trình không đánh giá mức độ lệ thuộc, không kê đơn và không thay thế kế hoạch chăm sóc của chuyên gia y tế.</p>
-              </div>
-              <ul>
-                {[
-                  ["Chẩn đoán","Đánh giá hoặc kết luận tình trạng sức khỏe và mức độ lệ thuộc nicotine."],
-                  ["Điều trị","Kê đơn, điều chỉnh thuốc hoặc chỉ định sản phẩm thay thế nicotine."],
-                  ["Xử lý triệu chứng","Theo dõi hay xử lý các triệu chứng thể chất hoặc tinh thần cần chăm sóc chuyên môn."],
-                  ["Cam kết kết quả","Hứa chữa khỏi, bảo đảm một mốc thời gian hoặc khẳng định bạn sẽ không bao giờ tái hút."],
-                ].map(item => <li key={item[0]}><span>—</span><div><b>{item[0]}</b><p>{item[1]}</p></div></li>)}
-              </ul>
-              <div className="medical-note">
-                <small>NẾU BẠN ĐANG ĐƯỢC ĐIỀU TRỊ</small>
-                <p>Hãy tiếp tục làm theo hướng dẫn của bác sĩ hoặc dược sĩ. Chương trình chỉ bổ sung phần quan sát Identity, trigger, hành vi và môi trường.</p>
-              </div>
-            </article>
+          <div className="scope-simple-grid">
+            <article><span>CHƯƠNG TRÌNH HỖ TRỢ</span><ul>{["Đánh giá vòng lặp hành vi hiện tại.","Xác định ngày bắt đầu và kế hoạch 21 ngày.","Thiết kế phản ứng cho trigger và cơn thèm.","Theo dõi tiến độ và phục hồi sau một lần trượt."].map(x=><li key={x}>✓ {x}</li>)}</ul></article>
+            <article><span>NÊN TÌM CHUYÊN MÔN KHI</span><ul>{["Muốn sử dụng thuốc hoặc sản phẩm thay thế nicotine.","Đang mang thai, có bệnh nền hoặc dùng thuốc điều trị.","Có triệu chứng thể chất hay tinh thần đáng lo ngại.","Cần một kế hoạch có theo dõi y khoa sát hơn."].map(x=><li key={x}>→ {x}</li>)}</ul></article>
           </div>
-
-          <div className="care-path">
-            <div>
-              <span>KHI NÀO NÊN TÌM THÊM HỖ TRỢ CHUYÊN MÔN?</span>
-              <h3>Có những phần không nên tự mình đoán.</h3>
-              <p>Bác sĩ hoặc dược sĩ phù hợp hơn khi bạn cần đánh giá sức khỏe, lựa chọn hỗ trợ dùng thuốc hoặc xử lý những triệu chứng khiến bạn lo lắng.</p>
-            </div>
-            <div className="care-signals">
-              {[
-                ["01","Bạn muốn tìm hiểu thuốc hoặc liệu pháp thay thế nicotine."],
-                ["02","Bạn đang mang thai, có bệnh nền hoặc đang dùng thuốc điều trị."],
-                ["03","Bạn gặp triệu chứng thể chất hay tinh thần nghiêm trọng hoặc bất thường."],
-                ["04","Bạn cần một kế hoạch cai thuốc có theo dõi y khoa sát hơn."],
-              ].map(item => <div key={item[0]}><span>{item[0]}</span><p>{item[1]}</p></div>)}
-            </div>
-          </div>
-
-          <div className="authority-bridge">
-            <div>
-              <small>HAI HƯỚNG CÓ THỂ ĐI CÙNG NHAU</small>
-              <p>Bạn không cần chọn giữa thay đổi hành vi và hỗ trợ y khoa. Khi cần, hai hướng có thể bổ sung cho nhau.</p>
-            </div>
-            <div className="bridge-parts"><span>IDENTITY · TRIGGER · HÀNH VI · MÔI TRƯỜNG</span><i>+</i><span>SỨC KHỎE · THUỐC · THEO DÕI CHUYÊN MÔN</span></div>
-          </div>
+          <div className="authority-bridge"><div><small>KHÔNG CẦN CHỌN MỘT TRONG HAI</small><p>Identity Shift™ là lớp hỗ trợ thay đổi hành vi. Nó không thay thế việc xử lý lệ thuộc nicotine hoặc những hỗ trợ chuyên môn phù hợp.</p></div><div className="bridge-parts"><span>KẾ HOẠCH · TRIGGER · HÀNH VI</span><i>+</i><span>SỨC KHỎE · THUỐC · THEO DÕI</span></div></div>
         </div>
       </section>
 
-      <section id="offer" className="section offer blueprint">
+      <section id="offer" className="section offer blueprint v2-offer">
         <div className="offer-card">
-          <span className="offer-badge">MỞ BÁN GIAI ĐOẠN ĐẦU</span>
-          <small>SMOKE-FREE IDENTITY SYSTEM™</small>
-          <h2>BẢN ĐỒ CAI THUỐC<br/>7 NGÀY™</h2>
-          <p className="offer-story">7 ngày để chuyển từ “Tôi biết mình nên bỏ” sang “Tôi hiểu vì sao mình hút và biết mình cần làm gì khi trigger xuất hiện.”</p>
+          <span className="offer-badge">COHORT PILOT · GIỚI HẠN 25 NGƯỜI</span>
+          <small>BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™</small>
+          <h2>7 ngày để xác định ngày bắt đầu và chuẩn bị kế hoạch cai thuốc cá nhân.</h2>
+          <p className="offer-story">Phù hợp với mức độ lệ thuộc, trigger và đời sống thực tế của bạn — cùng nhịp đồng hành trong 21 ngày tiếp theo.</p>
           <ul className="check-list two-col">
-            {["7 video bài học","7 workbook thực hành","Smoke-Free Identity Canvas™","Trigger Replacement Map™","Craving & State Reset Protocol™","Kế hoạch hành động 21 ngày","Relapse Prevention Map™","Bộ công cụ hỗ trợ đi kèm"].map(x=><Check key={x}>{x}</Check>)}
+            {["7 video hướng dẫn","7 workbook thực hành","Bộ công cụ triển khai","Kế hoạch & Tracker 21 ngày","Một buổi khởi động","Hai group check-in","Cộng đồng đồng hành 21 ngày","Hỗ trợ hoàn thiện kế hoạch"].map(x=><Check key={x}>{x}</Check>)}
           </ul>
-          <div className="price"><span>MỨC GIÁ MỞ BÁN ĐẦU TIÊN</span><b>457.000 <i>VNĐ</i></b></div>
-          <a className="button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc 7 ngày">BẮT ĐẦU XÂY BẢN ĐỒ CỦA TÔI →</a>
-          <p className="micro">Một lựa chọn duy nhất · Nhận toàn bộ nội dung · Không có gói nâng cấp</p>
+          <div className="price"><span>MỨC ĐẦU TƯ COHORT PILOT</span><b>497.000 <i>VNĐ</i></b></div>
+          <a className="button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc lá 7 ngày">TÔI MUỐN CHUẨN BỊ KẾ HOẠCH CAI THUỐC →</a>
+          <p className="micro">Giới hạn 25 người · Có hỗ trợ thêm 14 ngày nếu đủ điều kiện</p>
         </div>
       </section>
 
-      <section className="section faq">
+      <section className="section faq v2-faq">
         <div className="wrap faq-grid">
-          <div className="section-head left"><span>10 — TRƯỚC KHI BẠN QUYẾT ĐỊNH</span><h2>Có thể trong đầu bạn vẫn còn vài câu hỏi.</h2><p>Điều đó hoàn toàn bình thường. Hãy bắt đầu từ câu hỏi gần với mình nhất.</p></div>
+          <div className="section-head left"><span>13 — CÂU HỎI THƯỜNG GẶP</span><h2>Những điều cần rõ trước khi bạn bắt đầu.</h2><p>Mục tiêu của chương trình là chuẩn bị một kế hoạch có thể triển khai — không hứa hẹn một kết quả giống nhau cho tất cả mọi người.</p></div>
           <div className="accordion faq-list">{faqs.map((f,i)=><article className={openFaq===i ? "open":""} key={f[0]}><button onClick={()=>setOpenFaq(openFaq===i?null:i)} aria-expanded={openFaq===i}><span>{String(i+1).padStart(2,"0")}</span><div><b>{f[0]}</b></div><i>{openFaq===i?"−":"+"}</i></button>{openFaq===i&&<div className="accordion-body"><p>{f[1]}</p></div>}</article>)}</div>
         </div>
       </section>
 
-      <section className="final blueprint">
+      <section className="final blueprint v2-final">
         <div className="wrap final-inner">
-          <span>BẠN CÓ THỂ VIẾT TIẾP CÂU CHUYỆN NÀY THEO HAI CÁCH</span>
-          <h2>Bạn có thể tiếp tục chờ một tuần ít stress hơn.</h2>
-          <p>Tiếp tục tự hứa “lần sau mình sẽ quyết tâm hơn”. Hoặc dành 7 ngày để nhìn lại câu chuyện của mình, đặt nó lên một bản đồ và chuẩn bị cho những khoảnh khắc trigger thật sự xuất hiện.</p>
-          <div className="from-to"><div><small>TỪ</small><b>“Tôi biết mình nên bỏ.”</b></div><i>→</i><div><small>SANG</small><b>“Tôi hiểu vòng lặp và có kế hoạch để bắt đầu.”</b></div></div>
-          <strong>457.000 VNĐ</strong>
-          <a className="button" href="#offer">BẮT ĐẦU HÀNH TRÌNH KHÔNG KHÓI THUỐC →</a>
-          <small>Một chương trình duy nhất · Toàn bộ 7 ngày và bộ công cụ thực hành</small>
+          <span>BẠN CÓ THỂ TIẾP TỤC CHỜ MỘT THỜI ĐIỂM KHÁC</span>
+          <h2>Hoặc dành 7 ngày để chuẩn bị một cách nghiêm túc hơn.</h2>
+          <p>Không phải bằng một lời hứa mới. Mà bằng một ngày bắt đầu rõ ràng, một bản đồ trigger, một protocol xử lý cơn thèm, một kế hoạch 21 ngày và phương án quay lại nếu gặp đứt gãy.</p>
+          <div className="final-questions">
+            <p>“Khi cơn thèm xuất hiện, tôi sẽ làm gì?”</p>
+            <p>“Khi stress quay lại, tôi sẽ phản ứng thế nào?”</p>
+            <p>“Nếu lỡ trượt, tôi sẽ quay lại bằng cách nào?”</p>
+          </div>
+          <strong>497.000 VNĐ</strong>
+          <a className="button" href="#offer">TÔI MUỐN BẮT ĐẦU KẾ HOẠCH CAI THUỐC →</a>
+          <small>Cohort pilot · Giới hạn 25 người · Đồng hành 21 ngày</small>
         </div>
       </section>
 
-      <footer><div className="wrap"><b>BẢN ĐỒ CAI THUỐC 7 NGÀY™</b><p>Chương trình hướng dẫn về nhận dạng, hành vi và lối sống; không thay thế tư vấn, chẩn đoán hoặc điều trị y tế. Nếu có dấu hiệu sức khỏe nghiêm trọng, hãy tìm hỗ trợ chuyên môn phù hợp.</p><span>© 2026 Identity Shift™</span></div></footer>
+      <footer><div className="wrap"><b>BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™</b><p>Chương trình giáo dục và hỗ trợ thay đổi hành vi; không thay thế tư vấn, chẩn đoán hoặc điều trị y tế, không kê đơn và không cam kết chữa bệnh hoặc một kết quả giống nhau cho tất cả mọi người.</p><span>© 2026 Identity Shift™</span></div></footer>
 
-      <div className={`mobile-sticky ${showSticky ? "show":""}`}><div><small>MỞ BÁN</small><b>457.000 VNĐ</b></div><a href="#offer">THAM GIA NGAY →</a></div>
+      <div className={`mobile-sticky ${showSticky ? "show":""}`}><div><small>COHORT PILOT</small><b>497.000 VNĐ</b></div><a href="#offer">THAM GIA NGAY →</a></div>
     </main>
   );
 }
