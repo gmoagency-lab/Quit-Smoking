@@ -232,25 +232,106 @@ export default function Home() {
         <span>DÀNH CHO NGƯỜI ĐÃ NHIỀU LẦN MUỐN CAI NHƯNG VẪN QUAY LẠI</span>
       </div>
 
-      <header className="letter-hero">
-        <div className="letter-wrap">
-          <p className="letter-brand">BẢN ĐỒ CAI THUỐC 7 NGÀY™</p>
+      <header className="hero blueprint">
+        <div className="wrap">
+          <div className="hero-grid">
+            <div>
+              <div className="eyebrow" style={{ marginBottom: "16px" }}>
+                <i />
+                <span>CHƯƠNG TRÌNH IDENTITY SHIFT™ · BẢN ĐỒ CAI THUỐC 7 NGÀY™</span>
+              </div>
+              <h1 style={{ fontSize: "clamp(34px, 3.8vw, 52px)", lineHeight: "1.15", margin: "0 0 18px", color: "white" }}>
+                LẤY LẠI HƠI THỞ, NĂNG LƯỢNG VÀ SỰ TỰ TIN ĐÃ BỊ BÀO MÒN SAU NHIỀU NĂM HÚT THUỐC
+              </h1>
+              <p className="hero-line" style={{ fontSize: "clamp(17px, 1.6vw, 21px)", color: "#c4d0cb", margin: "0 0 18px", lineHeight: "1.5" }}>
+                Trong 7 ngày, anh sẽ xây dựng tấm bản đồ cai thuốc từ gốc rễ—để hiểu điều gì thực sự khiến mình tiếp tục hút, từng bước tháo gỡ sự lệ thuộc vào Nicotine và lấy lại quyền làm chủ bản thân.
+              </p>
+              <p className="lead" style={{ fontSize: "16px", color: "#9caea6", marginBottom: "22px", lineHeight: "1.6" }}>
+                Trở thành người đàn ông giữ được lời hứa với chính mình— Nhất quán đến mức gia đình, bạn bè và đồng nghiệp bắt đầu đặt câu hỏi làm sao anh làm được điều đó.
+              </p>
+              <blockquote className="letter-quote" style={{ textAlign: "left", margin: "0 0 24px", paddingLeft: "18px", borderLeft: "3px solid var(--bright)", fontSize: "16px", color: "#eef5f1", fontStyle: "italic" }}>
+                Đây là hành trình lấy lại sức khỏe, lòng tự trọng và hình ảnh của người đàn ông làm chủ cuộc đời mình.
+              </blockquote>
 
-          <h1>LẤY LẠI HƠI THỞ, NĂNG LƯỢNG VÀ SỰ TỰ TIN ĐÃ BỊ BÀO MÒN SAU NHIỀU NĂM HÚT THUỐC</h1>
-          <p className="letter-hero-line">
-            Trong 7 ngày, anh sẽ xây dựng tấm bản đồ cai thuốc từ gốc rễ—để hiểu điều gì thực sự khiến mình tiếp tục hút, từng bước tháo gỡ sự lệ thuộc vào Nicotine và lấy lại quyền làm chủ bản thân.
-          </p>
-          <p className="letter-lead">
-            Trở thành người đàn ông giữ được lời hứa với chính mình— Nhất quán đến mức gia đình, bạn bè và đồng nghiệp bắt đầu đặt câu hỏi làm sao anh làm được điều đó.
-          </p>
-          <blockquote className="letter-quote">
-            Đây là hành trình lấy lại sức khỏe, lòng tự trọng và hình ảnh của người đàn ông làm chủ cuộc đời mình.
-          </blockquote>
-          <div className="letter-hero-action">
-            <a className="letter-button" href="#offer">TÔI MUỐN XÂY BẢN ĐỒ CAI THUỐC CỦA MÌNH →</a>
-            <p><small>MỨC GIÁ MỞ BÁN</small><b>457.000 VNĐ</b><span>Một gói duy nhất</span></p>
+              <div className="hero-cta" style={{ flexWrap: "wrap", gap: "20px" }}>
+                <a className="button" href="#offer">TÔI MUỐN XÂY BẢN ĐỒ CAI THUỐC CỦA MÌNH →</a>
+                <div>
+                  <small style={{ color: "#91a19b" }}>MỨC GIÁ MỞ BÁN</small>
+                  <strong style={{ color: "var(--bright)", fontSize: "22px" }}>457.000 VNĐ</strong>
+                  <span style={{ color: "#88948f" }}>Một gói duy nhất · Trọn đời</span>
+                </div>
+              </div>
+
+              <div className="chips" style={{ justifyContent: "flex-start", marginTop: "24px" }}>
+                <span>✓ Tháo gỡ Nicotine từ gốc</span>
+                <span>✓ Bản đồ 7 Ngày có cấu trúc</span>
+                <span>✓ Đổi mới định danh Identity Shift™</span>
+              </div>
+
+              <p className="letter-disclaimer" style={{ marginTop: "18px", fontSize: "12px", color: "#7a8a83" }}>
+                Chương trình hướng dẫn về định danh, hành vi và lối sống. Không thay thế tư vấn, chẩn đoán hoặc điều trị y tế.
+              </p>
+            </div>
+
+            <div style={{ position: "relative" }}>
+              <div className="map-mockup">
+                <div className="map-toolbar">
+                  <span>BẢN ĐỒ CAI THUỐC CÁ NHÂN™</span>
+                  <span style={{ color: "var(--bright)" }}>STATUS: BLUEPRINT 1.0</span>
+                </div>
+                <div className="map-title">
+                  <div>
+                    <small>CHƯƠNG TRÌNH 7 NGÀY</small>
+                    <b>Identity Shift Map</b>
+                  </div>
+                  <span>● Đồng hành 21 ngày</span>
+                </div>
+                <div className="map-flow">
+                  <div>
+                    <i>[01-02] BÓC TÁCH & TRIGGER</i>
+                    <b>VÒNG LẶP HÚT THUỐC</b>
+                    <span>Xóa tự trách & 15+ điểm nóng</span>
+                  </div>
+                  <div>
+                    <i>[03-04] NHU CẦU ẨN & THUẬT TOÁN</i>
+                    <b>PHẢN ỨNG THAY THẾ</b>
+                    <span>Kịch bản If-Then chính xác</span>
+                  </div>
+                  <div>
+                    <i>[05] IDENTITY SHIFT™</i>
+                    <b>ĐỊNH DANH MỚI</b>
+                    <span>Tạo hệ bằng chứng hành vi</span>
+                  </div>
+                  <div>
+                    <i>[06-07] LÁ CHẮN & PHỤC HỒI</i>
+                    <b>QUY TRÌNH 24H</b>
+                    <span>Lá chắn rủi ro khẩn cấp</span>
+                  </div>
+                </div>
+                <div className="map-bottom">
+                  <span>7 NGÀY TIẾN ĐỘ THỰC HÀNH</span>
+                  <div>
+                    <i className="on" />
+                    <i className="on" />
+                    <i className="on" />
+                    <i className="on" />
+                    <i className="on" />
+                    <i className="on" />
+                    <i className="on" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="float-card fc1">
+                <small>CHUYỂN DỊCH ĐỊNH DANH</small>
+                <b>&ldquo;Tôi không còn cần Nicotine&rdquo;</b>
+              </div>
+              <div className="float-card fc2">
+                <small>BẢO VỆ THÀNH QUẢ</small>
+                <b>Lá chắn xử lý cơn thèm</b>
+              </div>
+            </div>
           </div>
-          <p className="letter-disclaimer">Chương trình hướng dẫn về định danh, hành vi và lối sống. Không thay thế tư vấn, chẩn đoán hoặc điều trị y tế.</p>
         </div>
       </header>
 
