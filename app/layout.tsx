@@ -6,19 +6,19 @@ const body = Be_Vietnam_Pro({ variable: "--font-body", subsets: ["latin", "vietn
 const display = Manrope({ variable: "--font-display", subsets: ["latin","vietnamese"], weight: ["500","600","700","800"] });
 
 export const metadata: Metadata = {
-  title: "Bản Đồ Cai Thuốc Lá 7 Ngày™ | Identity Shift™",
-  description: "Hành trình 7 ngày giúp bạn nhìn rõ vòng lặp hút thuốc, xây Bản đồ Cai thuốc Cá nhân và bắt đầu sống như một người không còn cần đến điếu thuốc.",
+  title: "Bản Đồ Cai Thuốc 7 Ngày™ | Identity Shift™",
+  description: "Dành cho người đã nhiều lần muốn cai nhưng vẫn quay lại. Lấy lại hơi thở, năng lượng và sự tự tin đã bị bào mòn sau nhiều năm hút thuốc.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
-    title: "Bản Đồ Cai Thuốc Lá 7 Ngày™",
-    description: "Đừng tiếp tục cố gắng nhịn hút. Hãy nhìn rõ vòng lặp và bắt đầu sống như một người không còn cần đến điếu thuốc.",
+    title: "Bản Đồ Cai Thuốc 7 Ngày™",
+    description: "Dành cho người đã nhiều lần muốn cai nhưng vẫn quay lại. Lấy lại hơi thở, năng lượng và sự tự tin đã bị bào mòn sau nhiều năm hút thuốc.",
     type: "website",
-    images: [{ url: "/og-identity.png", width: 1730, height: 909, alt: "Bản Đồ Cai Thuốc Lá 7 Ngày™ — Đừng tiếp tục cố gắng nhịn hút" }],
+    images: [{ url: "/og-identity.png", width: 1730, height: 909, alt: "Bản Đồ Cai Thuốc 7 Ngày™ — Identity Shift™" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bản Đồ Cai Thuốc Lá 7 Ngày™",
-    description: "Đừng tiếp tục cố gắng nhịn hút. Hãy nhìn rõ vòng lặp và bắt đầu sống như một người không còn cần đến điếu thuốc.",
+    title: "Bản Đồ Cai Thuốc 7 Ngày™",
+    description: "Dành cho người đã nhiều lần muốn cai nhưng vẫn quay lại. Lấy lại hơi thở, năng lượng và sự tự tin đã bị bào mòn sau nhiều năm hút thuốc.",
     images: ["/og-identity.png"],
   },
 };
