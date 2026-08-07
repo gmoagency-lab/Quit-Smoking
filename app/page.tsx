@@ -99,7 +99,7 @@ const days = [
 const deliverables = [
   {
     title: "7 video hướng dẫn",
-    story: "Mỗi ngày tập trung vào một vấn đề và một kết quả cụ thể—không kéo dài bằng kiến thức lan man.",
+    story: "Mỗi ngày Anh tập trung vào một vấn đề và một kết quả cụ thể, không kéo dài bằng kiến thức lan man.",
   },
   {
     title: "7 sổ bài tập thực hành",
@@ -132,6 +132,44 @@ const deliverables = [
   {
     title: "Bản Đồ Phòng Ngừa Tái Hút™",
     story: "Giúp anh nhận diện nguy cơ và quay lại hệ thống nếu xảy ra một lần trượt.",
+  },
+];
+
+const bonusItems = [
+  {
+    id: 1,
+    title: "BONUS #1 — BỘ KHỞI ĐỘNG 48 GIỜ: LÀM CHỦ NĂNG LƯỢNG™",
+    desc: "Giúp anh chuẩn bị cơ thể, môi trường và nhịp sống trước khi bắt đầu—để thiếu ngủ, mệt mỏi, cà phê hoặc áp lực không kéo anh trở lại phản ứng hút thuốc quen thuộc.",
+    value: "297.000 VNĐ",
+    items: [
+      "Bảng đánh giá năng lượng ban đầu.",
+      "Kế hoạch buổi sáng trong 48 giờ.",
+      "Bản đồ caffeine – rượu bia – thuốc lá.",
+      "Danh sách chuẩn bị môi trường.",
+      "Quy trình nghỉ ngắn không khói thuốc.",
+      "Lịch giấc ngủ, vận động và phục hồi.",
+    ],
+  },
+  {
+    id: 2,
+    title: "BONUS #2 — THƯ VIỆN 30 CÂU IDENTITY SHIFT™",
+    desc: "Ba mươi câu nhắc quyết định được thiết kế cho những thời điểm anh dễ thương lượng với điếu thuốc nhất: Khi cơn thèm xuất hiện, khi căng thẳng hoặc mất tập trung, khi uống cà phê, khi được bạn bè hoặc đồng nghiệp mời thuốc, sau một lần trượt, khi bắt đầu mất niềm tin vào bản thân.",
+    value: "197.000 VNĐ",
+    subtext: "Đây không phải những câu khẳng định tích cực chung chung. Đây là ngôn ngữ giúp anh nhớ lại mình là ai, đã lựa chọn điều gì và cần làm gì ngay trong thời điểm khó khăn.",
+  },
+  {
+    id: 3,
+    title: "BONUS #3 — BỘ TÀI LIỆU SỨC KHỎE NỀN TẢNG™",
+    desc: "Giúp anh hỗ trợ năng lượng, giấc ngủ và nhịp sống trong quá trình thay đổi mà không phải biến việc cai thuốc thành một dự án sức khỏe phức tạp.",
+    value: "297.000 VNĐ",
+    items: [
+      "Hướng dẫn xây bữa ăn nền tảng.",
+      "Bảng theo dõi nước và caffeine.",
+      "Kế hoạch vận động tối thiểu.",
+      "Danh sách hỗ trợ giấc ngủ và phục hồi.",
+      "Bản đồ thay thế các nghi thức hút thuốc quen thuộc.",
+      "Danh sách dấu hiệu cần tìm hỗ trợ chuyên môn.",
+    ],
   },
 ];
 
@@ -345,12 +383,12 @@ export default function Home() {
             <p>Vì tò mò.</p>
             <p>Vì muốn hòa nhập với anh em.</p>
             <p>Vì muốn tỏ ra trưởng thành.</p>
-            <p>Hoặc đơn giản vì khi ấy anh nghĩ: “Chỉ một điếu thôi. Có gì nghiêm trọng đâu.”</p>
+            <p>Hoặc đơn giản vì khi ấy anh nghĩ: &ldquo;Chỉ một điếu thôi. Có gì nghiêm trọng đâu.&rdquo;</p>
           </div>
           <p>Lúc đó, hút thuốc chỉ là một hành động. Anh chưa cần thuốc để bắt đầu ngày mới, chưa cần thuốc để làm việc, chưa cần thuốc để bình tĩnh, và chưa từng nghĩ sẽ có ngày mình phải tìm cách thoát khỏi nó.</p>
           <p>Nhưng một điếu dần trở thành nhiều điếu: Sau bữa ăn, bên ly cà phê, khi đầu óc căng thẳng, trong lúc chờ đợi, khi ngồi cùng bạn bè, khi cần một lý do để bước ra ngoài nghỉ vài phút.</p>
           <blockquote className="letter-quote">
-            Không ai thức dậy vào một buổi sáng và quyết định: “Từ hôm nay, tôi sẽ để thuốc lá điều khiển một phần cuộc sống của mình.” Nó diễn ra âm thầm hơn thế.
+            Không ai thức dậy vào một buổi sáng và quyết định: &ldquo;Từ hôm nay, tôi sẽ để thuốc lá điều khiển một phần cuộc sống của mình.&rdquo; Nó diễn ra âm thầm hơn thế.
           </blockquote>
         </div>
       </section>
@@ -367,10 +405,10 @@ export default function Home() {
             <li>Muốn tập trung thì cần nicotine.</li>
             <li>Muốn nghỉ ngơi thì bước ra ngoài hút.</li>
           </ul>
-          <p>Điếu thuốc dần được gắn với công việc, cảm xúc, các mối quan hệ và nhịp sống hằng ngày của anh. Cho đến khi câu: “Tôi có hút thuốc” âm thầm biến thành: <b>“Tôi là người hút thuốc.”</b></p>
+          <p>Điếu thuốc dần được gắn với công việc, cảm xúc, các mối quan hệ và nhịp sống hằng ngày của anh. Cho đến khi câu: &ldquo;Tôi có hút thuốc&rdquo; âm thầm biến thành: <b>&ldquo;Tôi là người hút thuốc.&rdquo;</b></p>
           <p>Đây là điểm mọi thứ bắt đầu trở nên khó khăn. Bởi bỏ thuốc không còn được cảm nhận đơn thuần là loại bỏ một hành vi có hại. Ở tầng sâu hơn, nó giống như anh đang phải từ bỏ: Cách mình giải tỏa áp lực, khoảng nghỉ quen thuộc trong ngày, cách kết nối với bạn bè và đồng nghiệp, thứ giúp mình cảm thấy tập trung và một nếp sống đã tồn tại suốt nhiều năm.</p>
           <div className="letter-voices">
-            <p>“Nếu không còn thuốc, tôi sẽ vận hành thế nào?”</p>
+            <p>&ldquo;Nếu không còn thuốc, tôi sẽ vận hành thế nào?&rdquo;</p>
           </div>
           <p>Đây không đơn thuần là thiếu ý chí. Đó là điều xảy ra khi một hành vi được lặp lại đủ lâu để trở thành một phần trong cách anh nhìn nhận chính mình.</p>
         </div>
@@ -383,12 +421,12 @@ export default function Home() {
           <p>Anh đã biết thuốc lá có hại. Anh đã nhìn thấy cảnh báo trên bao thuốc, đã nghe người thân khuyên nhủ, đã cảm nhận hơi thở ngắn hơn khi vận động, đã thấy cơ thể không còn khỏe như trước, và đã nhiều lần tự hứa rằng mình phải dừng lại.</p>
           <p>Nhưng rồi tâm trí bắt đầu thương lượng:</p>
           <div className="letter-voices">
-            <p>“Hôm nay căng thẳng quá, để mai bỏ.”</p>
-            <p>“Tôi hút ít hơn nhiều người khác.”</p>
-            <p>“Tôi chỉ hút khi uống cà phê.”</p>
-            <p>“Đi nhậu mà không hút thì mất vui.”</p>
-            <p>“Tôi có thể bỏ bất cứ lúc nào.”</p>
-            <p>“Một điếu chắc không sao.”</p>
+            <p>&ldquo;Hôm nay căng thẳng quá, để mai bỏ.&rdquo;</p>
+            <p>&ldquo;Tôi hút ít hơn nhiều người khác.&rdquo;</p>
+            <p>&ldquo;Tôi chỉ hút khi uống cà phê.&rdquo;</p>
+            <p>&ldquo;Đi nhậu mà không hút thì mất vui.&rdquo;</p>
+            <p>&ldquo;Tôi có thể bỏ bất cứ lúc nào.&rdquo;</p>
+            <p>&ldquo;Một điếu chắc không sao.&rdquo;</p>
           </div>
           <p>Những lời này không xuất hiện vì anh không hiểu tác hại của thuốc. Chúng xuất hiện vì tâm trí đang bảo vệ một hành vi đã trở nên quen thuộc và phù hợp với cách anh vận hành hiện tại.</p>
           <blockquote className="letter-quote">Lý trí muốn dừng lại. Nhưng định danh cũ vẫn tìm lý do để tiếp tục.</blockquote>
@@ -399,13 +437,13 @@ export default function Home() {
         <div className="letter-wrap">
           <p className="letter-number">04 — BẪY Ý CHÍ</p>
           <h2>ĐÓ LÀ LÝ DO NHỮNG LẦN CAI TRƯỚC THƯỜNG BIẾN THÀNH MỘT CUỘC CHỊU ĐỰNG</h2>
-          <p>Một ngày nào đó, anh quyết định: “Lần này tôi sẽ bỏ thật.” Anh vứt bao thuốc đi, cố gắng chịu đựng, tự nhắc mình phải mạnh mẽ. Có thể anh vượt qua vài giờ, vài ngày hoặc thậm chí vài tuần.</p>
+          <p>Một ngày nào đó, anh quyết định: &ldquo;Lần này tôi sẽ bỏ thật.&rdquo; Anh vứt bao thuốc đi, cố gắng chịu đựng, tự nhắc mình phải mạnh mẽ. Có thể anh vượt qua vài giờ, vài ngày hoặc thậm chí vài tuần.</p>
           <p>Nhưng sâu bên trong, anh vẫn cảm thấy mình là một người hút thuốc đang phải nhịn. Mỗi cơn thèm trở thành một cuộc chiến. Mỗi ly cà phê là một bài kiểm tra. Mỗi cuộc nhậu là một lần phải chống lại chính mình.</p>
-          <p>Rồi sau một cuộc tranh luận, một đợt áp lực hoặc một lời mời từ bạn bè, anh tự nói: “Chỉ một điếu thôi.” Một điếu trở thành hai. Và chẳng bao lâu, anh quay lại thói quen cũ.</p>
+          <p>Rồi sau một cuộc tranh luận, một đợt áp lực hoặc một lời mời từ bạn bè, anh tự nói: &ldquo;Chỉ một điếu thôi.&rdquo; Một điếu trở thành hai. Và chẳng bao lâu, anh quay lại thói quen cũ.</p>
           <div className="letter-voices">
-            <p>“Mình lại thất bại.”</p>
-            <p>“Mình không đủ bản lĩnh.”</p>
-            <p>“Có lẽ mình không thể bỏ được.”</p>
+            <p>&ldquo;Mình lại thất bại.&rdquo;</p>
+            <p>&ldquo;Mình không đủ bản lĩnh.&rdquo;</p>
+            <p>&ldquo;Có lẽ mình không thể bỏ được.&rdquo;</p>
           </div>
           <p>Mỗi lần như vậy không chỉ làm giảm niềm tin rằng anh có thể cai thuốc. Nó còn bào mòn niềm tin rằng anh có thể giữ được lời hứa với chính mình.</p>
         </div>
@@ -417,12 +455,12 @@ export default function Home() {
           <h2>“TÔI ĐANG CỐ NHỊN” VÀ “TÔI KHÔNG CÒN HÚT” LÀ HAI TRẠNG THÁI KHÁC NHAU</h2>
           <p>Hãy hình dung hai người đàn ông cùng đứng trước một lời mời thuốc.</p>
           <div className="letter-voices">
-            <p><b>Người thứ nhất nghĩ:</b> “Tôi rất muốn hút, nhưng tôi đang cố nhịn.”</p>
-            <p><b>Người thứ hai nghĩ:</b> “Tôi không còn hút nữa.”</p>
+            <p><b>Người thứ nhất nghĩ:</b> &ldquo;Tôi rất muốn hút, nhưng tôi đang cố nhịn.&rdquo;</p>
+            <p><b>Người thứ hai nghĩ:</b> &ldquo;Tôi không còn hút nữa.&rdquo;</p>
           </div>
           <p>Cả hai đều có thể từ chối. Nhưng trải nghiệm bên trong hoàn toàn khác nhau.</p>
           <p>Người thứ nhất cảm thấy mình đang mất đi một thứ vẫn thuộc về mình. Mỗi lần từ chối là một lần phải tiêu hao ý chí.</p>
-          <p>Người thứ hai vẫn có thể xuất hiện cơn thèm. Nhưng anh ấy không còn xem cơn thèm là mệnh lệnh phải làm theo. Anh ấy hiểu: <i>“Đây chỉ là một trạng thái đang đi qua. Nó không quyết định tôi là ai và tôi sẽ làm gì.”</i></p>
+          <p>Người thứ hai vẫn có thể xuất hiện cơn thèm. Nhưng anh ấy không còn xem cơn thèm là mệnh lệnh phải làm theo. Anh ấy hiểu: <i>&ldquo;Đây chỉ là một trạng thái đang đi qua. Nó không quyết định tôi là ai và tôi sẽ làm gì.&rdquo;</i></p>
           <blockquote className="letter-quote">Đó là sự khác biệt giữa: Chống lại con người cũ bằng ý chí vs Hành động phù hợp với con người mới.</blockquote>
         </div>
       </section>
@@ -431,7 +469,7 @@ export default function Home() {
         <div className="letter-wrap">
           <p className="letter-number">06 — CƠ CHẾ BẰNG CHỨNG HÀNH VI</p>
           <h2>IDENTITY SHIFT™ KHÔNG PHẢI LÀ SUY NGHĨ TÍCH CỰC</h2>
-          <p>Anh không thể chỉ đứng trước gương và lặp lại: “Tôi là người không hút thuốc” rồi mong mọi thứ tự động thay đổi. Một định danh mới chỉ trở nên đáng tin khi được xây bằng bằng chứng thực tế.</p>
+          <p>Anh không thể chỉ đứng trước gương và lặp lại: &ldquo;Tôi là người không hút thuốc&rdquo; rồi mong mọi thứ tự động thay đổi. Một định danh mới chỉ trở nên đáng tin khi được xây bằng bằng chứng thực tế.</p>
           <ul className="letter-list">
             <li>Anh uống cà phê mà không hút — Đó là một bằng chứng.</li>
             <li>Anh vượt qua một cơn thèm mà không làm theo nó — Đó là một bằng chứng.</li>
@@ -439,7 +477,7 @@ export default function Home() {
             <li>Anh trải qua một ngày căng thẳng mà không dùng nicotine — Đó là một bằng chứng.</li>
             <li>Anh có một lần trượt nhưng dừng lại ngay, thay vì dùng nó làm lý do quay về thói quen cũ — Đó cũng là một bằng chứng.</li>
           </ul>
-          <p>Mỗi hành động nhỏ gửi cho não một thông điệp: <i>“Đây là điều một người như tôi có thể làm.”</i></p>
+          <p>Mỗi hành động nhỏ gửi cho não một thông điệp: <i>&ldquo;Đây là điều một người như tôi có thể làm.&rdquo;</i></p>
           <p><b>Hành vi mới tạo ra bằng chứng → Bằng chứng xây dựng niềm tin → Niềm tin củng cố định danh mới → Định danh mới khiến hành vi tiếp theo trở nên dễ dàng hơn.</b></p>
         </div>
       </section>
@@ -448,7 +486,7 @@ export default function Home() {
         <div className="letter-wrap">
           <p className="letter-number">07 — ĐÍCH ĐẾN CỦA NGƯỜI ĐÀN ÔNG</p>
           <h2>ANH KHÔNG CHỈ CẦN MỘT THỨ ĐỂ CHẠY KHỎI</h2>
-          <p>Anh cần biết mình đang tiến về đâu. Không chỉ: “Tôi không muốn là người hút thuốc nữa” mà là: <b>“Tôi muốn trở thành người đàn ông như thế nào?”</b></p>
+          <p>Anh cần biết mình đang tiến về đâu. Không chỉ: &ldquo;Tôi không muốn là người hút thuốc nữa&rdquo; mà là: <b>&ldquo;Tôi muốn trở thành người đàn ông như thế nào?&rdquo;</b></p>
           <ul className="letter-list">
             <li>Một người làm chủ cảm xúc mà không cần nicotine.</li>
             <li>Một người cha đủ khỏe để có mặt lâu hơn bên con.</li>
@@ -548,7 +586,7 @@ export default function Home() {
       <section className="letter-section letter-tint">
         <div className="letter-wrap">
           <p className="letter-number">10 — HỆ THỐNG BÀN GIAO</p>
-          <h2>TOÀN BỘ NHỮNG GÌ ANH NHẬN ĐƯỢC</h2>
+          <h2>7 NGÀY ĐÓ SẼ DIỄN RA NHƯ THẾ NÀO?</h2>
           <div className="letter-deliverables">
             {deliverables.map((item, idx) => (
               <article key={item.title}>
@@ -567,8 +605,8 @@ export default function Home() {
         <div className="letter-wrap">
           <p className="letter-number">11 — VÌ SAO ANH CÓ THỂ TIN VÀO CÁCH TIẾP CẬN NÀY?</p>
           <h2>BẰNG CHỨNG ĐẦU TIÊN ĐẾN TỪ CHÍNH HÀNH TRÌNH CỦA TÔI</h2>
-          <p>Tôi từng hút thuốc trong khoảng 10 năm. Thuốc lá từng xuất hiện khi tôi làm việc, suy nghĩ, căng thẳng, nghỉ ngơi và giao tiếp. Tôi từng nghĩ vấn đề của mình là thiếu ý chí. Nhưng càng cố gồng, tôi càng giữ thuốc lá ở vị trí trung tâm: <i>“Tôi là người hút thuốc đang cố bỏ.”</i></p>
-          <p>Bước chuyển bắt đầu khi tôi không còn chỉ hỏi: “Làm thế nào để cưỡng lại điếu thuốc?” mà bắt đầu hỏi: <b>“Vì sao tôi tin mình cần thuốc để xử lý trạng thái này?”, “Tôi đang sống từ định danh nào?”, “Một người không còn dùng thuốc sẽ phản ứng thế nào trong tình huống này?”</b></p>
+          <p>Tôi từng hút thuốc trong khoảng 10 năm. Thuốc lá từng xuất hiện khi tôi làm việc, suy nghĩ, căng thẳng, nghỉ ngơi và giao tiếp. Tôi từng nghĩ vấn đề của mình là thiếu ý chí. Nhưng càng cố gồng, tôi càng giữ thuốc lá ở vị trí trung tâm: <i>&ldquo;Tôi là người hút thuốc đang cố bỏ.&rdquo;</i></p>
+          <p>Bước chuyển bắt đầu khi tôi không còn chỉ hỏi: &ldquo;Làm thế nào để cưỡng lại điếu thuốc?&rdquo; mà bắt đầu hỏi: <b>&ldquo;Vì sao tôi tin mình cần thuốc để xử lý trạng thái này?&rdquo;, &ldquo;Tôi đang sống từ định danh nào?&rdquo;, &ldquo;Một người không còn dùng thuốc sẽ phản ứng thế nào trong tình huống này?&rdquo;</b></p>
           <p>Từ đó, tôi điều chỉnh từng phần: Môi trường, nhịp sinh hoạt, cách nghỉ ngơi, cách xử lý căng thẳng, nghi thức làm việc, tình huống xã hội và phản ứng khi tác nhân xuất hiện.</p>
 
           <div style={{ marginTop: "40px", paddingTop: "30px", borderTop: "1px solid #2e443c" }}>
@@ -605,17 +643,82 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="offer" className="letter-offer">
+      <section id="offer" className="letter-offer" style={{ background: "var(--ink2)", padding: "80px 0" }}>
         <div className="letter-wrap">
-          <p className="letter-number">13 — MỨC ĐẦU TƯ</p>
-          <h2>TOÀN BỘ CHƯƠNG TRÌNH CHỈ VỚI 457.000 VNĐ</h2>
-          <p>Không có nhiều gói lựa chọn. Không cần cân nhắc giữa các phiên bản. Một chương trình hoàn chỉnh với mức giá mở bán giai đoạn đầu:</p>
-          <div className="letter-price">
-            <small>MỨC GIÁ MỞ BÁN GIAI ĐOẠN ĐẦU</small>
-            <b>457.000 VNĐ</b>
-            <span>Một chương trình · Một gói duy nhất · Trọn đời</span>
+          <p className="letter-number">13 — HỆ THỐNG & ĐẶC QUYỀN MỞ BÁN</p>
+          <h2 style={{ fontSize: "clamp(30px, 3.5vw, 46px)", color: "white", marginBottom: "16px" }}>
+            ĐÂY LÀ TOÀN BỘ HỆ THỐNG ANH NHẬN ĐƯỢC KHI THAM GIA BẢN ĐỒ CAI THUỐC 7 NGÀY™
+          </h2>
+          <p style={{ fontSize: "17px", color: "#aebdb7", maxWidth: "800px", margin: "0 auto 35px", textAlign: "center" }}>
+            Một hệ thống thực hành giúp anh nhìn rõ vòng lặp hút thuốc, xác định những tác nhân cá nhân, xây phản ứng thay thế và hoàn thiện kế hoạch không khói thuốc 21 ngày.
+          </p>
+
+          <div style={{ background: "#152621", border: "1px solid #375347", padding: "35px", borderRadius: "8px", margin: "30px 0" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #2d453b", paddingBottom: "18px", marginBottom: "20px" }}>
+              <h3 style={{ color: "white", margin: 0, fontSize: "22px" }}>BẢN ĐỒ CAI THUỐC 7 NGÀY™ (CHƯƠNG TRÌNH CHÍNH)</h3>
+              <span style={{ color: "var(--bright)", fontWeight: "700", fontSize: "15px" }}>Giá trị tham chiếu: 997.000 VNĐ</span>
+            </div>
+            <List items={[
+              "7 video hướng dẫn từng bước.",
+              "7 sổ bài tập thực hành.",
+              "Bản Đồ Vòng Lặp Hút Thuốc™.",
+              "Bản Thiết Kế Identity Shift™.",
+              "Kế Hoạch Phục Hồi Cá Nhân™.",
+              "Bản Đồ Thay Thế Tác Nhân™.",
+              "Quy Trình Xử Lý Cơn Thèm Và Trạng Thái™.",
+              "Kế Hoạch Hành Động Không Khói Thuốc 21 Ngày™.",
+              "Bảng Theo Dõi Không Khói Thuốc 21 Ngày™.",
+              "Bản Đồ Phòng Ngừa Tái Hút™.",
+              "Quy Trình Phục Hồi Trong 24 Giờ™.",
+              "Các công cụ ứng phó trong những tình huống nguy cơ cao.",
+            ]} check={true} />
           </div>
-          <a className="letter-button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc 7 ngày">THAM GIA BẢN ĐỒ CAI THUỐC 7 NGÀY™ →</a>
+
+          <div style={{ marginTop: "50px" }}>
+            <h3 style={{ color: "var(--bright)", fontSize: "26px", textAlign: "center", marginBottom: "25px" }}>
+              THAM GIA TRONG GIAI ĐOẠN MỞ BÁN, ANH NHẬN THÊM 3 BONUS MIỄN PHÍ
+            </h3>
+            <div style={{ display: "grid", gap: "24px" }}>
+              {bonusItems.map((b) => (
+                <div key={b.id} style={{ background: "#101d19", border: "1px solid #2e473d", padding: "28px", borderRadius: "8px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px", borderBottom: "1px solid #253b33", paddingBottom: "14px", marginBottom: "14px" }}>
+                    <h4 style={{ color: "var(--bright)", margin: 0, fontSize: "18px" }}>{b.title}</h4>
+                    <span style={{ color: "var(--gold)", fontWeight: "700", fontSize: "14px" }}>
+                      Giá trị: {b.value} → <span style={{ color: "var(--bright)" }}>HÔM NAY: MIỄN PHÍ</span>
+                    </span>
+                  </div>
+                  <p style={{ color: "#bdcbc5", fontSize: "15px", margin: "0 0 14px" }}>{b.desc}</p>
+                  {b.items && <List items={b.items} check={true} />}
+                  {b.subtext && <p style={{ color: "var(--bright)", fontStyle: "italic", fontSize: "14px", marginTop: "10px" }}>{b.subtext}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ background: "linear-gradient(135deg, #173228, #0e201a)", border: "2px solid var(--green)", padding: "40px", borderRadius: "10px", margin: "60px 0 30px", textAlign: "center" }}>
+            <h3 style={{ color: "white", fontSize: "24px", marginBottom: "15px" }}>TỔNG GIÁ TRỊ NẾU TÁC RIÊNG</h3>
+            <p style={{ fontSize: "16px", color: "#a5b8b0", margin: "0 0 8px" }}>Bản Đồ Cai Thuốc 7 Ngày™: 997.000 VNĐ</p>
+            <p style={{ fontSize: "16px", color: "#a5b8b0", margin: "0 0 8px" }}>Bonus #1 — Bộ Khởi Động 48 Giờ: 297.000 VNĐ</p>
+            <p style={{ fontSize: "16px", color: "#a5b8b0", margin: "0 0 8px" }}>Bonus #2 — Thư Viện 30 Câu Identity Shift™: 197.000 VNĐ</p>
+            <p style={{ fontSize: "16px", color: "#a5b8b0", margin: "0 0 20px" }}>Bonus #3 — Bộ Tài Liệu Sức Khỏe Nền Tảng™: 297.000 VNĐ</p>
+
+            <div style={{ fontSize: "20px", color: "#d2ded9", fontWeight: "700", borderTop: "1px dashed #345246", paddingTop: "18px" }}>
+              TỔNG GIÁ TRỊ TỔNG CỘNG: <span style={{ textDecoration: "line-through", color: "#8a9c95" }}>1.788.000 VNĐ</span>
+            </div>
+
+            <div className="letter-price" style={{ margin: "25px 0 15px" }}>
+              <small style={{ color: "var(--bright)", letterSpacing: "0.15em" }}>GIÁ TRỊ ANH PHẢI TRẢ HÔM NAY</small>
+              <b style={{ fontSize: "56px", color: "var(--bright)" }}>457.000 VNĐ</b>
+              <span style={{ color: "#a5b8b0" }}>Thanh toán một lần · Tiết kiệm ngay 1.331.000 VNĐ so với mua riêng</span>
+            </div>
+
+            <a className="letter-button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc 7 ngày và nhận 3 Bonus" style={{ maxWidth: "560px", margin: "20px auto 0", fontSize: "15px" }}>
+              TÔI MUỐN NHẬN TOÀN BỘ CHƯƠNG TRÌNH VÀ 3 BONUS →
+            </a>
+            <p style={{ fontSize: "12px", color: "#7f928a", marginTop: "14px" }}>
+              *Giá 457.000 VNĐ là mức giá mở bán giai đoạn đầu.
+            </p>
+          </div>
         </div>
       </section>
 
