@@ -247,6 +247,19 @@ const List = ({ items, check = true }: { items: string[]; check?: boolean }) => 
   </ul>
 );
 
+const CardList = ({ items, check = true }: { items: string[]; check?: boolean }) => (
+  <ul className="offer-card-list">
+    {items.map((item) => (
+      <li key={item}>
+        <span className="check-icon" style={{ color: check ? "var(--bright)" : "var(--red)" }}>
+          {check ? "✓" : "✕"}
+        </span>
+        <span style={{ color: "#e4ebe7" }}>{item}</span>
+      </li>
+    ))}
+  </ul>
+);
+
 export default function Home() {
   const [showSticky, setShowSticky] = useState(false);
 
@@ -645,20 +658,21 @@ export default function Home() {
 
       <section id="offer" className="letter-offer" style={{ background: "var(--ink2)", padding: "80px 0" }}>
         <div className="letter-wrap">
-          <p className="letter-number">13 — HỆ THỐNG & ĐẶC QUYỀN MỞ BÁN</p>
-          <h2 style={{ fontSize: "clamp(30px, 3.5vw, 46px)", color: "white", marginBottom: "16px" }}>
-            ĐÂY LÀ TOÀN BỘ HỆ THỐNG ANH NHẬN ĐƯỢC KHI THAM GIA BẢN ĐỒ CAI THUỐC 7 NGÀY™
+          <p className="letter-number" style={{ color: "var(--bright)" }}>13 — HỆ THỐNG & ĐẶC QUYỀN MỞ BÁN</p>
+          <h2 style={{ fontSize: "clamp(28px, 3.5vw, 44px)", color: "white", marginBottom: "16px", textTransform: "uppercase" }}>
+            ĐÂY LÀ TOÀN BỘ HỆ THỐNG ANH NHẬN ĐƯỢC KHI BẮT ĐẦU
           </h2>
-          <p style={{ fontSize: "17px", color: "#aebdb7", maxWidth: "800px", margin: "0 auto 35px", textAlign: "center" }}>
-            Một hệ thống thực hành giúp anh nhìn rõ vòng lặp hút thuốc, xác định những tác nhân cá nhân, xây phản ứng thay thế và hoàn thiện kế hoạch không khói thuốc 21 ngày.
-          </p>
 
-          <div style={{ background: "#152621", border: "1px solid #375347", padding: "35px", borderRadius: "8px", margin: "30px 0" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #2d453b", paddingBottom: "18px", marginBottom: "20px" }}>
-              <h3 style={{ color: "white", margin: 0, fontSize: "22px" }}>BẢN ĐỒ CAI THUỐC 7 NGÀY™ (CHƯƠNG TRÌNH CHÍNH)</h3>
-              <span style={{ color: "var(--bright)", fontWeight: "700", fontSize: "15px" }}>Giá trị tham chiếu: 997.000 VNĐ</span>
+          <div style={{ background: "#152621", border: "1px solid #375347", padding: "35px", borderRadius: "10px", margin: "30px 0" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", borderBottom: "1px solid #2d453b", paddingBottom: "18px", marginBottom: "20px" }}>
+              <h3 style={{ color: "white", margin: 0, fontSize: "22px" }}>BẢN ĐỒ CAI THUỐC 7 NGÀY™</h3>
+              <span style={{ color: "var(--bright)", fontWeight: "800", fontSize: "16px" }}>GIÁ: 997.000 VNĐ</span>
             </div>
-            <List items={[
+            <p style={{ color: "#d2ded9", fontSize: "15px", marginBottom: "20px", lineHeight: "1.6" }}>
+              Một hệ thống thực hành giúp anh nhìn rõ vòng lặp hút thuốc, xác định những tác nhân cá nhân, xây phản ứng thay thế và hoàn thiện kế hoạch không khói thuốc 21 ngày.
+            </p>
+
+            <CardList items={[
               "7 video hướng dẫn từng bước.",
               "7 sổ bài tập thực hành.",
               "Bản Đồ Vòng Lặp Hút Thuốc™.",
@@ -675,49 +689,89 @@ export default function Home() {
           </div>
 
           <div style={{ marginTop: "50px" }}>
-            <h3 style={{ color: "var(--bright)", fontSize: "26px", textAlign: "center", marginBottom: "25px" }}>
-              THAM GIA TRONG GIAI ĐOẠN MỞ BÁN, ANH NHẬN THÊM 3 BONUS MIỄN PHÍ
+            <h3 style={{ color: "var(--bright)", fontSize: "24px", textAlign: "center", marginBottom: "25px", textTransform: "uppercase", letterSpacing: "0.03em" }}>
+              THAM GIA TRONG NGÀY HÔM NAY, ANH NHẬN THÊM #3 BONUS
             </h3>
             <div style={{ display: "grid", gap: "24px" }}>
               {bonusItems.map((b) => (
-                <div key={b.id} style={{ background: "#101d19", border: "1px solid #2e473d", padding: "28px", borderRadius: "8px" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px", borderBottom: "1px solid #253b33", paddingBottom: "14px", marginBottom: "14px" }}>
-                    <h4 style={{ color: "var(--bright)", margin: 0, fontSize: "18px" }}>{b.title}</h4>
+                <div key={b.id} style={{ background: "#101d19", border: "1px solid #2e473d", padding: "30px", borderRadius: "10px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "12px", borderBottom: "1px solid #253b33", paddingBottom: "16px", marginBottom: "16px" }}>
+                    <h4 style={{ color: "var(--bright)", margin: 0, fontSize: "19px" }}>{b.title}</h4>
                     <span style={{ color: "var(--gold)", fontWeight: "700", fontSize: "14px" }}>
-                      Giá trị: {b.value} → <span style={{ color: "var(--bright)" }}>HÔM NAY: MIỄN PHÍ</span>
+                      Giá: {b.value} → <span style={{ color: "var(--bright)", fontWeight: "800" }}>HÔM NAY: MIỄN PHÍ</span>
                     </span>
                   </div>
-                  <p style={{ color: "#bdcbc5", fontSize: "15px", margin: "0 0 14px" }}>{b.desc}</p>
-                  {b.items && <List items={b.items} check={true} />}
-                  {b.subtext && <p style={{ color: "var(--bright)", fontStyle: "italic", fontSize: "14px", marginTop: "10px" }}>{b.subtext}</p>}
+                  <p style={{ color: "#d2ded9", fontSize: "15px", margin: "0 0 16px", lineHeight: "1.6" }}>{b.desc}</p>
+                  {b.items && <CardList items={b.items} check={true} />}
+                  {b.subtext && <p style={{ color: "var(--bright)", fontStyle: "italic", fontSize: "14px", marginTop: "14px", paddingLeft: "14px", borderLeft: "2px solid var(--bright)" }}>{b.subtext}</p>}
                 </div>
               ))}
             </div>
           </div>
 
-          <div style={{ background: "linear-gradient(135deg, #173228, #0e201a)", border: "2px solid var(--green)", padding: "40px", borderRadius: "10px", margin: "60px 0 30px", textAlign: "center" }}>
-            <h3 style={{ color: "white", fontSize: "24px", marginBottom: "15px" }}>TỔNG GIÁ TRỊ NẾU TÁC RIÊNG</h3>
-            <p style={{ fontSize: "16px", color: "#a5b8b0", margin: "0 0 8px" }}>Bản Đồ Cai Thuốc 7 Ngày™: 997.000 VNĐ</p>
-            <p style={{ fontSize: "16px", color: "#a5b8b0", margin: "0 0 8px" }}>Bonus #1 — Bộ Khởi Động 48 Giờ: 297.000 VNĐ</p>
-            <p style={{ fontSize: "16px", color: "#a5b8b0", margin: "0 0 8px" }}>Bonus #2 — Thư Viện 30 Câu Identity Shift™: 197.000 VNĐ</p>
-            <p style={{ fontSize: "16px", color: "#a5b8b0", margin: "0 0 20px" }}>Bonus #3 — Bộ Tài Liệu Sức Khỏe Nền Tảng™: 297.000 VNĐ</p>
-
-            <div style={{ fontSize: "20px", color: "#d2ded9", fontWeight: "700", borderTop: "1px dashed #345246", paddingTop: "18px" }}>
-              TỔNG GIÁ TRỊ TỔNG CỘNG: <span style={{ textDecoration: "line-through", color: "#8a9c95" }}>1.788.000 VNĐ</span>
+          <div style={{ background: "linear-gradient(135deg, #173228, #0e201a)", border: "2px solid var(--green)", padding: "40px", borderRadius: "12px", margin: "50px 0 30px" }}>
+            <h3 style={{ color: "white", fontSize: "22px", marginBottom: "20px", textTransform: "uppercase", textAlign: "center" }}>TỔNG GIÁ TRỊ NẾU TÁCH RIÊNG</h3>
+            <div style={{ display: "grid", gap: "10px", maxWidth: "600px", margin: "0 auto 20px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", color: "#c2d4cd", fontSize: "15px" }}>
+                <span>Bản Đồ Cai Thuốc 7 Ngày™:</span>
+                <b>997.000 VNĐ</b>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", color: "#c2d4cd", fontSize: "15px" }}>
+                <span>Bộ Khởi Động 48 Giờ — Làm Chủ Năng Lượng™:</span>
+                <b>297.000 VNĐ</b>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", color: "#c2d4cd", fontSize: "15px" }}>
+                <span>Thư Viện 30 Câu Identity Shift™:</span>
+                <b>197.000 VNĐ</b>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", color: "#c2d4cd", fontSize: "15px" }}>
+                <span>Bộ Tài Liệu Sức Khỏe Nền Tảng™:</span>
+                <b>297.000 VNĐ</b>
+              </div>
             </div>
 
-            <div className="letter-price" style={{ margin: "25px 0 15px" }}>
+            <div style={{ fontSize: "18px", color: "#d2ded9", fontWeight: "700", borderTop: "1px dashed #345246", paddingTop: "18px", textAlign: "center" }}>
+              TỔNG GIÁ TRỊ: <span style={{ textDecoration: "line-through", color: "#8a9c95" }}>1.788.000 VNĐ</span>
+            </div>
+
+            <p style={{ color: "#aebdb7", fontSize: "15px", textAlign: "center", margin: "16px auto", maxWidth: "640px" }}>
+              Nhưng anh không cần thanh toán 1.788.000 VNĐ. Anh cũng không cần lựa chọn giữa nhiều phiên bản hoặc mua thêm từng công cụ riêng lẻ.
+            </p>
+
+            <div className="letter-price" style={{ margin: "25px 0 15px", textAlign: "center" }}>
               <small style={{ color: "var(--bright)", letterSpacing: "0.15em" }}>GIÁ TRỊ ANH PHẢI TRẢ HÔM NAY</small>
               <b style={{ fontSize: "56px", color: "var(--bright)" }}>457.000 VNĐ</b>
-              <span style={{ color: "#a5b8b0" }}>Thanh toán một lần · Tiết kiệm ngay 1.331.000 VNĐ so với mua riêng</span>
+              <span style={{ color: "#a5b8b0" }}>Thanh toán một lần · Nhận toàn bộ chương trình và #3 bonus · Tiết kiệm 1.331.000 VNĐ</span>
             </div>
 
-            <a className="letter-button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc 7 ngày và nhận 3 Bonus" style={{ maxWidth: "560px", margin: "20px auto 0", fontSize: "15px" }}>
-              TÔI MUỐN NHẬN TOÀN BỘ CHƯƠNG TRÌNH VÀ 3 BONUS →
-            </a>
-            <p style={{ fontSize: "12px", color: "#7f928a", marginTop: "14px" }}>
-              *Giá 457.000 VNĐ là mức giá mở bán giai đoạn đầu.
-            </p>
+            <div style={{ background: "#0c1714", border: "1px solid #2a4239", borderRadius: "10px", padding: "28px", margin: "30px 0 20px", textAlign: "left" }}>
+              <h4 style={{ color: "var(--bright)", fontSize: "17px", margin: "0 0 16px", textTransform: "uppercase" }}>
+                VỚI 457.000 VNĐ, ANH NHẬN ĐƯỢC MỘT HỆ THỐNG HOÀN CHỈNH ĐỂ:
+              </h4>
+              <CardList items={[
+                "Nhìn rõ vì sao mình vẫn tiếp tục hút.",
+                "Xác định những tình huống dễ khiến mình tái hút.",
+                "Chuẩn bị phản ứng trước khi cơn thèm xuất hiện.",
+                "Xây kế hoạch không khói thuốc 21 ngày.",
+                "Biết cách phục hồi nếu xảy ra một lần trượt.",
+                "Từng bước củng cố định danh của người không còn lệ thuộc vào nicotine.",
+              ]} check={true} />
+              <p style={{ color: "#c2d4cd", fontSize: "14px", fontStyle: "italic", margin: "14px 0 0" }}>
+                Không chỉ thêm một lần quyết tâm. Mà là một tấm bản đồ giúp anh biết mình cần làm gì trong từng tình huống thực tế.
+              </p>
+            </div>
+
+            <div style={{ textAlign: "center", margin: "28px 0 10px" }}>
+              <p style={{ fontSize: "15px", color: "#aebdb7", margin: "0 0 6px" }}>TỔNG GIÁ TRỊ: <span style={{ textDecoration: "line-through" }}>1.788.000 VNĐ</span></p>
+              <p style={{ fontSize: "20px", color: "var(--bright)", fontWeight: "800", margin: "0 0 20px" }}>HÔM NAY ANH CHỈ TRẢ: 457.000 VNĐ</p>
+
+              <a className="letter-button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc 7 ngày và nhận 3 Bonus" style={{ maxWidth: "560px", width: "100%", margin: "0 auto", fontSize: "15px" }}>
+                TÔI MUỐN NHẬN TOÀN BỘ CHƯƠNG TRÌNH VÀ 3 BONUS →
+              </a>
+              <p style={{ fontSize: "12px", color: "#7f928a", marginTop: "14px" }}>
+                Giá 457.000 VNĐ là mức giá mở bán giai đoạn đầu. Chương trình cung cấp nội dung giáo dục về định danh, hành vi và lối sống; không thay thế tư vấn, chẩn đoán hoặc điều trị y tế.
+              </p>
+            </div>
           </div>
         </div>
       </section>
