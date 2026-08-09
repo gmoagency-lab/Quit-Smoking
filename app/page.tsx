@@ -191,19 +191,19 @@ export default function Home() {
             {/* VISUAL BEFORE / AFTER PHOTO CARD */}
             <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px", margin: "36px 0", boxShadow: "0 10px 30px rgba(0,0,0,0.04)" }}>
               <div style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "20px", textAlign: "center" }}>
-                HÀNH TRÌNH CHUYỂN ĐỔI THỰC TẾ CỦA ĐẠT (BEFORE → AFTER)
+                HÀNH TRÌNH CHUYỂN ĐỔI THỰC TẾ CỦA ĐẠT
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", alignItems: "stretch" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "16px", alignItems: "center" }}>
                 {/* BEFORE PHOTO & METRICS */}
                 <div style={{ background: "#F3F0E8", border: "1px solid #D5CEBF", padding: "16px", borderRadius: "10px", display: "flex", flexDirection: "column" }}>
-                  <span style={{ display: "inline-block", background: "rgba(23,26,24,0.85)", color: "#F5F2E9", fontSize: "11px", fontWeight: 800, padding: "6px 12px", borderRadius: "4px", letterSpacing: "0.08em", marginBottom: "10px", alignSelf: "flex-start" }}>
-                    TRƯỚC KHI CHUYỂN ĐỔI
+                  <span style={{ display: "inline-block", background: "rgba(23,26,24,0.85)", color: "#F5F2E9", fontSize: "12px", fontWeight: 800, padding: "6px 12px", borderRadius: "4px", letterSpacing: "0.04em", marginBottom: "10px", alignSelf: "flex-start" }}>
+                    Lệ thuộc vào thuốc lá
                   </span>
                   <div style={{ overflow: "hidden", borderRadius: "8px", border: "1px solid #D5CEBF", marginBottom: "14px" }}>
                     <img
                       src="/images/dat_before_bw.jpg"
-                      alt="Đạt trước khi chuyển đổi"
+                      alt="Lệ thuộc vào thuốc lá"
                       style={{ width: "100%", height: "380px", objectFit: "cover", display: "block", filter: "grayscale(100%) contrast(110%)" }}
                     />
                   </div>
@@ -215,15 +215,22 @@ export default function Home() {
                   </ul>
                 </div>
 
+                {/* FLOW ARROW CONNECTOR */}
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "4px", color: "#D96732", fontWeight: 800 }}>
+                  <div style={{ background: "#171A18", color: "#D96732", width: "42px", height: "42px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "20px", border: "2px solid #D96732", boxShadow: "0 4px 15px rgba(217,103,50,0.3)" }}>
+                    ➔
+                  </div>
+                </div>
+
                 {/* AFTER PHOTO & METRICS */}
                 <div style={{ background: "#171A18", color: "#F5F2E9", border: "1px solid #384238", padding: "16px", borderRadius: "10px", display: "flex", flexDirection: "column" }}>
-                  <span style={{ display: "inline-block", background: "#D96732", color: "white", fontSize: "11px", fontWeight: 800, padding: "6px 12px", borderRadius: "4px", letterSpacing: "0.08em", marginBottom: "10px", alignSelf: "flex-start" }}>
-                    SAU KHI XÂY BẢN ĐỒ
+                  <span style={{ display: "inline-block", background: "#D96732", color: "white", fontSize: "12px", fontWeight: 800, padding: "6px 12px", borderRadius: "4px", letterSpacing: "0.04em", marginBottom: "10px", alignSelf: "flex-start" }}>
+                    Phiên bản hiện tại
                   </span>
                   <div style={{ overflow: "hidden", borderRadius: "8px", border: "1px solid #384238", marginBottom: "14px" }}>
                     <img
                       src="/images/dat_after_gym.jpg"
-                      alt="Đạt sau khi chuyển đổi"
+                      alt="Phiên bản hiện tại"
                       style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }}
                     />
                   </div>
