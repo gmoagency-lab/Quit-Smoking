@@ -188,28 +188,50 @@ export default function Home() {
               Rồi có một giai đoạn, tui bắt đầu thay đổi từng thứ một: thuốc lá, giấc ngủ, ăn uống, vận động, cách làm việc và cuối cùng là cách nhìn về chính mình.
             </p>
 
-            {/* VISUAL BEFORE / AFTER CARD */}
-            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "32px", margin: "36px 0", boxShadow: "0 10px 30px rgba(0,0,0,0.04)" }}>
+            {/* VISUAL BEFORE / AFTER PHOTO CARD */}
+            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px", margin: "36px 0", boxShadow: "0 10px 30px rgba(0,0,0,0.04)" }}>
               <div style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "20px", textAlign: "center" }}>
                 HÀNH TRÌNH CHUYỂN ĐỔI THỰC TẾ CỦA ĐẠT (BEFORE → AFTER)
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
-                <div style={{ background: "#F3F0E8", border: "1px solid #D5CEBF", padding: "20px", borderRadius: "8px" }}>
-                  <span style={{ color: "#A94725", fontWeight: 800, fontSize: "14px", display: "block", marginBottom: "8px" }}>TRƯỚC KHI CHUYỂN ĐỔI</span>
-                  <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: "14px", color: "#74766F", display: "grid", gap: "8px" }}>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", alignItems: "stretch" }}>
+                {/* BEFORE PHOTO & METRICS */}
+                <div style={{ background: "#F3F0E8", border: "1px solid #D5CEBF", padding: "16px", borderRadius: "10px", display: "flex", flexDirection: "column" }}>
+                  <div style={{ position: "relative", marginBottom: "14px", overflow: "hidden", borderRadius: "8px", border: "1px solid #D5CEBF" }}>
+                    <img
+                      src="/images/dat_before_bw.jpg"
+                      alt="Đạt trước khi chuyển đổi"
+                      style={{ width: "100%", height: "380px", objectFit: "cover", display: "block", filter: "grayscale(100%) contrast(110%)" }}
+                    />
+                    <span style={{ position: "absolute", top: "10px", left: "10px", background: "rgba(23,26,24,0.85)", color: "#F5F2E9", fontSize: "11px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", letterSpacing: "0.08em" }}>
+                      TRƯỚC KHI CHUYỂN ĐỔI
+                    </span>
+                  </div>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px", color: "#74766F", display: "grid", gap: "6px" }}>
                     <li>❌ Hút thuốc liên tục gần 8 năm</li>
                     <li>❌ Thể trạng 1m77 chỉ 55–56kg</li>
-                    <li>❌ Ngủ 2–3h sáng, cơ thể mệt mỏi</li>
+                    <li>❌ Thức khuya 2–3h sáng, mệt mỏi</li>
                     <li>❌ Ho vẫn châm thuốc khi stress</li>
                   </ul>
                 </div>
-                <div style={{ background: "#171A18", color: "#F5F2E9", padding: "20px", borderRadius: "8px", border: "1px solid #384238" }}>
-                  <span style={{ color: "#66735B", fontWeight: 800, fontSize: "14px", display: "block", marginBottom: "8px" }}>SAU KHI XÂY BẢN ĐỒ</span>
-                  <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: "14px", color: "#D5DFDB", display: "grid", gap: "8px" }}>
+
+                {/* AFTER PHOTO & METRICS */}
+                <div style={{ background: "#171A18", color: "#F5F2E9", border: "1px solid #384238", padding: "16px", borderRadius: "10px", display: "flex", flexDirection: "column" }}>
+                  <div style={{ position: "relative", marginBottom: "14px", overflow: "hidden", borderRadius: "8px", border: "1px solid #384238" }}>
+                    <img
+                      src="/images/dat_after_gym.jpg"
+                      alt="Đạt sau khi chuyển đổi"
+                      style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }}
+                    />
+                    <span style={{ position: "absolute", top: "10px", left: "10px", background: "#D96732", color: "white", fontSize: "11px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", letterSpacing: "0.08em" }}>
+                      SAU KHI XÂY BẢN ĐỒ
+                    </span>
+                  </div>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px", color: "#D5DFDB", display: "grid", gap: "6px" }}>
                     <li>✓ Không thuốc lá 300+ ngày</li>
                     <li>✓ Thể trạng tăng vọt lên 66kg</li>
                     <li>✓ Giấc ngủ ổn định 23:00 - 06:00</li>
-                    <li>✓ Làm chủ phản xạ & năng lượng</li>
+                    <li>✓ Làm chủ hoàn toàn phản xạ & sức khỏe</li>
                   </ul>
                 </div>
               </div>
