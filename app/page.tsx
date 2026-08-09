@@ -9,6 +9,14 @@ const fourMaps = [
     tag: "Bản Đồ Nhận Diện Tác Nhân",
     desc: "Tìm đúng khoảnh khắc khiến ông muốn hút. Không còn nói chung chung 'Tui thèm thuốc'. Chuyển thành: 'Tui thèm thuốc vào bối cảnh X, sau Y, khi cảm xúc Z'. Nhìn rõ pattern để làm chủ phản ứng.",
     badge: "WORKBOOK & APP ASSET",
+    mockup: (
+      <div style={{ background: "#091411", border: "1px solid #233b31", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#a5b8af" }}>
+        <div style={{ color: "var(--bright)", fontWeight: 700, marginBottom: "4px" }}>[ PATTERN MATRIX ]</div>
+        <div>▸ Cà phê sáng → Reflex Score: 9/10</div>
+        <div>▸ Stress deadline → Reflex Score: 8/10</div>
+        <div>▸ Mời thuốc bàn nhậu → Reflex Score: 9.5/10</div>
+      </div>
+    ),
   },
   {
     num: "02",
@@ -16,6 +24,14 @@ const fourMaps = [
     tag: "Biết Làm Gì Thay Vì Gồng Ý Chí",
     desc: "Xử lý khoảnh khắc thèm thuốc trước mắt. Chuẩn bị sẵn một chuỗi hành động 3 phút để tạo khoảng cách an toàn giữa Trigger bối cảnh và phản xạ châm thuốc.",
     badge: "QUICK RESPONSE CARD",
+    mockup: (
+      <div style={{ background: "#091411", border: "1px solid #233b31", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#a5b8af" }}>
+        <div style={{ color: "var(--bright)", fontWeight: 700, marginBottom: "4px" }}>[ EMERGENCY PROTOCOL ]</div>
+        <div>00:00 - Nhận diện sóng thèm</div>
+        <div>01:00 - Uống 200ml nước lạnh</div>
+        <div>02:00 - Reset hơi thở 4-7-8</div>
+      </div>
+    ),
   },
   {
     num: "03",
@@ -23,6 +39,14 @@ const fourMaps = [
     tag: "Kịch Bản Xã Giao Đời Thật",
     desc: "Không cần cai thuốc bằng cách trốn trong phòng kín. Chuẩn bị sẵn câu từ chối tự nhiên, phong thái lịch thiệp và exit strategy khi đi làm, cà phê hay trên bàn nhậu.",
     badge: "SOCIAL SCRIPT SET",
+    mockup: (
+      <div style={{ background: "#091411", border: "1px solid #233b31", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#a5b8af" }}>
+        <div style={{ color: "var(--bright)", fontWeight: 700, marginBottom: "4px" }}>[ TABLE RESPONSE ]</div>
+        <div>“Thôi ông, tui bỏ món này rồi.”</div>
+        <div>▸ Chuyển chủ đề tự nhiên</div>
+        <div>▸ Giữ nguyên vị thế bản lĩnh</div>
+      </div>
+    ),
   },
   {
     num: "04",
@@ -30,13 +54,21 @@ const fourMaps = [
     tag: "Bản Đồ Phục Hồi Khẩn Cấp",
     desc: "Loại bỏ suy nghĩ 'Lỡ hút 1 điếu là hỏng hết'. Recovery Map cho ông biết chính xác phải làm gì trong 60 phút tiếp theo để lập tức quay lại hành trình mà không dằn vặt.",
     badge: "RECOVERY PROTOCOL",
+    mockup: (
+      <div style={{ background: "#091411", border: "1px solid #233b31", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#a5b8af" }}>
+        <div style={{ color: "var(--bright)", fontWeight: 700, marginBottom: "4px" }}>[ 60-MIN RECOVERY ]</div>
+        <div>▸ Step 1: Dừng dằn vặt bản thân</div>
+        <div>▸ Step 2: Rà lại Trigger bối cảnh</div>
+        <div>▸ Step 3: Kích hoạt lại Protocol</div>
+      </div>
+    ),
   },
 ];
 
 const sevenDays = [
   {
     day: "DAY 01",
-    title: "Nhìn Thẳng Vào Vòng LẶp Hiện Tại",
+    title: "Nhìn Thẳng Vào Vòng Lặp Hiện Tại",
     desc: "Rà lại toàn bộ thói quen hút thuốc thực tế. Không tự trách, chỉ nhìn dữ liệu: Hút lúc nào? Ở đâu? Với ai? Trước và sau khi châm thuốc tâm trí đang cảm thấy gì?",
     output: "Current Smoking Loop Map™",
   },
@@ -201,7 +233,7 @@ export default function Home() {
                 [ TẠO BẢN ĐỒ CỦA TÔI → ]
               </a>
               <span style={{ color: "#7fa493", fontSize: "13px", letterSpacing: "0.04em", fontWeight: 500 }}>
-                5–10 phút/ngày • Pilot Cohort • 497.000đ
+                Pilot Cohort · Trọn bộ 7 ngày · 497.000đ
               </span>
             </div>
           </div>
@@ -360,8 +392,13 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Dynamic Flow Result */}
+              <div style={{ textAlign: "center", margin: "20px 0 10px", color: "var(--gold)", fontWeight: 800, fontSize: "15px" }}>
+                ↓ VÒNG 1 + VÒNG 2 = CHÂM THUỐC KHI KHÔNG CÓ BẢN ĐỒ
+              </div>
+
               {/* Dynamic Comparison Grid */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "24px", paddingTop: "20px", borderTop: "1px solid #20382f" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "16px", paddingTop: "20px", borderTop: "1px solid #20382f" }}>
                 <div style={{ background: "rgba(216,102,91,0.1)", border: "1px solid rgba(216,102,91,0.3)", padding: "14px", borderRadius: "6px", color: "#e8a8a2", fontSize: "13px" }}>
                   <strong>CÁCH CŨ THƯỜNG XỬ LÝ:</strong><br />Nicotine ✓ | Trigger ✕ (Chỉ né tránh & gồng ý chí)
                 </div>
@@ -396,6 +433,7 @@ export default function Home() {
                   <h3 style={{ color: "white", fontSize: "19px", margin: "0 0 6px" }}>{m.title}</h3>
                   <small style={{ color: "var(--gold)", fontWeight: 700, display: "block", marginBottom: "12px" }}>{m.tag}</small>
                   <p style={{ color: "#b9c7c1", fontSize: "14px", lineHeight: 1.65, margin: 0 }}>{m.desc}</p>
+                  {m.mockup}
                 </div>
               </div>
             ))}
@@ -440,7 +478,7 @@ export default function Home() {
             Sau 7 ngày, bối cảnh đời sống của ông vẫn vậy, nhưng ông đã nắm quyền làm chủ hoàn toàn:
           </p>
 
-          <div style={{ display: "grid", gap: "18px" }}>
+          <div style={{ display: "grid", gap: "14px" }}>
             <div style={{ background: "white", padding: "24px 28px", borderRadius: "8px", borderLeft: "4px solid var(--green)", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
               <div style={{ color: "var(--green)", fontWeight: 800, fontSize: "14px", marginBottom: "4px" }}>07:00 — QUÁN CÀ PHÊ SÁNG</div>
               <p style={{ color: "#3a4641", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
@@ -448,12 +486,16 @@ export default function Home() {
               </p>
             </div>
 
+            <div style={{ textAlign: "center", color: "var(--green)", fontWeight: 800, fontSize: "18px" }}>↓</div>
+
             <div style={{ background: "white", padding: "24px 28px", borderRadius: "8px", borderLeft: "4px solid var(--green)", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
               <div style={{ color: "var(--green)", fontWeight: 800, fontSize: "14px", marginBottom: "4px" }}>15:30 — CĂNG THẲNG DEADLINE</div>
               <p style={{ color: "#3a4641", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
                 Ông nhận ra bộ não đang cần một khoảng nghỉ phục hồi trạng thái. Không nhất thiết cần một điếu thuốc. Ông áp dụng Stress Break Menu và tiếp tục công việc.
               </p>
             </div>
+
+            <div style={{ textAlign: "center", color: "var(--green)", fontWeight: 800, fontSize: "18px" }}>↓</div>
 
             <div style={{ background: "white", padding: "24px 28px", borderRadius: "8px", borderLeft: "4px solid var(--green)", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
               <div style={{ color: "var(--green)", fontWeight: 800, fontSize: "14px", marginBottom: "4px" }}>20:15 — BÀN NHẬU ANH EM</div>
