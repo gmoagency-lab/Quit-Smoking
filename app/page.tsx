@@ -27,9 +27,10 @@ const fourMaps = [
     mockup: (
       <div style={{ background: "#171A18", border: "1px solid #384238", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#A9B2AC" }}>
         <div style={{ color: "#D96732", fontWeight: 700, marginBottom: "4px" }}>[ EMERGENCY PROTOCOL ]</div>
-        <div>00:00 - Nhận diện sóng thèm</div>
-        <div>01:00 - Uống 200ml nước lạnh</div>
-        <div>02:00 - Shift vị trí / Trạng thái</div>
+        <div>00:00 — Nhận diện Trigger</div>
+        <div>01:00 — Đổi trạng thái</div>
+        <div>02:00 — Chuyển hành vi tay/miệng</div>
+        <div>03:00 — Trì hoãn quyết định</div>
       </div>
     ),
   },
@@ -121,17 +122,14 @@ const offerStack = [
 const bonusStack = [
   {
     title: "BONUS #1 — THE MORNING COFFEE RESET™",
-    val: "190.000đ",
     desc: "Hướng dẫn riêng cho Trigger quen thuộc nhất: Cà phê sáng. Thiết kế lại ritual buổi sáng để uống cà phê mà không cần thuốc.",
   },
   {
     title: "BONUS #2 — THE STRESS BREAK MENU™",
-    val: "190.000đ",
     desc: "Danh sách các cách tạo khoảng nghỉ ngắn 5 phút khi căng thẳng mà không mặc định 'Break = Thuốc'.",
   },
   {
     title: "BONUS #3 — THE 21-DAY CONTINUATION TRACKER™",
-    val: "190.000đ",
     desc: "Bảng theo dõi 21 ngày tiếp theo khi ứng dụng Bản Đồ vào đời sống thật: ghi nhận chiến thắng nhỏ và tinh chỉnh Protocol.",
   },
 ];
@@ -139,7 +137,7 @@ const bonusStack = [
 const faqs = [
   {
     q: "1. Tôi phải dừng hút hoàn toàn ngay từ Ngày 1 không?",
-    a: "Không. Ngày đầu tiên là ngày rà lại dữ liệu thói quen hiện tại (Current Smoking Loop Map™). Chương trình có hướng dẫn rõ ràng từng bước quan sát, chuẩn bị và triển khai để ông bước vào lộ trình một cách tự tin nhất.",
+    a: "Không. Ngày đầu tiên là ngày rà lại dữ liệu thói quen hiện tại (Current Smoking Loop Map™). Chương trình không áp một quit date cứng đè nén cho tất cả mọi người ngay từ ngày 1; ông sẽ đi qua việc nhận diện và xây dựng các Protocol trước khi thực hiện bước chuyển đổi.",
   },
   {
     q: "2. 7 ngày có nghĩa tôi chắc chắn bỏ hoàn toàn thuốc lá không?",
@@ -209,93 +207,46 @@ export default function Home() {
         BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™ — TỪ MỘT LỜI HỨA MƠ HỒ THÀNH KẾ HOẠCH CÓ THỂ THỰC HIỆN
       </div>
 
-      {/* HERO SECTION — CHARCOAL BLACK (#171A18) */}
-      <header className="hero blueprint" style={{ background: "#171A18", color: "#F5F2E9", padding: "80px 0 70px" }}>
-        <div className="wrap hero-split-grid">
-          {/* Left Column: Copy & Scan Grid */}
-          <div>
-            <div style={{ color: "#D96732", fontSize: "12px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "14px" }}>
-              BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™
-            </div>
-            <h1 style={{ fontSize: "clamp(30px, 4.2vw, 50px)", color: "#F5F2E9", lineHeight: 1.15, fontWeight: 800, margin: "0 0 16px", letterSpacing: "-0.03em" }}>
-              Đừng bắt đầu bằng một lời hứa bỏ thuốc nữa.
-            </h1>
-            <p style={{ fontSize: "clamp(24px, 3.2vw, 38px)", color: "#D96732", fontWeight: 800, margin: "0 0 22px", lineHeight: 1.25 }}>
-              Lần này, hãy có một Bản Đồ.
-            </p>
-            <p style={{ fontSize: "16px", color: "#A9B2AC", lineHeight: 1.7, marginBottom: "22px" }}>
-              Trong 7 ngày, tự xây <strong>Bản Đồ Tác Chiến Cá Nhân</strong> cho những Trigger khiến mình cứ bỏ rồi lại hút.
-            </p>
+      {/* HERO SECTION — FOCUSED ABOVE-THE-FOLD (CHARCOAL BLACK #171A18) */}
+      <header className="hero blueprint" style={{ background: "#171A18", color: "#F5F2E9", padding: "85px 0 75px" }}>
+        <div className="wrap" style={{ maxWidth: "780px", margin: "0 auto", textAlign: "center" }}>
+          <div style={{ color: "#D96732", fontSize: "13px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "16px" }}>
+            BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™
+          </div>
+          <h1 style={{ fontSize: "clamp(32px, 4.5vw, 54px)", color: "#F5F2E9", lineHeight: 1.15, fontWeight: 800, margin: "0 0 16px", letterSpacing: "-0.03em" }}>
+            Đừng bắt đầu bằng một lời hứa bỏ thuốc nữa.
+          </h1>
+          <p style={{ fontSize: "clamp(24px, 3.4vw, 40px)", color: "#D96732", fontWeight: 800, margin: "0 0 24px", lineHeight: 1.25 }}>
+            Lần này, hãy có một Bản Đồ.
+          </p>
+          <p style={{ fontSize: "18px", color: "#A9B2AC", lineHeight: 1.7, marginBottom: "32px", maxWidth: "680px", margin: "0 auto 32px" }}>
+            Trong 7 ngày, tự xây <strong>Bản Đồ Tác Chiến Cá Nhân</strong> cho những Trigger khiến mình cứ bỏ rồi lại hút.
+          </p>
 
-            {/* 4 Micro-Rows Scan Grid */}
-            <div style={{ display: "grid", gap: "10px", marginBottom: "28px" }}>
-              <div style={{ background: "#252B25", border: "1px solid #384238", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
-                <span>☕</span> <span><strong>07:00 Cà phê sáng</strong> → Tay tự động tìm thuốc</span>
-              </div>
-              <div style={{ background: "#252B25", border: "1px solid #384238", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
-                <span>💼</span> <span><strong>11:45 Deadline</strong> → “Làm một điếu rồi vào làm tiếp”</span>
-              </div>
-              <div style={{ background: "#252B25", border: "1px solid #384238", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
-                <span>🍻</span> <span><strong>20:00 Bàn nhậu</strong> → “Làm điếu không?”</span>
-              </div>
-              <div style={{ background: "#252B25", border: "1px solid #384238", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
-                <span>🔄</span> <span><strong>Lỡ trượt 1 điếu</strong> → Không để sự tự trách biến thành cả bao</span>
-              </div>
+          {/* 4 Micro-Rows Scan Grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px", marginBottom: "36px", textAlign: "left" }}>
+            <div style={{ background: "#252B25", border: "1px solid #384238", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
+              <span style={{ fontSize: "18px" }}>☕</span> <span><strong>07:00 Cà phê sáng</strong> → Tay tự động tìm thuốc</span>
             </div>
-
-            {/* CTA & Micro-Trust Price */}
-            <div className="hero-cta" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "10px" }}>
-              <a href="#offer" className="button" style={{ background: "#D96732", color: "white", fontWeight: 800, padding: "18px 36px", borderRadius: "6px", fontSize: "16px", textDecoration: "none", boxShadow: "0 10px 30px rgba(217,103,50,0.35)" }}>
-                [ TẠO BẢN ĐỒ CỦA TÔI → ]
-              </a>
-              <span style={{ color: "#74766F", fontSize: "13px", letterSpacing: "0.04em", fontWeight: 500 }}>
-                Pilot Cohort · 497.000đ
-              </span>
+            <div style={{ background: "#252B25", border: "1px solid #384238", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
+              <span style={{ fontSize: "18px" }}>💼</span> <span><strong>11:45 Deadline</strong> → “Làm một điếu rồi vào làm tiếp”</span>
+            </div>
+            <div style={{ background: "#252B25", border: "1px solid #384238", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
+              <span style={{ fontSize: "18px" }}>🍻</span> <span><strong>20:00 Bàn nhậu</strong> → “Làm điếu không?”</span>
+            </div>
+            <div style={{ background: "#252B25", border: "1px solid #384238", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
+              <span style={{ fontSize: "18px" }}>🔄</span> <span><strong>Lỡ trượt 1 điếu</strong> → Không để sự tự trách biến thành cả bao</span>
             </div>
           </div>
 
-          {/* Right Column: High-Impact Product Visual Mockup Card Deck */}
-          <div className="product-mockup-stack" style={{ background: "#252B25", borderColor: "#384238" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #384238", paddingBottom: "12px", marginBottom: "16px" }}>
-              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px", letterSpacing: "0.12em" }}>HỆ THỐNG BẢN ĐỒ TÁC CHIẾN™</span>
-              <span style={{ background: "rgba(217,103,50,0.2)", color: "#D96732", fontSize: "10px", fontWeight: 700, padding: "3px 8px", borderRadius: "4px" }}>🟧 PILOT COHORT</span>
-            </div>
-
-            <div className="product-card-preview" style={{ background: "#171A18", borderColor: "#384238" }}>
-              <div>
-                <strong style={{ color: "#F5F2E9", fontSize: "14px", display: "block" }}>01 | TRIGGER MAP™</strong>
-                <small style={{ color: "#74766F", fontSize: "12px" }}>Biết chính xác khi nào dễ trượt nhất</small>
-              </div>
-              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px" }}>[ ASSET 1 ]</span>
-            </div>
-
-            <div className="product-card-preview" style={{ background: "#171A18", borderColor: "#384238" }}>
-              <div>
-                <strong style={{ color: "#F5F2E9", fontSize: "14px", display: "block" }}>02 | PROTOCOL 3 PHÚT™</strong>
-                <small style={{ color: "#74766F", fontSize: "12px" }}>Biết làm gì ngay khi cơn thèm xuất hiện</small>
-              </div>
-              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px" }}>[ ASSET 2 ]</span>
-            </div>
-
-            <div className="product-card-preview" style={{ background: "#171A18", borderColor: "#384238" }}>
-              <div>
-                <strong style={{ color: "#F5F2E9", fontSize: "14px", display: "block" }}>03 | SOCIAL NAVIGATION SCRIPT™</strong>
-                <small style={{ color: "#74766F", fontSize: "12px" }}>Biết nói gì khi người khác mời thuốc</small>
-              </div>
-              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px" }}>[ ASSET 3 ]</span>
-            </div>
-
-            <div className="product-card-preview" style={{ background: "#171A18", borderColor: "#384238" }}>
-              <div>
-                <strong style={{ color: "#F5F2E9", fontSize: "14px", display: "block" }}>04 | RECOVERY MAP™</strong>
-                <small style={{ color: "#74766F", fontSize: "12px" }}>Biết làm gì nếu lỡ trượt một điếu</small>
-              </div>
-              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px" }}>[ ASSET 4 ]</span>
-            </div>
-
-            <div style={{ marginTop: "14px", background: "rgba(217,103,50,0.1)", border: "1px dashed #D96732", padding: "10px 14px", borderRadius: "6px", textAlign: "center" }}>
-              <span style={{ color: "#D96732", fontSize: "12px", fontWeight: 700 }}>+ TẶNG KÈM #3 BONUS KHI ĐĂNG KÝ HÔM NAY</span>
-            </div>
+          {/* CTA & Micro-Trust Price */}
+          <div className="hero-cta" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
+            <a href="#offer" className="button" style={{ background: "#D96732", color: "white", fontWeight: 800, padding: "20px 42px", borderRadius: "6px", fontSize: "18px", textDecoration: "none", boxShadow: "0 12px 35px rgba(217,103,50,0.4)" }}>
+              [ TẠO BẢN ĐỒ CỦA TÔI → ]
+            </a>
+            <span style={{ color: "#74766F", fontSize: "14px", letterSpacing: "0.04em", fontWeight: 500 }}>
+              Pilot Cohort · 497.000đ
+            </span>
           </div>
         </div>
       </header>
@@ -345,7 +296,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 2: IDENTITY WOUND & THE DEPRIVATION TRAP (WARM IVORY #F3F0E8) */}
+      {/* SECTION 2: IDENTITY WOUND (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "0 0 20px", lineHeight: 1.25, color: "#191B19" }}>
@@ -373,25 +324,11 @@ export default function Home() {
             <p style={{ fontWeight: 700, color: "#191B19" }}>
               Một thứ nhỏ như vậy đang có quá nhiều quyền quyết định trong ngày của ông: khi nào nghỉ, khi nào thấy nhẹ đầu, khi nào tập trung, khi nào vui uống cà phê...
             </p>
-
-            {/* THE DEPRIVATION TRAP SUB-SECTION */}
-            <div style={{ marginTop: "48px", paddingTop: "36px", borderTop: "1px solid #D5CEBF" }}>
-              <h3 style={{ fontSize: "24px", color: "#191B19", marginTop: 0 }}>NHƯNG CÓ KHI THỨ GIỮ ÔNG LẠI KHÔNG CHỈ LÀ CƠN THÈM.</h3>
-              <p>
-                Có một nỗi sợ khác khó nói thành lời: <em>“Không hút nữa thì lúc stress làm gì?”, “Cà phê sáng còn gì vui?”, “Đi nhậu không hút có lệch pha không?”</em>
-              </p>
-              <p>
-                Một phần trong ông muốn bỏ, nhưng phần khác tin rằng: <strong>Nếu bỏ thuốc, mình sẽ phải mất đi một thứ gì đó</strong> (khoảng nghỉ, ritual sáng, thứ cầm tay, cách bắt chuyện, xả stress).
-              </p>
-              <p>
-                Và khi ông tự nói: <em>“Từ hôm nay tao không được hút nữa”</em>, não không chỉ nghe <em>“Bỏ thuốc”</em>, nó nghe thành: <em>“Từ hôm nay tao phải sống thiếu tất cả những thứ này.”</em>
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: THE TWO-LOOP PROBLEM™ & THE DEPRIVATION TRAP™ (DARK CHARCOAL #171A18) */}
+      {/* EPIPHANY 1: THE TWO-LOOP PROBLEM™ (DARK CHARCOAL #171A18) */}
       <section className="letter-section letter-dark" style={{ background: "#171A18", color: "#F5F2E9", padding: "90px 0" }}>
         <div className="letter-wrap" style={{ maxWidth: "860px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#F5F2E9", margin: "0 0 20px" }}>
@@ -403,35 +340,56 @@ export default function Home() {
               Có thể ông chưa thất bại vì thiếu quyết tâm. Ông đang cố dùng một công cụ quá đơn giản để xử lý một hệ thống đã được lặp đi lặp lại hàng nghìn lần:
             </p>
 
-            {/* Visual Centerpiece Diagram */}
+            {/* Two-Loop Diagram */}
             <div className="two-loop-box" style={{ background: "#252B25", borderColor: "#384238", margin: "36px 0" }}>
               <div style={{ textAlign: "center", color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", marginBottom: "20px" }}>
-                HỆ THỐNG HAI VÒNG LẶP — THE TWO-LOOP PROBLEM™
+                EPIPHANY #1 — THE TWO-LOOP PROBLEM™
               </div>
 
               <div className="two-loop-grid">
-                <div style={{ background: "#171A18", border: "1px solid #384238", padding: "20px", borderRadius: "8px" }}>
+                <div style={{ background: "#171A18", border: "1px solid #384238", padding: "22px", borderRadius: "8px" }}>
                   <div style={{ color: "#D96732", fontWeight: 800, fontSize: "12px", marginBottom: "6px" }}>VÒNG LẶP #1</div>
                   <strong style={{ color: "#F5F2E9", fontSize: "17px", display: "block", marginBottom: "6px" }}>CƠN THÈM NICOTINE</strong>
                   <p style={{ color: "#74766F", fontSize: "13px", margin: 0 }}>Bồn chồn, bứt rứt thể chất khi dừng nicotine. Cần được nhìn nhận nghiêm túc.</p>
                 </div>
 
-                <div style={{ background: "#171A18", border: "2px solid #D96732", padding: "20px", borderRadius: "8px" }}>
-                  <div style={{ color: "#D96732", fontWeight: 800, fontSize: "12px", marginBottom: "6px" }}>VÒNG LẶP #2 (CỐT LÕI)</div>
+                <div style={{ background: "#171A18", border: "1px solid #384238", padding: "22px", borderRadius: "8px" }}>
+                  <div style={{ color: "#D96732", fontWeight: 800, fontSize: "12px", marginBottom: "6px" }}>VÒNG LẶP #2</div>
                   <strong style={{ color: "#F5F2E9", fontSize: "17px", display: "block", marginBottom: "6px" }}>TRIGGER BỐI CẢNH</strong>
-                  <p style={{ color: "#A9B2AC", fontSize: "13px", margin: 0 }}>Cà phê, Sau ăn, Stress, Lái xe, Giờ nghỉ, Bàn nhậu (X xảy ra → Hút).</p>
+                  <p style={{ color: "#A9B2AC", fontSize: "13px", margin: 0 }}>Cà phê, Sau ăn, Stress, Lái xe, Giờ nghỉ, Bàn nhậu. Đây là phần Bản Đồ tập trung giúp ông chuẩn bị trước.</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div style={{ textAlign: "center", margin: "20px 0 10px", color: "#D96732", fontWeight: 800, fontSize: "15px" }}>
-                ↓ THE DEPRIVATION TRAP™: BẪY “TUI ĐANG PHẢI NHỊN VÀ THIẾU THÓN”
+      {/* EPIPHANY 2: THE DEPRIVATION TRAP™ (WARM IVORY #F3F0E8) */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
+        <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#191B19", margin: "0 0 20px" }}>
+            NHƯNG CÒN MỘT CÁI BẪY KHÁC... THE DEPRIVATION TRAP™
+          </h2>
+
+          <div className="story-prose" style={{ fontSize: "18px", color: "#191B19" }}>
+            <p>
+              Có một nỗi sợ khác khó nói thành lời: <em>“Không hút nữa thì lúc stress làm gì?”, “Cà phê sáng còn gì vui?”, “Đi nhậu không hút có lệch pha không?”</em>
+            </p>
+            <p>
+              Một phần trong ông muốn bỏ, nhưng phần khác tin rằng: <strong>Nếu bỏ thuốc, mình sẽ phải mất đi một thứ gì đó</strong> (khoảng nghỉ, ritual sáng, thứ cầm tay, cách bắt chuyện, xả stress).
+            </p>
+            <p>
+              Và khi ông tự nói: <em>“Từ hôm nay tao không được hút nữa”</em>, não không chỉ nghe <em>“Bỏ thuốc”</em>, nó nghe thành: <em>“Từ hôm nay tao phải sống thiếu tất cả những thứ này.”</em>
+            </p>
+
+            <div style={{ background: "#252B25", color: "#F5F2E9", padding: "28px", borderRadius: "10px", margin: "32px 0", borderLeft: "4px solid #D96732" }}>
+              <div style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.12em", marginBottom: "6px" }}>
+                CHUYỂN ĐỔI MỤC TIÊU CỐT LÕI
               </div>
-
-              <div style={{ background: "rgba(217,103,50,0.15)", border: "1px solid #D96732", padding: "16px", borderRadius: "6px", color: "#F5F2E9", fontSize: "14px", marginTop: "16px" }}>
-                <strong>CHUYỂN ĐỔI MỤC TIÊU CỐT LÕI:</strong><br />
+              <p style={{ margin: 0, fontSize: "17px", lineHeight: 1.65 }}>
                 Không phải: <em>“Tui không được hút (đang nhịn hy sinh)”</em><br />
                 Mà là: <strong>“TUI KHÔNG CÒN CẦN THUỐC ĐỂ LÀM VIỆC NÀY NỮA.”</strong> (Vẫn cà phê, vẫn nghỉ giữa giờ, vẫn đi nhậu mà không cần thuốc).
-              </div>
+              </p>
             </div>
           </div>
         </div>
@@ -491,7 +449,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 6: FOUNDER STORY — ĐẠT (WARM IVORY #F3F0E8) */}
+      {/* SECTION 6: FOUNDER STORY — EXPANDED EPIPHANY (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "0 0 20px", lineHeight: 1.25, color: "#191B19" }}>
@@ -500,26 +458,27 @@ export default function Home() {
 
           <div className="story-prose" style={{ fontSize: "18px", color: "#191B19" }}>
             <p>
-              Tui là Đạt. Tui không bắt đầu hành trình này với tư cách bác sĩ hay chuyên gia điều trị nghiện. Tui bắt đầu nó với tư cách: <strong>Một thằng từng để cuộc sống của mình chạy khỏi tay.</strong>
-            </p>
-            <p>
-              Tui lớn lên ở Kon Tum, tuổi thơ gắn với những hàng cao su, đất đỏ. 17 tuổi chạy hơn 300km ra Đà Nẵng, qua đa cấp, học nghề tóc, đại học, kinh doanh, 40 nhân sự, mất team, xây lại... Rồi burnout. Thuốc lá luôn nằm đâu đó trong những giai đoạn stress, làm việc, tiếp khách, lái xe.
-            </p>
-            <p>
-              Cho đến khi tui bắt đầu áp dụng <strong>Identity Shift</strong>. Thay vì câu nói dằn vặt <em>“Tui đang cố cai thuốc”</em>, tui chuyển sang một góc nhìn mới: <strong>“Tui không biết hút thuốc.”</strong>
+              Tui là Đạt. Tui lớn lên ở Kon Tum, tuổi thơ gắn với đất đỏ và hàng cao su. Từ Đà Nẵng qua nhiều mô hình kinh doanh, 40 nhân sự, mất team, xây lại... Rồi burnout. Thuốc lá luôn nằm đâu đó trong những giai đoạn stress, làm việc, tiếp khách, lái xe.
             </p>
 
-            <div style={{ background: "#171A18", color: "#F5F2E9", padding: "32px", borderRadius: "10px", margin: "32px 0" }}>
-              <h4 style={{ color: "#D96732", marginTop: 0, fontSize: "18px" }}>BẢN ĐỒ TÁC CHIẾN ĐƯỢC ĐÓNG GÓI TỪ TRẢI NGHIỆM THỰC THẾ:</h4>
-              <p style={{ color: "#A9B2AC", fontSize: "15px", margin: 0, lineHeight: 1.7 }}>
-                Tui đã dành rất nhiều năm cố thay đổi KẾT QUẢ nhưng không thay đổi HỆ THỐNG TẠO RA KẾT QUẢ. Bản Đồ 7 Ngày được tạo ra để ông không bước vào cuộc chiến chỉ với ý chí suông.
+            {/* EXPANDED FOUNDER EPIPHANY (MOMENT OF DISCOVERY) */}
+            <div style={{ background: "#171A18", color: "#F5F2E9", padding: "34px", borderRadius: "10px", margin: "32px 0", borderLeft: "4px solid #D96732" }}>
+              <h4 style={{ color: "#D96732", marginTop: 0, fontSize: "18px", marginBottom: "12px" }}>MOMENT OF DISCOVERY — KHOẢNH KHẮC BƯỚC NGOẶT:</h4>
+              <p style={{ color: "#F5F2E9", fontSize: "16px", lineHeight: 1.75, margin: "0 0 14px" }}>
+                Ban đầu tui cũng làm đúng thứ ông đang làm: quyết tâm, rồi gồng. Nhưng đầu tui càng nghĩ về chuyện “đang cai”, thuốc lá càng nằm ở trung tâm.
+              </p>
+              <p style={{ color: "#F5F2E9", fontSize: "16px", lineHeight: 1.75, margin: "0 0 14px" }}>
+                Khi đổi sang câu <strong>“Tui không biết hút thuốc”</strong>, điều thay đổi không phải một phép màu trong não. Nó thay đổi cách tui ra quyết định ở khoảnh khắc được mời thuốc. Từ: <em>“Có nên hút không?”</em> chuyển thành: <em>“Tại sao mình phải làm một thứ không thuộc về cách mình sống?”</em>
+              </p>
+              <p style={{ color: "#A9B2AC", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
+                Từ đó tui bắt đầu kết hợp Identity Shifting với Trigger Map bối cảnh, môi trường xung quanh và từng tích lũy bằng chứng nhỏ. Bản Đồ 7 Ngày ra đời từ chính hệ thống thực chiến đó.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 7: PROOF SECTIONS (WARM IVORY #F3F0E8) */}
+      {/* SECTION 7: PROOF SECTIONS — CONCRETE STRUCTURED PROOF (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", margin: "0 0 24px", color: "#191B19" }}>
@@ -527,24 +486,51 @@ export default function Home() {
           </h2>
 
           <div style={{ display: "grid", gap: "24px" }}>
-            <div style={{ background: "#E5DFD2", padding: "28px", borderRadius: "8px", borderLeft: "4px solid #66735B" }}>
-              <h4 style={{ color: "#66735B", margin: "0 0 8px", fontSize: "18px" }}>PROOF #1 — HÀNH TRÌNH CỦA CHÍNH TUI</h4>
-              <p style={{ color: "#191B19", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
-                Từ một người hút lâu năm khi stress, ngủ muộn, thể trạng 55kg → Chuyển đổi hệ thống habit tracker, giấc ngủ ổn định, vận động và duy trì lối sống không thuốc lá.
-              </p>
+            {/* PROOF #1: FOUNDER METRICS TRACKER */}
+            <div style={{ background: "#E5DFD2", padding: "28px", borderRadius: "10px", borderLeft: "4px solid #66735B" }}>
+              <h4 style={{ color: "#66735B", margin: "0 0 12px", fontSize: "18px" }}>PROOF #1 — METRICS & HABIT DATA CỦA ĐẠT</h4>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "12px", fontFamily: "monospace", fontSize: "13px", color: "#191B19" }}>
+                <div style={{ background: "#F3F0E8", padding: "10px", borderRadius: "6px" }}>
+                  <small style={{ color: "#74766F", display: "block" }}>Duy trì không thuốc</small>
+                  <strong>300+ ngày liên tục</strong>
+                </div>
+                <div style={{ background: "#F3F0E8", padding: "10px", borderRadius: "6px" }}>
+                  <small style={{ color: "#74766F", display: "block" }}>Giấc ngủ trung bình</small>
+                  <strong>23:00 - 06:00 (Sâu)</strong>
+                </div>
+                <div style={{ background: "#F3F0E8", padding: "10px", borderRadius: "6px" }}>
+                  <small style={{ color: "#74766F", display: "block" }}>Cân nặng thể trạng</small>
+                  <strong>55kg → 66kg (+11kg)</strong>
+                </div>
+                <div style={{ background: "#F3F0E8", padding: "10px", borderRadius: "6px" }}>
+                  <small style={{ color: "#74766F", display: "block" }}>Vận động rèn luyện</small>
+                  <strong>4 buổi / tuần</strong>
+                </div>
+              </div>
             </div>
 
-            <div style={{ background: "#E5DFD2", padding: "28px", borderRadius: "8px", borderLeft: "4px solid #66735B" }}>
-              <h4 style={{ color: "#66735B", margin: "0 0 8px", fontSize: "18px" }}>PROOF #2 — IDENTITY SHIFT & THAY ĐỔI HÀNH VI</h4>
-              <p style={{ color: "#191B19", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
-                Ứng dụng nguyên lý Identity Shifting & Micro-Proof giúp học viên vượt qua các vòng lặp trì hoãn, xây dựng bằng chứng mới về sự tự chủ.
-              </p>
+            {/* PROOF #2: IDENTITY SHIFT FEEDBACK CARDS */}
+            <div style={{ background: "#E5DFD2", padding: "28px", borderRadius: "10px", borderLeft: "4px solid #66735B" }}>
+              <h4 style={{ color: "#66735B", margin: "0 0 14px", fontSize: "18px" }}>PROOF #2 — BẰNG CHỨNG HÀNH VI TỪ IDENTITY SHIFT</h4>
+              <div style={{ display: "grid", gap: "12px" }}>
+                <div style={{ background: "#F3F0E8", padding: "14px", borderRadius: "6px", fontSize: "13px" }}>
+                  <span style={{ color: "#D96732", fontWeight: 700 }}>CASE #1 (Xử lý chì hoãn & gồng nhịn):</span><br />
+                  <span style={{ color: "#74766F" }}>BEFORE:</span> Hay dằn vặt vì mỗi lần nhịn là mỗi lần thấy thiếu.<br />
+                  <span style={{ color: "#66735B", fontWeight: 700 }}>RESULT:</span> Áp dụng Micro-Proof tracker → Tích lũy 14 bằng chứng tự chủ, không còn nghĩ mình đang nhịn.
+                </div>
+                <div style={{ background: "#F3F0E8", padding: "14px", borderRadius: "6px", fontSize: "13px" }}>
+                  <span style={{ color: "#D96732", fontWeight: 700 }}>CASE #2 (Bàn nhậu & Xã giao):</span><br />
+                  <span style={{ color: "#74766F" }}>BEFORE:</span> Né nhậu 2 tuần nhưng gặp lại anh em là trượt ngay điếu đầu.<br />
+                  <span style={{ color: "#66735B", fontWeight: 700 }}>RESULT:</span> Dùng Social Script từ chối lịch thiệp → Giữ nguyên vị thế mà không cần đụng thuốc.
+                </div>
+              </div>
             </div>
 
-            <div style={{ background: "#E5DFD2", padding: "28px", borderRadius: "8px", borderLeft: "4px solid #66735B" }}>
-              <h4 style={{ color: "#66735B", margin: "0 0 8px", fontSize: "18px" }}>PROOF #3 — KẾT QUẢ TỪ PILOT COHORT</h4>
-              <p style={{ color: "#191B19", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
-                Các trường hợp thực tế ứng dụng Bản Đồ cho Cà phê sáng, Căng thẳng Deadline, Bàn nhậu và xử lý cái bẫy “Một điếu thôi”.
+            {/* PROOF #3: PILOT COHORT TRANSPARENT NOTE */}
+            <div style={{ background: "#E5DFD2", padding: "24px", borderRadius: "10px", borderLeft: "4px solid #D96732" }}>
+              <h4 style={{ color: "#D96732", margin: "0 0 6px", fontSize: "16px" }}>PROOF #3 — KẾT QUẢ PILOT COHORT</h4>
+              <p style={{ color: "#74766F", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>
+                Hiện phiên bản Pilot đang mở nhận những thành viên đầu tiên. Toàn bộ kết quả thực tế từ Pilot Cohort sẽ được cập nhật công khai ngay sau khi kết thúc 7 ngày đầu tiên.
               </p>
             </div>
           </div>
@@ -608,20 +594,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* BONUS STACK */}
+          {/* BONUS STACK — CLEANED BRAND VOICE */}
           <div style={{ marginTop: "36px" }}>
             <h3 style={{ color: "#D96732", fontSize: "20px", textAlign: "center", marginBottom: "20px", textTransform: "uppercase" }}>
-              + 3 BONUS ĐẶC QUYỀN TẶNG KÈM
+              ÔNG CŨNG NHẬN THÊM 3 CÔNG CỤ THỰC HÀNH
             </h3>
             <div style={{ display: "grid", gap: "16px" }}>
               {bonusStack.map((b) => (
                 <div key={b.title} style={{ background: "#252B25", border: "1px solid #384238", padding: "22px", borderRadius: "8px" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px", marginBottom: "6px" }}>
-                    <h4 style={{ color: "#D96732", margin: 0, fontSize: "17px" }}>{b.title}</h4>
-                    <span style={{ color: "#D96732", fontWeight: 700, fontSize: "13px" }}>
-                      Trị giá: {b.val} → <span style={{ color: "#D96732", fontWeight: 800 }}>MIỄN PHÍ</span>
-                    </span>
-                  </div>
+                  <h4 style={{ color: "#D96732", margin: "0 0 6px", fontSize: "17px" }}>{b.title}</h4>
                   <p style={{ color: "#A9B2AC", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>{b.desc}</p>
                 </div>
               ))}
@@ -643,7 +624,7 @@ export default function Home() {
             </a>
           </div>
 
-          {/* ISOLATED GUARANTEE CARD / SEAL */}
+          {/* CONCRETE GUARANTEE CARD */}
           <div style={{ background: "#252B25", border: "1px solid #384238", padding: "26px 30px", borderRadius: "10px", margin: "28px 0" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
               <span style={{ fontSize: "24px" }}>🛡️</span>
@@ -652,7 +633,30 @@ export default function Home() {
               </h4>
             </div>
             <p style={{ color: "#A9B2AC", fontSize: "14px", lineHeight: 1.7, margin: 0 }}>
-              Hoàn thành đủ 7 ngày bài tập Workbook nhưng chưa xây xong được Bản Đồ Tác Chiến cá nhân? → Ông nhận thêm 14 ngày hỗ trợ review hoàn thiện bổ sung không mất thêm phí.
+              Gửi Workbook đã hoàn thành qua form review. Tui hoặc team sẽ chỉ ra những phần còn thiếu và ông có thêm 14 ngày để chỉnh lại Bản Đồ mà không mất thêm phí.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY NOW / OBJECTION HANDLING SECTION (WARM IVORY #F3F0E8) */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
+        <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", margin: "0 0 20px", color: "#191B19" }}>
+            NẾU ÔNG ĐANG NGHĨ: “ĐỂ ĐỢT NÀY BỚT STRESS RỒI BỎ...”
+          </h2>
+          <div className="story-prose" style={{ fontSize: "18px", color: "#191B19" }}>
+            <p>
+              Tui hiểu. Qua deadline này. Qua dự án này. Qua Tết. Qua tháng nhậu này. Qua chuyến công tác. Rồi bắt đầu.
+            </p>
+            <p>
+              Nhưng nếu <strong>stress chính là một trong những Trigger lớn nhất của ông</strong>... thì đợi đến lúc không còn stress mới học cách xử lý thuốc lá có thể chỉ đang trì hoãn bài học mình cần nhất.
+            </p>
+            <p>
+              Bởi vì công việc vẫn sẽ có áp lực, bạn bè vẫn sẽ xuất hiện, cà phê vẫn còn, những ngày tệ vẫn sẽ tới. Mục tiêu không phải tạo ra một cuộc sống không có Trigger.
+            </p>
+            <p style={{ fontWeight: 700, color: "#D96732", fontSize: "20px" }}>
+              Mục tiêu là không còn bước vào Trigger với hai bàn tay trắng.
             </p>
           </div>
         </div>
