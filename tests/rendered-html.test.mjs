@@ -30,7 +30,7 @@ test("server-renders the landing page HTML correctly", async () => {
 
   const html = await response.text();
   assert.match(html, /Bản Đồ Cai Thuốc Lá 7 Ngày/i);
-  assert.match(html, /THE TWO-LOOP PROBLEM/i);
+  assert.match(html, /CHẨN ĐOÁN HAI VÒNG LẶP/i);
   assert.match(html, /497\.000/i);
   assert.match(html, /CÀ PHÊ/i);
 });
