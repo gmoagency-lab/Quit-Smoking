@@ -80,18 +80,21 @@ const bonusTools = [
 
 const coachingFeedbacks = [
   {
-    name: "Tuấn",
-    role: "Client Coaching",
+    name: "Lê Tuấn",
+    role: "Group Coaching T8",
+    img: "/images/feedback_le_tuan.png",
     quote: "“Em cảm thấy một sự rõ ràng trên hành trình, những niềm tin cũ và hoài nghi cũng bị đập tan.”",
   },
   {
-    name: "Trúc",
-    role: "Client Coaching",
+    name: "Chị Trúc",
+    role: "Group Coaching T4",
+    img: "/images/feedback_truc.png",
     quote: "“Sau buổi nói chuyện với em chị cảm thấy nhẹ lòng hơn, bớt hoang mang và có thêm sự tự tin để tiếp tục.”",
   },
   {
-    name: "Bích Thuận",
-    role: "Client Coaching",
+    name: "Chị Bích Thuận",
+    role: "Group Coaching T6",
+    img: "/images/feedback_bich_thuan.png",
     quote: "“Chỉ vài cụm từ khóa nhưng đã tóm tắt lại hành trình tôi phải đi để đạt được sự chuyển hóa và kết quả.”",
   },
 ];
@@ -264,16 +267,26 @@ export default function Home() {
             </p>
             <p><strong>Họ thường dùng những từ khác:</strong></p>
 
-            {/* 3 TESTIMONIAL FEEDBACK CARDS */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "18px", margin: "32px 0" }}>
+            {/* 3 TESTIMONIAL SCREENSHOT FEEDBACK CARDS */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px", margin: "36px 0" }}>
               {coachingFeedbacks.map((fb) => (
-                <div key={fb.name} style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "22px", borderRadius: "10px" }}>
-                  <p style={{ fontStyle: "italic", fontSize: "15px", color: "#191B19", margin: "0 0 14px", lineHeight: 1.6 }}>
+                <div key={fb.name} style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "16px", borderRadius: "12px", display: "flex", flexDirection: "column", boxShadow: "0 8px 25px rgba(0,0,0,0.03)" }}>
+                  {/* SCREENSHOT IMAGE CONTAINER */}
+                  <div style={{ overflow: "hidden", borderRadius: "8px", border: "1px solid #D5CEBF", marginBottom: "14px", background: "#fff" }}>
+                    <img
+                      src={fb.img}
+                      alt={`Feedback ${fb.name}`}
+                      style={{ width: "100%", height: "auto", maxHeight: "320px", objectFit: "cover", objectPosition: "top", display: "block" }}
+                    />
+                  </div>
+
+                  <p style={{ fontStyle: "italic", fontSize: "14px", color: "#191B19", margin: "0 0 12px", lineHeight: 1.6, flexGrow: 1 }}>
                     {fb.quote}
                   </p>
+
                   <div style={{ borderTop: "1px solid #D5CEBF", paddingTop: "10px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <strong style={{ color: "#D96732", fontSize: "14px" }}>— {fb.name}</strong>
-                    <span style={{ fontSize: "11px", color: "#74766F" }}>{fb.role}</span>
+                    <span style={{ fontSize: "11px", color: "#74766F", background: "#F3F0E8", padding: "3px 8px", borderRadius: "4px", fontWeight: 600 }}>{fb.role}</span>
                   </div>
                 </div>
               ))}
