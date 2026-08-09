@@ -1,3 +1,4 @@
+/* eslint-disable */
 // @ts-nocheck
 import { env } from "cloudflare:workers";
 import { drizzle } from "drizzle-orm/d1";
