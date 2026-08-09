@@ -21,7 +21,7 @@ const fourMaps = [
   {
     num: "02",
     title: "PROTOCOL 3 PHÚT™",
-    tag: "Biết phải làm gì ngay khi cơn thèm xuất hiện",
+    tag: "Biết phải làm gì ngay khi cảm giác muốn hút xuất hiện",
     desc: "Không phải đứng gồng 'Cố lên. Không được hút'. Tạo một chuỗi hành động ngắn trong những phút đầu tiên để tạo khoảng cách an toàn giữa Trigger bối cảnh và phản xạ châm thuốc.",
     badge: "QUICK RESPONSE CARD",
     mockup: (
@@ -303,8 +303,7 @@ export default function Home() {
       {/* SECTION 1: MỘT NGÀY RẤT BÌNH THƯỜNG (WARM IVORY #F3F0E8) */}
       <section id="story" className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 01 — NHỮNG KHOẢNH KHẮC BÌNH THƯỜNG</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 20px", lineHeight: 1.25, color: "#191B19" }}>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "0 0 20px", lineHeight: 1.25, color: "#191B19" }}>
             ÔNG KHÔNG CẦN THÊM MỘT BÀI GIẢNG VỀ TÁC HẠI CỦA THUỐC LÁ.
           </h2>
 
@@ -349,8 +348,7 @@ export default function Home() {
       {/* SECTION 2: IDENTITY WOUND & THE DEPRIVATION TRAP (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 02 — CẢM GIÁC THẬT SỰ BÊN TRONG</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 20px", lineHeight: 1.25, color: "#191B19" }}>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "0 0 20px", lineHeight: 1.25, color: "#191B19" }}>
             PHẦN KHÓ CHỊU NHẤT KHÔNG PHẢI LÀ ĐIẾU THUỐC.
           </h2>
 
@@ -396,8 +394,7 @@ export default function Home() {
       {/* SECTION 3: THE TWO-LOOP PROBLEM™ & THE DEPRIVATION TRAP™ (DARK CHARCOAL #171A18) */}
       <section className="letter-section letter-dark" style={{ background: "#171A18", color: "#F5F2E9", padding: "90px 0" }}>
         <div className="letter-wrap" style={{ maxWidth: "860px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 03 — BÀI TOÁN HỆ THỐNG</p>
-          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#F5F2E9", margin: "16px 0 20px" }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#F5F2E9", margin: "0 0 20px" }}>
             ÔNG KHÔNG CHỈ ĐANG BỎ MỘT ĐIẾU THUỐC. ÔNG ĐANG XỬ LÝ HAI VÒNG LẶP.
           </h2>
 
@@ -443,8 +440,7 @@ export default function Home() {
       {/* SECTION 4: 4 BẢN ĐỒ TÁC CHIẾN (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ background: "#F3F0E8", padding: "90px 0", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "880px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 04 — THÀNH PHẨM TÁC CHIẾN</p>
-          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#191B19", margin: "16px 0 12px" }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#191B19", margin: "0 0 12px" }}>
             SAU 7 NGÀY, ĐÂY LÀ 4 THỨ ÔNG SẼ CÓ TRONG TAY.
           </h2>
           <p style={{ color: "#74766F", fontSize: "16px", marginBottom: "40px" }}>
@@ -473,8 +469,7 @@ export default function Home() {
       {/* SECTION 5: LỘ TRÌNH 7 NGÀY (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 05 — HÀNH TRÌNH 7 NGÀY</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 36px", color: "#191B19" }}>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "0 0 36px", color: "#191B19" }}>
             7 NGÀY ĐÓ DIỄN RA NHƯ THẾ NÀO?
           </h2>
 
@@ -499,8 +494,7 @@ export default function Home() {
       {/* SECTION 6: FOUNDER STORY — ĐẠT (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 06 — LỜI TÂM SỰ CỦA ĐẠT</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 20px", lineHeight: 1.25, color: "#191B19" }}>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "0 0 20px", lineHeight: 1.25, color: "#191B19" }}>
             VÌ SAO TUI LẠI XÂY THỨ NÀY?
           </h2>
 
@@ -528,8 +522,7 @@ export default function Home() {
       {/* SECTION 7: PROOF SECTIONS (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 07 — BẰNG CHỨNG THỰC TẾ</p>
-          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", margin: "16px 0 24px", color: "#191B19" }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", margin: "0 0 24px", color: "#191B19" }}>
             NHỮNG GÌ TUI ĐANG NÓI KHÔNG CHỈ NẰM TRÊN LÝ THUYẾT.
           </h2>
 
@@ -561,8 +554,7 @@ export default function Home() {
       {/* SECTION 8: CINEMATIC FUTURE PACING (DARK CHARCOAL #171A18) */}
       <section className="letter-section letter-dark" style={{ background: "#171A18", color: "#F5F2E9", padding: "90px 0" }}>
         <div className="letter-wrap" style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 08 — TƯƠNG LAI ĐỜI THỰC</p>
-          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#F5F2E9", margin: "16px 0 12px" }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#F5F2E9", margin: "0 0 12px" }}>
             HÃY THỬ HÌNH DUNG... CÙNG MỘT CUỘC SỐNG. NHƯNG MỘT PHẢN ỨNG KHÁC.
           </h2>
 
@@ -598,8 +590,7 @@ export default function Home() {
       {/* SECTION 9: OFFER & VALUE STACK (DARK CHARCOAL #171A18 & BURNT ORANGE #D96732 CTA) */}
       <section id="offer" className="letter-offer" style={{ background: "#171A18", color: "#F5F2E9", padding: "100px 0" }}>
         <div className="letter-wrap" style={{ maxWidth: "840px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 09 — PILOT COHORT OFFER</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 44px)", color: "#F5F2E9", margin: "16px 0 24px", textTransform: "uppercase" }}>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 44px)", color: "#F5F2E9", margin: "0 0 24px", textTransform: "uppercase" }}>
             ÔNG KHÔNG MUA 7 VIDEO. ÔNG NHẬN MỘT HỆ THỐNG TRIỂN KHAI.
           </h2>
 
@@ -670,8 +661,7 @@ export default function Home() {
       {/* SECTION 10: TWO CHOICES (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "840px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 10 — VÀ BÂY GIỜ ÔNG CÓ HAI LỰA CHỌN</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 32px", textAlign: "center", color: "#191B19" }}>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "0 0 32px", textAlign: "center", color: "#191B19" }}>
             VÀ BÂY GIỜ ÔNG CÓ HAI LỰA CHỌN.
           </h2>
 
@@ -698,8 +688,7 @@ export default function Home() {
       {/* SECTION 11: FAQ (WARM IVORY #F3F0E8) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8" }}>
         <div className="letter-wrap" style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 11 — GIẢI ĐÁP THẮC MẮC</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 32px", color: "#191B19" }}>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "0 0 32px", color: "#191B19" }}>
             CÂU HỎI THƯỜNG GẶP
           </h2>
           <div className="letter-faq">
