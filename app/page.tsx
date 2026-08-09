@@ -197,15 +197,15 @@ export default function Home() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", alignItems: "stretch" }}>
                 {/* BEFORE PHOTO & METRICS */}
                 <div style={{ background: "#F3F0E8", border: "1px solid #D5CEBF", padding: "16px", borderRadius: "10px", display: "flex", flexDirection: "column" }}>
-                  <div style={{ position: "relative", marginBottom: "14px", overflow: "hidden", borderRadius: "8px", border: "1px solid #D5CEBF" }}>
+                  <span style={{ display: "inline-block", background: "rgba(23,26,24,0.85)", color: "#F5F2E9", fontSize: "11px", fontWeight: 800, padding: "6px 12px", borderRadius: "4px", letterSpacing: "0.08em", marginBottom: "10px", alignSelf: "flex-start" }}>
+                    TRƯỚC KHI CHUYỂN ĐỔI
+                  </span>
+                  <div style={{ overflow: "hidden", borderRadius: "8px", border: "1px solid #D5CEBF", marginBottom: "14px" }}>
                     <img
                       src="/images/dat_before_bw.jpg"
                       alt="Đạt trước khi chuyển đổi"
                       style={{ width: "100%", height: "380px", objectFit: "cover", display: "block", filter: "grayscale(100%) contrast(110%)" }}
                     />
-                    <span style={{ position: "absolute", top: "10px", left: "10px", background: "rgba(23,26,24,0.85)", color: "#F5F2E9", fontSize: "11px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", letterSpacing: "0.08em" }}>
-                      TRƯỚC KHI CHUYỂN ĐỔI
-                    </span>
                   </div>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px", color: "#74766F", display: "grid", gap: "6px" }}>
                     <li>❌ Hút thuốc liên tục gần 8 năm</li>
@@ -217,15 +217,15 @@ export default function Home() {
 
                 {/* AFTER PHOTO & METRICS */}
                 <div style={{ background: "#171A18", color: "#F5F2E9", border: "1px solid #384238", padding: "16px", borderRadius: "10px", display: "flex", flexDirection: "column" }}>
-                  <div style={{ position: "relative", marginBottom: "14px", overflow: "hidden", borderRadius: "8px", border: "1px solid #384238" }}>
+                  <span style={{ display: "inline-block", background: "#D96732", color: "white", fontSize: "11px", fontWeight: 800, padding: "6px 12px", borderRadius: "4px", letterSpacing: "0.08em", marginBottom: "10px", alignSelf: "flex-start" }}>
+                    SAU KHI XÂY BẢN ĐỒ
+                  </span>
+                  <div style={{ overflow: "hidden", borderRadius: "8px", border: "1px solid #384238", marginBottom: "14px" }}>
                     <img
                       src="/images/dat_after_gym.jpg"
                       alt="Đạt sau khi chuyển đổi"
                       style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }}
                     />
-                    <span style={{ position: "absolute", top: "10px", left: "10px", background: "#D96732", color: "white", fontSize: "11px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", letterSpacing: "0.08em" }}>
-                      SAU KHI XÂY BẢN ĐỒ
-                    </span>
                   </div>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px", color: "#D5DFDB", display: "grid", gap: "6px" }}>
                     <li>✓ Không thuốc lá 300+ ngày</li>
