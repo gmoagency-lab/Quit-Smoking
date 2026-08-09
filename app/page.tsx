@@ -10,8 +10,8 @@ const fourMaps = [
     desc: "Tìm đúng khoảnh khắc khiến ông muốn hút. Không còn nói chung chung 'Tui thèm thuốc'. Chuyển thành: 'Tui thèm thuốc vào bối cảnh X, sau Y, khi cảm xúc Z'. Nhìn rõ pattern để làm chủ phản ứng.",
     badge: "WORKBOOK & APP ASSET",
     mockup: (
-      <div style={{ background: "#091411", border: "1px solid #233b31", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#a5b8af" }}>
-        <div style={{ color: "var(--bright)", fontWeight: 700, marginBottom: "4px" }}>[ PATTERN MATRIX ]</div>
+      <div style={{ background: "#171A18", border: "1px solid #333833", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#A9B2AC" }}>
+        <div style={{ color: "var(--orange)", fontWeight: 700, marginBottom: "4px" }}>[ PATTERN MATRIX ]</div>
         <div>▸ Cà phê sáng → Reflex Score: 9/10</div>
         <div>▸ Stress deadline → Reflex Score: 8/10</div>
         <div>▸ Mời thuốc bàn nhậu → Reflex Score: 9.5/10</div>
@@ -25,8 +25,8 @@ const fourMaps = [
     desc: "Xử lý khoảnh khắc thèm thuốc trước mắt. Chuẩn bị sẵn một chuỗi hành động 3 phút để tạo khoảng cách an toàn giữa Trigger bối cảnh và phản xạ châm thuốc.",
     badge: "QUICK RESPONSE CARD",
     mockup: (
-      <div style={{ background: "#091411", border: "1px solid #233b31", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#a5b8af" }}>
-        <div style={{ color: "var(--bright)", fontWeight: 700, marginBottom: "4px" }}>[ EMERGENCY PROTOCOL ]</div>
+      <div style={{ background: "#171A18", border: "1px solid #333833", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#A9B2AC" }}>
+        <div style={{ color: "var(--orange)", fontWeight: 700, marginBottom: "4px" }}>[ EMERGENCY PROTOCOL ]</div>
         <div>00:00 - Nhận diện sóng thèm</div>
         <div>01:00 - Uống 200ml nước lạnh</div>
         <div>02:00 - Reset hơi thở 4-7-8</div>
@@ -40,8 +40,8 @@ const fourMaps = [
     desc: "Không cần cai thuốc bằng cách trốn trong phòng kín. Chuẩn bị sẵn câu từ chối tự nhiên, phong thái lịch thiệp và exit strategy khi đi làm, cà phê hay trên bàn nhậu.",
     badge: "SOCIAL SCRIPT SET",
     mockup: (
-      <div style={{ background: "#091411", border: "1px solid #233b31", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#a5b8af" }}>
-        <div style={{ color: "var(--bright)", fontWeight: 700, marginBottom: "4px" }}>[ TABLE RESPONSE ]</div>
+      <div style={{ background: "#171A18", border: "1px solid #333833", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#A9B2AC" }}>
+        <div style={{ color: "var(--orange)", fontWeight: 700, marginBottom: "4px" }}>[ TABLE RESPONSE ]</div>
         <div>“Thôi ông, tui bỏ món này rồi.”</div>
         <div>▸ Chuyển chủ đề tự nhiên</div>
         <div>▸ Giữ nguyên vị thế bản lĩnh</div>
@@ -55,8 +55,8 @@ const fourMaps = [
     desc: "Loại bỏ suy nghĩ 'Lỡ hút 1 điếu là hỏng hết'. Recovery Map cho ông biết chính xác phải làm gì trong 60 phút tiếp theo để lập tức quay lại hành trình mà không dằn vặt.",
     badge: "RECOVERY PROTOCOL",
     mockup: (
-      <div style={{ background: "#091411", border: "1px solid #233b31", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#a5b8af" }}>
-        <div style={{ color: "var(--bright)", fontWeight: 700, marginBottom: "4px" }}>[ 60-MIN RECOVERY ]</div>
+      <div style={{ background: "#171A18", border: "1px solid #333833", borderRadius: "6px", padding: "12px", marginTop: "14px", fontFamily: "monospace", fontSize: "11px", color: "#A9B2AC" }}>
+        <div style={{ color: "var(--orange)", fontWeight: 700, marginBottom: "4px" }}>[ 60-MIN RECOVERY ]</div>
         <div>▸ Step 1: Dừng dằn vặt bản thân</div>
         <div>▸ Step 2: Rà lại Trigger bối cảnh</div>
         <div>▸ Step 3: Kích hoạt lại Protocol</div>
@@ -187,112 +187,112 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="letter-page" style={{ background: "#f5f1e8", color: "#17201c", fontFamily: "var(--font-body), sans-serif", lineHeight: 1.8 }}>
+    <div className="letter-page" style={{ background: "#F3F0E8", color: "#191B19", fontFamily: "var(--font-body), sans-serif", lineHeight: 1.8 }}>
       {/* Top Banner */}
-      <div className="letter-announcement" style={{ background: "#168a4d", color: "white", padding: "10px 16px", textAlign: "center", fontSize: "13px", fontWeight: 600 }}>
-        BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™ — TỪ LỜI HỨA MƠ HỒ THÀNH KẾ HOẠCH CÓ THỂ THỰC HIỆN
+      <div className="letter-announcement" style={{ background: "#252B25", color: "#F5F2E9", padding: "10px 16px", textAlign: "center", fontSize: "13px", fontWeight: 600 }}>
+        BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™ — TỰ SỰ VỀ HÀNH TRÌNH LẤY LẠI QUYỀN LÀM CHỦ BẢN THÂN
       </div>
 
-      {/* HERO SECTION — 2-COLUMN DESKTOP SPLIT GRID */}
-      <header className="hero blueprint" style={{ background: "#0c1714", color: "white", padding: "80px 0 70px" }}>
+      {/* HERO SECTION — CHARCOAL BLACK (#171A18) */}
+      <header className="hero blueprint" style={{ background: "#171A18", color: "#F5F2E9", padding: "80px 0 70px" }}>
         <div className="wrap hero-split-grid">
           {/* Left Column: Copy & Scan Grid */}
           <div>
-            <div style={{ color: "var(--bright)", fontSize: "12px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "14px" }}>
+            <div style={{ color: "#D96732", fontSize: "12px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "14px" }}>
               BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™
             </div>
-            <h1 style={{ fontSize: "clamp(32px, 4.2vw, 52px)", color: "white", lineHeight: 1.15, fontWeight: 800, margin: "0 0 16px", letterSpacing: "-0.03em" }}>
+            <h1 style={{ fontSize: "clamp(32px, 4.2vw, 52px)", color: "#F5F2E9", lineHeight: 1.15, fontWeight: 800, margin: "0 0 16px", letterSpacing: "-0.03em" }}>
               Lần này, đừng hứa với bản thân rằng ông sẽ bỏ thuốc.
             </h1>
-            <p style={{ fontSize: "clamp(20px, 2.4vw, 28px)", color: "var(--bright)", fontWeight: 700, margin: "0 0 22px", lineHeight: 1.3 }}>
+            <p style={{ fontSize: "clamp(20px, 2.4vw, 28px)", color: "#D96732", fontWeight: 700, margin: "0 0 22px", lineHeight: 1.3 }}>
               Hãy có một kế hoạch cho lúc ông muốn hút.
             </p>
-            <p style={{ fontSize: "16px", color: "#b8c7c1", lineHeight: 1.7, marginBottom: "22px" }}>
+            <p style={{ fontSize: "16px", color: "#A9B2AC", lineHeight: 1.7, marginBottom: "22px" }}>
               Trong 7 ngày, tự xây <strong>Bản Đồ Tác Chiến Cá Nhân</strong> để biết mình sẽ làm gì khi:
             </p>
 
             {/* 4 Micro-Rows Scan Grid */}
             <div style={{ display: "grid", gap: "10px", marginBottom: "28px" }}>
-              <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(89,217,142,0.2)", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#e4ebe7", display: "flex", alignItems: "center", gap: "10px" }}>
+              <div style={{ background: "#252B25", border: "1px solid #384238", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
                 <span>☕</span> <span><strong>Cà phê sáng</strong> → Thèm thuốc</span>
               </div>
-              <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(89,217,142,0.2)", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#e4ebe7", display: "flex", alignItems: "center", gap: "10px" }}>
+              <div style={{ background: "#252B25", border: "1px solid #384238", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
                 <span>💼</span> <span><strong>Deadline</strong> → Muốn ra ban công</span>
               </div>
-              <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(89,217,142,0.2)", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#e4ebe7", display: "flex", alignItems: "center", gap: "10px" }}>
+              <div style={{ background: "#252B25", border: "1px solid #384238", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
                 <span>🍻</span> <span><strong>Bàn nhậu</strong> → Được mời một điếu</span>
               </div>
-              <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(89,217,142,0.2)", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#e4ebe7", display: "flex", alignItems: "center", gap: "10px" }}>
+              <div style={{ background: "#252B25", border: "1px solid #384238", padding: "10px 14px", borderRadius: "6px", fontSize: "14px", color: "#F5F2E9", display: "flex", alignItems: "center", gap: "10px" }}>
                 <span>↩️</span> <span><strong>Lỡ trượt</strong> → Không để một điếu thành cả bao</span>
               </div>
             </div>
 
-            {/* CTA & Micro-Trust Price (60-70% lower visual weight) */}
+            {/* CTA & Micro-Trust Price (Burnt Orange #D96732) */}
             <div className="hero-cta" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "10px" }}>
-              <a href="#offer" className="button" style={{ background: "var(--green)", color: "#07120d", fontWeight: 800, padding: "18px 36px", borderRadius: "6px", fontSize: "16px", textDecoration: "none", boxShadow: "0 10px 30px rgba(38,181,107,0.3)" }}>
+              <a href="#offer" className="button" style={{ background: "#D96732", color: "white", fontWeight: 800, padding: "18px 36px", borderRadius: "6px", fontSize: "16px", textDecoration: "none", boxShadow: "0 10px 30px rgba(217,103,50,0.35)" }}>
                 [ TẠO BẢN ĐỒ CỦA TÔI → ]
               </a>
-              <span style={{ color: "#7fa493", fontSize: "13px", letterSpacing: "0.04em", fontWeight: 500 }}>
+              <span style={{ color: "#74766F", fontSize: "13px", letterSpacing: "0.04em", fontWeight: 500 }}>
                 Pilot Cohort · Trọn bộ 7 ngày · 497.000đ
               </span>
             </div>
           </div>
 
           {/* Right Column: High-Impact Product Visual Mockup Card Deck */}
-          <div className="product-mockup-stack">
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #274238", paddingBottom: "12px", marginBottom: "16px" }}>
-              <span style={{ color: "var(--bright)", fontWeight: 700, fontSize: "12px", letterSpacing: "0.12em" }}>HỆ THỐNG BẢN ĐỒ TÁC CHIẾN™</span>
-              <span style={{ background: "rgba(38,181,107,0.2)", color: "var(--bright)", fontSize: "10px", fontWeight: 700, padding: "3px 8px", borderRadius: "4px" }}>🟢 PILOT COHORT</span>
+          <div className="product-mockup-stack" style={{ background: "#252B25", borderColor: "#384238" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #384238", paddingBottom: "12px", marginBottom: "16px" }}>
+              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px", letterSpacing: "0.12em" }}>HỆ THỐNG BẢN ĐỒ TÁC CHIẾN™</span>
+              <span style={{ background: "rgba(217,103,50,0.2)", color: "#D96732", fontSize: "10px", fontWeight: 700, padding: "3px 8px", borderRadius: "4px" }}>🟧 PILOT COHORT</span>
             </div>
 
-            <div className="product-card-preview">
+            <div className="product-card-preview" style={{ background: "#171A18", borderColor: "#384238" }}>
               <div>
-                <strong style={{ color: "white", fontSize: "14px", display: "block" }}>01 | TRIGGER MAP™</strong>
-                <small style={{ color: "#8aa096", fontSize: "12px" }}>Bản đồ khoanh vùng 5-7 tác nhân châm thuốc</small>
+                <strong style={{ color: "#F5F2E9", fontSize: "14px", display: "block" }}>01 | TRIGGER MAP™</strong>
+                <small style={{ color: "#74766F", fontSize: "12px" }}>Bản đồ khoanh vùng 5-7 tác nhân châm thuốc</small>
               </div>
-              <span style={{ color: "var(--bright)", fontWeight: 700, fontSize: "12px" }}>[ ASSET 1 ]</span>
+              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px" }}>[ ASSET 1 ]</span>
             </div>
 
-            <div className="product-card-preview">
+            <div className="product-card-preview" style={{ background: "#171A18", borderColor: "#384238" }}>
               <div>
-                <strong style={{ color: "white", fontSize: "14px", display: "block" }}>02 | PROTOCOL 3 PHÚT™</strong>
-                <small style={{ color: "#8aa096", fontSize: "12px" }}>Quy trình ứng phó khẩn cấp khoảnh khắc thèm</small>
+                <strong style={{ color: "#F5F2E9", fontSize: "14px", display: "block" }}>02 | PROTOCOL 3 PHÚT™</strong>
+                <small style={{ color: "#74766F", fontSize: "12px" }}>Quy trình ứng phó khẩn cấp khoảnh khắc thèm</small>
               </div>
-              <span style={{ color: "var(--bright)", fontWeight: 700, fontSize: "12px" }}>[ ASSET 2 ]</span>
+              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px" }}>[ ASSET 2 ]</span>
             </div>
 
-            <div className="product-card-preview">
+            <div className="product-card-preview" style={{ background: "#171A18", borderColor: "#384238" }}>
               <div>
-                <strong style={{ color: "white", fontSize: "14px", display: "block" }}>03 | SOCIAL NAVIGATION SCRIPT™</strong>
-                <small style={{ color: "#8aa096", fontSize: "12px" }}>Bộ câu từ chối tự nhiên trên bàn nhậu & cà phê</small>
+                <strong style={{ color: "#F5F2E9", fontSize: "14px", display: "block" }}>03 | SOCIAL NAVIGATION SCRIPT™</strong>
+                <small style={{ color: "#74766F", fontSize: "12px" }}>Bộ câu từ chối tự nhiên trên bàn nhậu & cà phê</small>
               </div>
-              <span style={{ color: "var(--bright)", fontWeight: 700, fontSize: "12px" }}>[ ASSET 3 ]</span>
+              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px" }}>[ ASSET 3 ]</span>
             </div>
 
-            <div className="product-card-preview">
+            <div className="product-card-preview" style={{ background: "#171A18", borderColor: "#384238" }}>
               <div>
-                <strong style={{ color: "white", fontSize: "14px", display: "block" }}>04 | RECOVERY MAP™</strong>
-                <small style={{ color: "#8aa096", fontSize: "12px" }}>Quy trình khôi phục 60 phút khi lỡ trượt 1 điếu</small>
+                <strong style={{ color: "#F5F2E9", fontSize: "14px", display: "block" }}>04 | RECOVERY MAP™</strong>
+                <small style={{ color: "#74766F", fontSize: "12px" }}>Quy trình khôi phục 60 phút khi lỡ trượt 1 điếu</small>
               </div>
-              <span style={{ color: "var(--bright)", fontWeight: 700, fontSize: "12px" }}>[ ASSET 4 ]</span>
+              <span style={{ color: "#D96732", fontWeight: 700, fontSize: "12px" }}>[ ASSET 4 ]</span>
             </div>
 
-            <div style={{ marginTop: "14px", background: "rgba(215,184,102,0.1)", border: "1px dashed var(--gold)", padding: "10px 14px", borderRadius: "6px", textAlign: "center" }}>
-              <span style={{ color: "var(--gold)", fontSize: "12px", fontWeight: 700 }}>+ TẶNG KÈM #3 BONUS KHI ĐĂNG KÝ HÔM NAY</span>
+            <div style={{ marginTop: "14px", background: "rgba(217,103,50,0.1)", border: "1px dashed #D96732", padding: "10px 14px", borderRadius: "6px", textAlign: "center" }}>
+              <span style={{ color: "#D96732", fontSize: "12px", fontWeight: 700 }}>+ TẶNG KÈM #3 BONUS KHI ĐĂNG KÝ HÔM NAY</span>
             </div>
           </div>
         </div>
       </header>
 
-      {/* STORY CHAPTER 1: MỘT NGÀY RẤT QUEN (Pattern Interrupt Cards) */}
-      <section id="story" className="letter-section" style={{ padding: "90px 0", borderBottom: "1px solid #dce0dc" }}>
+      {/* CHAPTER 01 — WARM IVORY (#F3F0E8) */}
+      <section id="story" className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "var(--green)", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 01 — MỘT NGÀY RẤT QUEN</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 20px", lineHeight: 1.25 }}>
+          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 01 — MỘT NGÀY RẤT QUEN</p>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 20px", lineHeight: 1.25, color: "#191B19" }}>
             Ông không cần thêm một bài giảng về tác hại của thuốc lá.
           </h2>
 
-          <div className="story-prose" style={{ fontSize: "18px", color: "#38443f" }}>
+          <div className="story-prose" style={{ fontSize: "18px", color: "#191B19" }}>
             <p>
               Ông biết rõ rồi. Ung thư. Tim mạch. Phổi. Hơi thở. Mùi thuốc trên quần áo. Khói thuốc quanh vợ con... Biết thuốc lá có hại <strong>chưa bao giờ là phần khó nhất</strong>.
             </p>
@@ -300,41 +300,41 @@ export default function Home() {
               Phần khó nhất luôn xảy ra vào những khoảnh khắc rất đời thường:
             </p>
 
-            {/* 3 Pattern Interrupt Cards */}
+            {/* 3 Pattern Interrupt Cards (Sand background #E5DFD2) */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "18px", margin: "32px 0" }}>
-              <div style={{ background: "white", border: "1px solid #d8ddd9", padding: "24px", borderRadius: "8px", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
-                <span style={{ color: "var(--green)", fontWeight: 800, fontSize: "22px" }}>07:00</span>
-                <h4 style={{ margin: "10px 0 6px", fontSize: "18px" }}>☕ Cà phê sáng</h4>
-                <p style={{ color: "#58645f", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>Tay tự động tìm bao thuốc như một phản xạ lập trình sẵn.</p>
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "24px", borderRadius: "8px" }}>
+                <span style={{ color: "#D96732", fontWeight: 800, fontSize: "22px" }}>07:00</span>
+                <h4 style={{ margin: "10px 0 6px", fontSize: "18px", color: "#191B19" }}>☕ Cà phê sáng</h4>
+                <p style={{ color: "#74766F", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>Tay tự động tìm bao thuốc như một phản xạ lập trình sẵn.</p>
               </div>
-              <div style={{ background: "white", border: "1px solid #d8ddd9", padding: "24px", borderRadius: "8px", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
-                <span style={{ color: "var(--green)", fontWeight: 800, fontSize: "22px" }}>11:45</span>
-                <h4 style={{ margin: "10px 0 6px", fontSize: "18px" }}>💼 Căng thẳng Deadline</h4>
-                <p style={{ color: "#58645f", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>Đầu óc thúc giục ông ra ban công 5 phút để tìm cảm giác nghỉ.</p>
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "24px", borderRadius: "8px" }}>
+                <span style={{ color: "#D96732", fontWeight: 800, fontSize: "22px" }}>11:45</span>
+                <h4 style={{ margin: "10px 0 6px", fontSize: "18px", color: "#191B19" }}>💼 Căng thẳng Deadline</h4>
+                <p style={{ color: "#74766F", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>Đầu óc thúc giục ông ra ban công 5 phút để tìm cảm giác nghỉ.</p>
               </div>
-              <div style={{ background: "white", border: "1px solid #d8ddd9", padding: "24px", borderRadius: "8px", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
-                <span style={{ color: "var(--green)", fontWeight: 800, fontSize: "22px" }}>20:00</span>
-                <h4 style={{ margin: "10px 0 6px", fontSize: "18px" }}>🍻 Bàn nhậu anh em</h4>
-                <p style={{ color: "#58645f", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>Anh em chìa bao thuốc: <em>“Làm điếu không ông?”</em></p>
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "24px", borderRadius: "8px" }}>
+                <span style={{ color: "#D96732", fontWeight: 800, fontSize: "22px" }}>20:00</span>
+                <h4 style={{ margin: "10px 0 6px", fontSize: "18px", color: "#191B19" }}>🍻 Bàn nhậu anh em</h4>
+                <p style={{ color: "#74766F", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>Anh em chìa bao thuốc: <em>“Làm điếu không ông?”</em></p>
               </div>
             </div>
 
-            <p style={{ fontSize: "19px", fontWeight: 700, color: "#17201c", textAlign: "center", margin: "24px 0 0" }}>
+            <p style={{ fontSize: "19px", fontWeight: 700, color: "#191B19", textAlign: "center", margin: "24px 0 0" }}>
               Và chỉ trong vài giây... tất cả những gì ông từng tự hứa bắt đầu lung lay.
             </p>
           </div>
         </div>
       </section>
 
-      {/* STORY CHAPTER 2: VÒNG LẶP & IDENTITY WOUND FULL-WIDTH QUOTE BLOCK */}
-      <section className="letter-section letter-tint" style={{ padding: "90px 0", background: "#ebe7dc" }}>
+      {/* CHAPTER 02 — WARM IVORY (#F3F0E8) + IDENTITY WOUND QUOTE */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "var(--green)", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 02 — VÒNG LẶP THƯƠNG LƯỢNG</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 20px", lineHeight: 1.25 }}>
+          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 02 — VÒNG LẶP THƯƠNG LƯỢNG</p>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 20px", lineHeight: 1.25, color: "#191B19" }}>
             Nếu ông muốn thoát khỏi cảnh “bỏ rồi lại hút”...
           </h2>
 
-          <div className="story-prose" style={{ fontSize: "18px", color: "#38443f" }}>
+          <div className="story-prose" style={{ fontSize: "18px", color: "#191B19" }}>
             <p>
               Rất có thể vấn đề không nằm ở chỗ ông chưa đủ quyết tâm. <strong>Mà nằm ở chỗ ông đang cố dùng một công cụ quá đơn giản để giải quyết một hệ thống thói quen đã lặp lại hàng nghìn lần.</strong>
             </p>
@@ -342,67 +342,67 @@ export default function Home() {
               Một ngày ông quyết định: <em>“Đủ rồi, từ mai bỏ!”</em>. Vứt bao thuốc, cất bật lửa. Ngày đầu ổn, ngày thứ hai bứt rứt. Rồi 1 deadline, 1 cuộc nhậu, 1 chiếc ghế quen thuộc... Tâm trí thì thầm: <em>“Chỉ một điếu thôi chắc không sao.”</em> Một điếu thành hai điếu. Nửa bao. Vài hôm sau... bao thuốc lại nằm trong túi.
             </p>
 
-            {/* Full-Width Identity Wound Quote Block */}
-            <div style={{ background: "#0c1714", color: "white", padding: "45px 40px", borderRadius: "12px", margin: "45px 0", textAlign: "center", boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}>
-              <p style={{ fontStyle: "italic", fontSize: "clamp(22px, 3vw, 30px)", lineHeight: 1.4, color: "var(--bright)", margin: "0 0 16px", fontWeight: 700 }}>
+            {/* Full-Width Identity Wound Quote Block (Charcoal #171A18) */}
+            <div style={{ background: "#171A18", color: "#F5F2E9", padding: "45px 40px", borderRadius: "12px", margin: "45px 0", textAlign: "center", boxShadow: "0 20px 50px rgba(0,0,0,0.15)" }}>
+              <p style={{ fontStyle: "italic", fontSize: "clamp(22px, 3vw, 30px)", lineHeight: 1.4, color: "#D96732", margin: "0 0 16px", fontWeight: 700 }}>
                 “Tôi quản lý được bao nhiêu việc.<br />Tại sao lại không làm chủ nổi chuyện này?”
               </p>
-              <span style={{ color: "#95a8a1", fontSize: "14px", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 600 }}>
+              <span style={{ color: "#74766F", fontSize: "14px", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 600 }}>
                 — Câu hỏi rất nhiều người hút lâu năm từng tự hỏi mình.
               </span>
             </div>
 
-            <p style={{ color: "#38443f", fontSize: "18px", margin: 0 }}>
+            <p style={{ color: "#191B19", fontSize: "18px", margin: 0 }}>
               Đây mới là thứ âm thầm dằn vặt: Không chỉ chuyện hút thuốc. Mà là cảm giác <strong>tôi đang mất quyền quyết định đối với chính hành vi của mình.</strong>
             </p>
           </div>
         </div>
       </section>
 
-      {/* STORY CHAPTER 3: THE TWO-LOOP PROBLEM™ VISUAL CENTERPIECE */}
-      <section className="letter-section" style={{ padding: "90px 0" }}>
+      {/* CHAPTER 03 — EPIPHANY (VISUAL TRANSITION TO DARK CHARCOAL #171A18) */}
+      <section className="letter-section letter-dark" style={{ background: "#171A18", color: "#F5F2E9", padding: "90px 0" }}>
         <div className="letter-wrap" style={{ maxWidth: "860px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "var(--green)", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 03 — CƠ CHẾ CỐT LÕI</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 24px", lineHeight: 1.25 }}>
+          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 03 — CƠ CHẾ CỐT LÕI</p>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", color: "#F5F2E9", margin: "16px 0 24px", lineHeight: 1.25 }}>
             VÌ SAO ÔNG CỨ QUAY LẠI? — THE TWO-LOOP PROBLEM™
           </h2>
 
-          <div className="story-prose" style={{ fontSize: "18px", color: "#38443f" }}>
-            <p>
+          <div className="story-prose" style={{ fontSize: "18px", color: "#A9B2AC" }}>
+            <p style={{ color: "#F5F2E9" }}>
               Hầu hết mọi người cai thuốc thất bại vì họ chỉ tập trung giải quyết cơn thèm thể chất, nhưng bỏ trống hoàn toàn phản xạ bối cảnh:
             </p>
 
             {/* Visual Centerpiece Diagram */}
-            <div className="two-loop-box" style={{ margin: "36px 0" }}>
-              <div style={{ textAlign: "center", color: "var(--bright)", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", marginBottom: "20px" }}>
+            <div className="two-loop-box" style={{ background: "#252B25", borderColor: "#384238", margin: "36px 0" }}>
+              <div style={{ textAlign: "center", color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", marginBottom: "20px" }}>
                 SƠ ĐỒ NGUYÊN NHÂN THẤT BẠI — THE TWO-LOOP PROBLEM™
               </div>
 
               <div className="two-loop-grid">
-                <div style={{ background: "#13241d", border: "1px solid #284439", padding: "20px", borderRadius: "8px" }}>
-                  <div style={{ color: "var(--bright)", fontWeight: 800, fontSize: "12px", marginBottom: "6px" }}>VÒNG LẶP #1</div>
-                  <strong style={{ color: "white", fontSize: "17px", display: "block", marginBottom: "6px" }}>CƠN THÈM NICOTINE</strong>
-                  <p style={{ color: "#9bb0a7", fontSize: "13px", margin: 0 }}>Phản ứng thèm sinh học của cơ thể (Chỉ chiếm 20% khó khăn)</p>
+                <div style={{ background: "#171A18", border: "1px solid #384238", padding: "20px", borderRadius: "8px" }}>
+                  <div style={{ color: "#D96732", fontWeight: 800, fontSize: "12px", marginBottom: "6px" }}>VÒNG LẶP #1</div>
+                  <strong style={{ color: "#F5F2E9", fontSize: "17px", display: "block", marginBottom: "6px" }}>CƠN THÈM NICOTINE</strong>
+                  <p style={{ color: "#74766F", fontSize: "13px", margin: 0 }}>Phản ứng thèm sinh học của cơ thể (Chỉ chiếm 20% khó khăn)</p>
                 </div>
 
-                <div style={{ background: "#172b23", border: "2px solid var(--bright)", padding: "20px", borderRadius: "8px" }}>
-                  <div style={{ color: "var(--bright)", fontWeight: 800, fontSize: "12px", marginBottom: "6px" }}>VÒNG LẶP #2 (CỐT LÕI)</div>
-                  <strong style={{ color: "white", fontSize: "17px", display: "block", marginBottom: "6px" }}>TRIGGER BỐI CẢNH</strong>
-                  <p style={{ color: "#c8dad3", fontSize: "13px", margin: 0 }}>Cà phê / Stress / Bàn nhậu / Sau ăn (Chiếm 80% nguyên nhân tái hút)</p>
+                <div style={{ background: "#171A18", border: "2px solid #D96732", padding: "20px", borderRadius: "8px" }}>
+                  <div style={{ color: "#D96732", fontWeight: 800, fontSize: "12px", marginBottom: "6px" }}>VÒNG LẶP #2 (CỐT LÕI)</div>
+                  <strong style={{ color: "#F5F2E9", fontSize: "17px", display: "block", marginBottom: "6px" }}>TRIGGER BỐI CẢNH</strong>
+                  <p style={{ color: "#A9B2AC", fontSize: "13px", margin: 0 }}>Cà phê / Stress / Bàn nhậu / Sau ăn (Chiếm 80% nguyên nhân tái hút)</p>
                 </div>
               </div>
 
               {/* Dynamic Flow Result */}
-              <div style={{ textAlign: "center", margin: "20px 0 10px", color: "var(--gold)", fontWeight: 800, fontSize: "15px" }}>
+              <div style={{ textAlign: "center", margin: "20px 0 10px", color: "#D96732", fontWeight: 800, fontSize: "15px" }}>
                 ↓ VÒNG 1 + VÒNG 2 = CHÂM THUỐC KHI KHÔNG CÓ BẢN ĐỒ
               </div>
 
               {/* Dynamic Comparison Grid */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "16px", paddingTop: "20px", borderTop: "1px solid #20382f" }}>
-                <div style={{ background: "rgba(216,102,91,0.1)", border: "1px solid rgba(216,102,91,0.3)", padding: "14px", borderRadius: "6px", color: "#e8a8a2", fontSize: "13px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "16px", paddingTop: "20px", borderTop: "1px solid #384238" }}>
+                <div style={{ background: "rgba(169,71,37,0.15)", border: "1px solid rgba(169,71,37,0.4)", padding: "14px", borderRadius: "6px", color: "#E5A490", fontSize: "13px" }}>
                   <strong>CÁCH CŨ THƯỜNG XỬ LÝ:</strong><br />Nicotine ✓ | Trigger ✕ (Chỉ né tránh & gồng ý chí)
                 </div>
-                <div style={{ background: "rgba(38,181,107,0.1)", border: "1px solid rgba(38,181,107,0.3)", padding: "14px", borderRadius: "6px", color: "#a8e8c4", fontSize: "13px" }}>
+                <div style={{ background: "rgba(102,115,91,0.25)", border: "1px solid #66735B", padding: "14px", borderRadius: "6px", color: "#D5E2D8", fontSize: "13px" }}>
                   <strong>BẢN ĐỒ 7 NGÀY XỬ LÝ:</strong><br />Nicotine → Nhận diện | Trigger → Chuẩn bị Protocol
                 </div>
               </div>
@@ -411,28 +411,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STORY CHAPTER 4: 4 BẢN ĐỒ — PRODUCT SHOWCASE */}
-      <section className="letter-section letter-dark" style={{ background: "#07110e", color: "white", padding: "90px 0" }}>
+      {/* CHAPTER 04 — WARM IVORY (#F3F0E8) EQUIPMENT SHOWCASE */}
+      <section className="letter-section" style={{ background: "#F3F0E8", padding: "90px 0", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "880px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "var(--bright)", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 04 — SHOWCASE SẢN PHẨM</p>
-          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "white", margin: "16px 0 12px" }}>
+          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 04 — SHOWCASE SẢN PHẨM</p>
+          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#191B19", margin: "16px 0 12px" }}>
             Sau 7 ngày, đây là thứ nằm trong điện thoại và Workbook của ông.
           </h2>
-          <p style={{ color: "#aab8b2", fontSize: "16px", marginBottom: "40px" }}>
+          <p style={{ color: "#74766F", fontSize: "16px", marginBottom: "40px" }}>
             Không phải tài liệu lý thuyết suông. Đây là 4 tài sản tác chiến cụ thể được thiết kế riêng cho ông.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px" }}>
             {fourMaps.map((m) => (
-              <div key={m.num} style={{ background: "#10201a", border: "1px solid #274036", padding: "26px", borderRadius: "10px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div key={m.num} style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "26px", borderRadius: "10px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
-                    <span style={{ color: "var(--bright)", fontWeight: 800, fontSize: "24px" }}>{m.num}</span>
-                    <span style={{ background: "rgba(89,217,142,0.15)", color: "var(--bright)", fontSize: "9px", fontWeight: 700, padding: "3px 8px", borderRadius: "4px" }}>{m.badge}</span>
+                    <span style={{ color: "#D96732", fontWeight: 800, fontSize: "24px" }}>{m.num}</span>
+                    <span style={{ background: "rgba(217,103,50,0.15)", color: "#D96732", fontSize: "9px", fontWeight: 700, padding: "3px 8px", borderRadius: "4px" }}>{m.badge}</span>
                   </div>
-                  <h3 style={{ color: "white", fontSize: "19px", margin: "0 0 6px" }}>{m.title}</h3>
-                  <small style={{ color: "var(--gold)", fontWeight: 700, display: "block", marginBottom: "12px" }}>{m.tag}</small>
-                  <p style={{ color: "#b9c7c1", fontSize: "14px", lineHeight: 1.65, margin: 0 }}>{m.desc}</p>
+                  <h3 style={{ color: "#191B19", fontSize: "19px", margin: "0 0 6px" }}>{m.title}</h3>
+                  <small style={{ color: "#A94725", fontWeight: 700, display: "block", marginBottom: "12px" }}>{m.tag}</small>
+                  <p style={{ color: "#74766F", fontSize: "14px", lineHeight: 1.65, margin: 0 }}>{m.desc}</p>
                   {m.mockup}
                 </div>
               </div>
@@ -441,24 +441,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STORY CHAPTER 5: VERTICAL ROADMAP (TIMELINE) */}
-      <section className="letter-section" style={{ padding: "90px 0" }}>
+      {/* CHAPTER 05 — WARM IVORY (#F3F0E8) VERTICAL ROADMAP */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "var(--green)", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 05 — HÀNH TRÌNH 7 NGÀY</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 36px" }}>
+          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 05 — HÀNH TRÌNH 7 NGÀY</p>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 36px", color: "#191B19" }}>
             LỘ TRÌNH 7 NGÀY TRIỂN KHAI THỰC THẾ
           </h2>
 
           {/* Vertical Timeline Roadmap */}
           <div style={{ margin: "20px 0" }}>
             {sevenDays.map((d) => (
-              <div key={d.day} className="vertical-roadmap-item">
+              <div key={d.day} className="vertical-roadmap-item" style={{ borderColor: "#D5CEBF" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "6px" }}>
-                  <span style={{ background: "var(--green)", color: "#07120d", fontWeight: 800, padding: "3px 8px", borderRadius: "4px", fontSize: "11px" }}>{d.day}</span>
-                  <h3 style={{ margin: 0, fontSize: "18px", color: "#17201c" }}>{d.title}</h3>
+                  <span style={{ background: "#D96732", color: "white", fontWeight: 800, padding: "3px 8px", borderRadius: "4px", fontSize: "11px" }}>{d.day}</span>
+                  <h3 style={{ margin: 0, fontSize: "18px", color: "#191B19" }}>{d.title}</h3>
                 </div>
-                <p style={{ color: "#54605b", fontSize: "14px", lineHeight: 1.65, margin: "6px 0 8px" }}>{d.desc}</p>
-                <span style={{ background: "#eef3f0", color: "var(--green)", fontWeight: 700, fontSize: "12px", padding: "4px 10px", borderRadius: "4px", display: "inline-block" }}>
+                <p style={{ color: "#74766F", fontSize: "14px", lineHeight: 1.65, margin: "6px 0 8px" }}>{d.desc}</p>
+                <span style={{ background: "#E5DFD2", color: "#66735B", fontWeight: 700, fontSize: "12px", padding: "4px 10px", borderRadius: "4px", display: "inline-block" }}>
                   ✓ {d.output}
                 </span>
               </div>
@@ -467,159 +467,159 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STORY CHAPTER 6: CINEMATIC FUTURE PACING */}
-      <section className="letter-section letter-tint" style={{ padding: "90px 0", background: "#ebe7dc" }}>
+      {/* CHAPTER 06 — CINEMATIC FUTURE PACING (DARK CHARCOAL #171A18) */}
+      <section className="letter-section letter-dark" style={{ background: "#171A18", color: "#F5F2E9", padding: "90px 0" }}>
         <div className="letter-wrap" style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "var(--green)", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 06 — TƯƠNG LAI ĐỜI THỰC</p>
-          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", margin: "16px 0 12px" }}>
+          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 06 — TƯƠNG LAI ĐỜI THỰC</p>
+          <h2 style={{ fontSize: "clamp(26px, 3.5vw, 40px)", color: "#F5F2E9", margin: "16px 0 12px" }}>
             Cùng một cuộc sống. Một phản ứng khác.
           </h2>
-          <p style={{ color: "#525e59", fontSize: "17px", marginBottom: "32px" }}>
+          <p style={{ color: "#A9B2AC", fontSize: "17px", marginBottom: "32px" }}>
             Sau 7 ngày, bối cảnh đời sống của ông vẫn vậy, nhưng ông đã nắm quyền làm chủ hoàn toàn:
           </p>
 
           <div style={{ display: "grid", gap: "14px" }}>
-            <div style={{ background: "white", padding: "24px 28px", borderRadius: "8px", borderLeft: "4px solid var(--green)", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
-              <div style={{ color: "var(--green)", fontWeight: 800, fontSize: "14px", marginBottom: "4px" }}>07:00 — QUÁN CÀ PHÊ SÁNG</div>
-              <p style={{ color: "#3a4641", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
+            <div style={{ background: "#252B25", padding: "24px 28px", borderRadius: "8px", borderLeft: "4px solid #D96732" }}>
+              <div style={{ color: "#D96732", fontWeight: 800, fontSize: "14px", marginBottom: "4px" }}>07:00 — QUÁN CÀ PHÊ SÁNG</div>
+              <p style={{ color: "#F5F2E9", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
                 Trigger thèm thuốc vẫn xuất hiện. Nhưng lần này ông nhận diện được nó, mở đúng Protocol 3 phút và thong dong thưởng thức ly cà phê.
               </p>
             </div>
 
-            <div style={{ textAlign: "center", color: "var(--green)", fontWeight: 800, fontSize: "18px" }}>↓</div>
+            <div style={{ textAlign: "center", color: "#D96732", fontWeight: 800, fontSize: "18px" }}>↓</div>
 
-            <div style={{ background: "white", padding: "24px 28px", borderRadius: "8px", borderLeft: "4px solid var(--green)", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
-              <div style={{ color: "var(--green)", fontWeight: 800, fontSize: "14px", marginBottom: "4px" }}>15:30 — CĂNG THẲNG DEADLINE</div>
-              <p style={{ color: "#3a4641", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
+            <div style={{ background: "#252B25", padding: "24px 28px", borderRadius: "8px", borderLeft: "4px solid #D96732" }}>
+              <div style={{ color: "#D96732", fontWeight: 800, fontSize: "14px", marginBottom: "4px" }}>15:30 — CĂNG THẲNG DEADLINE</div>
+              <p style={{ color: "#F5F2E9", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
                 Ông nhận ra bộ não đang cần một khoảng nghỉ phục hồi trạng thái. Không nhất thiết cần một điếu thuốc. Ông áp dụng Stress Break Menu và tiếp tục công việc.
               </p>
             </div>
 
-            <div style={{ textAlign: "center", color: "var(--green)", fontWeight: 800, fontSize: "18px" }}>↓</div>
+            <div style={{ textAlign: "center", color: "#D96732", fontWeight: 800, fontSize: "18px" }}>↓</div>
 
-            <div style={{ background: "white", padding: "24px 28px", borderRadius: "8px", borderLeft: "4px solid var(--green)", boxShadow: "0 4px 15px rgba(0,0,0,0.03)" }}>
-              <div style={{ color: "var(--green)", fontWeight: 800, fontSize: "14px", marginBottom: "4px" }}>20:15 — BÀN NHẬU ANH EM</div>
-              <p style={{ color: "#3a4641", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
+            <div style={{ background: "#252B25", padding: "24px 28px", borderRadius: "8px", borderLeft: "4px solid #D96732" }}>
+              <div style={{ color: "#D96732", fontWeight: 800, fontSize: "14px", marginBottom: "4px" }}>20:15 — BÀN NHẬU ANH EM</div>
+              <p style={{ color: "#F5F2E9", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
                 <em>“Làm điếu không ông?”</em> — <em>“Thôi ông, tui bỏ cái này rồi.”</em> Đáp lời tự nhiên theo Social Script, giữ nguyên vị thế phong thái bản lĩnh.
               </p>
             </div>
           </div>
 
-          <p style={{ fontSize: "18px", fontWeight: 700, color: "#17201c", textAlign: "center", marginTop: "32px" }}>
+          <p style={{ fontSize: "18px", fontWeight: 700, color: "#F5F2E9", textAlign: "center", marginTop: "32px" }}>
             Cuộc sống không cần biến mất. Điếu thuốc chỉ không còn quyết định thay ông.
           </p>
         </div>
       </section>
 
-      {/* STORY CHAPTER 7: OFFER SECTION (Maximum Contrast & High Hierarchy) */}
-      <section id="offer" className="letter-offer" style={{ background: "#060d0b", color: "white", padding: "100px 0" }}>
+      {/* CHAPTER 07 — OFFER SECTION (DARK CHARCOAL #171A18 & BURNT ORANGE #D96732 CTA) */}
+      <section id="offer" className="letter-offer" style={{ background: "#171A18", color: "#F5F2E9", padding: "100px 0" }}>
         <div className="letter-wrap" style={{ maxWidth: "840px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "var(--bright)", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 07 — TOÀN BỘ HỆ THỐNG</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 44px)", color: "white", margin: "16px 0 24px", textTransform: "uppercase" }}>
+          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 07 — TOÀN BỘ HỆ THỐNG</p>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 44px)", color: "#F5F2E9", margin: "16px 0 24px", textTransform: "uppercase" }}>
             TOÀN BỘ HỆ THỐNG ÔNG NHẬN ĐƯỢC
           </h2>
 
-          <div style={{ background: "#10201a", border: "1px solid #274036", padding: "32px", borderRadius: "12px", margin: "30px 0" }}>
-            <h3 style={{ color: "white", marginTop: 0, fontSize: "20px", borderBottom: "1px solid #22382f", paddingBottom: "14px", marginBottom: "18px" }}>
+          <div style={{ background: "#252B25", border: "1px solid #384238", padding: "32px", borderRadius: "12px", margin: "30px 0" }}>
+            <h3 style={{ color: "#F5F2E9", marginTop: 0, fontSize: "20px", borderBottom: "1px solid #384238", paddingBottom: "14px", marginBottom: "18px" }}>
               DANH MỤC TÀI SẢN BÀN GIAO:
             </h3>
             <div style={{ display: "grid", gap: "12px" }}>
               {offerStack.map((item) => (
-                <div key={item.name} style={{ display: "flex", justifyContent: "space-between", color: "#e4ebe7", fontSize: "15px", borderBottom: "1px solid rgba(255,255,255,0.06)", paddingBottom: "10px" }}>
+                <div key={item.name} style={{ display: "flex", justifyContent: "space-between", color: "#F5F2E9", fontSize: "15px", borderBottom: "1px solid rgba(255,255,255,0.08)", paddingBottom: "10px" }}>
                   <span>✓ {item.name}</span>
-                  <span style={{ color: "#8aa096" }}>{item.val}</span>
+                  <span style={{ color: "#74766F" }}>{item.val}</span>
                 </div>
               ))}
             </div>
-            <div style={{ textAlign: "right", marginTop: "16px", color: "#8aa096", fontSize: "14px" }}>
-              Tổng giá trị tham chiếu: <strong style={{ color: "white" }}>1.550.000đ</strong>
+            <div style={{ textAlign: "right", marginTop: "16px", color: "#74766F", fontSize: "14px" }}>
+              Tổng giá trị tham chiếu: <strong style={{ color: "#F5F2E9" }}>1.550.000đ</strong>
             </div>
           </div>
 
           {/* BONUS STACK */}
           <div style={{ marginTop: "36px" }}>
-            <h3 style={{ color: "var(--bright)", fontSize: "20px", textAlign: "center", marginBottom: "20px", textTransform: "uppercase" }}>
+            <h3 style={{ color: "#D96732", fontSize: "20px", textAlign: "center", marginBottom: "20px", textTransform: "uppercase" }}>
               + 3 BONUS ĐẶC QUYỀN TẶNG KÈM
             </h3>
             <div style={{ display: "grid", gap: "16px" }}>
               {bonusStack.map((b) => (
-                <div key={b.title} style={{ background: "#0d1a15", border: "1px solid #223a30", padding: "22px", borderRadius: "8px" }}>
+                <div key={b.title} style={{ background: "#252B25", border: "1px solid #384238", padding: "22px", borderRadius: "8px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px", marginBottom: "6px" }}>
-                    <h4 style={{ color: "var(--bright)", margin: 0, fontSize: "17px" }}>{b.title}</h4>
-                    <span style={{ color: "var(--gold)", fontWeight: 700, fontSize: "13px" }}>
-                      Trị giá: {b.val} → <span style={{ color: "var(--bright)", fontWeight: 800 }}>MIỄN PHÍ</span>
+                    <h4 style={{ color: "#D96732", margin: 0, fontSize: "17px" }}>{b.title}</h4>
+                    <span style={{ color: "#D96732", fontWeight: 700, fontSize: "13px" }}>
+                      Trị giá: {b.val} → <span style={{ color: "#D96732", fontWeight: 800 }}>MIỄN PHÍ</span>
                     </span>
                   </div>
-                  <p style={{ color: "#b9c7c1", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>{b.desc}</p>
+                  <p style={{ color: "#A9B2AC", fontSize: "14px", margin: 0, lineHeight: 1.6 }}>{b.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* DRAMATIC PRICE REVEAL CARD */}
-          <div style={{ background: "linear-gradient(135deg, #153026, #050b09)", border: "2px solid var(--bright)", padding: "42px", borderRadius: "12px", margin: "45px 0 30px", textAlign: "center", boxShadow: "0 25px 70px rgba(0,0,0,0.6)" }}>
-            <span style={{ color: "#9bb3aa", letterSpacing: "0.15em", textTransform: "uppercase", fontSize: "13px", fontWeight: 700 }}>
+          <div style={{ background: "#252B25", border: "2px solid #D96732", padding: "42px", borderRadius: "12px", margin: "45px 0 30px", textAlign: "center", boxShadow: "0 25px 70px rgba(0,0,0,0.5)" }}>
+            <span style={{ color: "#A9B2AC", letterSpacing: "0.15em", textTransform: "uppercase", fontSize: "13px", fontWeight: 700 }}>
               TỔNG GIÁ TRỊ THỰC TẾ: 2.120.000Đ
             </span>
             <div style={{ margin: "18px 0 14px" }}>
-              <div style={{ color: "var(--bright)", fontSize: "14px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" }}>MỨC PHÍ PILOT COHORT HÔM NAY</div>
-              <b style={{ fontSize: "68px", color: "var(--bright)", lineHeight: 1, display: "block", margin: "8px 0" }}>497.000Đ</b>
-              <span style={{ color: "#a5b8b0", fontSize: "14px" }}>Thanh toán một lần duy nhất • Không phát sinh chi phí</span>
+              <div style={{ color: "#D96732", fontSize: "14px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" }}>MỨC PHÍ PILOT COHORT HÔM NAY</div>
+              <b style={{ fontSize: "68px", color: "#D96732", lineHeight: 1, display: "block", margin: "8px 0" }}>497.000Đ</b>
+              <span style={{ color: "#74766F", fontSize: "14px" }}>Thanh toán một lần duy nhất • Không phát sinh chi phí</span>
             </div>
 
-            <a className="letter-button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc lá 7 ngày" style={{ maxWidth: "560px", width: "100%", margin: "20px auto 0", fontSize: "17px", padding: "20px 32px", textDecoration: "none", boxShadow: "0 12px 35px rgba(38,181,107,0.4)" }}>
+            <a className="letter-button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc lá 7 ngày" style={{ maxWidth: "560px", width: "100%", margin: "20px auto 0", fontSize: "17px", padding: "20px 32px", background: "#D96732", color: "white", textDecoration: "none", boxShadow: "0 12px 35px rgba(217,103,50,0.4)" }}>
               [ TÔI MUỐN XÂY BẢN ĐỒ CỦA MÌNH — 497.000Đ → ]
             </a>
           </div>
 
           {/* ISOLATED GUARANTEE CARD / SEAL */}
-          <div style={{ background: "#0e1c17", border: "1px solid #284438", padding: "26px 30px", borderRadius: "10px", margin: "28px 0" }}>
+          <div style={{ background: "#252B25", border: "1px solid #384238", padding: "26px 30px", borderRadius: "10px", margin: "28px 0" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
               <span style={{ fontSize: "24px" }}>🛡️</span>
-              <h4 style={{ color: "var(--bright)", fontSize: "16px", margin: 0, textTransform: "uppercase" }}>
+              <h4 style={{ color: "#D96732", fontSize: "16px", margin: 0, textTransform: "uppercase" }}>
                 IMPLEMENTATION GUARANTEE™
               </h4>
             </div>
-            <p style={{ color: "#c2d4cd", fontSize: "14px", lineHeight: 1.7, margin: 0 }}>
+            <p style={{ color: "#A9B2AC", fontSize: "14px", lineHeight: 1.7, margin: 0 }}>
               Làm đủ 7 ngày nhưng vẫn chưa hoàn thiện được Bản Đồ Tác Chiến? → Ông nhận thêm 14 ngày hỗ trợ review không mất thêm phí.
             </p>
           </div>
         </div>
       </section>
 
-      {/* STORY CHAPTER 8: TWO CHOICES (2-COLUMN CROSSROADS COMPARISON) */}
-      <section className="letter-section" style={{ padding: "90px 0" }}>
+      {/* CHAPTER 08 — TWO CHOICES (WARM IVORY #F3F0E8) */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "840px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "var(--green)", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 08 — QUYẾT ĐỊNH CỦA ÔNG</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 32px", textAlign: "center" }}>
+          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 08 — QUYẾT ĐỊNH CỦA ÔNG</p>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 32px", textAlign: "center", color: "#191B19" }}>
             VÀ BÂY GIỜ ÔNG CÓ HAI LỰA CHỌN
           </h2>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
             {/* LEFT — GIỮ NGUYÊN */}
-            <div style={{ background: "#f7eded", border: "1px solid #e0c7c7", padding: "30px", borderRadius: "10px" }}>
-              <h3 style={{ color: "#b83b3b", marginTop: 0, fontSize: "19px", borderBottom: "1px solid #ebd0d0", paddingBottom: "10px" }}>LEFT — GIỮ NGUYÊN</h3>
-              <ul style={{ listStyle: "none", padding: 0, margin: "16px 0", fontSize: "14px", color: "#5c4a4a", display: "grid", gap: "10px" }}>
+            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "30px", borderRadius: "10px" }}>
+              <h3 style={{ color: "#A94725", marginTop: 0, fontSize: "19px", borderBottom: "1px solid #D5CEBF", paddingBottom: "10px" }}>LEFT — GIỮ NGUYÊN</h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: "16px 0", fontSize: "14px", color: "#74766F", display: "grid", gap: "10px" }}>
                 <li>❌ Sáng → Thèm thuốc</li>
                 <li>❌ Stress → Ban công châm thuốc</li>
                 <li>❌ Nhậu → “Một điếu thôi chắc không sao”</li>
                 <li>❌ Trượt 1 điếu → Hút lại cả bao</li>
               </ul>
-              <div style={{ borderTop: "1px solid #ebd0d0", paddingTop: "12px", fontWeight: 700, color: "#9e2a2a", fontSize: "14px" }}>
+              <div style={{ borderTop: "1px solid #D5CEBF", paddingTop: "12px", fontWeight: 700, color: "#A94725", fontSize: "14px" }}>
                 ↓ Tiếp tục vòng lặp dằn vặt bản thân
               </div>
             </div>
 
             {/* RIGHT — CÓ BẢN ĐỒ */}
-            <div style={{ background: "#edf7f1", border: "2px solid var(--green)", padding: "30px", borderRadius: "10px" }}>
-              <h3 style={{ color: "var(--green)", marginTop: 0, fontSize: "19px", borderBottom: "1px solid #c2e5d0", paddingBottom: "10px" }}>RIGHT — CÓ BẢN ĐỒ</h3>
-              <ul style={{ listStyle: "none", padding: 0, margin: "16px 0", fontSize: "14px", color: "#2b4538", display: "grid", gap: "10px" }}>
+            <div style={{ background: "#E5DFD2", border: "2px solid #D96732", padding: "30px", borderRadius: "10px" }}>
+              <h3 style={{ color: "#D96732", marginTop: 0, fontSize: "19px", borderBottom: "1px solid #D5CEBF", paddingBottom: "10px" }}>RIGHT — CÓ BẢN ĐỒ</h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: "16px 0", fontSize: "14px", color: "#191B19", display: "grid", gap: "10px" }}>
                 <li>✓ Trigger → Nhận diện & Protocol 3 Phút</li>
                 <li>✓ Stress → Stress Break Menu</li>
                 <li>✓ Nhậu → Social Script lịch thiệp</li>
                 <li>✓ Lỡ trượt → Recovery Map khôi phục ngay</li>
               </ul>
-              <div style={{ borderTop: "1px solid #c2e5d0", paddingTop: "12px", fontWeight: 700, color: "var(--green)", fontSize: "14px" }}>
+              <div style={{ borderTop: "1px solid #D5CEBF", paddingTop: "12px", fontWeight: 700, color: "#66735B", fontSize: "14px" }}>
                 ↓ Tích lũy bằng chứng làm chủ hành vi
               </div>
             </div>
@@ -627,47 +627,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STORY CHAPTER 9: FAQ */}
-      <section className="letter-section letter-tint" style={{ padding: "90px 0", background: "#ebe7dc" }}>
+      {/* CHAPTER 09 — FAQ (WARM IVORY #F3F0E8) */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8" }}>
         <div className="letter-wrap" style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <p className="letter-number" style={{ color: "var(--green)", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 09 — GIẢI ĐÁP THẮC MẮC</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 32px" }}>
+          <p className="letter-number" style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em" }}>CHƯƠNG 09 — GIẢI ĐÁP THẮC MẮC</p>
+          <h2 style={{ fontSize: "clamp(28px, 3.8vw, 42px)", margin: "16px 0 32px", color: "#191B19" }}>
             FAQ — CÂU HỎI THƯỜNG GẶP
           </h2>
           <div className="letter-faq">
             {faqs.map((faq, index) => (
-              <details key={faq.q} open={index === 0} style={{ margin: "12px 0", background: "white", padding: "16px 20px", borderRadius: "6px", border: "1px solid #dbe0dc" }}>
-                <summary style={{ fontStyle: "normal", fontWeight: 700, fontSize: "16px", color: "#17201c", cursor: "pointer" }}>{faq.q}</summary>
-                <p style={{ margin: "14px 0 0", color: "#4c5953", fontSize: "15px", lineHeight: 1.75 }}>{faq.a}</p>
+              <details key={faq.q} open={index === 0} style={{ margin: "12px 0", background: "#E5DFD2", padding: "16px 20px", borderRadius: "6px", border: "1px solid #D5CEBF" }}>
+                <summary style={{ fontStyle: "normal", fontWeight: 700, fontSize: "16px", color: "#191B19", cursor: "pointer" }}>{faq.q}</summary>
+                <p style={{ margin: "14px 0 0", color: "#74766F", fontSize: "15px", lineHeight: 1.75 }}>{faq.a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FINAL CLOSING CTA */}
-      <section className="letter-closing" style={{ background: "#050b09", color: "white", padding: "100px 0" }}>
+      {/* FINAL CLOSING CTA — CHARCOAL BLACK (#171A18) */}
+      <section className="letter-closing" style={{ background: "#171A18", color: "#F5F2E9", padding: "100px 0" }}>
         <div className="letter-wrap" style={{ textAlign: "center", maxWidth: "760px", margin: "0 auto" }}>
-          <p style={{ color: "var(--bright)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase" }}>
+          <p style={{ color: "#D96732", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase" }}>
             LỜI KẾT
           </p>
-          <h2 style={{ fontSize: "clamp(30px, 4.2vw, 52px)", color: "white", margin: "20px 0 24px", lineHeight: 1.25 }}>
+          <h2 style={{ fontSize: "clamp(30px, 4.2vw, 52px)", color: "#F5F2E9", margin: "20px 0 24px", lineHeight: 1.25 }}>
             Đừng bắt đầu bằng một lời thề nữa. Hãy bắt đầu bằng một Bản Đồ.
           </h2>
-          <p style={{ fontSize: "18px", color: "#aebdb7", marginBottom: "36px" }}>
+          <p style={{ fontSize: "18px", color: "#A9B2AC", marginBottom: "36px" }}>
             Ông có muốn tiếp tục để mỗi ly cà phê, mỗi deadline và mỗi bàn nhậu quyết định thay mình hay không?
           </p>
 
-          <a className="letter-button" href="#offer" style={{ maxWidth: "580px", margin: "0 auto", fontSize: "17px", padding: "20px 36px", textDecoration: "none", boxShadow: "0 12px 35px rgba(38,181,107,0.4)" }}>
+          <a className="letter-button" href="#offer" style={{ maxWidth: "580px", margin: "0 auto", fontSize: "17px", padding: "20px 36px", background: "#D96732", color: "white", textDecoration: "none", boxShadow: "0 12px 35px rgba(217,103,50,0.4)" }}>
             [ BẮT ĐẦU BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™ — 497.000Đ ]
           </a>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer style={{ background: "#030605", color: "#6e7e78", padding: "40px 0", fontSize: "12px" }}>
+      <footer style={{ background: "#111311", color: "#74766F", padding: "40px 0", fontSize: "12px" }}>
         <div className="wrap" style={{ textAlign: "center" }}>
-          <b style={{ color: "#b2c1bc" }}>BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™</b>
+          <b style={{ color: "#A9B2AC" }}>BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™</b>
           <p style={{ margin: "10px 0" }}>
             Chương trình cung cấp nội dung giáo dục về hành vi, tác nhân và lối sống. Không thay thế tư vấn, chẩn đoán hoặc điều trị y tế chuyên môn.
           </p>
@@ -676,12 +676,12 @@ export default function Home() {
       </footer>
 
       {/* MINIMALIST MOBILE & DESKTOP STICKY BAR */}
-      <div className={`letter-mobile-sticky ${showSticky ? "show" : ""}`}>
+      <div className={`letter-mobile-sticky ${showSticky ? "show" : ""}`} style={{ background: "#171A18", borderColor: "#384238" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontSize: "11px", color: "#8aa096", fontWeight: 600 }}>BẢN ĐỒ 7 NGÀY™</span>
-          <b style={{ fontSize: "16px", color: "var(--bright)" }}>497.000đ</b>
+          <span style={{ fontSize: "11px", color: "#A9B2AC", fontWeight: 600 }}>BẢN ĐỒ 7 NGÀY™</span>
+          <b style={{ fontSize: "16px", color: "#D96732" }}>497.000đ</b>
         </div>
-        <a href="#offer" style={{ padding: "10px 16px", fontSize: "12px" }}>[ TẠO BẢN ĐỒ CỦA TÔI → ]</a>
+        <a href="#offer" style={{ background: "#D96732", color: "white", padding: "10px 16px", fontSize: "12px" }}>[ TẠO BẢN ĐỒ CỦA TÔI → ]</a>
       </div>
     </div>
   );
