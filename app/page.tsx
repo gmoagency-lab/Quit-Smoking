@@ -620,20 +620,99 @@ export default function Home() {
                 <li>• Bạn có thể nói: “Tôi không còn là người hút thuốc”... nhưng nếu hành vi mỗi ngày vẫn liên tục tạo bằng chứng ngược lại, câu nói đó rất khó đứng vững.</li>
               </ul>
               <div style={{ borderTop: "1px solid #384238", paddingTop: "18px", marginTop: "18px" }}>
-                <strong style={{ color: "#F5F2E9", fontSize: "18px", display: "block", marginBottom: "10px" }}>
+                <strong style={{ color: "#F5F2E9" }}>
                   THAY ĐỔI KHÔNG ĐẾN TỪ MỘT MẢNH GHÉP DUY NHẤT.
                 </strong>
-                <p style={{ color: "#D5DFDB", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
+                <p style={{ color: "#D5DFDB", fontSize: "15px", lineHeight: 1.7, margin: "10px 0 0 0" }}>
                   Nó đến khi nhiều phần bắt đầu đi cùng nhau: Bạn nhìn thấy vòng lặp. Bạn nhận ra tác nhân. Bạn chuẩn bị phản ứng mới. Bạn có kế hoạch cho những tình huống khó. Bạn biết phải làm gì nếu một ngày bị trượt. Và bạn liên tục tạo bằng chứng cho cách mình muốn sống tiếp.
                 </p>
               </div>
-              <div style={{ background: "#252B25", borderLeft: "4px solid #D96732", padding: "18px", borderRadius: "6px", marginTop: "20px" }}>
-                <strong style={{ color: "#D96732", fontSize: "16px", display: "block", marginBottom: "6px" }}>
-                  LẤY LẠI QUYỀN TỰ CHỦ — LỘ TRÌNH HÀNH ĐỘNG TRONG 7 NGÀY
-                </strong>
-                <p style={{ color: "#D5DFDB", fontSize: "14px", margin: 0, lineHeight: 1.65 }}>
-                  Một hành trình từng bước giúp bạn không phải cố giải quyết tất cả cùng lúc. Ngày đầu tiên nhìn thấy. Ngày tiếp theo hiểu rõ hơn. Sau đó xây cách phản ứng. Chuẩn bị cho những tình huống khó. Và từng bước biến những gì vừa học thành thứ có thể sử dụng trong cuộc sống thật. Không phải để sau 7 ngày bạn có thêm một đống kiến thức. Mà để bạn bắt đầu có một hệ thống rõ ràng hơn cho chính hành trình bỏ thuốc của mình.
-                </p>
+
+              {/* SECTION: BẠN CÓ 2 SỰ LỰA CHỌN */}
+              <div style={{ marginTop: "48px", paddingTop: "36px", borderTop: "2px solid #D5CEBF", color: "#191B19" }}>
+                <div style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "8px", textAlign: "center" }}>
+                  QUYẾT ĐỊNH CỦA BẠN
+                </div>
+                <h3 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", color: "#191B19", margin: "0 0 28px", fontWeight: 800, textAlign: "center", lineHeight: 1.25 }}>
+                  BẠN CÓ 2 SỰ LỰA CHỌN
+                </h3>
+
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px", marginBottom: "32px" }}>
+                  {/* LỰA CHỌN 1 */}
+                  <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px", display: "flex", flexDirection: "column" }}>
+                    <span style={{ background: "rgba(23,26,24,0.85)", color: "#F5F2E9", fontSize: "12px", fontWeight: 800, padding: "5px 12px", borderRadius: "4px", alignSelf: "flex-start", marginBottom: "14px", letterSpacing: "0.05em" }}>
+                      LỰA CHỌN 1
+                    </span>
+                    <h4 style={{ fontSize: "18px", color: "#191B19", margin: "0 0 12px", fontWeight: 800 }}>
+                      Tiếp tục tự tìm cách & thử gồng mình nhịn
+                    </h4>
+                    <div style={{ fontSize: "14px", color: "#74766F", lineHeight: 1.7, display: "grid", gap: "8px", flexGrow: 1 }}>
+                      <p style={{ margin: 0 }}>
+                        • Xem thêm video, đọc thêm bài viết, thử một mẹo mới.<br />
+                        • Tự nhủ lần này phải quyết tâm hơn.<br />
+                        • Rồi tự ghép tất cả những gì mình biết lại và hy vọng khi cơn muốn hút xuất hiện, mình sẽ nhớ phải làm gì.
+                      </p>
+                      <div style={{ background: "#F3F0E8", padding: "12px 14px", borderRadius: "6px", borderLeft: "3px solid #A94725", color: "#191B19", fontStyle: "italic" }}>
+                        Tui đã từng đi theo con đường đó. Và với tui, nó kéo dài gần 8 năm.<br />
+                        Tui từng tự nhủ: <em>“Hết bao này bỏ.” “Qua đợt stress này bỏ.” “Mai bỏ.”</em><br />
+                        Nhưng đến đúng lúc cà phê, stress, sau ăn, lái xe hay gặp bạn bè... mọi quyết tâm rất dễ biến mất. Không phải vì tui chưa biết đủ, mà vì tui chưa có một hệ thống rõ ràng để áp dụng ngay trong những khoảnh khắc đời thật đó.
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* LỰA CHỌN 2 */}
+                  <div style={{ background: "#252B25", border: "2px solid #D96732", borderRadius: "12px", padding: "28px", color: "#F5F2E9", display: "flex", flexDirection: "column", boxShadow: "0 15px 40px rgba(217,103,50,0.18)" }}>
+                    <span style={{ background: "#D96732", color: "white", fontSize: "12px", fontWeight: 800, padding: "5px 12px", borderRadius: "4px", alignSelf: "flex-start", marginBottom: "14px", letterSpacing: "0.05em" }}>
+                      LỰA CHỌN 2 (KHUYÊN DÙNG)
+                    </span>
+                    <h4 style={{ fontSize: "18px", color: "#F5F2E9", margin: "0 0 12px", fontWeight: 800 }}>
+                      Đi theo một lộ trình đã được sắp xếp từng bước
+                    </h4>
+                    <div style={{ fontSize: "14px", color: "#D5DFDB", lineHeight: 1.7, display: "grid", gap: "8px", flexGrow: 1 }}>
+                      <p style={{ margin: 0 }}>
+                        ✓ Không cần tự mò xem nên bắt đầu từ đâu.<br />
+                        ✓ Không cần cố nhớ hàng chục lời khuyên khác nhau.<br />
+                        ✓ Không cần mỗi sáng lại tự hỏi: <em>“Hôm nay mình phải cố nhịn thế nào?”</em>
+                      </p>
+                      <p style={{ margin: 0 }}>
+                        Tui đã đi qua những lần thử, những lúc quay lại, những tình huống làm mình dễ gãy nhất và gom những gì hữu ích nhất lại thành <strong>Lộ trình hành động trong 7 ngày</strong>.
+                      </p>
+                      <div style={{ background: "#171A18", padding: "12px 14px", borderRadius: "6px", borderLeft: "3px solid #66735B", color: "#F5F2E9" }}>
+                        <strong>Giúp bạn có một con đường rõ ràng:</strong><br />
+                        1. Nhìn thấy vòng lặp.<br />
+                        2. Nhận diện tác nhân.<br />
+                        3. Xây phản ứng mới.<br />
+                        4. Chuẩn bị cho những tình huống khó.<br />
+                        5. Và biết cách tiếp tục nếu có một ngày không hoàn hảo.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* SUMMARY CALLOUT */}
+                <div style={{ background: "#252B25", border: "1px solid #384238", padding: "28px", borderRadius: "12px", color: "#F5F2E9", margin: "24px 0" }}>
+                  <p style={{ color: "#D5DFDB", fontSize: "16px", lineHeight: 1.7, margin: "0 0 14px" }}>
+                    Nếu bạn đang đọc đến đây, có lẽ bạn cũng đã mệt với việc cứ phải tự thử rồi tự đoán. Bạn không cần thêm thật nhiều thông tin.
+                  </p>
+                  <div style={{ color: "#D96732", fontWeight: 800, fontSize: "17px", lineHeight: 1.6, marginBottom: "14px" }}>
+                    BẠN CẦN BIẾT: HÔM NAY LÀM GÌ • NGÀY MAI LÀM GÌ • VÀ KHỦNG HOẢNG THÌ XỬ LÝ THẾ NÀO.
+                  </div>
+                  <p style={{ color: "#A9B2AC", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
+                    Đó là lý do tui xây dựng chương trình này. Để bạn không phải mất thêm nhiều năm chỉ để tự ráp từng mảnh lại với nhau.
+                  </p>
+                </div>
+
+                <div style={{ background: "#171A18", border: "2px solid #D96732", padding: "28px", borderRadius: "12px", textAlign: "center", boxShadow: "0 15px 40px rgba(0,0,0,0.3)" }}>
+                  <h4 style={{ fontSize: "22px", color: "#D96732", margin: "0 0 8px", fontWeight: 800 }}>
+                    LỘ TRÌNH HÀNH ĐỘNG TRONG 7 NGÀY™
+                  </h4>
+                  <p style={{ color: "#F5F2E9", fontSize: "15px", margin: "0 0 14px", lineHeight: 1.6 }}>
+                    Một hệ thống thực hành rõ ràng, từng bước, để bạn bắt đầu thay đổi cách mình phản ứng với thuốc lá trong chính cuộc sống hằng ngày.
+                  </p>
+                  <span style={{ color: "#A9B2AC", fontSize: "14px", fontWeight: 700, fontStyle: "italic" }}>
+                    Hãy đọc tiếp...
+                  </span>
+                </div>
               </div>
             </div>
 
