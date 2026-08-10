@@ -368,7 +368,8 @@ export default function Home() {
                     controls
                     playsInline
                     preload="metadata"
-                    style={{ width: "100%", maxHeight: "520px", display: "block" }}
+                    poster="/images/video_poster_dat.jpg"
+                    style={{ width: "100%", maxHeight: "520px", objectFit: "cover", display: "block" }}
                     src="/videos/dat_sports_video.mp4"
                   >
                     Your browser does not support HTML5 video playback.
