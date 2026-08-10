@@ -152,32 +152,22 @@ export default function Home() {
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", alignItems: "stretch" }}>
-              {/* Photo 1: 2017 đi làm từ 9h đêm --> 5h sáng */}
-              <div style={{ overflow: "hidden", borderRadius: "12px", border: "1px solid #384238", background: "#252B25", boxShadow: "0 12px 30px rgba(0,0,0,0.4)", display: "flex", flexDirection: "column" }}>
-                <div style={{ flexGrow: 1, overflow: "hidden" }}>
-                  <img
-                    src="/images/dat_2017_work.jpg"
-                    alt="2017 đi làm từ 9h đêm đến 5h sáng"
-                    style={{ width: "100%", height: "340px", objectFit: "cover", objectPosition: "center", display: "block" }}
-                  />
-                </div>
-                <div style={{ padding: "10px 12px", background: "rgba(23,26,24,0.92)", color: "#D5DFDB", fontSize: "11px", fontWeight: 600, textAlign: "center", borderTop: "1px solid #384238", lineHeight: 1.45 }}>
-                  2017: Đi làm từ 9h đêm ➔ 5h sáng,<br />điếu thuốc bắt đầu gắn bó từ đây
-                </div>
+              {/* Photo 1: Đạt thời hút thuốc (BW) */}
+              <div style={{ overflow: "hidden", borderRadius: "12px", border: "1px solid #384238", background: "#252B25", boxShadow: "0 12px 30px rgba(0,0,0,0.4)" }}>
+                <img
+                  src="/images/dat_before_bw.jpg"
+                  alt="Đạt thời hút thuốc"
+                  style={{ width: "100%", height: "370px", objectFit: "cover", objectPosition: "center 65%", display: "block", filter: "grayscale(100%) contrast(110%)" }}
+                />
               </div>
 
               {/* Photo 2: Đạt hiện tại (Gym fit) */}
-              <div style={{ overflow: "hidden", borderRadius: "12px", border: "2px solid #D96732", background: "#252B25", boxShadow: "0 12px 30px rgba(217,103,50,0.25)", display: "flex", flexDirection: "column" }}>
-                <div style={{ flexGrow: 1, overflow: "hidden" }}>
-                  <img
-                    src="/images/dat_after_gym.jpg"
-                    alt="Đạt hiện tại"
-                    style={{ width: "100%", height: "340px", objectFit: "cover", objectPosition: "top center", display: "block" }}
-                  />
-                </div>
-                <div style={{ padding: "10px 12px", background: "#D96732", color: "white", fontSize: "11px", fontWeight: 800, textAlign: "center", lineHeight: 1.45 }}>
-                  Phiên bản hiện tại:<br /> làm chủ phản xạ & sức khỏe
-                </div>
+              <div style={{ overflow: "hidden", borderRadius: "12px", border: "2px solid #D96732", background: "#252B25", boxShadow: "0 12px 30px rgba(217,103,50,0.25)" }}>
+                <img
+                  src="/images/dat_after_gym.jpg"
+                  alt="Đạt hiện tại"
+                  style={{ width: "100%", height: "370px", objectFit: "cover", objectPosition: "top center", display: "block" }}
+                />
               </div>
             </div>
           </div>
@@ -229,14 +219,11 @@ export default function Home() {
                   </span>
                   <div style={{ overflow: "hidden", borderRadius: "8px", border: "1px solid #D5CEBF", marginBottom: "14px" }}>
                     <img
-                      src="/images/dat_2017_work.jpg"
-                      alt="2017: Đi làm từ 9h đêm đến 5h sáng"
-                      style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center", display: "block" }}
+                      src="/images/dat_before_bw.jpg"
+                      alt="Lệ thuộc vào thuốc lá"
+                      style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 65%", display: "block", filter: "grayscale(100%) contrast(110%)" }}
                     />
                   </div>
-                  <p style={{ margin: "0 0 10px", fontSize: "12px", color: "#A94725", fontWeight: 700, lineHeight: 1.5, fontStyle: "italic" }}>
-                    2017: Đi làm từ 9h đêm ➔ 5h sáng, điếu thuốc bắt đầu gắn bó từ đây...
-                  </p>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px", color: "#74766F", display: "grid", gap: "6px" }}>
                     <li>❌ Hút thuốc liên tục gần 8 năm</li>
                     <li>❌ Thể trạng 1m77 chỉ 55–56kg</li>
