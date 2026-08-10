@@ -10,6 +10,11 @@ function ThankYouContent() {
   const name = searchParams.get("name") || "Bạn";
   const phone = searchParams.get("phone") || "";
   const email = searchParams.get("email") || "";
+  const hasBump = searchParams.get("hasBump") === "true";
+  const rawTotal = searchParams.get("total") || "497000";
+
+  const totalAmount = parseInt(rawTotal, 10);
+  const formattedTotal = totalAmount.toLocaleString("vi-VN") + "đ";
 
   return (
     <main style={{ maxWidth: "880px", margin: "0 auto", padding: "50px 20px 80px" }}>
@@ -35,7 +40,7 @@ function ThankYouContent() {
         <h2 style={{ fontSize: "18px", color: "#FAD08B", margin: "0 0 16px", fontWeight: 800, textTransform: "uppercase" }}>
           📋 THÔNG TIN ĐƠN HÀNG XÁC NHẬN:
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px", fontSize: "15px", background: "#171A18", padding: "20px", borderRadius: "10px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px", fontSize: "15px", background: "#171A18", padding: "20px", borderRadius: "10px", marginBottom: "16px" }}>
           <div>
             <span style={{ color: "#A9B2AC", display: "block", fontSize: "13px" }}>Họ tên học viên:</span>
             <strong style={{ color: "#F5F2E9" }}>{name}</strong>
@@ -54,9 +59,15 @@ function ThankYouContent() {
           )}
           <div>
             <span style={{ color: "#A9B2AC", display: "block", fontSize: "13px" }}>Tổng thanh toán:</span>
-            <strong style={{ color: "#D96732", fontWeight: 900 }}>497.000đ (Trọn gói)</strong>
+            <strong style={{ color: "#D96732", fontWeight: 900 }}>{formattedTotal}</strong>
           </div>
         </div>
+
+        {hasBump && (
+          <div style={{ background: "rgba(217, 103, 50, 0.15)", border: "1px solid #D96732", padding: "14px 18px", borderRadius: "8px", color: "#FAD08B", fontSize: "14px", fontWeight: 700 }}>
+            ⚡ Đã bao gồm: Bộ Audio Sơ Cứu Cơn Thèm Thuốc 3 Phút (Kèm File MP3 Nghe Tức Thì Trong Email).
+          </div>
+        )}
       </div>
 
       {/* 3 NEXT STEPS TO GET STARTED */}

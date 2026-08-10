@@ -101,6 +101,18 @@ const coachingFeedbacks = [
 
 export default function Home() {
   const [showSticky, setShowSticky] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState({ name: "", email: "", phone: "" });
+
+  const handleModalSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!modalData.name || !modalData.email || !modalData.phone) {
+      alert("Vui lòng điền đầy đủ Tên, Email và Số điện thoại.");
+      return;
+    }
+    const query = new URLSearchParams(modalData).toString();
+    window.location.href = `/checkout?${query}`;
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -1593,7 +1605,7 @@ export default function Home() {
               Chỉ với: 497.000đ
             </div>
 
-            <a href="/checkout" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "18px 24px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", marginBottom: "14px", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
+            <a href="/checkout" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "18px 24px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", marginBottom: "14px", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
               <span>[ TÔI MUỐN TRỞ THÀNH <span style={{ whiteSpace: "nowrap" }}>NGƯỜI KHÔNG HÚT THUỐC ]</span></span>
             </a>
 
@@ -2116,7 +2128,7 @@ export default function Home() {
               Khi đăng ký hôm nay, bạn nhận quyền truy cập vào toàn bộ chương trình NON-SMOKER™. Bạn nhận được một hệ thống giúp bạn hiểu: <strong>Vì sao mình hút • Vì sao mình khó bỏ • Và cần làm gì để từng bước lấy lại quyền kiểm soát.</strong>
             </p>
 
-            <a href="/checkout" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "20px 28px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
+            <a href="/checkout" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "20px 28px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
               <span>[ TÔI MUỐN TRỞ THÀNH <span style={{ whiteSpace: "nowrap" }}>NGƯỜI KHÔNG HÚT THUỐC ]</span></span>
             </a>
           </div>
@@ -2152,8 +2164,71 @@ export default function Home() {
           <span style={{ fontSize: "11px", color: "#A9B2AC", fontWeight: 600 }}>NON-SMOKER™</span>
           <b style={{ fontSize: "16px", color: "#D96732" }}>497.000đ</b>
         </div>
-        <a href="/checkout" style={{ background: "#D96732", color: "white", padding: "10px 18px", fontSize: "12px", fontWeight: 800, textDecoration: "none", borderRadius: "4px" }}>BẮT ĐẦU NGAY →</a>
+        <a href="/checkout" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} style={{ background: "#D96732", color: "white", padding: "10px 18px", fontSize: "12px", fontWeight: 800, textDecoration: "none", borderRadius: "4px" }}>BẮT ĐẦU NGAY →</a>
       </div>
+
+      {/* LEAD CAPTURE MODAL POPUP (REFERENCE STYLE: vncreatorpreneur.com) */}
+      {isModalOpen && (
+        <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0, 0, 0, 0.75)", zIndex: 999999, display: "flex", alignItems: "center", justifyContent: "center", padding: "20px", backdropFilter: "blur(4px)" }}>
+          <div style={{ background: "#FFFFFF", color: "#111311", borderRadius: "16px", padding: "36px 30px", maxWidth: "460px", width: "100%", position: "relative", boxShadow: "0 25px 50px rgba(0,0,0,0.5)", boxSizing: "border-box" }}>
+            
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              style={{ position: "absolute", top: "16px", right: "16px", background: "none", border: "none", fontSize: "24px", color: "#74766F", cursor: "pointer", padding: "4px 8px" }}
+            >
+              ✕
+            </button>
+
+            <h3 style={{ fontSize: "22px", margin: "0 0 20px", fontWeight: 800, textAlign: "center", color: "#111311" }}>
+              Nhập thông tin của bạn
+            </h3>
+
+            <form onSubmit={handleModalSubmit} style={{ display: "grid", gap: "14px" }}>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Tên của bạn"
+                  value={modalData.name}
+                  onChange={(e) => setModalData({ ...modalData, name: e.target.value })}
+                  required
+                  style={{ width: "100%", padding: "14px 16px", border: "1px solid #D1D5DB", borderRadius: "8px", fontSize: "15px", boxSizing: "border-box", outline: "none", color: "#111311" }}
+                />
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email của bạn"
+                  value={modalData.email}
+                  onChange={(e) => setModalData({ ...modalData, email: e.target.value })}
+                  required
+                  style={{ width: "100%", padding: "14px 16px", border: "1px solid #D1D5DB", borderRadius: "8px", fontSize: "15px", boxSizing: "border-box", outline: "none", color: "#111311" }}
+                />
+              </div>
+
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Số điện thoại (có Zalo)"
+                  value={modalData.phone}
+                  onChange={(e) => setModalData({ ...modalData, phone: e.target.value })}
+                  required
+                  style={{ width: "100%", padding: "14px 16px", border: "1px solid #D1D5DB", borderRadius: "8px", fontSize: "15px", boxSizing: "border-box", outline: "none", color: "#111311" }}
+                />
+              </div>
+
+              <button
+                type="submit"
+                style={{ width: "100%", padding: "16px 20px", background: "#D96732", color: "white", border: "none", borderRadius: "8px", fontWeight: 900, fontSize: "16px", cursor: "pointer", textTransform: "uppercase", boxShadow: "0 8px 25px rgba(217,103,50,0.4)", marginTop: "6px" }}
+              >
+                NHẬN NON-SMOKER™ NGAY →
+              </button>
+            </form>
+
+          </div>
+        </div>
+      )}
     </div>
   );
 }
