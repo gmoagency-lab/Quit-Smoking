@@ -1593,8 +1593,8 @@ export default function Home() {
               Chỉ với: 497.000đ
             </div>
 
-            <a href="mailto:?subject=Đăng ký NON-SMOKER™" style={{ display: "inline-block", maxWidth: "600px", width: "100%", padding: "22px 36px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "20px", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", marginBottom: "14px", textTransform: "uppercase" }}>
-              [ TÔI MUỐN TRỞ THÀNH NGƯỜI KHÔNG HÚT THUỐC ]
+            <a href="mailto:?subject=Đăng ký NON-SMOKER™" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "18px 24px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", marginBottom: "14px", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
+              <span>[ TÔI MUỐN TRỞ THÀNH <span style={{ whiteSpace: "nowrap" }}>NGƯỜI KHÔNG HÚT THUỐC ]</span></span>
             </a>
 
             <div style={{ color: "#A9B2AC", fontSize: "13px", letterSpacing: "0.04em" }}>
@@ -1640,8 +1640,8 @@ export default function Home() {
               <h4 style={{ fontSize: "18px", color: "#F5F2E9", margin: "0 0 16px", fontWeight: 800, textTransform: "uppercase" }}>
                 BẮT ĐẦU HÀNH TRÌNH TRỞ THÀNH NON-SMOKER™ HÔM NAY
               </h4>
-              <a href="mailto:?subject=Đăng ký NON-SMOKER™" style={{ display: "inline-block", maxWidth: "560px", width: "100%", padding: "20px 36px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "18px", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", textTransform: "uppercase" }}>
-                [ TÔI MUỐN TRỞ THÀNH NGƯỜI KHÔNG HÚT THUỐC ]
+              <a href="mailto:?subject=Đăng ký NON-SMOKER™" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "560px", width: "100%", padding: "18px 24px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
+                <span>[ TÔI MUỐN TRỞ THÀNH <span style={{ whiteSpace: "nowrap" }}>NGƯỜI KHÔNG HÚT THUỐC ]</span></span>
               </a>
             </div>
           </div>
