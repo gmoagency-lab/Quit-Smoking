@@ -430,82 +430,213 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION: 3 DỊCH CHUYỂN CỰC KỲ QUAN TRỌNG (WARM IVORY #F3F0E8) */}
-      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
-        <div className="letter-wrap" style={{ maxWidth: "820px", margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(26px, 3.8vw, 42px)", color: "#191B19", margin: "0 0 28px" }}>
-            3 DỊCH CHUYỂN CỰC KỲ QUAN TRỌNG
-          </h2>
-
-          <div style={{ display: "grid", gap: "20px" }}>
-            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "28px", borderRadius: "10px" }}>
-              <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px" }}>01</span>
-              <h3 style={{ margin: "6px 0 10px", fontSize: "20px", color: "#191B19" }}>1. NHÌN THẤY VÒNG LẶP™</h3>
-              <p style={{ color: "#74766F", fontSize: "15px", margin: 0, lineHeight: 1.7 }}>
-                Trước khi cố phá nó. Công việc căng → Bức bối → Ra ngoài hút → Cảm thấy nhẹ hơn. Qua thời gian, não không chỉ học <em>“Thuốc = phần thưởng”</em> mà học <em>“Stress = đến lúc hút”</em>. Nếu không nhìn thấy vòng lặp, chiến thuật duy nhất còn lại là: <em>“RÁNG NHỊN”</em>.
-              </p>
-            </div>
-
-            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "28px", borderRadius: "10px" }}>
-              <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px" }}>02</span>
-              <h3 style={{ margin: "6px 0 10px", fontSize: "20px", color: "#191B19" }}>2. BẺ GÃY LIÊN KẾT™</h3>
-              <p style={{ color: "#74766F", fontSize: "15px", margin: 0, lineHeight: 1.7 }}>
-                Thay vì: <code>TÁC NHÂN → THUỐC</code>, ta bắt đầu chèn vào giữa một khoảng: <code>TÁC NHÂN → CÁCH XỬ LÝ → QUYẾT ĐỊNH</code> (Đổi vị trí, uống nước, đi bộ ngắn, chuyển hành vi tay/miệng, trì hoãn quyết định, mở Thẻ Xử Lý Nhanh hoặc Social Script).
-              </p>
-            </div>
-
-            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "28px", borderRadius: "10px" }}>
-              <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px" }}>03</span>
-              <h3 style={{ margin: "6px 0 10px", fontSize: "20px", color: "#191B19" }}>3. XÂY ĐỊNH DANH MỚI™</h3>
-              <p style={{ color: "#74766F", fontSize: "15px", margin: 0, lineHeight: 1.7 }}>
-                Đừng chỉ nói mình là ai. Hãy tạo bằng chứng. Từng bằng chứng nhỏ bắt đầu thay đổi câu chuyện từ: <em>“Tui là người cứ bỏ rồi hút lại”</em> sang: <em>“Tui đang trở thành người có thể đi qua những khoảnh khắc này mà không cần thuốc.”</em>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION: ĐÂY LÀ CÁCH 7 NGÀY HOẠT ĐỘNG (WARM IVORY #F3F0E8) */}
+      {/* SECTION: BÂY GIỜ NHÌN LẠI... (QUYỀN TỰ CHỦ & 3 NỀN TẢNG) */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <div style={{ color: "#D96732", fontWeight: 700, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "10px" }}>
-            LỘ TRÌNH THỰC THẾ
-          </div>
-          <h2 style={{ fontSize: "clamp(26px, 3.8vw, 42px)", color: "#191B19", margin: "0 0 16px" }}>
-            ĐÂY LÀ CÁCH 7 NGÀY HOẠT ĐỘNG
+          <h2 style={{ fontSize: "clamp(26px, 3.8vw, 42px)", color: "#191B19", margin: "0 0 24px", lineHeight: 1.25, fontWeight: 800 }}>
+            BÂY GIỜ NHÌN LẠI...
           </h2>
-          <p style={{ color: "#74766F", fontSize: "16px", marginBottom: "36px" }}>
-            Mỗi ngày: 1 video ngắn + 1 hướng dẫn + 1 bài thực hành + 1 thành phẩm.
-          </p>
 
-          {/* ROADMAP TIMELINE */}
-          <div style={{ display: "grid", gap: "16px" }}>
-            {sevenDaysRoadmap.map((item) => (
-              <div key={item.day} style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "24px", borderRadius: "10px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
-                  <span style={{ background: "#D96732", color: "white", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", fontSize: "12px" }}>{item.day}</span>
-                  <h3 style={{ margin: 0, fontSize: "18px", color: "#191B19" }}>{item.title}</h3>
-                </div>
-                <p style={{ color: "#74766F", fontSize: "14px", margin: "8px 0 10px", lineHeight: 1.65 }}>{item.desc}</p>
-                <span style={{ background: "#F3F0E8", color: "#66735B", fontWeight: 700, fontSize: "12px", padding: "4px 10px", borderRadius: "4px", display: "inline-block" }}>
-                  Thành phẩm: {item.output}
-                </span>
-              </div>
-            ))}
-          </div>
+          <div className="story-prose" style={{ fontSize: "18px", color: "#191B19", lineHeight: 1.8 }}>
+            <p>Thỉnh thoảng tui vẫn nghĩ về phiên bản của mình ngày trước.</p>
+            <p>
+              Một thằng hút thuốc gần 8 năm.<br />
+              Stress là hút.<br />
+              Cà phê là hút.<br />
+              Làm xong việc là hút.<br />
+              Đi nhậu cũng hút.<br />
+              Có hôm đang ho vẫn châm thêm một điếu.
+            </p>
+            <p>Và không biết đã bao nhiêu lần tự nói với mình: <em>“Mai bỏ.”</em></p>
 
-          {/* 10 DELIVERABLES RECAP BOX */}
-          <div style={{ background: "#171A18", color: "#F5F2E9", padding: "34px", borderRadius: "12px", marginTop: "42px" }}>
-            <h3 style={{ color: "#D96732", marginTop: 0, fontSize: "20px", borderBottom: "1px solid #384238", paddingBottom: "12px", marginBottom: "18px" }}>
-              SAU 7 NGÀY, ÔNG CÓ TRONG TAY TOÀN BỘ 10 THÀNH PHẨM:
-            </h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "10px" }}>
-              {tenDeliverables.map((d) => (
-                <div key={d} style={{ background: "#252B25", padding: "10px 14px", borderRadius: "6px", fontSize: "13px", color: "#D5DFDB" }}>
-                  ✓ {d}
-                </div>
-              ))}
+            <p>
+              Nếu gặp lại phiên bản đó, có lẽ tui sẽ không nói: <em>“Mày phải quyết tâm hơn.”</em><br />
+              Cũng không nói: <em>“Mày phải có ý chí mạnh hơn.”</em>
+            </p>
+
+            <p>Tui chỉ muốn chỉ cho nó thấy một điều mà ngày đó tui chưa hiểu.</p>
+
+            <div style={{ background: "#252B25", borderLeft: "4px solid #D96732", color: "#F5F2E9", padding: "24px 28px", borderRadius: "8px", margin: "28px 0" }}>
+              <strong style={{ color: "#D96732", fontSize: "20px", display: "block", marginBottom: "10px", textTransform: "uppercase" }}>
+                THỨ TUI CẦN LẤY LẠI KHÔNG CHỈ LÀ SỨC KHỎE. MÀ LÀ QUYỀN TỰ CHỦ.
+              </strong>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px", fontSize: "15px", color: "#D5DFDB" }}>
+                <li>✓ Quyền uống một ly cà phê mà không mặc định phải châm thuốc.</li>
+                <li>✓ Quyền gặp một ngày stress mà không để tay tự tìm bao thuốc.</li>
+                <li>✓ Quyền ngồi cùng bạn bè mà vẫn tự quyết định mình muốn làm gì.</li>
+                <li>✓ Quyền có một khoảng nghỉ mà không cần điếu thuốc trở thành điều kiện để cảm thấy dễ chịu.</li>
+                <li>✓ Và quan trọng nhất... Quyền không còn sống trong cảm giác mình biết điều gì tốt cho bản thân nhưng hết lần này tới lần khác vẫn không làm được.</li>
+              </ul>
             </div>
+
+            <p>Đó là thứ làm tui bắt đầu nhìn việc bỏ thuốc theo một cách khác.</p>
+
+            <p style={{ color: "#D96732", fontWeight: 800, fontSize: "20px" }}>
+              BỎ THUỐC KHÔNG CHỈ LÀ LOẠI BỎ MỘT ĐIẾU THUỐC.
+            </p>
+            <p>
+              Nó còn là quá trình lấy lại quyền quyết định trong những khoảnh khắc mà trước đây mình gần như phản ứng theo quán tính.
+            </p>
+
+            <p><strong>Và đây cũng là điều quan trọng:</strong></p>
+            <p style={{ color: "#191B19", fontWeight: 800 }}>
+              QUYỀN TỰ CHỦ KHÔNG ĐẾN TỪ MỘT THỨ DUY NHẤT.
+            </p>
+
+            <ul style={{ listStyle: "circle", paddingLeft: "24px", color: "#74766F", margin: "0 0 20px" }}>
+              <li>Không phải chỉ cần quyết tâm.</li>
+              <li>Không phải chỉ cần né tất cả những nơi có người hút.</li>
+              <li>Không phải chỉ cần thay một thói quen.</li>
+              <li>Và cũng không phải chỉ cần tự nhủ: <em>“Tôi không còn là người hút thuốc.”</em></li>
+            </ul>
+
+            <p>Muốn thay đổi một hành vi đã lặp lại trong thời gian dài, có nhiều mảnh ghép phải bắt đầu ăn khớp với nhau.</p>
+            <p style={{ color: "#D96732", fontWeight: 700 }}>
+              Và nếu bạn đang tự hỏi những mảnh ghép đó là gì... thì đây là 3 điều quan trọng nhất tui đã bắt đầu nhìn thấy trong chính hành trình của mình, cũng là nền tảng của Hệ thống 7 ngày này:
+            </p>
+
+            {/* NỀN TẢNG 1 */}
+            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "28px", borderRadius: "12px", margin: "32px 0" }}>
+              <span style={{ background: "#D96732", color: "white", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                NỀN TẢNG 1
+              </span>
+              <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                NHÌN THẤY VÒNG LẶP TRƯỚC KHI CỐ PHÁ NÓ
+              </h3>
+              <p style={{ color: "#191B19", fontSize: "16px" }}>
+                Một thời gian dài, tui chỉ có một cách giải thích: <em>“Tui thèm thuốc.”</em>
+              </p>
+              <p style={{ color: "#74766F", fontSize: "15px" }}>
+                Nhưng “thèm thuốc” là một câu quá rộng. Vì nếu để ý kỹ, bạn sẽ thấy mình không hút giống nhau trong mọi thời điểm.
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 14px", display: "grid", gap: "6px", fontSize: "14px", color: "#191B19" }}>
+                <li>• Có người cứ mở mắt buổi sáng là muốn hút.</li>
+                <li>• Có người phải có cà phê.</li>
+                <li>• Có người ăn xong là tay tìm thuốc.</li>
+                <li>• Có người bình thường cả ngày nhưng tới lúc công việc căng thì cảm giác muốn hút tăng lên.</li>
+                <li>• Có người ít nghĩ đến thuốc khi ở một mình, nhưng chỉ cần ngồi vào bàn với bạn bè là mọi thứ tự động quay lại.</li>
+              </ul>
+              <p style={{ color: "#74766F", fontSize: "15px" }}>
+                Điều đó có nghĩa là trước điếu thuốc thường có một bối cảnh. Một khoảnh khắc. Một cảm xúc. Một hoạt động. Một người. Một nơi. Hoặc một nghi thức đã lặp lại quá nhiều lần.
+              </p>
+              <div style={{ background: "#F3F0E8", borderLeft: "3px solid #D96732", padding: "12px 16px", borderRadius: "4px", fontSize: "14px", margin: "14px 0", color: "#191B19", fontWeight: 600 }}>
+                Ví dụ:<br />
+                • Cà phê ➔ muốn hút ➔ châm thuốc.<br />
+                • Stress ➔ muốn ra ngoài ➔ châm thuốc.<br />
+                • Ăn xong ➔ cảm thấy thiếu thiếu ➔ châm thuốc.<br />
+                • Bạn bè mời ➔ cầm thuốc ➔ hút.
+              </div>
+              <p style={{ color: "#74766F", fontSize: "15px" }}>
+                Từng lần riêng lẻ trông rất nhỏ. Nhưng khi lặp lại hàng trăm, hàng nghìn lần, nó bắt đầu trở thành một con đường quen thuộc. Và rồi tới một lúc... bạn không còn cảm giác mình đang quyết định nữa. Bạn chỉ đang phản ứng.
+              </p>
+              <p style={{ color: "#D96732", fontWeight: 800, margin: 0 }}>
+                Đó là lý do bước đầu tiên không phải cố chống lại tất cả. Mà là: NHÌN THẤY CHÍNH XÁC VÒNG LẶP CỦA MÌNH.
+              </p>
+              <p style={{ color: "#74766F", fontSize: "14px", margin: "8px 0 0" }}>
+                Khi bạn biết mình thường hút ở đâu, khi nào, sau điều gì và trong trạng thái nào... thứ từng có cảm giác rất mơ hồ bắt đầu trở nên cụ thể. Và thứ cụ thể thì mới có thể bắt đầu xử lý. Đó là nền tảng đầu tiên.
+              </p>
+            </div>
+
+            {/* NỀN TẢNG 2 */}
+            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "28px", borderRadius: "12px", margin: "32px 0" }}>
+              <span style={{ background: "#D96732", color: "white", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                NỀN TẢNG 2
+              </span>
+              <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                TÁC NHÂN CỦ KHÔNG NHẤT THIẾT PHẢI DẪN ĐẾN PHẢN ỨNG CỦ
+              </h3>
+              <p style={{ color: "#74766F", fontSize: "15px" }}>
+                Nhìn thấy vòng lặp thôi chưa đủ. Vì cuộc sống vẫn tiếp tục. Ngày mai bạn vẫn có thể uống cà phê. Vẫn có deadline. Vẫn ăn cơm. Vẫn lái xe. Vẫn gặp bạn bè. Vẫn có những ngày vui. Và cũng vẫn có những ngày cực kỳ tệ.
+              </p>
+              <p style={{ color: "#74766F", fontSize: "15px" }}>
+                Nếu kế hoạch bỏ thuốc chỉ hoạt động khi mọi thứ bình yên... thì tới lúc cuộc sống trở lại bình thường, phản ứng cũ rất dễ quay lại.
+              </p>
+              <div style={{ background: "#252B25", color: "#F5F2E9", padding: "18px 20px", borderRadius: "8px", margin: "16px 0" }}>
+                <strong style={{ color: "#D96732", fontSize: "17px", display: "block", marginBottom: "8px" }}>
+                  ĐÂY LÀ CHỖ MÌNH CẦN XÂY MỘT THỨ KHÁC: KHOẢNG LỰA CHỌN.
+                </strong>
+                <div style={{ fontSize: "14px", lineHeight: 1.7, color: "#D5DFDB" }}>
+                  • Trước đây: Stress ➔ hút.<br />
+                  &nbsp;&nbsp;➔ Ta bắt đầu tập: <strong>Stress ➔ Dừng lại ➔ Xử lý ➔ Quyết định.</strong><br />
+                  • Trước đây: Cà phê ➔ hút.<br />
+                  &nbsp;&nbsp;➔ Ta bắt đầu tạo một nghi thức khác.<br />
+                  • Trước đây: “Làm điếu không?” ➔ nhận thuốc.<br />
+                  &nbsp;&nbsp;➔ Ta chuẩn bị trước câu trả lời.
+                </div>
+              </div>
+              <p style={{ color: "#74766F", fontSize: "15px" }}>
+                Điểm quan trọng không nằm ở một mẹo cụ thể. Vì không có một phản ứng duy nhất phù hợp với tất cả mọi người và mọi tình huống.
+              </p>
+              <p style={{ color: "#D96732", fontWeight: 800, margin: 0 }}>
+                Điều quan trọng là: BẠN KHÔNG CÒN ĐỂ TÁC NHÂN VÀ ĐIẾU THUỐC NỐI THẲNG VỚI NHAU.
+              </p>
+              <p style={{ color: "#74766F", fontSize: "14px", margin: "8px 0 0" }}>
+                Có một khoảng ở giữa. Và trong khoảng đó... bạn bắt đầu có quyền lựa chọn. Một lần. Rồi thêm một lần. Rồi thêm một lần nữa. Đó là nền tảng thứ hai.
+              </p>
+            </div>
+
+            {/* NỀN TẢNG 3 */}
+            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "28px", borderRadius: "12px", margin: "32px 0" }}>
+              <span style={{ background: "#D96732", color: "white", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                NỀN TẢNG 3
+              </span>
+              <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                CON NGƯỜI MỚI CẦN BẰNG CHỨNG MỚI
+              </h3>
+              <p style={{ color: "#74766F", fontSize: "15px" }}>
+                Đây là phần tui từng không để ý. Sau nhiều năm hút thuốc, nó không còn chỉ là một hành vi. Nó bắt đầu trở thành một phần trong cách mình nhìn chính mình: <em>“Tôi là người hút thuốc.”</em>
+              </p>
+              <p style={{ color: "#74766F", fontSize: "15px" }}>
+                Vậy nên khi bỏ, mình rất dễ đứng ở vị trí: <em>“Tôi là người hút thuốc đang cố không hút.”</em> Và mỗi ngày lại trở thành một cuộc giằng co. Một bên là: <em>“Tôi muốn hút.”</em> Một bên là: <em>“Tôi không được hút.”</em>
+              </p>
+              <p style={{ color: "#191B19", fontWeight: 700 }}>
+                Nhưng thay đổi cách nhìn về bản thân không có nghĩa là chỉ đọc vài câu khẳng định rồi mọi thứ tự biến mất. Identity mới cần: BẰNG CHỨNG.
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "14px 0", display: "grid", gap: "8px", fontSize: "14px", color: "#191B19" }}>
+                <li>✓ Bạn uống một ly cà phê mà phản ứng khác đi ➔ <strong>Một bằng chứng.</strong></li>
+                <li>✓ Bạn gặp stress và sử dụng cách xử lý đã chuẩn bị ➔ <strong>Một bằng chứng.</strong></li>
+                <li>✓ Bạn được mời thuốc nhưng lựa chọn khác ➔ <strong>Một bằng chứng.</strong></li>
+                <li>✓ Bạn có một ngày khó khăn nhưng không mặc định dùng điếu thuốc như nút xả ➔ <strong>Một bằng chứng.</strong></li>
+              </ul>
+              <p style={{ color: "#74766F", fontSize: "15px" }}>
+                Từng hành động riêng nhìn rất nhỏ. Nhưng khi cộng lại, chúng bắt đầu gửi cho chính bạn một thông điệp khác: <em>“Có thể mình không nhất thiết phải sống theo cách cũ nữa.”</em> Rồi dần dần: <em>“Mình có thể tự quyết định.”</em>
+              </p>
+              <p style={{ color: "#D96732", fontWeight: 800, margin: 0 }}>
+                Và cuối cùng, mục tiêu không còn chỉ là: “Tôi phải nhịn thuốc.” Mà tiến gần hơn đến: “Thuốc lá không còn là thứ tôi cần để đi qua những khoảnh khắc này.” Đó là nền tảng thứ ba.
+              </p>
+            </div>
+
+            {/* INTEGRATION SUMMARY & 7-DAY ROADMAP INTRO */}
+            <div style={{ background: "#171A18", color: "#F5F2E9", padding: "32px", borderRadius: "14px", margin: "40px 0" }}>
+              <h3 style={{ color: "#D96732", fontSize: "20px", marginTop: 0, textTransform: "uppercase", fontWeight: 800 }}>
+                NHƯNG NẾU CHỈ LÀM MỘT TRONG BA THỨ THÌ SAO?
+              </h3>
+              <p style={{ color: "#D5DFDB", fontSize: "15px", lineHeight: 1.7 }}>
+                Nhiều người nghĩ: Chỉ cần hiểu Trigger là đủ. Hoặc chỉ cần tìm một hành vi thay thế là đủ. Hoặc chỉ cần thay đổi tư duy là đủ. Nhưng thay đổi hành vi hiếm khi đơn giản như vậy.
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "14px 0", display: "grid", gap: "10px", fontSize: "14px", color: "#A9B2AC" }}>
+                <li>• Bạn có thể hiểu rất rõ vì sao mình hút... nhưng nếu đúng lúc stress mà không biết phải làm gì tiếp theo, phản ứng cũ vẫn rất dễ quay lại.</li>
+                <li>• Bạn có thể chuẩn bị hàng chục cách thay thế... nhưng nếu không biết tình huống nào thực sự làm mình dễ gãy, bạn không biết nên dùng cái nào lúc nào.</li>
+                <li>• Bạn có thể nói: “Tôi không còn là người hút thuốc”... nhưng nếu hành vi mỗi ngày vẫn liên tục tạo bằng chứng ngược lại, câu nói đó rất khó đứng vững.</li>
+              </ul>
+              <div style={{ borderTop: "1px solid #384238", paddingTop: "18px", marginTop: "18px" }}>
+                <strong style={{ color: "#F5F2E9", fontSize: "18px", display: "block", marginBottom: "10px" }}>
+                  THAY ĐỔI KHÔNG ĐẾN TỪ MỘT MẢNH GHÉP DUY NHẤT.
+                </strong>
+                <p style={{ color: "#D5DFDB", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
+                  Nó đến khi nhiều phần bắt đầu đi cùng nhau: Bạn nhìn thấy vòng lặp. Bạn nhận ra tác nhân. Bạn chuẩn bị phản ứng mới. Bạn có kế hoạch cho những tình huống khó. Bạn biết phải làm gì nếu một ngày bị trượt. Và bạn liên tục tạo bằng chứng cho cách mình muốn sống tiếp.
+                </p>
+              </div>
+              <div style={{ background: "#252B25", borderLeft: "4px solid #D96732", padding: "18px", borderRadius: "6px", marginTop: "20px" }}>
+                <strong style={{ color: "#D96732", fontSize: "16px", display: "block", marginBottom: "6px" }}>
+                  LẤY LẠI QUYỀN TỰ CHỦ — LỘ TRÌNH HÀNH ĐỘNG TRONG 7 NGÀY
+                </strong>
+                <p style={{ color: "#D5DFDB", fontSize: "14px", margin: 0, lineHeight: 1.65 }}>
+                  Một hành trình từng bước giúp bạn không phải cố giải quyết tất cả cùng lúc. Ngày đầu tiên nhìn thấy. Ngày tiếp theo hiểu rõ hơn. Sau đó xây cách phản ứng. Chuẩn bị cho những tình huống khó. Và từng bước biến những gì vừa học thành thứ có thể sử dụng trong cuộc sống thật. Không phải để sau 7 ngày bạn có thêm một đống kiến thức. Mà để bạn bắt đầu có một hệ thống rõ ràng hơn cho chính hành trình bỏ thuốc của mình.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
