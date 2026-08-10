@@ -297,45 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION: MID-LETTER OFFER CARD & GUARANTEE */}
-      <section className="letter-section" style={{ padding: "80px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
-        <div className="letter-wrap" style={{ maxWidth: "800px", margin: "0 auto" }}>
-          {/* MID OFFER CARD */}
-          <div style={{ background: "#171A18", color: "#F5F2E9", padding: "40px", borderRadius: "14px", textAlign: "center", boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}>
-            <div style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", marginBottom: "8px" }}>
-              BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™
-            </div>
-            <h3 style={{ fontSize: "32px", color: "#D96732", margin: "0 0 16px", fontWeight: 800 }}>
-              Nhóm trải nghiệm đầu tiên — 497.000Đ
-            </h3>
-            <p style={{ color: "#A9B2AC", fontSize: "16px", maxWidth: "620px", margin: "0 auto 24px", lineHeight: 1.7 }}>
-              Mỗi ngày khoảng 5–10 phút nội dung chính + bài tập thực hành. Mục tiêu không phải để ông xem cho biết, mà để sau 7 ngày ông thực sự có một <strong>BẢN ĐỒ TÁC CHIẾN CÁ NHÂN</strong> của chính mình.
-            </p>
-            <a href="#offer" style={{ display: "inline-block", background: "#D96732", color: "white", fontWeight: 800, padding: "18px 40px", borderRadius: "6px", fontSize: "17px", textDecoration: "none", boxShadow: "0 10px 30px rgba(217,103,50,0.4)", marginBottom: "10px" }}>
-              BẮT ĐẦU NGÀY 1 NGAY →
-            </a>
-            <div style={{ color: "#74766F", fontSize: "13px", letterSpacing: "0.04em" }}>
-              Truy cập ngay sau đăng ký · 497.000đ · Thanh toán một lần
-            </div>
-          </div>
 
-          {/* GUARANTEE BOX */}
-          <div style={{ background: "#252B25", border: "1px solid #384238", padding: "30px", borderRadius: "10px", marginTop: "28px", color: "#F5F2E9" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "10px" }}>
-              <span style={{ fontSize: "24px" }}>🛡️</span>
-              <h4 style={{ color: "#D96732", margin: 0, fontSize: "17px", textTransform: "uppercase" }}>
-                CAM KẾT ĐỒNG HÀNH HOÀN THIỆN™
-              </h4>
-            </div>
-            <p style={{ color: "#A9B2AC", fontSize: "15px", lineHeight: 1.7, margin: "0 0 14px" }}>
-              Tui không hứa: <em>“7 ngày đảm bảo ông bỏ thuốc vĩnh viễn.”</em> Một lời hứa như vậy không thuộc quyền kiểm soát của tui. Điều tui có thể đứng sau là quá trình triển khai.
-            </p>
-            <p style={{ color: "#F5F2E9", fontSize: "15px", lineHeight: 1.7, margin: 0 }}>
-              Nếu ông hoàn thành đủ 7 ngày, làm Sổ Thực Hành và các bước được yêu cầu nhưng vẫn chưa xây xong Bản Đồ Tác Chiến cá nhân, ông được thêm: <strong>14 NGÀY HỖ TRỢ HOÀN THIỆN</strong> mà không mất thêm phí. Mục tiêu rất đơn giản: Ông không mua một đống video rồi cuối cùng chẳng có gì trong tay.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* SECTION: DEEP PERSONAL LETTER ("HEY BRO. ĐIẾU THUỐC CUỐI CÙNG CỦA TUI?") */}
       <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
