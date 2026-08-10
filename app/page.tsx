@@ -121,52 +121,69 @@ export default function Home() {
         BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™ — NHÓM TRẢI NGHIỆM ĐẦU TIÊN
       </div>
 
-      {/* HERO SECTION — DARK CHARCOAL (#171A18) */}
-      <header className="hero blueprint" style={{ background: "#171A18", color: "#F5F2E9", padding: "85px 0 75px" }}>
-        <div className="wrap" style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
-          <div style={{ color: "#D96732", fontSize: "13px", fontWeight: 800, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "14px" }}>
-            BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™
-          </div>
-          <div style={{ color: "#A9B2AC", fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", marginBottom: "20px" }}>
-            NHÓM TRẢI NGHIỆM ĐẦU TIÊN — 497.000Đ
+      {/* HERO SECTION — THE YOUNG LOVE STYLE (CHARCOAL BLACK #171A18) */}
+      <header className="hero blueprint" style={{ background: "#171A18", color: "#F5F2E9", padding: "75px 0 80px" }}>
+        <div className="wrap" style={{ maxWidth: "840px", margin: "0 auto", textAlign: "center" }}>
+          {/* Top Logo / Brand Badge */}
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#D96732", fontSize: "13px", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "28px" }}>
+            <span style={{ color: "#D96732", fontSize: "16px" }}>❤️</span> BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™
           </div>
 
-          <a href="#offer" className="button" style={{ display: "inline-block", background: "#D96732", color: "white", fontWeight: 800, padding: "18px 42px", borderRadius: "6px", fontSize: "18px", textDecoration: "none", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", marginBottom: "36px" }}>
-            [ BẮT ĐẦU 7 NGÀY CỦA TÔI → ]
-          </a>
-
-          <div style={{ background: "#252B25", border: "1px solid #384238", padding: "24px 28px", borderRadius: "10px", textAlign: "left", marginBottom: "32px" }}>
-            <p style={{ color: "#D5DFDB", fontSize: "16px", margin: 0, lineHeight: 1.7, fontStyle: "italic" }}>
-              Dành cho người đã hút thuốc nhiều năm, từng muốn bỏ nhưng cứ quay lại mỗi khi stress, cà phê, nhậu hoặc gặp đúng “cữ” quen thuộc.
-            </p>
-          </div>
-
-          <h1 style={{ fontSize: "clamp(28px, 4.2vw, 48px)", color: "#F5F2E9", lineHeight: 1.2, fontWeight: 800, margin: "0 0 12px", letterSpacing: "-0.02em" }}>
-            TUI ĐÃ HÚT THUỐC GẦN 8 NĂM
+          {/* Main Headline */}
+          <h1 style={{ fontSize: "clamp(30px, 4.5vw, 54px)", color: "#D96732", lineHeight: 1.2, fontWeight: 800, margin: "0 0 20px", letterSpacing: "-0.02em" }}>
+            CÁCH TRỞ THÀNH NGƯỜI ĐÀN ÔNG<br />KHÔNG CÒN CẦN ĐẾN THUỐC LÁ
           </h1>
-          <p style={{ fontSize: "clamp(22px, 3.2vw, 36px)", color: "#D96732", fontWeight: 800, margin: "0 0 24px", lineHeight: 1.25 }}>
-            Và từng nghĩ mình sẽ HÚT CẢ ĐỜI
+
+          {/* Subheadline */}
+          <p style={{ fontSize: "clamp(16px, 2.2vw, 20px)", color: "#D5DFDB", lineHeight: 1.6, maxWidth: "680px", margin: "0 auto 36px", fontWeight: 400 }}>
+            Mà không phải ngày nào cũng gồng mình nhịn, đấu tranh với cơn thèm hay tự trách vì những lần bỏ chưa thành công.
           </p>
 
-          <div className="story-prose" style={{ textAlign: "left", color: "#A9B2AC", fontSize: "17px", lineHeight: 1.8 }}>
-            <p style={{ color: "#F5F2E9", fontSize: "18px", fontWeight: 600 }}>
-              Cho tới khi tui nhận ra:
-            </p>
-            <p style={{ color: "#F5F2E9", fontSize: "18px" }}>
-              Cai thuốc không chỉ là cố không hút điếu tiếp theo. Mà còn là học cách trở thành một con người không còn cần xây cuộc sống xoay quanh điếu thuốc.
-            </p>
-            <p style={{ color: "#A9B2AC" }}>
-              Ngay cả khi ông đã từng bỏ vài lần, vẫn quay lại khi stress và bắt đầu nghĩ: <em>“Chắc tại mình không đủ ý chí.”</em>
-            </p>
+          {/* Image Comparison Box (Đạt thời hút thuốc → Đạt hiện tại) */}
+          <div style={{ maxWidth: "640px", margin: "0 auto 40px" }}>
+            {/* Top Curved Flow Arrow */}
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: "8px" }}>
+              <span style={{ color: "#D96732", fontSize: "24px", fontWeight: 800 }}>
+                ➔
+              </span>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", alignItems: "center" }}>
+              {/* Photo 1: Đạt thời hút thuốc (BW) */}
+              <div style={{ overflow: "hidden", borderRadius: "12px", border: "1px solid #384238", background: "#252B25", boxShadow: "0 12px 30px rgba(0,0,0,0.4)" }}>
+                <img
+                  src="/images/dat_before_bw.jpg"
+                  alt="Đạt thời hút thuốc"
+                  style={{ width: "100%", height: "320px", objectFit: "cover", display: "block", filter: "grayscale(100%) contrast(110%)" }}
+                />
+                <div style={{ padding: "10px 12px", background: "rgba(23,26,24,0.9)", color: "#A9B2AC", fontSize: "12px", fontWeight: 700, textAlign: "center" }}>
+                  Đạt thời hút thuốc
+                </div>
+              </div>
+
+              {/* Photo 2: Đạt hiện tại (Gym fit) */}
+              <div style={{ overflow: "hidden", borderRadius: "12px", border: "2px solid #D96732", background: "#252B25", boxShadow: "0 12px 30px rgba(217,103,50,0.25)" }}>
+                <img
+                  src="/images/dat_after_gym.jpg"
+                  alt="Đạt hiện tại"
+                  style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }}
+                />
+                <div style={{ padding: "10px 12px", background: "#D96732", color: "white", fontSize: "12px", fontWeight: 800, textAlign: "center" }}>
+                  Đạt hiện tại
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div style={{ background: "rgba(217,103,50,0.15)", border: "2px solid #D96732", padding: "20px", borderRadius: "8px", margin: "32px 0", color: "#D96732", fontWeight: 800, fontSize: "18px", letterSpacing: "0.05em" }}>
-            THAY ĐỔI CON NGƯỜI BÊN TRONG — NOT JUST NICOTINE.
+          {/* Primary CTA Button */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+            <a href="#offer" className="button" style={{ display: "inline-block", background: "#D96732", color: "white", fontWeight: 800, padding: "20px 48px", borderRadius: "8px", fontSize: "18px", textDecoration: "none", boxShadow: "0 14px 40px rgba(217,103,50,0.45)", letterSpacing: "0.02em" }}>
+              [ BẮT ĐẦU HÀNH TRÌNH 7 NGÀY → ]
+            </a>
+            <span style={{ color: "#74766F", fontSize: "13px", letterSpacing: "0.04em" }}>
+              Nhóm trải nghiệm đầu tiên · 497.000đ
+            </span>
           </div>
-
-          <a href="#intro" style={{ color: "#A9B2AC", fontSize: "14px", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "4px" }}>
-            [ KHÁM PHÁ BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™ ↓ ]
-          </a>
         </div>
       </header>
 
