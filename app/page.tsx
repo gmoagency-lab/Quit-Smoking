@@ -784,69 +784,68 @@ export default function Home() {
                 </svg>
               </div>
 
-              {/* COMPARISON PHOTOS SIDE BY SIDE */}
+              {/* COMPARISON PHOTOS SIDE BY SIDE WITH LABELS ABOVE */}
               <div style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                gap: "20px",
+                gap: "24px",
                 maxWidth: "680px",
                 margin: "0 auto 36px"
               }}>
-                <div style={{ position: "relative" }}>
+                {/* BEFORE ITEM */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <div style={{
+                    background: "rgba(0,0,0,0.6)",
+                    border: "1px solid #3E2B23",
+                    color: "#A9B2AC",
+                    fontSize: "14px",
+                    fontWeight: 700,
+                    padding: "8px 14px",
+                    borderRadius: "8px",
+                    textAlign: "center"
+                  }}>
+                    2023 (Tự mò & giằng co)
+                  </div>
                   <img
                     src="/images/dat_trade_fair_2023.png"
                     alt="Đạt trước đây - 2023"
                     style={{
                       width: "100%",
-                      height: "360px",
+                      height: "440px",
                       objectFit: "cover",
                       borderRadius: "16px",
                       border: "1px solid #4A352C",
                       boxShadow: "0 12px 30px rgba(0,0,0,0.5)"
                     }}
                   />
-                  <span style={{
-                    position: "absolute",
-                    bottom: "12px",
-                    left: "12px",
-                    background: "rgba(0,0,0,0.75)",
-                    backdropFilter: "blur(6px)",
-                    color: "#A9B2AC",
-                    fontSize: "12px",
-                    fontWeight: 700,
-                    padding: "4px 10px",
-                    borderRadius: "6px"
-                  }}>
-                    2023 (Tự mò & giằng co)
-                  </span>
                 </div>
 
-                <div style={{ position: "relative" }}>
+                {/* AFTER ITEM */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                  <div style={{
+                    background: "#D96732",
+                    color: "#FFFFFF",
+                    fontSize: "14px",
+                    fontWeight: 800,
+                    padding: "8px 14px",
+                    borderRadius: "8px",
+                    textAlign: "center",
+                    boxShadow: "0 4px 14px rgba(217,103,50,0.3)"
+                  }}>
+                    Hiện tại (Tự chủ hoàn toàn)
+                  </div>
                   <img
                     src="/images/dat_park_runner.jpg"
                     alt="Đạt bây giờ - Tự chủ & Khỏe mạnh"
                     style={{
                       width: "100%",
-                      height: "360px",
+                      height: "440px",
                       objectFit: "cover",
                       borderRadius: "16px",
                       border: "2px solid #D96732",
                       boxShadow: "0 12px 35px rgba(217,103,50,0.25)"
                     }}
                   />
-                  <span style={{
-                    position: "absolute",
-                    bottom: "12px",
-                    left: "12px",
-                    background: "rgba(217,103,50,0.9)",
-                    color: "#FFFFFF",
-                    fontSize: "12px",
-                    fontWeight: 800,
-                    padding: "4px 10px",
-                    borderRadius: "6px"
-                  }}>
-                    Hiện tại (Tự chủ hoàn toàn)
-                  </span>
                 </div>
               </div>
 
