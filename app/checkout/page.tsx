@@ -18,6 +18,7 @@ function CheckoutFormContent() {
   const [includeBump, setIncludeBump] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSepayPaid, setIsSepayPaid] = useState(false);
+  const [pgFormState, setPgFormState] = useState<{ checkoutURL: string; fields: Record<string, string> } | null>(null);
 
   const basePrice = 497000;
   const bumpPrice = 99000;
@@ -74,6 +75,47 @@ function CheckoutFormContent() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // SePAY PG Form Redirect Handler
+  const handleSepayPgRedirect = async () => {
+    if (!formData.fullName || !formData.phone || !formData.email) {
+      alert("Vui lòng nhập đầy đủ Họ tên, Số điện thoại và Email.");
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/sepay-init", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: totalPrice,
+          phone: formData.phone,
+          name: formData.fullName,
+          email: formData.email,
+          hasBump: includeBump,
+        }),
+      });
+
+      const data = await res.json();
+      if (data && data.success && data.fields) {
+        setPgFormState({
+          checkoutURL: data.checkoutURL,
+          fields: data.fields,
+        });
+
+        // Submit form after render
+        setTimeout(() => {
+          const formElement = document.getElementById("sepayPgForm") as HTMLFormElement;
+          if (formElement) {
+            formElement.submit();
+          }
+        }, 100);
+      }
+    } catch (err) {
+      console.error("SePAY PG Init Error:", err);
+      setIsSubmitting(false);
+    }
   };
 
   const handleSimulatePayment = async () => {
@@ -137,7 +179,7 @@ function CheckoutFormContent() {
           HOÀN TẤT ĐĂNG KÝ NON-SMOKER™ (2026)
         </h1>
         <p style={{ color: "#A9B2AC", fontSize: "16px", maxWidth: "600px", margin: "0 auto" }}>
-          Quét mã VietQR SePAY bên dưới để thanh toán tự động. Hệ thống sẽ tự động kích hoạt tài khoản ngay khi nhận được tiền.
+          Quét mã VietQR SePAY bên dưới để thanh toán tự động hoặc bấm chuyển hướng cổng thanh toán SePAY PG.
         </p>
       </div>
 
@@ -247,7 +289,6 @@ function CheckoutFormContent() {
                   <img
                     src={sepayQrUrl}
                     onError={(e) => {
-                      // Fallback to VietQR API if SePAY gateway img is loading
                       (e.target as HTMLImageElement).src = vietqrFallbackUrl;
                     }}
                     alt="Mã QR SePAY Chuyển Khoản Tự Động"
@@ -288,7 +329,7 @@ function CheckoutFormContent() {
               </div>
             </div>
 
-            {/* SUBMIT BUTTON */}
+            {/* SUBMIT BUTTON 1: DIRECT CONFIRM */}
             <button
               type="submit"
               disabled={isSubmitting}
@@ -308,6 +349,29 @@ function CheckoutFormContent() {
               }}
             >
               {isSubmitting ? "ĐANG XỬ LÝ ĐƠN HÀNG..." : `✔ ĐÃ CHUYỂN KHOẢN ${formatVND(totalPrice)} — VÀO HỌC NGAY`}
+            </button>
+
+            {/* SUBMIT BUTTON 2: OFFICIAL SEPAY PG GATEWAY REDIRECT FORM */}
+            <button
+              type="button"
+              onClick={handleSepayPgRedirect}
+              disabled={isSubmitting}
+              style={{
+                width: "100%",
+                padding: "14px 20px",
+                background: "#0068FF",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                fontWeight: 800,
+                fontSize: "15px",
+                cursor: isSubmitting ? "not-allowed" : "pointer",
+                marginTop: "8px",
+                textTransform: "uppercase",
+                boxShadow: "0 8px 20px rgba(0,104,255,0.3)",
+              }}
+            >
+              💳 THANH TOÁN QUA CỔNG SEPAY PG GATEWAY (SẼ CHUYỂN TRANG)
             </button>
 
             {/* SANDBOX SEPAY SIMULATION TEST BUTTON */}
@@ -336,10 +400,20 @@ function CheckoutFormContent() {
             </div>
 
           </form>
+
+          {/* HIDDEN SEPAY PG GATEWAY FORM */}
+          {pgFormState && (
+            <form id="sepayPgForm" action={pgFormState.checkoutURL} method="POST" style={{ display: "none" }}>
+              {Object.keys(pgFormState.fields).map((field) => (
+                <input key={field} type="hidden" name={field} value={pgFormState.fields[field]} />
+              ))}
+            </form>
+          )}
+
         </div>
 
         {/* COLUMN 2: ORDER SUMMARY */}
-        <div style={{ background: "#252B25", border: "2px solid #D96732", borderRadius: "16px", padding: "32px", boxShadow: "0 20px 50px rgba(0,0,0,0.4)" }}>
+        <div style={{ background: "#252B25", border: "2px solid #D96732", borderRadius: "16px", padding: "36px", boxShadow: "0 20px 50px rgba(0,0,0,0.4)" }}>
           
           <h2 style={{ fontSize: "20px", color: "#FAD08B", margin: "0 0 20px", fontWeight: 800, textTransform: "uppercase" }}>
             TÓM TẮT ĐƠN HÀNG
@@ -415,7 +489,7 @@ function CheckoutFormContent() {
 
           <div style={{ background: "#171A18", padding: "16px", borderRadius: "10px", fontSize: "13px", color: "#A9B2AC", lineHeight: 1.6 }}>
             <strong style={{ color: "#F5F2E9", display: "block", marginBottom: "4px" }}>💡 Hướng dẫn nhận tài khoản:</strong>
-            Mở ứng dụng ngân hàng quét mã QR bên cạnh. Sau khi SePAY xác nhận, hệ thống sẽ tự động gửi Email kích hoạt tài khoản và chuyển hướng bạn sang trang kích hoạt.
+            Mở ứng dụng ngân hàng quét mã QR bên cạnh hoặc chọn cổng SePAY PG. Sau khi thanh toán, hệ thống sẽ tự động gửi Email kích hoạt tài khoản và chuyển hướng bạn sang trang kích hoạt.
           </div>
 
         </div>
@@ -436,7 +510,7 @@ export default function CheckoutPage() {
             NON-SMOKER™
           </Link>
           <span style={{ background: "rgba(217,103,50,0.15)", border: "1px solid #D96732", color: "#FAD08B", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>
-            🔒 ĐÃ TÍCH HỢP SEPAY AUTOMATED VIETQR
+            🔒 ĐÃ TÍCH HỢP SEPAY AUTOMATED VIETQR & SEPAY PG
           </span>
         </div>
       </header>
