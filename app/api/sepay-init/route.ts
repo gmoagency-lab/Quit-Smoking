@@ -6,8 +6,8 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { amount, phone, name, email, hasBump } = body;
 
-    const merchantId = process.env.SEPAY_MERCHANT_ID || "SP-TEST-XXXXXXXX";
-    const secretKey = process.env.SEPAY_SECRET_KEY || "spsk_test_xxxxxxxxxxqE2z5EFvH8MBUj9ZMbHr3EN";
+    const merchantId = process.env.SEPAY_MERCHANT_ID || "SP-TEST-NQAA8933";
+    const secretKey = process.env.SEPAY_SECRET_KEY || "spsk_test_xhYaDK4YM2uSh9yMUYemPBrGL8aFz2HY";
     const env = (process.env.SEPAY_ENV as "sandbox" | "production") || "sandbox";
 
     const client = new SePayPgClient({

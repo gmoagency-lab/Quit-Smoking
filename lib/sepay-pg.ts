@@ -24,8 +24,8 @@ export class SePayPgClient {
 
   constructor(options: SePayPgClientOptions = {}) {
     this.env = options.env || (process.env.SEPAY_ENV as "sandbox" | "production") || "sandbox";
-    this.merchantId = options.merchant_id || process.env.SEPAY_MERCHANT_ID || "SP-TEST-MERCHANT";
-    this.secretKey = options.secret_key || process.env.SEPAY_SECRET_KEY || "spsk_test_xxxxxxxxxxqE2z5EFvH8MBUj9ZMbHr3EN";
+    this.merchantId = options.merchant_id || process.env.SEPAY_MERCHANT_ID || "SP-TEST-NQAA8933";
+    this.secretKey = options.secret_key || process.env.SEPAY_SECRET_KEY || "spsk_test_xhYaDK4YM2uSh9yMUYemPBrGL8aFz2HY";
   }
 
   get checkout() {
