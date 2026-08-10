@@ -170,10 +170,10 @@ export default function Home() {
           {/* Primary CTA Button */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
             <a href="#offer" className="button" style={{ display: "inline-block", background: "#D96732", color: "white", fontWeight: 800, padding: "20px 48px", borderRadius: "8px", fontSize: "18px", textDecoration: "none", boxShadow: "0 14px 40px rgba(217,103,50,0.45)", letterSpacing: "0.02em" }}>
-              [ BẮT ĐẦU HÀNH TRÌNH 7 NGÀY → ]
+              BẮT ĐẦU NGÀY 1 NGAY →
             </a>
             <span style={{ color: "#74766F", fontSize: "13px", letterSpacing: "0.04em" }}>
-              Nhóm trải nghiệm đầu tiên · 497.000đ
+              Truy cập ngay sau đăng ký · 497.000đ · Thanh toán một lần
             </span>
           </div>
         </div>
@@ -311,9 +311,12 @@ export default function Home() {
             <p style={{ color: "#A9B2AC", fontSize: "16px", maxWidth: "620px", margin: "0 auto 24px", lineHeight: 1.7 }}>
               Mỗi ngày khoảng 5–10 phút nội dung chính + bài tập thực hành. Mục tiêu không phải để ông xem cho biết, mà để sau 7 ngày ông thực sự có một <strong>BẢN ĐỒ TÁC CHIẾN CÁ NHÂN</strong> của chính mình.
             </p>
-            <a href="#offer" style={{ display: "inline-block", background: "#D96732", color: "white", fontWeight: 800, padding: "18px 40px", borderRadius: "6px", fontSize: "17px", textDecoration: "none", boxShadow: "0 10px 30px rgba(217,103,50,0.4)" }}>
-              [ TẠO BẢN ĐỒ CỦA TÔI → ]
+            <a href="#offer" style={{ display: "inline-block", background: "#D96732", color: "white", fontWeight: 800, padding: "18px 40px", borderRadius: "6px", fontSize: "17px", textDecoration: "none", boxShadow: "0 10px 30px rgba(217,103,50,0.4)", marginBottom: "10px" }}>
+              BẮT ĐẦU NGÀY 1 NGAY →
             </a>
+            <div style={{ color: "#74766F", fontSize: "13px", letterSpacing: "0.04em" }}>
+              Truy cập ngay sau đăng ký · 497.000đ · Thanh toán một lần
+            </div>
           </div>
 
           {/* GUARANTEE BOX */}
@@ -558,9 +561,12 @@ export default function Home() {
             </h2>
             <p style={{ color: "#74766F", fontSize: "14px", marginBottom: "28px" }}>Thanh toán một lần duy nhất • Không phát sinh chi phí</p>
 
-            <a href="mailto:?subject=Đăng ký Bản đồ Cai thuốc lá 7 ngày" style={{ display: "inline-block", maxWidth: "560px", width: "100%", padding: "20px 36px", background: "#D96732", color: "white", fontWeight: 800, fontSize: "18px", textDecoration: "none", borderRadius: "6px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)" }}>
-              [ TẠO BẢN ĐỒ CỦA TÔI → ]
+            <a href="mailto:?subject=Đăng ký Bản đồ Cai thuốc lá 7 ngày" style={{ display: "inline-block", maxWidth: "560px", width: "100%", padding: "20px 36px", background: "#D96732", color: "white", fontWeight: 800, fontSize: "18px", textDecoration: "none", borderRadius: "6px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", marginBottom: "10px" }}>
+              BẮT ĐẦU NGÀY 1 NGAY →
             </a>
+            <div style={{ color: "#74766F", fontSize: "13px", letterSpacing: "0.04em" }}>
+              Truy cập ngay sau đăng ký · 497.000đ · Thanh toán một lần
+            </div>
           </div>
 
           {/* QUALIFICATION: FOR YOU / NOT FOR YOU */}
@@ -644,9 +650,12 @@ export default function Home() {
             <span style={{ color: "#A9B2AC", fontSize: "14px" }}>NHÓM TRẢI NGHIỆM ĐẦU TIÊN — 497.000Đ</span>
           </div>
 
-          <a className="letter-button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc lá 7 ngày" style={{ maxWidth: "580px", margin: "0 auto 20px", fontSize: "18px", padding: "20px 36px", background: "#D96732", color: "white", textDecoration: "none", borderRadius: "6px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)" }}>
-            [ BẮT ĐẦU 7 NGÀY CỦA TÔI → ]
+          <a className="letter-button" href="mailto:?subject=Đăng ký Bản đồ Cai thuốc lá 7 ngày" style={{ maxWidth: "580px", margin: "0 auto 10px", fontSize: "18px", padding: "20px 36px", background: "#D96732", color: "white", textDecoration: "none", borderRadius: "6px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", display: "block" }}>
+            BẮT ĐẦU NGÀY 1 NGAY →
           </a>
+          <div style={{ color: "#74766F", fontSize: "13px", letterSpacing: "0.04em", marginBottom: "16px" }}>
+            Truy cập ngay sau đăng ký · 497.000đ · Thanh toán một lần
+          </div>
 
           <p style={{ color: "#74766F", fontSize: "14px", margin: 0 }}>
             Không cần hứa với tui. Không cần đăng lên Facebook. Không cần đợi thứ Hai. Chỉ cần bắt đầu Ngày 1.
@@ -671,7 +680,7 @@ export default function Home() {
           <span style={{ fontSize: "11px", color: "#A9B2AC", fontWeight: 600 }}>BẢN ĐỒ 7 NGÀY™</span>
           <b style={{ fontSize: "16px", color: "#D96732" }}>497.000đ</b>
         </div>
-        <a href="#offer" style={{ background: "#D96732", color: "white", padding: "10px 16px", fontSize: "12px" }}>[ BẮT ĐẦU 7 NGÀY CỦA TÔI → ]</a>
+        <a href="#offer" style={{ background: "#D96732", color: "white", padding: "10px 18px", fontSize: "12px", fontWeight: 800, textDecoration: "none", borderRadius: "4px" }}>BẮT ĐẦU NGÀY 1 NGAY →</a>
       </div>
     </div>
   );
