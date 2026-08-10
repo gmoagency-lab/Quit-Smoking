@@ -239,6 +239,33 @@ export default function Home() {
             </p>
             <p><strong>Họ thường dùng những từ khác:</strong></p>
 
+            {/* 3 FATHOM 1-1 COACHING SESSIONS PROOF SHOWCASE */}
+            <div style={{ margin: "28px 0 36px" }}>
+              <div style={{ color: "#D96732", fontWeight: 800, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "14px", textAlign: "center" }}>
+                📸 HÌNH ẢNH THỰC TẾ CÁC PHIÊN COACHING 1-1 TRÊN FATHOM
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
+                {[
+                  { img: "/images/coaching_session_1.png", title: "Nhật ký các phiên Google Meet & Zoom Coaching 1-1 trực tiếp cùng Đạt" },
+                  { img: "/images/coaching_session_2.png", title: "Lưu trữ hàng trăm giờ đồng hành tháo gỡ điểm nghẽn & xây dựng hệ thống" },
+                  { img: "/images/coaching_session_3.png", title: "Hành trình thực tế lắng nghe, chẩn đoán và chuyển hóa định danh cùng học viên" },
+                ].map((session, idx) => (
+                  <div key={idx} style={{ background: "#171A18", border: "1px solid #384238", borderRadius: "10px", padding: "12px", overflow: "hidden", boxShadow: "0 10px 25px rgba(0,0,0,0.15)" }}>
+                    <div style={{ borderRadius: "6px", overflow: "hidden", border: "1px solid #252B25", marginBottom: "8px" }}>
+                      <img
+                        src={session.img}
+                        alt={session.title}
+                        style={{ width: "100%", height: "auto", display: "block" }}
+                      />
+                    </div>
+                    <div style={{ color: "#A9B2AC", fontSize: "12px", fontStyle: "italic", textAlign: "center" }}>
+                      {session.title}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* 3 TESTIMONIAL SCREENSHOT FEEDBACK CARDS */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px", margin: "36px 0" }}>
               {coachingFeedbacks.map((fb) => (
