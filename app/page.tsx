@@ -118,7 +118,7 @@ export default function Home() {
     <div className="letter-page" style={{ background: "#F3F0E8", color: "#191B19", fontFamily: "var(--font-body), sans-serif", lineHeight: 1.85 }}>
       {/* Top Banner */}
       <div className="letter-announcement" style={{ background: "#252B25", color: "#F5F2E9", padding: "10px 16px", textAlign: "center", fontSize: "13px", fontWeight: 600 }}>
-        BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™ — NHÓM TRẢI NGHIỆM ĐẦU TIÊN
+        Dành cho bất kỳ ai thực sự muốn khép lại hành trình với thuốc lá
       </div>
 
       {/* HERO SECTION — THE YOUNG LOVE STYLE (CHARCOAL BLACK #171A18) */}
