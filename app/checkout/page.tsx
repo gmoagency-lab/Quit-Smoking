@@ -27,9 +27,10 @@ function CheckoutFormContent() {
   const cleanPhone = formData.phone.replace(/\D/g, "") || "0912345678";
   const sepayMemo = `NONSMOKER${cleanPhone}`;
   
-  // SePAY Dynamic VietQR URL
-  const sepayQrUrl = `https://qr.sepay.vn/img?acc=19036888888&bank=TCB&amount=${totalPrice}&des=${sepayMemo}`;
-  const vietqrFallbackUrl = `https://img.vietqr.io/image/TCB-19036888888-compact2.png?amount=${totalPrice}&addInfo=${sepayMemo}&accountName=NGUYEN%20QUOC%20DAT`;
+  // SePAY Dynamic VietQR URL (OCB - Ngân hàng Phương Đông)
+  const ocbAccountNumber = process.env.NEXT_PUBLIC_SEPAY_ACC_NUMBER || "0004100000000";
+  const sepayQrUrl = `https://qr.sepay.vn/img?acc=${ocbAccountNumber}&bank=OCB&amount=${totalPrice}&des=${sepayMemo}`;
+  const vietqrFallbackUrl = `https://img.vietqr.io/image/OCB-${ocbAccountNumber}-compact2.png?amount=${totalPrice}&addInfo=${sepayMemo}&accountName=NGUYEN%20QUOC%20DAT`;
 
   const formatVND = (num: number) => {
     return num.toLocaleString("vi-VN") + "đ";
@@ -306,11 +307,11 @@ function CheckoutFormContent() {
                 <div style={{ background: "#111311", border: "1px dashed #384238", padding: "16px", borderRadius: "10px", display: "grid", gap: "8px", fontSize: "14px", textAlign: "left" }}>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span style={{ color: "#A9B2AC" }}>Ngân hàng:</span>
-                    <strong style={{ color: "#F5F2E9" }}>Techcombank (TCB)</strong>
+                    <strong style={{ color: "#F5F2E9" }}>Phương Đông (OCB)</strong>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span style={{ color: "#A9B2AC" }}>Số tài khoản:</span>
-                    <strong style={{ color: "#FAD08B", fontSize: "16px" }}>19036888888</strong>
+                    <strong style={{ color: "#FAD08B", fontSize: "16px" }}>{ocbAccountNumber}</strong>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span style={{ color: "#A9B2AC" }}>Chủ tài khoản:</span>
