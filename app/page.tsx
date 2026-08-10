@@ -140,35 +140,41 @@ export default function Home() {
           </p>
 
           {/* Image Comparison Box (Đạt thời hút thuốc → Đạt hiện tại) */}
-          <div style={{ maxWidth: "640px", margin: "0 auto 40px" }}>
-            {/* Top Curved Flow Arrow */}
-            <div style={{ display: "flex", justifyContent: "center", marginBottom: "8px" }}>
-              <span style={{ color: "#D96732", fontSize: "24px", fontWeight: 800 }}>
-                ➔
+          <div style={{ maxWidth: "600px", margin: "0 auto 40px", position: "relative" }}>
+            {/* Top Connector Arrow */}
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "14px" }}>
+              <span style={{ background: "#252B25", color: "#D96732", border: "1px solid #384238", fontSize: "13px", fontWeight: 700, padding: "5px 16px", borderRadius: "20px", display: "inline-flex", alignItems: "center", gap: "8px", boxShadow: "0 4px 15px rgba(0,0,0,0.2)" }}>
+                <span>Thời hút thuốc</span>
+                <span style={{ fontSize: "15px", fontWeight: 900 }}>➔</span>
+                <span style={{ color: "#F5F2E9" }}>Hiện tại</span>
               </span>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", alignItems: "center" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", alignItems: "stretch" }}>
               {/* Photo 1: Đạt thời hút thuốc (BW) */}
-              <div style={{ overflow: "hidden", borderRadius: "12px", border: "1px solid #384238", background: "#252B25", boxShadow: "0 12px 30px rgba(0,0,0,0.4)" }}>
-                <img
-                  src="/images/dat_before_bw.jpg"
-                  alt="Đạt thời hút thuốc"
-                  style={{ width: "100%", height: "320px", objectFit: "cover", display: "block", filter: "grayscale(100%) contrast(110%)" }}
-                />
-                <div style={{ padding: "10px 12px", background: "rgba(23,26,24,0.9)", color: "#A9B2AC", fontSize: "12px", fontWeight: 700, textAlign: "center" }}>
+              <div style={{ overflow: "hidden", borderRadius: "12px", border: "1px solid #384238", background: "#252B25", boxShadow: "0 12px 30px rgba(0,0,0,0.4)", display: "flex", flexDirection: "column" }}>
+                <div style={{ flexGrow: 1, overflow: "hidden" }}>
+                  <img
+                    src="/images/dat_before_bw.jpg"
+                    alt="Đạt thời hút thuốc"
+                    style={{ width: "100%", height: "340px", objectFit: "cover", display: "block", filter: "grayscale(100%) contrast(110%)" }}
+                  />
+                </div>
+                <div style={{ padding: "12px", background: "#1C201C", color: "#A9B2AC", fontSize: "13px", fontWeight: 700, textAlign: "center", borderTop: "1px solid #384238" }}>
                   Đạt thời hút thuốc
                 </div>
               </div>
 
               {/* Photo 2: Đạt hiện tại (Gym fit) */}
-              <div style={{ overflow: "hidden", borderRadius: "12px", border: "2px solid #D96732", background: "#252B25", boxShadow: "0 12px 30px rgba(217,103,50,0.25)" }}>
-                <img
-                  src="/images/dat_after_gym.jpg"
-                  alt="Đạt hiện tại"
-                  style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }}
-                />
-                <div style={{ padding: "10px 12px", background: "#D96732", color: "white", fontSize: "12px", fontWeight: 800, textAlign: "center" }}>
+              <div style={{ overflow: "hidden", borderRadius: "12px", border: "2px solid #D96732", background: "#252B25", boxShadow: "0 12px 30px rgba(217,103,50,0.25)", display: "flex", flexDirection: "column" }}>
+                <div style={{ flexGrow: 1, overflow: "hidden" }}>
+                  <img
+                    src="/images/dat_after_gym.jpg"
+                    alt="Đạt hiện tại"
+                    style={{ width: "100%", height: "340px", objectFit: "cover", display: "block" }}
+                  />
+                </div>
+                <div style={{ padding: "12px", background: "#D96732", color: "white", fontSize: "13px", fontWeight: 800, textAlign: "center" }}>
                   Đạt hiện tại
                 </div>
               </div>
