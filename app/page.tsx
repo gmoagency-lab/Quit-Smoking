@@ -635,11 +635,73 @@ export default function Home() {
                   Một hành trình từng bước giúp bạn không phải cố giải quyết tất cả cùng lúc. Ngày đầu tiên nhìn thấy. Ngày tiếp theo hiểu rõ hơn. Sau đó xây cách phản ứng. Chuẩn bị cho những tình huống khó. Và từng bước biến những gì vừa học thành thứ có thể sử dụng trong cuộc sống thật. Không phải để sau 7 ngày bạn có thêm một đống kiến thức. Mà để bạn bắt đầu có một hệ thống rõ ràng hơn cho chính hành trình bỏ thuốc của mình.
                 </p>
               </div>
-            </div>
 
+            {/* CONNECTING SECTION: ĐÓ LÀ 3 MẢNH GHÉP GIÚP BẠN BẮT ĐẦU LẤY LẠI QUYỀN TỰ CHỦ */}
+            <div style={{ marginTop: "48px", paddingTop: "36px", borderTop: "1px solid #D5CEBF" }}>
+              <div style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "8px" }}>
+                3 MẢNH GHÉP TỰ CHỦ
+              </div>
+              <h3 style={{ fontSize: "clamp(22px, 3.2vw, 32px)", color: "#191B19", margin: "0 0 20px", fontWeight: 800, lineHeight: 1.3 }}>
+                ĐÓ LÀ 3 MẢNH GHÉP GIÚP BẠN BẮT ĐẦU LẤY LẠI QUYỀN TỰ CHỦ
+              </h3>
+
+              <div style={{ background: "#E5DFD2", borderLeft: "4px solid #A94725", padding: "20px 24px", borderRadius: "6px", marginBottom: "24px" }}>
+                <strong style={{ color: "#191B19", fontSize: "16px", display: "block", marginBottom: "8px" }}>
+                  NẾU BẠN...
+                </strong>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "8px", fontSize: "15px", color: "#191B19" }}>
+                  <li>• Đã hút thuốc nhiều năm và thật sự muốn dừng lại.</li>
+                  <li>• Từng quyết tâm bỏ nhiều lần nhưng rồi vẫn quay lại.</li>
+                  <li>• Cứ stress, cà phê, sau ăn, lái xe hay gặp bạn bè là lại muốn hút.</li>
+                  <li>• Đã thử nhịn, cố gắng nhiều hơn, nhưng cuối cùng vẫn rơi vào vòng lặp cũ.</li>
+                  <li>• Và mỗi lần hút lại, bạn lại thất vọng rồi tự trách bản thân: <em>“Tại sao mình muốn bỏ mà vẫn không làm được?”</em></li>
+                </ul>
+              </div>
+
+              <p style={{ fontWeight: 800, color: "#D96732", fontSize: "18px" }}>
+                VẬY ĐIỀU GÌ ĐANG THỰC SỰ NGĂN CẢN BẠN?
+              </p>
+              <p>Có thể bạn không thiếu quyết tâm.</p>
+              <p>Bạn cũng không thiếu kiến thức về tác hại của thuốc lá.</p>
+              <p style={{ background: "rgba(217,103,50,0.1)", padding: "14px 18px", borderRadius: "6px", border: "1px solid rgba(217,103,50,0.25)", color: "#191B19", fontWeight: 600 }}>
+                Điều bạn đang thiếu là một hệ thống rõ ràng để biết mình cần bắt đầu từ đâu, làm gì khi cơn muốn hút xuất hiện và xử lý thế nào trong những tình huống dễ khiến mình quay lại.
+              </p>
+
+              <p style={{ fontWeight: 800, color: "#191B19", fontSize: "18px", marginTop: "24px" }}>
+                VẬY BẠN CẦN PHẢI LÀM GÌ?
+              </p>
+              <p><strong>Bạn cần một lộ trình chỉ cho mình từng bước:</strong></p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px", display: "grid", gap: "6px", fontSize: "15px", color: "#191B19" }}>
+                <li>1. Nhìn thấy vòng lặp.</li>
+                <li>2. Nhận diện tác nhân.</li>
+                <li>3. Xây phản ứng mới.</li>
+                <li>4. Chuẩn bị cho tình huống khó.</li>
+                <li>5. Và biết cách tiếp tục nếu hành trình không hoàn hảo.</li>
+              </ul>
+
+              <p>
+                Khi có một lộ trình rõ ràng, bạn không còn phải đoán xem mình nên làm gì trước, làm gì sau.
+              </p>
+              <p>
+                Bạn chỉ cần đi từng bước để bắt đầu trở thành phiên bản không còn để điếu thuốc quyết định thay mình.
+              </p>
+
+              <div style={{ background: "#171A18", color: "#F5F2E9", padding: "28px", borderRadius: "12px", textAlign: "center", margin: "28px 0", border: "2px solid #D96732" }}>
+                <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                  ĐÓ LÀ LÝ DO TUI XÂY DỰNG
+                </span>
+                <h4 style={{ fontSize: "24px", color: "#F5F2E9", margin: "8px 0 10px", fontWeight: 800 }}>
+                  LỘ TRÌNH HÀNH ĐỘNG TRONG 7 NGÀY
+                </h4>
+                <p style={{ color: "#D5DFDB", fontSize: "15px", margin: 0, lineHeight: 1.65 }}>
+                  Một chương trình thực hành từng bước giúp bạn nhìn thấy vòng lặp ➔ thay đổi phản ứng ➔ bắt đầu lấy lại quyền tự chủ.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* SECTION: 3 CÔNG CỤ THỰC HÀNH (BONUS) */}
       <section className="letter-section" style={{ padding: "80px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
