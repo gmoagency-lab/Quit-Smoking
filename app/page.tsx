@@ -181,7 +181,7 @@ export default function Home() {
 
           {/* Primary CTA Button */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
-            <a href="#offer" className="button" style={{ display: "inline-block", background: "#D96732", color: "white", fontWeight: 800, padding: "20px 48px", borderRadius: "8px", fontSize: "18px", textDecoration: "none", boxShadow: "0 14px 40px rgba(217,103,50,0.45)", letterSpacing: "0.02em" }}>
+            <a href="/checkout" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="button" style={{ display: "inline-block", background: "#D96732", color: "white", fontWeight: 800, padding: "20px 48px", borderRadius: "8px", fontSize: "18px", textDecoration: "none", boxShadow: "0 14px 40px rgba(217,103,50,0.45)", letterSpacing: "0.02em" }}>
               BẮT ĐẦU NGÀY 1 NGAY →
             </a>
             <span style={{ color: "#74766F", fontSize: "13px", letterSpacing: "0.04em" }}>
