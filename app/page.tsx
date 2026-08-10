@@ -130,13 +130,14 @@ export default function Home() {
           </div>
 
           {/* Main Headline */}
-          <h1 style={{ fontSize: "clamp(30px, 4.5vw, 54px)", color: "#D96732", lineHeight: 1.2, fontWeight: 800, margin: "0 0 20px", letterSpacing: "-0.02em" }}>
-            CÁCH TRỞ THÀNH NGƯỜI ĐÀN ÔNG<br />KHÔNG CÒN CẦN ĐẾN THUỐC LÁ
+          <h1 style={{ fontSize: "clamp(26px, 4.2vw, 48px)", color: "#D96732", lineHeight: 1.25, fontWeight: 800, margin: "0 0 20px", letterSpacing: "-0.02em" }}>
+            <span style={{ display: "block" }}>CÁCH TRỞ THÀNH NGƯỜI ĐÀN ÔNG</span>
+            <span style={{ display: "block" }}>KHÔNG CÒN CẦN ĐẾN THUỐC LÁ</span>
           </h1>
 
           {/* Subheadline */}
-          <p style={{ fontSize: "clamp(16px, 2.2vw, 20px)", color: "#D5DFDB", lineHeight: 1.6, maxWidth: "680px", margin: "0 auto 36px", fontWeight: 400 }}>
-            Mà không phải ngày nào cũng gồng mình nhịn, đấu tranh với cơn thèm hay tự trách vì những lần bỏ chưa thành công.
+          <p style={{ fontSize: "clamp(16px, 2vw, 19px)", color: "#D5DFDB", lineHeight: 1.65, maxWidth: "720px", margin: "0 auto 36px", fontWeight: 400 }}>
+            Ngay cả khi bạn đã hút thuốc nhiều năm, từng nhiều lần quyết tâm bỏ nhưng vẫn quay lại, và đã quá mệt với việc cứ phải đấu tranh với cơn thèm rồi tự trách chính mình.
           </p>
 
           {/* Image Comparison Box (Đạt thời hút thuốc → Đạt hiện tại) */}
