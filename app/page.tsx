@@ -635,9 +635,10 @@ export default function Home() {
                   Một hành trình từng bước giúp bạn không phải cố giải quyết tất cả cùng lúc. Ngày đầu tiên nhìn thấy. Ngày tiếp theo hiểu rõ hơn. Sau đó xây cách phản ứng. Chuẩn bị cho những tình huống khó. Và từng bước biến những gì vừa học thành thứ có thể sử dụng trong cuộc sống thật. Không phải để sau 7 ngày bạn có thêm một đống kiến thức. Mà để bạn bắt đầu có một hệ thống rõ ràng hơn cho chính hành trình bỏ thuốc của mình.
                 </p>
               </div>
+            </div>
 
             {/* CONNECTING SECTION: ĐÓ LÀ 3 MẢNH GHÉP GIÚP BẠN BẮT ĐẦU LẤY LẠI QUYỀN TỰ CHỦ */}
-            <div style={{ marginTop: "48px", paddingTop: "36px", borderTop: "1px solid #D5CEBF" }}>
+            <div style={{ marginTop: "48px", paddingTop: "36px", borderTop: "2px solid #D5CEBF", color: "#191B19" }}>
               <div style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "8px" }}>
                 3 MẢNH GHÉP TỰ CHỦ
               </div>
@@ -658,20 +659,23 @@ export default function Home() {
                 </ul>
               </div>
 
-              <p style={{ fontWeight: 800, color: "#D96732", fontSize: "18px" }}>
+              <p style={{ fontWeight: 800, color: "#D96732", fontSize: "18px", margin: "24px 0 10px" }}>
                 VẬY ĐIỀU GÌ ĐANG THỰC SỰ NGĂN CẢN BẠN?
               </p>
-              <p>Có thể bạn không thiếu quyết tâm.</p>
-              <p>Bạn cũng không thiếu kiến thức về tác hại của thuốc lá.</p>
-              <p style={{ background: "rgba(217,103,50,0.1)", padding: "14px 18px", borderRadius: "6px", border: "1px solid rgba(217,103,50,0.25)", color: "#191B19", fontWeight: 600 }}>
-                Điều bạn đang thiếu là một hệ thống rõ ràng để biết mình cần bắt đầu từ đâu, làm gì khi cơn muốn hút xuất hiện và xử lý thế nào trong những tình huống dễ khiến mình quay lại.
-              </p>
+              <p style={{ color: "#191B19", margin: "0 0 8px" }}>Có thể bạn không thiếu quyết tâm.</p>
+              <p style={{ color: "#191B19", margin: "0 0 16px" }}>Bạn cũng không thiếu kiến thức về tác hại của thuốc lá.</p>
+              
+              <div style={{ background: "#252B25", borderLeft: "4px solid #D96732", padding: "18px 22px", borderRadius: "8px", margin: "16px 0 24px" }}>
+                <p style={{ color: "#F5F2E9", fontSize: "15px", fontWeight: 600, lineHeight: 1.7, margin: 0 }}>
+                  Điều bạn đang thiếu là một hệ thống rõ ràng để biết mình cần bắt đầu từ đâu, làm gì khi cơn muốn hút xuất hiện và xử lý thế nào trong những tình huống dễ khiến mình quay lại.
+                </p>
+              </div>
 
-              <p style={{ fontWeight: 800, color: "#191B19", fontSize: "18px", marginTop: "24px" }}>
+              <p style={{ fontWeight: 800, color: "#191B19", fontSize: "18px", marginTop: "28px" }}>
                 VẬY BẠN CẦN PHẢI LÀM GÌ?
               </p>
-              <p><strong>Bạn cần một lộ trình chỉ cho mình từng bước:</strong></p>
-              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px", display: "grid", gap: "6px", fontSize: "15px", color: "#191B19" }}>
+              <p style={{ color: "#191B19" }}><strong>Bạn cần một lộ trình chỉ cho mình từng bước:</strong></p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px", display: "grid", gap: "8px", fontSize: "15px", color: "#191B19" }}>
                 <li>1. Nhìn thấy vòng lặp.</li>
                 <li>2. Nhận diện tác nhân.</li>
                 <li>3. Xây phản ứng mới.</li>
@@ -679,14 +683,14 @@ export default function Home() {
                 <li>5. Và biết cách tiếp tục nếu hành trình không hoàn hảo.</li>
               </ul>
 
-              <p>
+              <p style={{ color: "#191B19" }}>
                 Khi có một lộ trình rõ ràng, bạn không còn phải đoán xem mình nên làm gì trước, làm gì sau.
               </p>
-              <p>
+              <p style={{ color: "#191B19" }}>
                 Bạn chỉ cần đi từng bước để bắt đầu trở thành phiên bản không còn để điếu thuốc quyết định thay mình.
               </p>
 
-              <div style={{ background: "#171A18", color: "#F5F2E9", padding: "28px", borderRadius: "12px", textAlign: "center", margin: "28px 0", border: "2px solid #D96732" }}>
+              <div style={{ background: "#171A18", color: "#F5F2E9", padding: "32px", borderRadius: "14px", textAlign: "center", margin: "32px 0 0", border: "2px solid #D96732", boxShadow: "0 15px 40px rgba(0,0,0,0.25)" }}>
                 <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                   ĐÓ LÀ LÝ DO TUI XÂY DỰNG
                 </span>
@@ -700,8 +704,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* SECTION: 3 CÔNG CỤ THỰC HÀNH (BONUS) */}
       <section className="letter-section" style={{ padding: "80px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
