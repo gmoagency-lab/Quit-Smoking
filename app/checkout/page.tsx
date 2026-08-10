@@ -1,9 +1,10 @@
 "use me";
 "use client";
 
-import React, { useState, Suspense } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import * as fpixel from "../../lib/fpixel";
 
 function CheckoutFormContent() {
   const router = useRouter();
@@ -26,6 +27,15 @@ function CheckoutFormContent() {
     return num.toLocaleString("vi-VN") + "đ";
   };
 
+  // Meta Pixel Event: InitiateCheckout on page load
+  useEffect(() => {
+    fpixel.event("InitiateCheckout", {
+      content_name: "NON-SMOKER Program",
+      currency: "VND",
+      value: totalPrice,
+    });
+  }, [totalPrice]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -38,6 +48,13 @@ function CheckoutFormContent() {
       return;
     }
     setIsSubmitting(true);
+
+    // Meta Pixel Event: AddPaymentInfo / Submit Form
+    fpixel.event("AddPaymentInfo", {
+      content_name: "NON-SMOKER Program",
+      currency: "VND",
+      value: totalPrice,
+    });
 
     const query = new URLSearchParams({
       name: formData.fullName,

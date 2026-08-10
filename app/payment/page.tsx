@@ -4,6 +4,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import * as fpixel from "../../lib/fpixel";
 
 function PaymentContent() {
   const router = useRouter();
@@ -34,6 +35,15 @@ function PaymentContent() {
     setTimeout(() => setCopiedField(null), 2000);
   };
 
+  // Meta Pixel Event: AddPaymentInfo on page load
+  useEffect(() => {
+    fpixel.event("AddPaymentInfo", {
+      content_name: "NON-SMOKER QR Payment",
+      currency: "VND",
+      value: totalAmount,
+    });
+  }, [totalAmount]);
+
   // Real-time SePAY Payment Polling Effect
   useEffect(() => {
     if (!phone || isPaid) return;
@@ -46,6 +56,13 @@ function PaymentContent() {
         if (data && data.paid) {
           setIsPaid(true);
           clearInterval(interval);
+
+          // Trigger Meta/Facebook Pixel Purchase Event
+          fpixel.event("Purchase", {
+            content_name: "NON-SMOKER Program",
+            currency: "VND",
+            value: totalAmount,
+          });
 
           const query = new URLSearchParams({
             name,
@@ -66,7 +83,7 @@ function PaymentContent() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [phone, name, email, hasBump, rawTotal, isPaid, router]);
+  }, [phone, name, email, hasBump, rawTotal, totalAmount, isPaid, router]);
 
   return (
     <main style={{ maxWidth: "860px", margin: "0 auto", padding: "24px 14px 60px", boxSizing: "border-box" }}>

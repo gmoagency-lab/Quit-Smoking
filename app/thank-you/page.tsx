@@ -1,9 +1,10 @@
 "use me";
 "use client";
 
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import * as fpixel from "../../lib/fpixel";
 
 function ThankYouContent() {
   const searchParams = useSearchParams();
@@ -16,6 +17,15 @@ function ThankYouContent() {
 
   const totalAmount = parseInt(rawTotal, 10);
   const formattedTotal = totalAmount.toLocaleString("vi-VN") + "đ";
+
+  // Meta Pixel Event: Purchase on Thank You Page
+  useEffect(() => {
+    fpixel.event("Purchase", {
+      content_name: "NON-SMOKER Program Confirmed",
+      currency: "VND",
+      value: totalAmount,
+    });
+  }, [totalAmount]);
 
   return (
     <main style={{ maxWidth: "880px", margin: "0 auto", padding: "50px 20px 80px" }}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import * as fpixel from "../lib/fpixel";
 
 const sevenDaysRoadmap = [
   {
@@ -110,6 +111,14 @@ export default function Home() {
       alert("Vui lòng điền đầy đủ Tên, Email và Số điện thoại.");
       return;
     }
+
+    // Trigger Meta/Facebook Pixel Lead Event
+    fpixel.event("Lead", {
+      content_name: "NON-SMOKER Lead Form",
+      currency: "VND",
+      value: 497000,
+    });
+
     const query = new URLSearchParams(modalData).toString();
     window.location.href = `/checkout?${query}`;
   };
