@@ -11,15 +11,35 @@ if (!globalThis.sepayPaidTransactions) {
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    let body: Record<string, unknown> = {};
+    const contentType = request.headers.get("content-type") || "";
+
+    if (contentType.includes("application/json")) {
+      body = await request.json();
+    } else if (contentType.includes("application/x-www-form-urlencoded")) {
+      const formData = await request.formData();
+      const entries: Record<string, unknown> = {};
+      formData.forEach((value, key) => {
+        entries[key] = value;
+      });
+      body = entries;
+    } else {
+      const text = await request.text();
+      try {
+        body = JSON.parse(text);
+      } catch {
+        body = { content: text };
+      }
+    }
+
     console.log("Received SePAY Webhook:", body);
 
     // SePAY Webhook format fields:
     // id, gateway, transactionDate, accountNumber, content, transferType, transferAmount, referenceCode, code
-    const content = body.content || body.des || "";
-    const code = body.code || "";
+    const content = String(body.content || body.des || "");
+    const code = String(body.code || "");
     const amount = Number(body.transferAmount || body.amount || 0);
-    const date = body.transactionDate || new Date().toISOString();
+    const date = String(body.transactionDate || new Date().toISOString());
     const id = String(body.id || body.referenceCode || Date.now());
 
     // Clean up content to extract phone or match code
@@ -38,7 +58,8 @@ export async function POST(request: Request) {
     // Also store by full raw content string
     globalThis.sepayPaidTransactions[fullText] = { amount, content, date, id };
 
-    return NextResponse.json({ success: true, message: "SePAY Webhook processed" });
+    // Exact response required by SePAY: { success: true } with HTTP 200
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     console.error("SePAY Webhook Error:", error);
     return NextResponse.json({ success: false, error: "Invalid payload" }, { status: 400 });
