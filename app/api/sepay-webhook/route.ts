@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-// Global in-memory cache for SePAY transactions across requests
+// Global in-memory cache for local dev / fallback
 declare global {
   var sepayPaidTransactions: Record<string, { amount: number; content: string; date: string; id: string }>;
 }
@@ -45,20 +45,42 @@ export async function POST(request: Request) {
     // Clean up content to extract phone or match code
     const fullText = (content + " " + code).toUpperCase();
 
-    // Store by fullText and by any phone number pattern found
+    // Store in global memory
     globalThis.sepayPaidTransactions[id] = { amount, content, date, id };
 
-    // Extract phone numbers from transfer memo (e.g. NONSMOKER0912345678 -> 0912345678)
+    let extractedPhone = "";
     const phoneMatch = fullText.match(/(?:NONSMOKER|NS)?(0\d{9,10})/);
     if (phoneMatch && phoneMatch[1]) {
-      const phone = phoneMatch[1];
-      globalThis.sepayPaidTransactions[phone] = { amount, content, date, id };
+      extractedPhone = phoneMatch[1];
+      globalThis.sepayPaidTransactions[extractedPhone] = { amount, content, date, id };
     }
 
-    // Also store by full raw content string
     globalThis.sepayPaidTransactions[fullText] = { amount, content, date, id };
 
-    // Exact response required by SePAY: { success: true } with HTTP 200
+    // Persist to shared cloud store so Vercel Serverless Function instances sync state in real-time
+    try {
+      const payloadName = `sepay_${extractedPhone || fullText.replace(/\s+/g, "_")}`;
+      await fetch("https://api.restful-api.dev/objects", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: payloadName,
+          data: {
+            paid: true,
+            phone: extractedPhone,
+            amount,
+            content,
+            code,
+            date,
+            id,
+          },
+        }),
+      });
+    } catch (err) {
+      console.error("Cloud store sync error:", err);
+    }
+
+    // Response required by SePAY Webhook: { success: true } with HTTP 200
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     console.error("SePAY Webhook Error:", error);

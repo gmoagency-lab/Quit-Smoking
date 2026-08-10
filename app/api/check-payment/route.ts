@@ -20,6 +20,28 @@ export async function GET(request: Request) {
       date: new Date().toISOString(),
       id: "SIMULATED_" + Date.now(),
     };
+    
+    // Also save simulation to cloud store so polling across instances works
+    try {
+      await fetch("https://api.restful-api.dev/objects", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: `sepay_${phone}`,
+          data: {
+            paid: true,
+            phone,
+            amount: 497000,
+            content: `NONSMOKER ${phone} (Test Sandbox)`,
+            date: new Date().toISOString(),
+            id: "SIMULATED_" + Date.now(),
+          },
+        }),
+      });
+    } catch {
+      // ignore
+    }
+
     return NextResponse.json({ paid: true, simulated: true, transaction: store[phone] });
   }
 
@@ -45,51 +67,37 @@ export async function GET(request: Request) {
     return NextResponse.json({ paid: true, transaction: matchedTx });
   }
 
-  // 3. Fallback Direct Query to SePAY Official User API (Fixes Serverless Memory Isolation on Vercel)
-  const apiKey = process.env.SEPAY_SECRET_KEY || "spsk_live_q994EnfHgSFWma278iFmsjT83oYP8BmA";
-  const accountNumber = "0335046117";
-
+  // 3. Fallback Cloud Persistent Search (Solves Serverless In-Memory Isolation on Vercel)
   try {
-    const sepayApiRes = await fetch(
-      `https://my.sepay.vn/userapi/transactions/list?account_number=${accountNumber}&limit=20`,
-      {
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        cache: "no-store",
-      }
-    );
+    const cloudRes = await fetch("https://api.restful-api.dev/objects", {
+      cache: "no-store",
+    });
 
-    if (sepayApiRes.ok) {
-      const sepayData = await sepayApiRes.json();
-      const transactions = sepayData.transactions || sepayData.messages || sepayData.data || [];
-
-      if (Array.isArray(transactions)) {
-        const found = transactions.find((tx: Record<string, unknown>) => {
-          const content = String(tx.transaction_content || tx.content || tx.des || "").toUpperCase();
-          const codeStr = String(tx.code || "").toUpperCase();
-          const full = content + " " + codeStr;
-
-          if (cleanPhone && full.includes(cleanPhone)) return true;
-          if (code && full.includes(code.toUpperCase())) return true;
+    if (cloudRes.ok) {
+      const items = await cloudRes.json();
+      if (Array.isArray(items)) {
+        const foundItem = items.find((item: Record<string, unknown>) => {
+          const title = String(item.name || "").toUpperCase();
+          if (cleanPhone && title.includes(cleanPhone)) return true;
+          if (code && title.includes(code.toUpperCase())) return true;
           return false;
         });
 
-        if (found) {
+        if (foundItem && foundItem.data) {
+          const dataObj = foundItem.data as Record<string, unknown>;
           const txObj = {
-            amount: Number(found.amount_in || found.transferAmount || 0),
-            content: String(found.transaction_content || found.content || ""),
-            date: String(found.transaction_date || found.transactionDate || ""),
-            id: String(found.id || found.reference_number || Date.now()),
+            amount: Number(dataObj.amount || 0),
+            content: String(dataObj.content || ""),
+            date: String(dataObj.date || ""),
+            id: String(dataObj.id || Date.now()),
           };
           if (cleanPhone) store[cleanPhone] = txObj;
-          return NextResponse.json({ paid: true, transaction: txObj, fromApi: true });
+          return NextResponse.json({ paid: true, transaction: txObj, fromCloud: true });
         }
       }
     }
   } catch (err) {
-    console.error("Error querying SePAY User API:", err);
+    console.error("Cloud check error:", err);
   }
 
   return NextResponse.json({ paid: false });
