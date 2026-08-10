@@ -738,34 +738,183 @@ export default function Home() {
               </div>
             </div>
 
-            {/* LỰA CHỌN 2 */}
-            <div style={{ background: "#252B25", border: "2px solid #D96732", borderRadius: "12px", padding: "32px", color: "#F5F2E9", marginBottom: "32px", boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}>
-              <h3 style={{ fontSize: "22px", color: "#D96732", margin: "0 0 16px", fontWeight: 800 }}>
+            {/* LỰA CHỌN 2 SHOWCASE CONTAINER (MATCHING SAMPLE IMAGE DESIGN) */}
+            <div style={{
+              background: "linear-gradient(180deg, #1C1310 0%, #140C0A 100%)",
+              border: "1px solid #3E2B23",
+              borderRadius: "20px",
+              padding: "48px 32px",
+              color: "#F5F2E9",
+              marginBottom: "40px",
+              boxShadow: "0 25px 60px rgba(0,0,0,0.45)",
+              textAlign: "center"
+            }}>
+              {/* HEADER TITLE */}
+              <h3 style={{
+                fontSize: "clamp(28px, 4.5vw, 38px)",
+                background: "linear-gradient(180deg, #FAD08B 0%, #D96732 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                margin: "0 0 12px",
+                fontWeight: 900,
+                letterSpacing: "0.05em",
+                textTransform: "uppercase"
+              }}>
                 LỰA CHỌN 2
               </h3>
-              <p style={{ color: "#F5F2E9", margin: "0 0 8px" }}>Bạn có thể đi theo một lộ trình đã được sắp xếp từng bước.</p>
-              <p style={{ color: "#D5DFDB", margin: "0 0 8px" }}>Không cần tự mò xem nên bắt đầu từ đâu.</p>
-              <p style={{ color: "#D5DFDB", margin: "0 0 8px" }}>Không cần cố nhớ hàng chục lời khuyên khác nhau.</p>
-              <p style={{ color: "#D5DFDB", margin: "0 0 8px" }}>Không cần mỗi sáng lại tự hỏi:</p>
-              <p style={{ color: "#F5F2E9", margin: "0 0 16px" }}><em>“Hôm nay mình phải cố nhịn thế nào?”</em></p>
+              
+              <h4 style={{
+                fontSize: "clamp(18px, 3vw, 24px)",
+                color: "#FFFFFF",
+                margin: "0 0 24px",
+                fontWeight: 600,
+                lineHeight: 1.4,
+                maxWidth: "600px",
+                marginLeft: "auto",
+                marginRight: "auto"
+              }}>
+                Đi theo một lộ trình đã được sắp xếp từng bước
+              </h4>
 
-              <p style={{ color: "#D5DFDB", margin: "0 0 12px" }}>
-                Tui đã đi qua những lần thử, những lúc quay lại, những tình huống làm mình dễ gãy nhất và quá trình tự quan sát để hiểu điều gì thực sự đang xảy ra với hành vi của mình.
-              </p>
-              <p style={{ color: "#D5DFDB", margin: "0 0 16px" }}>
-                Sau đó tui gom những gì hữu ích nhất lại thành một Lộ trình hành động trong 7 ngày.
-              </p>
+              {/* CURVED GOLD ARROW ABOVE PHOTOS */}
+              <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                <svg width="48" height="28" viewBox="0 0 48 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 24C18 8 32 6 42 16" stroke="#D96732" strokeWidth="2.5" strokeLinecap="round"/>
+                  <path d="M34 18L42 16L40 8" stroke="#D96732" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
 
-              <p style={{ color: "#D5DFDB", margin: "0 0 8px" }}>Không phải để hứa với bạn rằng sau 7 ngày mọi thứ sẽ biến mất.</p>
-              <p style={{ color: "#F5F2E9", fontWeight: 700, margin: "0 0 12px" }}>Mà để giúp bạn có một con đường rõ ràng hơn:</p>
+              {/* COMPARISON PHOTOS SIDE BY SIDE */}
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: "20px",
+                maxWidth: "680px",
+                margin: "0 auto 36px"
+              }}>
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="/images/dat_trade_fair_2023.png"
+                    alt="Đạt trước đây - 2023"
+                    style={{
+                      width: "100%",
+                      height: "360px",
+                      objectFit: "cover",
+                      borderRadius: "16px",
+                      border: "1px solid #4A352C",
+                      boxShadow: "0 12px 30px rgba(0,0,0,0.5)"
+                    }}
+                  />
+                  <span style={{
+                    position: "absolute",
+                    bottom: "12px",
+                    left: "12px",
+                    background: "rgba(0,0,0,0.75)",
+                    backdropFilter: "blur(6px)",
+                    color: "#A9B2AC",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    padding: "4px 10px",
+                    borderRadius: "6px"
+                  }}>
+                    2023 (Tự mò & giằng co)
+                  </span>
+                </div>
 
-              <ul style={{ listStyle: "none", padding: 0, margin: "0 0 10px", display: "grid", gap: "6px", color: "#D5DFDB", fontSize: "16px" }}>
-                <li>Nhìn thấy vòng lặp.</li>
-                <li>Nhận diện tác nhân.</li>
-                <li>Xây phản ứng mới.</li>
-                <li>Chuẩn bị cho những tình huống khó.</li>
-                <li>Và biết cách tiếp tục nếu có một ngày không hoàn hảo.</li>
-              </ul>
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="/images/dat_park_runner.jpg"
+                    alt="Đạt bây giờ - Tự chủ & Khỏe mạnh"
+                    style={{
+                      width: "100%",
+                      height: "360px",
+                      objectFit: "cover",
+                      borderRadius: "16px",
+                      border: "2px solid #D96732",
+                      boxShadow: "0 12px 35px rgba(217,103,50,0.25)"
+                    }}
+                  />
+                  <span style={{
+                    position: "absolute",
+                    bottom: "12px",
+                    left: "12px",
+                    background: "rgba(217,103,50,0.9)",
+                    color: "#FFFFFF",
+                    fontSize: "12px",
+                    fontWeight: 800,
+                    padding: "4px 10px",
+                    borderRadius: "6px"
+                  }}>
+                    Hiện tại (Tự chủ hoàn toàn)
+                  </span>
+                </div>
+              </div>
+
+              {/* CARD PROSE CONTENT (MATCHING EXACT VERBATIM COPY) */}
+              <div style={{
+                textAlign: "left",
+                fontSize: "17px",
+                lineHeight: 1.8,
+                color: "#E8DFD5",
+                maxWidth: "680px",
+                margin: "0 auto",
+                display: "grid",
+                gap: "14px"
+              }}>
+                <p style={{ margin: 0 }}>
+                  Bạn có thể đi theo một lộ trình đã được sắp xếp từng bước.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Không cần tự mò xem nên bắt đầu từ đâu.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Không cần cố nhớ hàng chục lời khuyên khác nhau.
+                </p>
+                <p style={{ margin: 0 }}>
+                  Không cần mỗi sáng lại tự hỏi: <em style={{ color: "#F5F2E9" }}>“Hôm nay mình phải cố nhịn thế nào?”</em>
+                </p>
+
+                <p style={{ margin: "10px 0 0" }}>
+                  Tui đã đi qua những lần thử, những lúc quay lại, những tình huống làm mình dễ gãy nhất và quá trình tự quan sát để hiểu điều gì thực sự đang xảy ra với hành vi của mình.
+                </p>
+
+                <p style={{ margin: 0 }}>
+                  Sau đó tui gom những gì hữu ích nhất lại thành một <strong style={{ color: "#FAD08B" }}>Lộ trình hành động trong 7 ngày</strong>.
+                </p>
+
+                <p style={{ margin: "10px 0 0" }}>
+                  Không phải để hứa với bạn rằng sau 7 ngày mọi thứ sẽ biến mất.
+                </p>
+
+                <div style={{
+                  background: "rgba(217, 103, 50, 0.12)",
+                  borderLeft: "4px solid #D96732",
+                  padding: "18px 22px",
+                  borderRadius: "8px",
+                  margin: "8px 0"
+                }}>
+                  <strong style={{ color: "#F5F2E9", display: "block", marginBottom: "10px", fontSize: "18px" }}>
+                    Mà để giúp bạn có một con đường rõ ràng hơn:
+                  </strong>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "8px", color: "#F5F2E9", fontSize: "16px" }}>
+                    <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ color: "#D96732", fontWeight: 800 }}>✓</span> Nhìn thấy vòng lặp.
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ color: "#D96732", fontWeight: 800 }}>✓</span> Nhận diện tác nhân.
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ color: "#D96732", fontWeight: 800 }}>✓</span> Xây phản ứng mới.
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ color: "#D96732", fontWeight: 800 }}>✓</span> Chuẩn bị cho những tình huống khó.
+                    </li>
+                    <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <span style={{ color: "#D96732", fontWeight: 800 }}>✓</span> Và biết cách tiếp tục nếu có một ngày không hoàn hảo.
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             {/* CLOSING REFLECTION */}
