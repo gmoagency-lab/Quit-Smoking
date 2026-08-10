@@ -28,7 +28,7 @@ function CheckoutFormContent() {
   const sepayMemo = `NONSMOKER${cleanPhone}`;
   
   // SePAY Dynamic VietQR URL (OCB - Ngân hàng Phương Đông)
-  const ocbAccountNumber = process.env.NEXT_PUBLIC_SEPAY_ACC_NUMBER || "0004100000000";
+  const ocbAccountNumber = process.env.NEXT_PUBLIC_SEPAY_ACC_NUMBER || "0335046117";
   const sepayQrUrl = `https://qr.sepay.vn/img?acc=${ocbAccountNumber}&bank=OCB&amount=${totalPrice}&des=${sepayMemo}`;
   const vietqrFallbackUrl = `https://img.vietqr.io/image/OCB-${ocbAccountNumber}-compact2.png?amount=${totalPrice}&addInfo=${sepayMemo}&accountName=NGUYEN%20QUOC%20DAT`;
 

@@ -27,7 +27,7 @@ export class SePayPgClient {
     const defaultEnv = key.startsWith("spsk_live_") ? "production" : "sandbox";
 
     this.env = options.env || (process.env.SEPAY_ENV as "sandbox" | "production") || defaultEnv;
-    this.merchantId = options.merchant_id || process.env.SEPAY_MERCHANT_ID || "SP-TEST-NQAA8933";
+    this.merchantId = options.merchant_id || process.env.SEPAY_MERCHANT_ID || "SP-LIVE-NQ539884";
     this.secretKey = key;
   }
 

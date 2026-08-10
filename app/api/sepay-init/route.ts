@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { amount, phone, name, email, hasBump } = body;
 
-    const merchantId = process.env.SEPAY_MERCHANT_ID || "SP-TEST-NQAA8933";
+    const merchantId = process.env.SEPAY_MERCHANT_ID || "SP-LIVE-NQ539884";
     const secretKey = process.env.SEPAY_SECRET_KEY || "spsk_live_q994EnfHgSFWma278iFmsjT83oYP8BmA";
     const defaultEnv = secretKey.startsWith("spsk_live_") ? "production" : "sandbox";
     const env = (process.env.SEPAY_ENV as "sandbox" | "production") || defaultEnv;
