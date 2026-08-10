@@ -1,7 +1,7 @@
 "use me";
 "use client";
 
-import React, { useState, Suspense } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -15,20 +15,93 @@ function CheckoutFormContent() {
     email: searchParams.get("email") || "",
   }));
 
-  const [includeBump, setIncludeBump] = useState(true); // Default checked as a high-converting order bump!
+  const [includeBump, setIncludeBump] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSepayPaid, setIsSepayPaid] = useState(false);
 
   const basePrice = 497000;
   const bumpPrice = 99000;
   const totalPrice = basePrice + (includeBump ? bumpPrice : 0);
 
+  const cleanPhone = formData.phone.replace(/\D/g, "") || "0912345678";
+  const sepayMemo = `NONSMOKER${cleanPhone}`;
+  
+  // SePAY Dynamic VietQR URL
+  const sepayQrUrl = `https://qr.sepay.vn/img?acc=19036888888&bank=TCB&amount=${totalPrice}&des=${sepayMemo}`;
+  const vietqrFallbackUrl = `https://img.vietqr.io/image/TCB-19036888888-compact2.png?amount=${totalPrice}&addInfo=${sepayMemo}&accountName=NGUYEN%20QUOC%20DAT`;
+
   const formatVND = (num: number) => {
     return num.toLocaleString("vi-VN") + "đ";
   };
 
+  const isPolling = Boolean(formData.phone && !isSepayPaid);
+
+  // Real-time SePAY Payment Polling Effect
+  useEffect(() => {
+    if (!formData.phone || isSepayPaid) return;
+
+    const interval = setInterval(async () => {
+      try {
+        const res = await fetch(`/api/check-payment?phone=${encodeURIComponent(formData.phone)}`);
+        const data = await res.json();
+
+        if (data && data.paid) {
+          setIsSepayPaid(true);
+          clearInterval(interval);
+          
+          // Auto-redirect to Thank You page upon SePAY payment verification
+          const query = new URLSearchParams({
+            name: formData.fullName || "Học viên",
+            phone: formData.phone,
+            email: formData.email,
+            hasBump: includeBump ? "true" : "false",
+            total: totalPrice.toString(),
+            sepayPaid: "true",
+          }).toString();
+
+          setTimeout(() => {
+            router.push(`/thank-you?${query}`);
+          }, 1200);
+        }
+      } catch (err) {
+        console.error("SePAY polling check error:", err);
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [formData.phone, formData.fullName, formData.email, includeBump, totalPrice, isSepayPaid, router]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSimulatePayment = async () => {
+    if (!formData.phone) {
+      alert("Vui lòng nhập Số điện thoại trước khi bấm test giả lập thanh toán.");
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      await fetch(`/api/check-payment?phone=${encodeURIComponent(formData.phone)}&simulate=true`);
+      setIsSepayPaid(true);
+      
+      const query = new URLSearchParams({
+        name: formData.fullName || "Học viên Test",
+        phone: formData.phone,
+        email: formData.email,
+        hasBump: includeBump ? "true" : "false",
+        total: totalPrice.toString(),
+        sepayPaid: "true",
+      }).toString();
+
+      setTimeout(() => {
+        router.push(`/thank-you?${query}`);
+      }, 800);
+    } catch (err) {
+      console.error(err);
+      setIsSubmitting(false);
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -58,20 +131,20 @@ function CheckoutFormContent() {
       {/* TOP BANNER */}
       <div style={{ textAlign: "center", marginBottom: "36px" }}>
         <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-          XÁC NHẬN ĐĂNG KÝ HỌC
+          CỔNG THANH TOÁN TỰ ĐỘNG SEPAY
         </span>
         <h1 style={{ fontSize: "clamp(24px, 4vw, 36px)", margin: "8px 0 12px", color: "#F5F2E9", fontWeight: 900 }}>
           HOÀN TẤT ĐĂNG KÝ NON-SMOKER™ (2026)
         </h1>
         <p style={{ color: "#A9B2AC", fontSize: "16px", maxWidth: "600px", margin: "0 auto" }}>
-          Điền thông tin bên dưới để nhận tài khoản kích hoạt và toàn bộ bộ quà tặng đính kèm ngay lập tức.
+          Quét mã VietQR SePAY bên dưới để thanh toán tự động. Hệ thống sẽ tự động kích hoạt tài khoản ngay khi nhận được tiền.
         </p>
       </div>
 
       {/* TWO COLUMN LAYOUT */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px", alignItems: "start" }}>
         
-        {/* COLUMN 1: FORM & PAYMENT INFO */}
+        {/* COLUMN 1: FORM & SEPAY QR PAYMENT */}
         <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "16px", padding: "32px", boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}>
           
           <h2 style={{ fontSize: "20px", color: "#D96732", margin: "0 0 20px", fontWeight: 800, textTransform: "uppercase" }}>
@@ -149,44 +222,69 @@ function CheckoutFormContent() {
               </div>
             </div>
 
-            {/* PAYMENT METHOD SELECTION */}
+            {/* SEPAY AUTOMATED VIETQR PAYMENT CARD */}
             <div style={{ marginTop: "12px" }}>
               <h2 style={{ fontSize: "20px", color: "#D96732", margin: "0 0 16px", fontWeight: 800, textTransform: "uppercase" }}>
-                2. PHƯƠNG THỨC THANH TOÁN
+                2. QUÉT MÃ SEPAY VIETQR THANH TOÁN
               </h2>
 
-              <div style={{ background: "#171A18", border: "2px solid #D96732", padding: "18px", borderRadius: "10px", marginBottom: "16px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                  <span style={{ fontSize: "20px" }}>🏦</span>
-                  <strong style={{ color: "#FAD08B", fontSize: "16px" }}>Chuyển Khoản Ngân Hàng Quick QR (VietQR)</strong>
+              <div style={{ background: "#171A18", border: "2px solid #D96732", padding: "24px", borderRadius: "14px", textAlign: "center" }}>
+                
+                {/* SEPAY STATUS BADGE */}
+                <div style={{ background: isSepayPaid ? "rgba(102, 115, 91, 0.3)" : "rgba(217, 103, 50, 0.15)", border: `1px solid ${isSepayPaid ? "#66735B" : "#D96732"}`, color: isSepayPaid ? "#FAD08B" : "#FAD08B", padding: "10px 14px", borderRadius: "8px", fontSize: "13px", fontWeight: 800, marginBottom: "16px", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}>
+                  <span>{isSepayPaid ? "🟢" : "🔴"}</span>
+                  <span>
+                    {isSepayPaid
+                      ? "ĐÃ NHẬN THANH TOÁN THÀNH CÔNG QUA SEPAY! ĐANG CHUYỂN HƯỚNG..."
+                      : isPolling
+                      ? "Đang chờ SePAY nhận tiền... Hệ thống tự động kiểm tra mỗi 3 giây"
+                      : "Nhập số điện thoại để kích hoạt kiểm tra tự động"}
+                  </span>
                 </div>
-                <p style={{ color: "#A9B2AC", fontSize: "13px", margin: 0, lineHeight: 1.5 }}>
-                  Mở ứng dụng ngân hàng quét mã QR để thanh toán tự động hoặc chuyển khoản theo số tài khoản bên dưới.
-                </p>
-              </div>
 
-              {/* BANK ACCOUNT DETAILS CARD */}
-              <div style={{ background: "#111311", border: "1px dashed #384238", padding: "20px", borderRadius: "10px", display: "grid", gap: "8px", fontSize: "14px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "#A9B2AC" }}>Ngân hàng:</span>
-                  <strong style={{ color: "#F5F2E9" }}>Techcombank (TCB)</strong>
+                {/* DYNAMIC SEPAY QR IMAGE */}
+                <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                  <img
+                    src={sepayQrUrl}
+                    onError={(e) => {
+                      // Fallback to VietQR API if SePAY gateway img is loading
+                      (e.target as HTMLImageElement).src = vietqrFallbackUrl;
+                    }}
+                    alt="Mã QR SePAY Chuyển Khoản Tự Động"
+                    style={{
+                      maxWidth: "280px",
+                      width: "100%",
+                      borderRadius: "12px",
+                      border: "2px solid #384238",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                    }}
+                  />
                 </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "#A9B2AC" }}>Số tài khoản:</span>
-                  <strong style={{ color: "#FAD08B", fontSize: "16px" }}>19036888888</strong>
+
+                {/* BANK TRANSFER DETAILS TABLE */}
+                <div style={{ background: "#111311", border: "1px dashed #384238", padding: "16px", borderRadius: "10px", display: "grid", gap: "8px", fontSize: "14px", textAlign: "left" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span style={{ color: "#A9B2AC" }}>Ngân hàng:</span>
+                    <strong style={{ color: "#F5F2E9" }}>Techcombank (TCB)</strong>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span style={{ color: "#A9B2AC" }}>Số tài khoản:</span>
+                    <strong style={{ color: "#FAD08B", fontSize: "16px" }}>19036888888</strong>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span style={{ color: "#A9B2AC" }}>Chủ tài khoản:</span>
+                    <strong style={{ color: "#F5F2E9" }}>NGUYỄN QUỐC ĐẠT</strong>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span style={{ color: "#A9B2AC" }}>Số tiền:</span>
+                    <strong style={{ color: "#D96732", fontSize: "20px", fontWeight: 900 }}>{formatVND(totalPrice)}</strong>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between", borderTop: "1px solid #2B332B", paddingTop: "8px", marginTop: "4px" }}>
+                    <span style={{ color: "#A9B2AC" }}>Nội dung CK chuẩn SePAY:</span>
+                    <strong style={{ color: "#FAD08B", fontSize: "15px" }}>{sepayMemo}</strong>
+                  </div>
                 </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "#A9B2AC" }}>Chủ tài khoản:</span>
-                  <strong style={{ color: "#F5F2E9" }}>NGUYỄN QUỐC ĐẠT</strong>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "#A9B2AC" }}>Số tiền chuyển khoản:</span>
-                  <strong style={{ color: "#D96732", fontSize: "20px", fontWeight: 900 }}>{formatVND(totalPrice)}</strong>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between", borderTop: "1px solid #2B332B", paddingTop: "8px", marginTop: "4px" }}>
-                  <span style={{ color: "#A9B2AC" }}>Nội dung CK:</span>
-                  <strong style={{ color: "#FAD08B" }}>NONSMOKER {formData.phone || "SĐT"}</strong>
-                </div>
+
               </div>
             </div>
 
@@ -209,12 +307,32 @@ function CheckoutFormContent() {
                 textTransform: "uppercase",
               }}
             >
-              {isSubmitting ? "ĐANG XỬ LÝ ĐƠN HÀNG..." : `✔ XÁC NHẬN ĐĂNG KÝ & THANH TOÁN ${formatVND(totalPrice)}`}
+              {isSubmitting ? "ĐANG XỬ LÝ ĐƠN HÀNG..." : `✔ ĐÃ CHUYỂN KHOẢN ${formatVND(totalPrice)} — VÀO HỌC NGAY`}
+            </button>
+
+            {/* SANDBOX SEPAY SIMULATION TEST BUTTON */}
+            <button
+              type="button"
+              onClick={handleSimulatePayment}
+              style={{
+                width: "100%",
+                padding: "10px 14px",
+                background: "#252B25",
+                color: "#FAD08B",
+                border: "1px dashed #D96732",
+                borderRadius: "6px",
+                fontWeight: 700,
+                fontSize: "13px",
+                cursor: "pointer",
+                marginTop: "8px",
+              }}
+            >
+              ⚡ BẤM ĐÂY ĐỂ SIMULATE TEST SEPAY THANH TOÁN THÀNH CÔNG (SANDBOX)
             </button>
 
             <div style={{ textAlign: "center", color: "#A9B2AC", fontSize: "12px", lineHeight: 1.5 }}>
               🛡️ Cam kết hoàn tiền 100% nếu chương trình không phù hợp với bạn.<br />
-              Thông tin được bảo mật tuyệt đối.
+              Hệ thống tự động xác nhận qua SePAY Webhook API.
             </div>
 
           </form>
@@ -297,7 +415,7 @@ function CheckoutFormContent() {
 
           <div style={{ background: "#171A18", padding: "16px", borderRadius: "10px", fontSize: "13px", color: "#A9B2AC", lineHeight: 1.6 }}>
             <strong style={{ color: "#F5F2E9", display: "block", marginBottom: "4px" }}>💡 Hướng dẫn nhận tài khoản:</strong>
-            Sau khi xác nhận thanh toán, hệ thống sẽ tự động gửi Email kích hoạt tài khoản kèm thông tin tham gia cộng đồng Zalo hỗ trợ trong vòng 5 phút.
+            Mở ứng dụng ngân hàng quét mã QR bên cạnh. Sau khi SePAY xác nhận, hệ thống sẽ tự động gửi Email kích hoạt tài khoản và chuyển hướng bạn sang trang kích hoạt.
           </div>
 
         </div>
@@ -318,12 +436,12 @@ export default function CheckoutPage() {
             NON-SMOKER™
           </Link>
           <span style={{ background: "rgba(217,103,50,0.15)", border: "1px solid #D96732", color: "#FAD08B", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>
-            🔒 THANH TOÁN BẢO MẬT 256-BIT
+            🔒 ĐÃ TÍCH HỢP SEPAY AUTOMATED VIETQR
           </span>
         </div>
       </header>
 
-      <Suspense fallback={<div style={{ textAlign: "center", padding: "60px 20px", color: "#A9B2AC" }}>Đang tải thông tin thanh toán...</div>}>
+      <Suspense fallback={<div style={{ textAlign: "center", padding: "60px 20px", color: "#A9B2AC" }}>Đang tải thông tin thanh toán SePAY...</div>}>
         <CheckoutFormContent />
       </Suspense>
 
@@ -332,7 +450,7 @@ export default function CheckoutPage() {
         <div style={{ maxWidth: "1000px", margin: "0 auto", textAlign: "center", padding: "0 20px" }}>
           <b style={{ color: "#A9B2AC" }}>NON-SMOKER™ — HỆ THỐNG LẤY LẠI QUYỀN TỰ CHỦ</b>
           <p style={{ margin: "8px 0" }}>
-            Chương trình cung cấp nội dung giáo dục về hành vi, tác nhân và lối sống.
+            Cổng thanh toán tự động SePAY. Tự động xác nhận giao dịch ngân hàng 24/7.
           </p>
           <span>© 2026 NON-SMOKER™. All rights reserved.</span>
         </div>

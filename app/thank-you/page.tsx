@@ -11,6 +11,7 @@ function ThankYouContent() {
   const phone = searchParams.get("phone") || "";
   const email = searchParams.get("email") || "";
   const hasBump = searchParams.get("hasBump") === "true";
+  const sepayPaid = searchParams.get("sepayPaid") === "true";
   const rawTotal = searchParams.get("total") || "497000";
 
   const totalAmount = parseInt(rawTotal, 10);
@@ -34,6 +35,13 @@ function ThankYouContent() {
           Đơn đăng ký của bạn đã được hệ thống ghi nhận thành công. Bạn đã chính thức bước vào hành trình lấy lại quyền tự chủ!
         </p>
       </div>
+
+      {/* SEPAY VERIFIED STATUS BANNER */}
+      {sepayPaid && (
+        <div style={{ background: "rgba(102, 115, 91, 0.25)", border: "2px solid #66735B", padding: "16px 20px", borderRadius: "12px", marginBottom: "32px", textAlign: "center", color: "#FAD08B", fontWeight: 800, fontSize: "16px" }}>
+          🟢 GIAO DỊCH ĐÃ ĐƯỢC SEPAY XÁC NHẬN TỰ ĐỘNG THÀNH CÔNG!
+        </div>
+      )}
 
       {/* ORDER SUMMARY CONFIRMATION CARD */}
       <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "16px", padding: "28px", marginBottom: "40px", boxShadow: "0 15px 40px rgba(0,0,0,0.3)" }}>
