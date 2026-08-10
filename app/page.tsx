@@ -156,7 +156,7 @@ export default function Home() {
                 <img
                   src="/images/dat_before_bw.jpg"
                   alt="Đạt thời hút thuốc"
-                  style={{ width: "100%", height: "340px", objectFit: "cover", display: "block", filter: "grayscale(100%) contrast(110%)" }}
+                  style={{ width: "100%", height: "370px", objectFit: "cover", objectPosition: "top center", display: "block", filter: "grayscale(100%) contrast(110%)" }}
                 />
               </div>
 
@@ -165,7 +165,7 @@ export default function Home() {
                 <img
                   src="/images/dat_after_gym.jpg"
                   alt="Đạt hiện tại"
-                  style={{ width: "100%", height: "340px", objectFit: "cover", display: "block" }}
+                  style={{ width: "100%", height: "370px", objectFit: "cover", objectPosition: "top center", display: "block" }}
                 />
               </div>
             </div>
@@ -220,7 +220,7 @@ export default function Home() {
                     <img
                       src="/images/dat_before_bw.jpg"
                       alt="Lệ thuộc vào thuốc lá"
-                      style={{ width: "100%", height: "380px", objectFit: "cover", display: "block", filter: "grayscale(100%) contrast(110%)" }}
+                      style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "top center", display: "block", filter: "grayscale(100%) contrast(110%)" }}
                     />
                   </div>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px", color: "#74766F", display: "grid", gap: "6px" }}>
@@ -247,7 +247,7 @@ export default function Home() {
                     <img
                       src="/images/dat_after_gym.jpg"
                       alt="Phiên bản hiện tại"
-                      style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }}
+                      style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "top center", display: "block" }}
                     />
                   </div>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: "13px", color: "#D5DFDB", display: "grid", gap: "6px" }}>
