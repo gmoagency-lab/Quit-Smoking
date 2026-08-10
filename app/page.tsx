@@ -1649,6 +1649,270 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION: VIỆC QUYẾT ĐỊNH HÔM NAY LÀ QUAN TRỌNG & CAM KẾT CỦA TUI */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
+        <div className="letter-wrap" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+              THỜI ĐIỂM QUAN TRỌNG
+            </span>
+            <h2 style={{ fontSize: "clamp(24px, 3.8vw, 38px)", color: "#191B19", margin: "10px 0 20px", fontWeight: 800, lineHeight: 1.3 }}>
+              VIỆC QUYẾT ĐỊNH HÔM NAY LÀ QUAN TRỌNG
+            </h2>
+            <div style={{ background: "#252B25", color: "#FAD08B", padding: "18px 22px", borderRadius: "10px", fontWeight: 800, fontSize: "16px", lineHeight: 1.6, marginBottom: "24px" }}>
+              ĐÂY CHỈ LÀ GIÁ & QUYỀN LỢI TRONG THỜI GIAN NON-SMOKER™ MỚI RA MẮT & TUI KHÔNG CHẮC SẼ GIỮ CHÚNG BAO LÂU.
+            </div>
+            
+            <div style={{ fontSize: "17px", color: "#191B19", lineHeight: 1.8, textAlign: "left", background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "28px", borderRadius: "12px", display: "grid", gap: "14px" }}>
+              <p style={{ margin: 0 }}>
+                Phiên bản hiện tại của NON-SMOKER™ đang đi kèm đầy đủ các quyền lợi và công cụ thực hành ở trên. Tui đang tiếp tục cập nhật nội dung, bổ sung công cụ và hoàn thiện chương trình theo từng giai đoạn.
+              </p>
+              <p style={{ margin: 0 }}>
+                Vì vậy, tui không chắc những quyền lợi hiện tại có còn được giữ nguyên trong tương lai hay không. Nếu bạn đăng ký ở thời điểm hiện tại, bạn sẽ được giữ trọn quyền lợi của phiên bản này.
+              </p>
+              <p style={{ margin: 0, fontWeight: 700, color: "#D96732" }}>
+                Bạn không chỉ nhận được chương trình chính. Bạn còn nhận thêm những công cụ giúp bạn hiểu rõ hơn về hành vi hút thuốc, xử lý cơn thèm và từng bước xây dựng một lối sống không còn phụ thuộc vào thuốc lá.
+              </p>
+              <div style={{ background: "#F3F0E8", padding: "14px 18px", borderRadius: "8px", fontWeight: 800, color: "#191B19", textAlign: "center" }}>
+                Vì vậy, nếu bạn thấy NON-SMOKER™ phù hợp với mình... Đây là thời điểm tốt để bắt đầu.
+              </div>
+            </div>
+          </div>
+
+          {/* CAM KẾT CỦA TUI */}
+          <div style={{ background: "#171A18", color: "#F5F2E9", border: "2px solid #D96732", borderRadius: "16px", padding: "36px 30px", boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}>
+            <div style={{ textAlign: "center", marginBottom: "20px" }}>
+              <span style={{ fontSize: "32px", display: "block", marginBottom: "8px" }}>🛡️</span>
+              <h3 style={{ fontSize: "24px", color: "#D96732", margin: 0, fontWeight: 800, textTransform: "uppercase" }}>
+                CAM KẾT CỦA TUI
+              </h3>
+            </div>
+
+            <div style={{ fontSize: "16px", lineHeight: 1.8, color: "#D5DFDB", display: "grid", gap: "14px" }}>
+              <p style={{ margin: 0, fontSize: "18px", color: "#F5F2E9", fontWeight: 700, textAlign: "center" }}>
+                Tui hoàn tiền 100% nếu trong thời gian đầu bạn cảm thấy NON-SMOKER™ không phù hợp với mình.
+              </p>
+              <p style={{ margin: 0, textAlign: "center", color: "#A9B2AC" }}>
+                Bạn chỉ cần nhắn cho tui. Không cần giải thích dài dòng. Không phù hợp, tui hoàn tiền lại cho bạn.
+              </p>
+              <p style={{ margin: 0 }}>
+                Tui đưa ra cam kết này vì tui tin vào giá trị của hệ thống NON-SMOKER™ và muốn mọi người có cơ hội trải nghiệm trước khi quyết định tiếp tục.
+              </p>
+
+              <div style={{ background: "#252B25", borderLeft: "4px solid #D96732", padding: "18px 22px", borderRadius: "8px", margin: "8px 0", color: "#F5F2E9" }}>
+                <strong style={{ color: "#FAD08B", display: "block", marginBottom: "8px", fontSize: "17px" }}>
+                  TUI KHÔNG THỂ BỎ THUỐC THAY BẠN:
+                </strong>
+                Nhưng tui đã thiết kế một hệ thống rõ ràng để bạn biết: <strong>Cần bắt đầu từ đâu • Cần thay đổi điều gì • Cần làm gì khi gặp những thời điểm dễ quay lại thuốc lá.</strong>
+              </div>
+
+              <p style={{ margin: 0, color: "#F5F2E9", fontWeight: 700, textAlign: "center" }}>
+                Điều này giống như: Bạn cứ bắt đầu trước ➔ Áp dụng ➔ Quan sát sự thay đổi ➔ Và chỉ giữ lại chương trình khi bạn thấy nó thật sự có giá trị với mình.
+              </p>
+              <div style={{ textAlign: "center", fontSize: "20px", color: "#D96732", fontWeight: 900 }}>
+                VẬY THÌ CUỐI CÙNG... BẠN KHÔNG MẤT GÌ CẢ.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* SECTION: CÂU HỎI THƯỜNG GẶP (8 CÂU HỎI FAQ) + HỖ TRỢ ZALO */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#171A18", color: "#F5F2E9", borderBottom: "1px solid #384238" }}>
+        <div className="letter-wrap" style={{ maxWidth: "840px", margin: "0 auto" }}>
+          
+          <div style={{ textAlign: "center", marginBottom: "44px" }}>
+            <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+              GIẢI ĐÁP THẮC MẮC
+            </span>
+            <h2 style={{ fontSize: "clamp(26px, 3.8vw, 40px)", color: "#F5F2E9", margin: "10px 0 16px", fontWeight: 900 }}>
+              CÂU HỎI THƯỜNG GẶP NHẤT
+            </h2>
+            <p style={{ color: "#A9B2AC", fontSize: "16px", margin: 0 }}>
+              Tui trả lời một số câu hỏi thường gặp nhất ở bên dưới.
+            </p>
+          </div>
+
+          {/* FAQ CARDS GRID */}
+          <div style={{ display: "grid", gap: "20px", marginBottom: "48px" }}>
+            
+            {/* FAQ 1 */}
+            <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "14px", padding: "28px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>CÂU HỎI 1</span>
+                <h3 style={{ fontSize: "18px", color: "#F5F2E9", margin: 0, fontWeight: 800 }}>NON-SMOKER™ có gì khác so với những nội dung bỏ thuốc miễn phí trên mạng không?</h3>
+              </div>
+              <div style={{ fontSize: "15px", color: "#D5DFDB", lineHeight: 1.7, display: "grid", gap: "10px" }}>
+                <strong style={{ color: "#FAD08B" }}>Có. Khác ở 2 điểm chính:</strong>
+                <div>
+                  <strong style={{ color: "#F5F2E9" }}>1. Lộ trình đầy đủ, rõ ràng:</strong> Hiện nay có rất nhiều nội dung mảnh ghép nhỏ. Bạn biết nên bỏ thuốc nhưng khi gặp tình huống thật (stress, nhậu, cà phê...) bạn vẫn không biết làm gì tiếp theo. NON-SMOKER™ cho bạn lộ trình rõ ràng từng bước.
+                </div>
+                <div>
+                  <strong style={{ color: "#F5F2E9" }}>2. Có hệ thống hỗ trợ bên cạnh:</strong> Tham gia cộng đồng NON-SMOKER™ cùng những người trên hành trình thay đổi để đặt câu hỏi và chia sẻ khó khăn.
+                </div>
+                <div style={{ background: "#171A18", padding: "12px 16px", borderRadius: "6px", color: "#F5F2E9", fontWeight: 700, borderLeft: "3px solid #D96732" }}>
+                  Tóm lại: Nội dung miễn phí giúp bạn biết thêm thông tin. Còn NON-SMOKER™ giúp bạn có một hệ thống rõ ràng để bắt đầu thay đổi.
+                </div>
+              </div>
+            </div>
+
+            {/* FAQ 2 */}
+            <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "14px", padding: "28px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>CÂU HỎI 2</span>
+                <h3 style={{ fontSize: "18px", color: "#F5F2E9", margin: 0, fontWeight: 800 }}>Nếu tôi bận thì sao? Tôi có bỏ lỡ điều gì không?</h3>
+              </div>
+              <p style={{ fontSize: "15px", color: "#D5DFDB", lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ color: "#FAD08B" }}>Không.</strong> NON-SMOKER™ được thiết kế để bạn có thể học theo tốc độ của mình. Không cần tham gia khung giờ cố định. Toàn bộ nội dung đã chuẩn bị sẵn để bạn học khi rảnh, dừng khi bận và xem lại bất cứ lúc nào.
+              </p>
+            </div>
+
+            {/* FAQ 3 */}
+            <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "14px", padding: "28px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>CÂU HỎI 3</span>
+                <h3 style={{ fontSize: "18px", color: "#F5F2E9", margin: 0, fontWeight: 800 }}>Mất bao lâu để hoàn thành NON-SMOKER™?</h3>
+              </div>
+              <p style={{ fontSize: "15px", color: "#D5DFDB", lineHeight: 1.7, margin: 0 }}>
+                Điều này phụ thuộc vào tốc độ của mỗi người. Giá trị nằm ở việc bạn quan sát thói quen, áp dụng công cụ, thử những cách phản ứng mới và điều chỉnh trong thực tế. Bạn có thể học theo tốc độ phù hợp với mình.
+              </p>
+            </div>
+
+            {/* FAQ 4 */}
+            <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "14px", padding: "28px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>CÂU HỎI 4</span>
+                <h3 style={{ fontSize: "18px", color: "#F5F2E9", margin: 0, fontWeight: 800 }}>Tôi đã hút thuốc rất nhiều năm rồi, NON-SMOKER™ có phù hợp với tôi không?</h3>
+              </div>
+              <p style={{ fontSize: "15px", color: "#D5DFDB", lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ color: "#FAD08B" }}>Có thể phù hợp.</strong> Bởi vấn đề không chỉ ở thời gian hút bao lâu, mà ở việc thuốc lá đã trở thành vòng lặp gắn với cảm xúc, hoàn cảnh và thói quen. NON-SMOKER™ giúp bạn nhìn ra những vòng lặp đó để từng bước thay đổi.
+              </p>
+            </div>
+
+            {/* FAQ 5 */}
+            <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "14px", padding: "28px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>CÂU HỎI 5</span>
+                <h3 style={{ fontSize: "18px", color: "#F5F2E9", margin: 0, fontWeight: 800 }}>Tôi đã từng bỏ thuốc nhiều lần nhưng đều thất bại. NON-SMOKER™ có dành cho tôi không?</h3>
+              </div>
+              <p style={{ fontSize: "15px", color: "#D5DFDB", lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ color: "#FAD08B" }}>Có.</strong> Điều đó không có nghĩa bạn không thể thay đổi, mà cho thấy bạn chưa xử lý được những yếu tố khiến mình quay lại. NON-SMOKER™ giúp bạn chuẩn bị trước những tình huống dễ mất kiểm soát thay vì chỉ dựa vào ý chí.
+              </p>
+            </div>
+
+            {/* FAQ 6 */}
+            <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "14px", padding: "28px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>CÂU HỎI 6</span>
+                <h3 style={{ fontSize: "18px", color: "#F5F2E9", margin: 0, fontWeight: 800 }}>NON-SMOKER™ có phải là thuốc hoặc phương pháp thay thế nicotine không?</h3>
+              </div>
+              <p style={{ fontSize: "15px", color: "#D5DFDB", lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ color: "#FAD08B" }}>Không.</strong> Đây là chương trình tập trung vào phần hành vi phía sau việc hút thuốc (thói quen, môi trường, cảm xúc). Nếu bạn đang sử dụng thuốc/miếng dán theo chỉ định y tế, bạn nên tiếp tục tuân thủ hướng dẫn.
+              </p>
+            </div>
+
+            {/* FAQ 7 */}
+            <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "14px", padding: "28px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>CÂU HỎI 7</span>
+                <h3 style={{ fontSize: "18px", color: "#F5F2E9", margin: 0, fontWeight: 800 }}>Nếu trong quá trình học tôi vẫn còn thèm thuốc thì sao?</h3>
+              </div>
+              <p style={{ fontSize: "15px", color: "#D5DFDB", lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ color: "#FAD08B" }}>Điều đó hoàn toàn bình thường.</strong> Mục tiêu không phải là khiến bạn không bao giờ thèm nữa, mà là giúp bạn biết cách xử lý khi cơn thèm xuất hiện để không lập tức quay lại hành vi cũ.
+              </p>
+            </div>
+
+            {/* FAQ 8 */}
+            <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "14px", padding: "28px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>CÂU HỎI 8</span>
+                <h3 style={{ fontSize: "18px", color: "#F5F2E9", margin: 0, fontWeight: 800 }}>NON-SMOKER™ có đảm bảo tôi chắc chắn bỏ thuốc hoàn toàn không?</h3>
+              </div>
+              <p style={{ fontSize: "15px", color: "#D5DFDB", lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ color: "#FAD08B" }}>Không.</strong> NON-SMOKER™ không bán lời hứa thiếu thực tế, mà giúp bạn có một cách hiểu đúng và một hệ thống rõ ràng để thực hành. Tui không thể thay đổi thay bạn, nhưng tui có thể giúp bạn có công cụ để bắt đầu.
+              </p>
+            </div>
+
+          </div>
+
+          {/* ZALO SUPPORT CARD WITH QR IMAGE */}
+          <div style={{ background: "#252B25", border: "2px solid #D96732", borderRadius: "16px", padding: "36px", textAlign: "center", boxShadow: "0 20px 50px rgba(0,0,0,0.4)" }}>
+            <h3 style={{ fontSize: "22px", color: "#F5F2E9", margin: "0 0 12px", fontWeight: 800 }}>
+              BẠN VẪN CÒN CÂU HỎI CHƯA ĐƯỢC GIẢI ĐÁP?
+            </h3>
+            <p style={{ color: "#D5DFDB", fontSize: "16px", margin: "0 0 24px" }}>
+              Hãy thoải mái liên hệ với Đạt & đội ngũ hỗ trợ qua Zalo bằng cách quét mã QR bên dưới:
+            </p>
+
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
+              <img
+                src="/images/zalo_contact_qr.png"
+                alt="Nguyễn Quốc Đạt - Danh thiếp Zalo Hỗ trợ"
+                style={{
+                  maxWidth: "320px",
+                  width: "100%",
+                  borderRadius: "14px",
+                  border: "1px solid #384238",
+                  boxShadow: "0 12px 30px rgba(0,0,0,0.5)"
+                }}
+              />
+            </div>
+
+            <a href="https://zalo.me" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", padding: "14px 28px", background: "#0068FF", color: "white", fontWeight: 800, fontSize: "16px", textDecoration: "none", borderRadius: "8px", boxShadow: "0 8px 20px rgba(0,104,255,0.3)" }}>
+              BẤM VÀO ĐÂY ĐỂ CHÁT ZALO HỖ TRỢ →
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* SECTION: NẾU BẠN ĐANG ĐỌC ĐẾN ĐÂY... (FINAL CLOSING & CTA) */}
+      <section className="letter-closing" style={{ background: "#171A18", color: "#F5F2E9", padding: "100px 0" }}>
+        <div className="letter-wrap" style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
+          
+          <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", color: "#D96732", margin: "0 0 24px", fontWeight: 900, textTransform: "uppercase" }}>
+            NẾU BẠN ĐANG ĐỌC ĐẾN ĐÂY...
+          </h2>
+
+          <div style={{ fontSize: "18px", color: "#D5DFDB", lineHeight: 1.8, textAlign: "left", background: "#252B25", border: "1px solid #384238", padding: "32px", borderRadius: "14px", marginBottom: "40px", display: "grid", gap: "14px" }}>
+            <p style={{ margin: 0 }}>
+              Có thể bạn đã từng nghĩ: <em>“Mai mình bỏ.”</em>
+            </p>
+            <p style={{ margin: 0 }}>
+              Có thể bạn đã từng thử nhiều lần.
+            </p>
+            <p style={{ margin: 0 }}>
+              Có thể bạn từng nghĩ: <em>“Chắc mình hút lâu quá rồi.”</em>
+            </p>
+            <p style={{ margin: "8px 0 0", color: "#F5F2E9", fontWeight: 700, fontSize: "19px" }}>
+              Nhưng nếu bạn vẫn đang đọc đến đây... <span style={{ color: "#FAD08B" }}>Có một phần trong bạn vẫn muốn thay đổi.</span>
+            </p>
+            <p style={{ margin: 0 }}>
+              NON-SMOKER™ không yêu cầu bạn trở thành một người hoàn hảo ngay lập tức. Chỉ cần bắt đầu bằng một quyết định nhỏ: <strong>Cho bản thân một cơ hội để thử một cách khác.</strong>
+            </p>
+          </div>
+
+          <div style={{ margin: "0 0 32px" }}>
+            <h3 style={{ fontSize: "28px", color: "#F5F2E9", margin: "0 0 8px", fontWeight: 800 }}>
+              HÀNH TRÌNH NON-SMOKER™
+            </h3>
+            <div style={{ color: "#D96732", fontWeight: 900, fontSize: "32px", marginBottom: "20px" }}>
+              CHỈ VỚI: 497.000Đ
+            </div>
+            <a href="mailto:?subject=Đăng ký NON-SMOKER™" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "20px 28px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
+              <span>[ TÔI MUỐN TRỞ THÀNH <span style={{ whiteSpace: "nowrap" }}>NGƯỜI KHÔNG HÚT THUỐC ]</span></span>
+            </a>
+          </div>
+
+          <p style={{ color: "#74766F", fontSize: "14px", margin: 0 }}>
+            Không cần hứa với ai. Không cần đăng lên Facebook. Không cần đợi thứ Hai. Chỉ cần bắt đầu từ chính hôm nay.
+          </p>
+
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer style={{ background: "#111311", color: "#74766F", padding: "40px 0", fontSize: "12px" }}>
         <div className="wrap" style={{ textAlign: "center" }}>
