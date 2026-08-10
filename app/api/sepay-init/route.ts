@@ -7,8 +7,9 @@ export async function POST(request: Request) {
     const { amount, phone, name, email, hasBump } = body;
 
     const merchantId = process.env.SEPAY_MERCHANT_ID || "SP-TEST-NQAA8933";
-    const secretKey = process.env.SEPAY_SECRET_KEY || "spsk_test_xhYaDK4YM2uSh9yMUYemPBrGL8aFz2HY";
-    const env = (process.env.SEPAY_ENV as "sandbox" | "production") || "sandbox";
+    const secretKey = process.env.SEPAY_SECRET_KEY || "spsk_live_q994EnfHgSFWma278iFmsjT83oYP8BmA";
+    const defaultEnv = secretKey.startsWith("spsk_live_") ? "production" : "sandbox";
+    const env = (process.env.SEPAY_ENV as "sandbox" | "production") || defaultEnv;
 
     const client = new SePayPgClient({
       env,

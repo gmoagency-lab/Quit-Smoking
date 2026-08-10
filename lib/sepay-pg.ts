@@ -23,9 +23,12 @@ export class SePayPgClient {
   private secretKey: string;
 
   constructor(options: SePayPgClientOptions = {}) {
-    this.env = options.env || (process.env.SEPAY_ENV as "sandbox" | "production") || "sandbox";
+    const key = options.secret_key || process.env.SEPAY_SECRET_KEY || "spsk_live_q994EnfHgSFWma278iFmsjT83oYP8BmA";
+    const defaultEnv = key.startsWith("spsk_live_") ? "production" : "sandbox";
+
+    this.env = options.env || (process.env.SEPAY_ENV as "sandbox" | "production") || defaultEnv;
     this.merchantId = options.merchant_id || process.env.SEPAY_MERCHANT_ID || "SP-TEST-NQAA8933";
-    this.secretKey = options.secret_key || process.env.SEPAY_SECRET_KEY || "spsk_test_xhYaDK4YM2uSh9yMUYemPBrGL8aFz2HY";
+    this.secretKey = key;
   }
 
   get checkout() {
