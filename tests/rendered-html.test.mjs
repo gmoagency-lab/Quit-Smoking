@@ -36,9 +36,11 @@ test("server-renders the landing page HTML correctly", async () => {
 });
 
 test("page and layout source files have valid configuration", async () => {
-  const [page, layout, packageJson] = await Promise.all([
+  const [page, layout, checkoutPage, thankYouPage, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/checkout/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/thank-you/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
@@ -46,6 +48,8 @@ test("page and layout source files have valid configuration", async () => {
   assert.match(layout, /Bản Đồ Cai Thuốc Lá 7 Ngày/);
   assert.match(layout, /lang="vi"/);
   assert.match(page, /export default function Home/);
+  assert.match(checkoutPage, /export default function CheckoutPage/);
+  assert.match(thankYouPage, /export default function ThankYouPage/);
   assert.match(packageJson, /"vinext"/);
 });
 

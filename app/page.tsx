@@ -1593,7 +1593,7 @@ export default function Home() {
               Chỉ với: 497.000đ
             </div>
 
-            <a href="mailto:?subject=Đăng ký NON-SMOKER™" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "18px 24px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", marginBottom: "14px", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
+            <a href="/checkout" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "18px 24px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", marginBottom: "14px", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
               <span>[ TÔI MUỐN TRỞ THÀNH <span style={{ whiteSpace: "nowrap" }}>NGƯỜI KHÔNG HÚT THUỐC ]</span></span>
             </a>
 
@@ -2116,7 +2116,7 @@ export default function Home() {
               Khi đăng ký hôm nay, bạn nhận quyền truy cập vào toàn bộ chương trình NON-SMOKER™. Bạn nhận được một hệ thống giúp bạn hiểu: <strong>Vì sao mình hút • Vì sao mình khó bỏ • Và cần làm gì để từng bước lấy lại quyền kiểm soát.</strong>
             </p>
 
-            <a href="mailto:?subject=Đăng ký NON-SMOKER™" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "20px 28px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
+            <a href="/checkout" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", maxWidth: "600px", width: "100%", padding: "20px 28px", background: "#D96732", color: "white", fontWeight: 900, fontSize: "clamp(15px, 2.3vw, 19px)", textDecoration: "none", borderRadius: "8px", boxShadow: "0 12px 35px rgba(217,103,50,0.4)", textTransform: "uppercase", lineHeight: 1.35, boxSizing: "border-box", textAlign: "center" }}>
               <span>[ TÔI MUỐN TRỞ THÀNH <span style={{ whiteSpace: "nowrap" }}>NGƯỜI KHÔNG HÚT THUỐC ]</span></span>
             </a>
           </div>
@@ -2152,7 +2152,7 @@ export default function Home() {
           <span style={{ fontSize: "11px", color: "#A9B2AC", fontWeight: 600 }}>NON-SMOKER™</span>
           <b style={{ fontSize: "16px", color: "#D96732" }}>497.000đ</b>
         </div>
-        <a href="#offer" style={{ background: "#D96732", color: "white", padding: "10px 18px", fontSize: "12px", fontWeight: 800, textDecoration: "none", borderRadius: "4px" }}>BẮT ĐẦU NGAY →</a>
+        <a href="/checkout" style={{ background: "#D96732", color: "white", padding: "10px 18px", fontSize: "12px", fontWeight: 800, textDecoration: "none", borderRadius: "4px" }}>BẮT ĐẦU NGAY →</a>
       </div>
     </div>
   );
