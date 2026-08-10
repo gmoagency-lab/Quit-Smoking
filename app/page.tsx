@@ -1868,6 +1868,131 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION: NHẮC LẠI: QUYỀN LỢI & MỨC GIÁ PHIÊN BẢN HIỆN TẠI (PERSUASION & SYSTEM ADVANTAGE) */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
+        <div className="letter-wrap" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          
+          {/* URGENCY HEADER BANNER */}
+          <div style={{ background: "#252B25", color: "#FAD08B", padding: "18px 22px", borderRadius: "10px", fontWeight: 800, fontSize: "16px", lineHeight: 1.6, marginBottom: "32px", textAlign: "center", border: "1px solid #D96732" }}>
+            ⚠️ NHẮC LẠI: QUYỀN LỢI & MỨC GIÁ PHIÊN BẢN HIỆN TẠI SẼ THAY ĐỔI TRONG THỜI GIAN TỚI
+          </div>
+
+          {/* PERSUASIVE PROSE */}
+          <div style={{ fontSize: "17px", color: "#191B19", lineHeight: 1.8, background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "32px", borderRadius: "14px", marginBottom: "36px", display: "grid", gap: "14px" }}>
+            <h3 style={{ fontSize: "22px", color: "#D96732", margin: "0 0 10px", fontWeight: 800, textTransform: "uppercase" }}>
+              NGHE NÀY...
+            </h3>
+            <p style={{ margin: 0 }}>
+              Bạn hoàn toàn có thể tự bỏ thuốc. Bạn có thể tự tìm hiểu thêm về tác hại thuốc lá. Xem thêm những video chia sẻ kinh nghiệm. Đọc thêm những cách vượt qua cơn thèm. Tự thử bỏ thuốc bằng ý chí của mình.
+            </p>
+            <p style={{ margin: 0, fontWeight: 700 }}>
+              Và thực tế... Có rất nhiều người đã làm được như vậy.
+            </p>
+
+            <div style={{ background: "#252B25", color: "#F5F2E9", padding: "20px 24px", borderRadius: "10px", margin: "10px 0", borderLeft: "4px solid #A94725" }}>
+              <strong style={{ color: "#D96732", fontSize: "17px", display: "block", marginBottom: "8px" }}>
+                NHƯNG VẤN ĐỀ LÀ:
+              </strong>
+              <p style={{ margin: "0 0 10px", color: "#D5DFDB", fontSize: "16px" }}>
+                Nếu bạn chưa hiểu điều gì thật sự khiến mình hút thuốc... Bạn sẽ tiếp tục chiến đấu với sai vấn đề.
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "6px", fontSize: "15px", color: "#F5F2E9" }}>
+                <li>• Bạn có thể cố gắng nhịn thuốc vài ngày... Nhưng khi gặp một ngày căng thẳng, một cuộc nhậu, một ly cà phê quen thuộc... Bạn lại quay về vòng lặp cũ.</li>
+                <li>• Bạn có thể rất quyết tâm vào buổi sáng... Nhưng đến lúc cơn thèm xuất hiện, bạn lại không biết mình nên làm gì tiếp theo.</li>
+              </ul>
+              <p style={{ margin: "10px 0 0", color: "#FAD08B", fontWeight: 700 }}>
+                Bạn có thể biết thuốc lá không tốt. Nhưng biết không đồng nghĩa với thay đổi được. Đó là điều rất nhiều người từng muốn bỏ thuốc gặp phải.
+              </p>
+            </div>
+          </div>
+
+          {/* NON-SMOKER CORE ADVANTAGE BOX */}
+          <div style={{ background: "#171A18", color: "#F5F2E9", border: "2px solid #D96732", borderRadius: "16px", padding: "36px 30px", marginBottom: "36px", boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}>
+            <h3 style={{ fontSize: "22px", color: "#D96732", margin: "0 0 16px", fontWeight: 800, textTransform: "uppercase" }}>
+              NON-SMOKER™ GIÚP BẠN ĐI THEO MỘT LỘ TRÌNH RÕ RÀNG HƠN:
+            </h3>
+
+            <div style={{ display: "grid", gap: "12px", marginBottom: "20px", fontSize: "16px" }}>
+              <div style={{ background: "#252B25", padding: "14px 18px", borderRadius: "8px", borderLeft: "3px solid #D96732" }}>
+                ✓ <strong>Hiểu vì sao bạn hút thuốc.</strong>
+              </div>
+              <div style={{ background: "#252B25", padding: "14px 18px", borderRadius: "8px", borderLeft: "3px solid #D96732" }}>
+                ✓ <strong>Nhận ra những vòng lặp khiến bạn khó bỏ.</strong>
+              </div>
+              <div style={{ background: "#252B25", padding: "14px 18px", borderRadius: "8px", borderLeft: "3px solid #D96732" }}>
+                ✓ <strong>Biết cách xử lý những thời điểm dễ quay lại thuốc lá.</strong>
+              </div>
+              <div style={{ background: "#252B25", padding: "14px 18px", borderRadius: "8px", borderLeft: "3px solid #D96732" }}>
+                ✓ <strong>Xây dựng những thói quen mới để thay thế sự phụ thuộc cũ.</strong>
+              </div>
+            </div>
+
+            <p style={{ margin: 0, fontSize: "16px", color: "#F5F2E9", textAlign: "center", fontWeight: 700 }}>
+              Không phải bằng việc mỗi ngày ép bản thân phải chiến đấu. Mà bằng việc hiểu chính mình và từng bước lấy lại quyền kiểm soát.
+            </p>
+          </div>
+
+          {/* CHECKLIST: DÀNH CHO AI & BẠN NHẬN ĐƯỢC GÌ */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px", marginBottom: "36px" }}>
+            
+            {/* FIT CHECKLIST */}
+            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "14px", padding: "28px" }}>
+              <h4 style={{ fontSize: "18px", color: "#D96732", margin: "0 0 14px", fontWeight: 800 }}>
+                NON-SMOKER™ DÀNH CHO NHỮNG NGƯỜI:
+              </h4>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px", fontSize: "15px", color: "#191B19" }}>
+                <li>✓ Đã từng muốn bỏ thuốc nhưng chưa thành công.</li>
+                <li>✓ Đã thử nhiều cách nhưng vẫn quay lại hút.</li>
+                <li>✓ Không muốn tiếp tục phụ thuộc vào thói quen kéo dài nhiều năm.</li>
+                <li>✓ Muốn lấy lại sự chủ động với sức khỏe, thời gian và cuộc sống.</li>
+              </ul>
+            </div>
+
+            {/* DELIVERABLES CHECKLIST */}
+            <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "14px", padding: "28px" }}>
+              <h4 style={{ fontSize: "18px", color: "#D96732", margin: "0 0 14px", fontWeight: 800 }}>
+                KHI THAM GIA NON-SMOKER™, BẠN NHẬN ĐƯỢC:
+              </h4>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px", fontSize: "15px", color: "#191B19" }}>
+                <li>✓ Lộ trình hành động rõ ràng thay đổi vòng lặp.</li>
+                <li>✓ Bài học xử lý tình huống thực tế khi muốn hút.</li>
+                <li>✓ Công cụ thực hành từng bước thay đổi thói quen.</li>
+                <li>✓ Cộng đồng đồng hành trong quá trình thay đổi.</li>
+                <li>✓ Quyền truy cập và cập nhật mới trong phiên bản này.</li>
+                <li>✓ Bộ công cụ thực hành đi kèm giai đoạn ra mắt.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          {/* FINAL CALLOUT: ĐÂY LA LÚC BẮT ĐẦU */}
+          <div style={{ background: "#252B25", color: "#F5F2E9", padding: "32px", borderRadius: "14px", textAlign: "center", border: "2px solid #D96732" }}>
+            <h3 style={{ fontSize: "20px", color: "#D96732", margin: "0 0 14px", fontWeight: 800, textTransform: "uppercase" }}>
+              NẾU BẠN NGHIÊM TÚC MUỐN:
+            </h3>
+            <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "12px", marginBottom: "20px", fontSize: "15px", color: "#F5F2E9" }}>
+              <span style={{ background: "#171A18", padding: "8px 14px", borderRadius: "6px" }}>• Không còn để thuốc lá quyết định ngày của bạn</span>
+              <span style={{ background: "#171A18", padding: "8px 14px", borderRadius: "6px" }}>• Không còn phải tự hứa “mai bỏ” rồi lặp lại</span>
+              <span style={{ background: "#171A18", padding: "8px 14px", borderRadius: "6px" }}>• Không còn cảm giác mất kiểm soát trước thói quen cũ</span>
+            </div>
+
+            <p style={{ fontSize: "17px", color: "#D5DFDB", lineHeight: 1.7, margin: "0 0 16px" }}>
+              NON-SMOKER™ không hứa thay đổi bạn chỉ sau một đêm. Nhưng nó cho bạn một hệ thống rõ ràng để biết mình cần làm gì tiếp theo.
+            </p>
+            
+            <div style={{ color: "#FAD08B", fontSize: "18px", fontWeight: 800, lineHeight: 1.6 }}>
+              Và đôi khi... Điều một người cần không phải là cố gắng nhiều hơn.<br />
+              Mà là một cách đúng hơn để bắt đầu.
+            </div>
+
+            <div style={{ marginTop: "16px", color: "#F5F2E9", fontWeight: 800, fontSize: "16px" }}>
+              Bắt đầu hành trình trở thành phiên bản không còn phụ thuộc vào thuốc lá của chính mình.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* SECTION: NẾU BẠN ĐANG ĐỌC ĐẾN ĐÂY... (FINAL CLOSING & CTA) */}
       <section className="letter-closing" style={{ background: "#171A18", color: "#F5F2E9", padding: "100px 0" }}>
         <div className="letter-wrap" style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
