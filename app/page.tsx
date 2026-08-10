@@ -947,6 +947,403 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION: NHƯNG ĐẠT ƠI, NHỮNG ĐIỀU NÀY CÓ PHÙ HỢP VỚI TÔI KHÔNG? (NON-SMOKER™ CURRICULUM & QUALIFICATION) */}
+      <section className="letter-section" style={{ padding: "90px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
+        <div className="letter-wrap" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          
+          {/* 1. SECTION TITLE & SUITABILITY */}
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+              DÀNH CHO AI?
+            </span>
+            <h2 style={{ fontSize: "clamp(24px, 3.8vw, 38px)", color: "#191B19", margin: "10px 0 20px", fontWeight: 800, lineHeight: 1.3 }}>
+              “NHƯNG ĐẠT ƠI, NHỮNG ĐIỀU NÀY CÓ PHÙ HỢP VỚI TÔI KHÔNG?”
+            </h2>
+            <div style={{ fontSize: "18px", color: "#191B19", lineHeight: 1.8, textAlign: "left", background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "28px", borderRadius: "12px" }}>
+              <p style={{ margin: "0 0 12px" }}>
+                Nếu bạn đang hút thuốc và thực sự muốn dừng lại, hoặc đã từng thử bỏ nhưng vẫn quay về với điếu thuốc, thì chương trình này được thiết kế dành cho bạn.
+              </p>
+              <p style={{ margin: "0 0 16px" }}>
+                Không quan trọng bạn mới bắt đầu nghĩ đến chuyện bỏ thuốc hay đã thử nhiều lần trước đây.
+              </p>
+              <div style={{ background: "#252B25", borderLeft: "4px solid #D96732", padding: "16px 20px", borderRadius: "6px", color: "#F5F2E9" }}>
+                <strong style={{ color: "#D96732", fontSize: "17px", display: "block" }}>
+                  ĐIỀU QUAN TRỌNG LÀ:
+                </strong>
+                <span style={{ fontSize: "16px" }}>Bạn không muốn tiếp tục lặp lại cách cũ nữa.</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 2. PROGRAM INTRO BANNER (NON-SMOKER™) */}
+          <div style={{
+            background: "linear-gradient(180deg, #1C1310 0%, #140C0A 100%)",
+            border: "2px solid #D96732",
+            borderRadius: "16px",
+            padding: "40px 32px",
+            color: "#F5F2E9",
+            marginBottom: "48px",
+            boxShadow: "0 20px 50px rgba(0,0,0,0.3)"
+          }}>
+            <div style={{ textAlign: "center", marginBottom: "28px" }}>
+              <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 12px", borderRadius: "4px", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                GIỚI THIỆU
+              </span>
+              <h3 style={{ fontSize: "clamp(28px, 4vw, 40px)", color: "#F5F2E9", margin: "12px 0 6px", fontWeight: 900, letterSpacing: "0.05em" }}>
+                NON-SMOKER™
+              </h3>
+              <p style={{ color: "#D5DFDB", fontSize: "18px", margin: 0, fontStyle: "italic" }}>
+                Trở thành người không còn cần đến thuốc lá.
+              </p>
+            </div>
+
+            <p style={{ fontSize: "17px", lineHeight: 1.8, margin: "0 0 20px" }}>
+              Tham gia chương trình, tui sẽ hướng dẫn bạn bắt đầu thay đổi mối quan hệ với thuốc lá dựa trên <strong>3 nền tảng</strong>:
+            </p>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "14px", marginBottom: "24px" }}>
+              <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #3E2B23", padding: "16px", borderRadius: "8px", textAlign: "center", fontWeight: 800, color: "#FAD08B" }}>
+                1. NHÌN THẤY VÒNG LẶP
+              </div>
+              <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #3E2B23", padding: "16px", borderRadius: "8px", textAlign: "center", fontWeight: 800, color: "#FAD08B" }}>
+                2. THAY ĐỔI PHẢN ỨNG
+              </div>
+              <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid #3E2B23", padding: "16px", borderRadius: "8px", textAlign: "center", fontWeight: 800, color: "#FAD08B" }}>
+                3. LẤY LẠI QUYỀN TỰ CHỦ
+              </div>
+            </div>
+
+            <div style={{ borderTop: "1px solid #3E2B23", paddingTop: "20px" }}>
+              <p style={{ color: "#A9B2AC", fontSize: "15px", margin: "0 0 8px" }}>
+                Thay vì chỉ cố gắng: <em>“Lần này mình phải nhịn được.”</em>
+              </p>
+              <p style={{ color: "#F5F2E9", fontSize: "16px", lineHeight: 1.7, margin: 0 }}>
+                Bạn sẽ bắt đầu hiểu rõ mình đang hút trong những tình huống nào, điều gì thường kéo mình quay lại và có thể chuẩn bị cách phản ứng ra sao khi những tình huống đó xuất hiện.
+              </p>
+            </div>
+          </div>
+
+          {/* 3. HOW THE PROGRAM WORKS */}
+          <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "36px 32px", borderRadius: "14px", marginBottom: "48px" }}>
+            <h3 style={{ fontSize: "22px", color: "#191B19", margin: "0 0 20px", fontWeight: 800, textTransform: "uppercase" }}>
+              CÁCH CHƯƠNG TRÌNH HOẠT ĐỘNG NHƯ SAU:
+            </h3>
+
+            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "grid", gap: "12px", fontSize: "16px", color: "#191B19", lineHeight: 1.7 }}>
+              <li style={{ display: "flex", gap: "10px" }}>
+                <span style={{ color: "#D96732", fontWeight: 800 }}>•</span>
+                <span>Chương trình gồm các video hướng dẫn được thu sẵn trên website. Bạn có thể học online và xem lại bất cứ lúc nào.</span>
+              </li>
+              <li style={{ display: "flex", gap: "10px" }}>
+                <span style={{ color: "#D96732", fontWeight: 800 }}>•</span>
+                <span>Nội dung được sắp xếp theo từng phần, đi từ hiểu hành vi hiện tại → nhận diện những tác nhân kích hoạt → xây phản ứng mới → chuẩn bị cho những tình huống khó → củng cố quyền tự chủ.</span>
+              </li>
+              <li style={{ display: "flex", gap: "10px" }}>
+                <span style={{ color: "#D96732", fontWeight: 800 }}>•</span>
+                <span>Mỗi phần đều có hướng dẫn và công cụ thực hành để bạn biết mình cần quan sát gì, làm gì và áp dụng thế nào vào chính cuộc sống của mình.</span>
+              </li>
+            </ul>
+
+            <div style={{ background: "#252B25", color: "#F5F2E9", padding: "20px 24px", borderRadius: "8px", marginBottom: "18px" }}>
+              <strong style={{ color: "#D96732", fontSize: "16px", display: "block", marginBottom: "6px", textTransform: "uppercase" }}>
+                ĐIỂM QUAN TRỌNG NHẤT LÀ:
+              </strong>
+              <p style={{ margin: 0, fontSize: "15px", lineHeight: 1.75, color: "#D5DFDB" }}>
+                Bạn không cần tự xem hàng chục video, đọc hàng chục bài viết rồi cố ghép chúng thành một cách làm của riêng mình. Tui đã sắp xếp mọi thứ thành một hệ thống theo thứ tự rõ ràng để bạn có thể học đến đâu, áp dụng đến đó.
+              </p>
+            </div>
+
+            <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#191B19", margin: 0 }}>
+              Chương trình không được thiết kế để bạn chỉ “biết thêm về cai thuốc”. Mà để những gì bạn học có thể được đưa vào đúng những lúc đời thật xảy ra: <strong>Khi stress. Khi uống cà phê. Sau bữa ăn. Khi bạn bè mời thuốc. Hay khi trong đầu bắt đầu xuất hiện câu: “Một điếu thôi chắc không sao.”</strong>
+            </p>
+          </div>
+
+          {/* 4. QUALIFICATION QUESTIONNAIRE (7 CÂU HỎI "CÓ") */}
+          <div style={{ background: "#171A18", color: "#F5F2E9", border: "2px solid #D96732", padding: "40px 32px", borderRadius: "16px", marginBottom: "48px", boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}>
+            <h3 style={{ fontSize: "clamp(22px, 3.5vw, 30px)", color: "#D96732", margin: "0 0 12px", fontWeight: 800, textAlign: "center" }}>
+              BÂY GIỜ LÀ LÚC ĐỂ QUYẾT ĐỊNH CHƯƠNG TRÌNH NÀY CÓ DÀNH CHO BẠN KHÔNG.
+            </h3>
+            <p style={{ textAlign: "center", color: "#D5DFDB", fontSize: "17px", margin: "0 0 28px" }}>
+              Nếu bạn trả lời <strong>“Có”</strong> với bất kỳ câu hỏi nào dưới đây... <span style={{ color: "#FAD08B" }}>thì chương trình này được thiết kế dành cho bạn.</span>
+            </p>
+
+            <div style={{ display: "grid", gap: "12px", marginBottom: "28px" }}>
+              {[
+                "Bạn đã hút thuốc đủ lâu và thực sự muốn dừng lại?",
+                "Bạn đã từng quyết tâm bỏ nhưng sau một thời gian lại quay lại?",
+                "Bạn cứ uống cà phê, ăn xong, stress, lái xe hay gặp bạn bè là muốn hút?",
+                "Bạn mệt với việc ngày nào cũng phải đấu tranh với cảm giác muốn hút?",
+                "Bạn muốn hiểu vì sao mình cứ quay lại thay vì tiếp tục tự trách bản thân?",
+                "Bạn muốn biết mình có thể làm gì khi đúng tình huống khó xuất hiện?",
+                "Bạn muốn việc bỏ thuốc không còn chỉ phụ thuộc vào câu “lần này mình sẽ cố hơn”?"
+              ].map((q, idx) => (
+                <div key={idx} style={{ background: "#252B25", border: "1px solid #384238", padding: "16px 20px", borderRadius: "8px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
+                  <span style={{ fontSize: "15px", color: "#F5F2E9", flex: "1 1 300px" }}>✓ {q}</span>
+                  <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", whiteSpace: "nowrap" }}>
+                    CHƯƠNG TRÌNH DÀNH CHO BẠN
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p style={{ textAlign: "center", color: "#A9B2AC", fontSize: "15px", margin: 0, fontStyle: "italic" }}>
+              Nếu bạn trả lời “Có” với bất kỳ câu nào ở trên, hãy đọc tiếp để biết chính xác bạn sẽ được hướng dẫn những gì bên trong chương trình.
+            </p>
+          </div>
+
+          {/* 5. COURSE CURRICULUM (7 PHẦN HỌC CHI TIẾT) */}
+          <div style={{ marginBottom: "48px" }}>
+            <div style={{ textAlign: "center", marginBottom: "36px" }}>
+              <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                NỘI DUNG CHI TIẾT
+              </span>
+              <h2 style={{ fontSize: "clamp(26px, 3.8vw, 36px)", color: "#191B19", margin: "8px 0 0", fontWeight: 800 }}>
+                7 PHẦN HỌC BÊN TRONG NON-SMOKER™
+              </h2>
+            </div>
+
+            <div style={{ display: "grid", gap: "24px" }}>
+              {/* PHẦN 1 */}
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                  PHẦN 1
+                </span>
+                <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                  HIỂU VÒNG LẶP HÚT THUỐC
+                </h3>
+                <p style={{ color: "#191B19", fontSize: "15px", lineHeight: 1.7, margin: "0 0 14px" }}>
+                  Phần này giúp bạn hiểu cách hành vi hút thuốc đang xuất hiện trong chính cuộc sống của mình trước khi cố thay đổi nó. Bạn sẽ bắt đầu nhìn thấy khi nào mình hút, chuyện gì thường xảy ra trước đó và những điếu thuốc nào gần như đã trở thành phản xạ tự động.
+                </p>
+                <div style={{ background: "#F3F0E8", padding: "16px 20px", borderRadius: "8px", marginBottom: "14px" }}>
+                  <strong style={{ color: "#191B19", fontSize: "15px", display: "block", marginBottom: "8px" }}>BẠN SẼ HỌC:</strong>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "6px", fontSize: "14px", color: "#74766F" }}>
+                    <li>• Cách nhận diện những thời điểm mình thường hút nhất.</li>
+                    <li>• Cách quan sát điều gì thường xảy ra ngay trước một điếu thuốc.</li>
+                    <li>• Cách nhận ra những bối cảnh, cảm xúc và hoạt động thường đi cùng hành vi hút.</li>
+                    <li>• Cách nhìn hành vi hút thuốc như một vòng lặp có thể quan sát, thay vì chỉ kết luận: “Tôi nghiện nên tôi hút.”</li>
+                  </ul>
+                </div>
+                <div style={{ color: "#D96732", fontWeight: 700, fontSize: "15px" }}>
+                  Sau phần này, bạn không còn chỉ nói: <em>“Tôi thèm thuốc.”</em><br />
+                  Mà bắt đầu thấy rõ: <em>“Tôi thường muốn hút mạnh nhất trong những tình huống này.”</em>
+                </div>
+              </div>
+
+              {/* PHẦN 2 */}
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                  PHẦN 2
+                </span>
+                <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                  NHẬN DIỆN TÁC NHÂN KÍCH HOẠT
+                </h3>
+                <p style={{ color: "#191B19", fontSize: "15px", lineHeight: 1.7, margin: "0 0 14px" }}>
+                  Không phải mọi cảm giác muốn hút đều xuất hiện giống nhau. Có người cứ uống cà phê là muốn hút. Có người sau bữa ăn. Có người bình thường không sao nhưng chỉ cần công việc căng là bắt đầu tìm thuốc. Có người chỉ cần ngồi đúng nhóm bạn là phản xạ cũ quay trở lại.
+                </p>
+                <div style={{ background: "#F3F0E8", padding: "16px 20px", borderRadius: "8px", marginBottom: "14px" }}>
+                  <strong style={{ color: "#191B19", fontSize: "15px", display: "block", marginBottom: "8px" }}>TRONG PHẦN NÀY, BẠN SẼ HỌC:</strong>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "6px", fontSize: "14px", color: "#74766F" }}>
+                    <li>• Cách xác định những tác nhân mạnh nhất của riêng mình.</li>
+                    <li>• Cách nhận diện tác nhân từ môi trường, cảm xúc và những hoạt động quen thuộc.</li>
+                    <li>• Cách tìm ra những tình huống có nguy cơ khiến mình quay lại cao nhất.</li>
+                    <li>• Cách biết tình huống nào cần chuẩn bị trước thay vì chờ nó xảy ra mới nghĩ cách xử lý.</li>
+                  </ul>
+                </div>
+                <div style={{ background: "#252B25", color: "#FAD08B", padding: "12px 18px", borderRadius: "6px", fontWeight: 800, fontSize: "15px" }}>
+                  Sau phần này, bạn bắt đầu trả lời được câu hỏi: “ĐIỂM DỄ GÃY CỦA MÌNH NẰM Ở ĐÂU?”
+                </div>
+              </div>
+
+              {/* PHẦN 3 */}
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                  PHẦN 3
+                </span>
+                <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                  HIỂU ĐIỀU GÌ NẰM SAU MỖI ĐIẾU THUỐC
+                </h3>
+                <p style={{ color: "#191B19", fontSize: "15px", lineHeight: 1.7, margin: "0 0 14px" }}>
+                  Không phải mọi điếu thuốc đều đang làm cùng một “nhiệm vụ”. Có lúc bạn đang muốn một khoảng nghỉ. Có lúc cần chuyển trạng thái sau khi làm việc căng. Có lúc thuốc đã trở thành nghi thức đi cùng cà phê hoặc sau bữa ăn. Có lúc nó xuất hiện trong giao tiếp. Và có lúc trải nghiệm liên quan đến phụ thuộc nicotine thực sự hiện diện.
+                </p>
+                <div style={{ background: "#F3F0E8", padding: "16px 20px", borderRadius: "8px", marginBottom: "14px" }}>
+                  <strong style={{ color: "#191B19", fontSize: "15px", display: "block", marginBottom: "8px" }}>BẠN SẼ HỌC:</strong>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "6px", fontSize: "14px", color: "#74766F" }}>
+                    <li>• Cách phân biệt những hoàn cảnh khác nhau dẫn tới hành vi hút.</li>
+                    <li>• Cách nhận ra điếu thuốc đang đóng vai trò gì trong từng tình huống.</li>
+                    <li>• Vì sao chỉ lấy đi điếu thuốc nhưng để nguyên khoảng trống phía sau có thể khiến việc thay đổi trở nên khó hơn.</li>
+                    <li>• Cách tìm đúng thứ cần xử lý trước khi nghĩ đến phản ứng thay thế.</li>
+                  </ul>
+                </div>
+                <div style={{ color: "#D96732", fontWeight: 800, fontSize: "15px" }}>
+                  HƯỚNG ĐẾN CÂU HỎI: “TRONG TÌNH HUỐNG NÀY, MÌNH THỰC SỰ ĐANG CẦN GÌ?”
+                </div>
+              </div>
+
+              {/* PHẦN 4 */}
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                  PHẦN 4
+                </span>
+                <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                  TẠO KHOẢNG DỪNG TRƯỚC KHI PHẢN ỨNG
+                </h3>
+                <p style={{ color: "#191B19", fontSize: "15px", lineHeight: 1.7, margin: "0 0 14px" }}>
+                  Một hành vi đã tồn tại lâu thường diễn ra rất nhanh: Cảm giác muốn hút xuất hiện ➔ Tay tìm thuốc ➔ Bật lửa ➔ Hút. Mọi thứ có thể xảy ra trước cả khi bạn kịp nghĩ: <em>“Mình có thực sự muốn hút điếu này không?”</em>
+                </p>
+                <div style={{ background: "#252B25", color: "#F5F2E9", padding: "14px 18px", borderRadius: "6px", marginBottom: "14px", fontSize: "15px", fontWeight: 700 }}>
+                  TẠO KHOẢNG GIỮA: “TÔI MUỐN HÚT” → “TÔI QUYẾT ĐỊNH LÀM GÌ TIẾP THEO.”
+                </div>
+                <div style={{ background: "#F3F0E8", padding: "16px 20px", borderRadius: "8px", marginBottom: "14px" }}>
+                  <strong style={{ color: "#191B19", fontSize: "15px", display: "block", marginBottom: "8px" }}>BẠN SẼ HỌC:</strong>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "6px", fontSize: "14px", color: "#74766F" }}>
+                    <li>• Cách nhận ra khoảnh khắc phản xạ cũ bắt đầu chạy.</li>
+                    <li>• Một quy trình ngắn để tạo khoảng dừng trước khi phản ứng.</li>
+                    <li>• Cách quan sát cảm giác muốn hút mà không cần lập tức hành động theo nó.</li>
+                    <li>• Cách đưa quyền quyết định quay trở lại trước khi lựa chọn bước tiếp theo.</li>
+                  </ul>
+                </div>
+                <div style={{ color: "#D96732", fontWeight: 700, fontSize: "15px" }}>
+                  Mục tiêu không phải hứa rằng mọi cảm giác muốn hút sẽ biến mất. Mà là giúp bạn tạo thêm: <strong>KHOẢNG LỰA CHỌN.</strong>
+                </div>
+              </div>
+
+              {/* PHẦN 5 */}
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                  PHẦN 5
+                </span>
+                <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                  XÂY PHẢN ỨNG MỚI
+                </h3>
+                <p style={{ color: "#191B19", fontSize: "15px", lineHeight: 1.7, margin: "0 0 14px" }}>
+                  Nhìn thấy vòng lặp là chưa đủ. Bạn còn cần biết: <em>“Lần tới khi tình huống đó xảy ra, mình sẽ làm gì?”</em> Bởi vì stress có thể cần một cách xử lý. Cà phê có thể cần một cách khác. Sau bữa ăn lại khác. Khoảng nghỉ giữa giờ lại khác.
+                </p>
+                <div style={{ background: "#F3F0E8", padding: "16px 20px", borderRadius: "8px", marginBottom: "14px" }}>
+                  <strong style={{ color: "#191B19", fontSize: "15px", display: "block", marginBottom: "8px" }}>TRONG PHẦN NÀY, BẠN SẼ HỌC:</strong>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "6px", fontSize: "14px", color: "#74766F" }}>
+                    <li>• Cách xây lựa chọn thay thế cho những tác nhân quan trọng nhất.</li>
+                    <li>• Cách chuẩn bị trước thay vì đợi tới lúc muốn hút mới nghĩ cách.</li>
+                    <li>• Cách thay đổi những nghi thức đã gắn với thuốc lá.</li>
+                    <li>• Cách thử và điều chỉnh để tìm ra phản ứng phù hợp với chính cuộc sống của mình.</li>
+                  </ul>
+                </div>
+                <div style={{ background: "#171A18", color: "#F5F2E9", padding: "12px 18px", borderRadius: "6px", fontSize: "15px", fontWeight: 700 }}>
+                  THAY VÌ: Tác nhân → Thuốc<br />
+                  <span style={{ color: "#D96732" }}>BẠN XÂY: TÁC NHÂN → KHOẢNG DỪNG → PHẢN ỨNG MỚI → QUYẾT ĐỊNH</span>
+                </div>
+              </div>
+
+              {/* PHẦN 6 */}
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                  PHẦN 6
+                </span>
+                <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                  XỬ LÝ NHỮNG TÌNH HUỐNG KHÓ
+                </h3>
+                <p style={{ color: "#191B19", fontSize: "15px", lineHeight: 1.7, margin: "0 0 14px" }}>
+                  Mọi thứ thường dễ hơn khi bạn ở nhà, tâm trạng tốt và chẳng có gì xảy ra. Nhưng cuộc sống thật còn có: Deadline, một ngày rất tệ, một buổi nhậu, bạn bè chìa thuốc, người xung quanh đang hút, một chuyến đi dài, hay một lúc cực kỳ stress.
+                </p>
+                <div style={{ background: "#F3F0E8", padding: "16px 20px", borderRadius: "8px", marginBottom: "14px" }}>
+                  <strong style={{ color: "#191B19", fontSize: "15px", display: "block", marginBottom: "8px" }}>TRONG PHẦN NÀY, TUI SẼ GIÚP BẠN CHUẨN BỊ:</strong>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "6px", fontSize: "14px", color: "#74766F" }}>
+                    <li>• Cách xác định những tình huống nguy cơ cao nhất của riêng mình.</li>
+                    <li>• Cách phản ứng khi được người khác mời thuốc.</li>
+                    <li>• Cách xử lý khi xung quanh có nhiều người đang hút.</li>
+                    <li>• Cách nhận ra khi đầu óc bắt đầu mặc cả: “Một điếu chắc không sao.”</li>
+                    <li>• Cách chuẩn bị trước để không phải nghĩ cách xử lý từ con số 0 ngay giữa tình huống khó.</li>
+                  </ul>
+                </div>
+                <div style={{ color: "#D96732", fontWeight: 700, fontSize: "15px" }}>
+                  Bạn không kiểm soát được mọi thứ sẽ xảy ra. Nhưng bạn có thể chuẩn bị trước cách mình muốn phản ứng.
+                </div>
+              </div>
+
+              {/* PHẦN 7 */}
+              <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", borderRadius: "12px", padding: "28px" }}>
+                <span style={{ background: "#D96732", color: "#FFFFFF", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px", textTransform: "uppercase" }}>
+                  PHẦN 7
+                </span>
+                <h3 style={{ fontSize: "22px", color: "#191B19", margin: "12px 0 10px", fontWeight: 800 }}>
+                  XÂY LẠI QUYỀN TỰ CHỦ
+                </h3>
+                <p style={{ color: "#191B19", fontSize: "15px", lineHeight: 1.7, margin: "0 0 14px" }}>
+                  Đây là phần kết nối tất cả những gì bạn đã học trước đó. Bởi vì mục tiêu cuối cùng không phải biến bạn thành một người <em>“ngày nào cũng phải cố nhịn thuốc”</em>, mà là từng bước giúp bạn có nhiều quyền lựa chọn hơn trước những tình huống từng khiến mình phản ứng gần như tự động.
+                </p>
+                <div style={{ background: "#F3F0E8", padding: "16px 20px", borderRadius: "8px", marginBottom: "14px" }}>
+                  <strong style={{ color: "#191B19", fontSize: "15px", display: "block", marginBottom: "8px" }}>BẠN SẼ HỌC:</strong>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "6px", fontSize: "14px", color: "#74766F" }}>
+                    <li>• Cách ghi nhận những lần mình đã phản ứng khác với trước đây.</li>
+                    <li>• Cách dùng những hành động nhỏ làm bằng chứng cho một cách sống mới.</li>
+                    <li>• Cách không biến một lần trượt thành lý do để quay lại hoàn toàn.</li>
+                    <li>• Cách tiếp tục điều chỉnh hệ thống của mình khi cuộc sống thay đổi.</li>
+                  </ul>
+                </div>
+                <div style={{ background: "#252B25", color: "#F5F2E9", padding: "16px 20px", borderRadius: "8px", fontSize: "14px", lineHeight: 1.7 }}>
+                  • Một ly cà phê mà bạn phản ứng khác ➔ <strong style={{ color: "#FAD08B" }}>Một bằng chứng.</strong><br />
+                  • Một lần stress nhưng không lập tức tìm thuốc ➔ <strong style={{ color: "#FAD08B" }}>Một bằng chứng.</strong><br />
+                  • Một lời mời thuốc mà bạn vẫn giữ được lựa chọn ➔ <strong style={{ color: "#FAD08B" }}>Một bằng chứng.</strong><br />
+                  <span style={{ display: "block", marginTop: "8px", color: "#D96732", fontWeight: 800 }}>
+                    Và đó là lúc việc bỏ thuốc trở thành quá trình: LẤY LẠI QUYỀN TỰ CHỦ VỚI CHÍNH LỰA CHỌN CỦA MÌNH.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 6. PRACTICAL TOOLS SUMMARY BANNER */}
+          <div style={{ background: "#252B25", border: "1px solid #384238", padding: "32px", borderRadius: "14px", color: "#F5F2E9", marginBottom: "48px" }}>
+            <h3 style={{ fontSize: "22px", color: "#D96732", margin: "0 0 12px", fontWeight: 800, textTransform: "uppercase" }}>
+              NGOÀI CÁC PHẦN HỌC CHÍNH...
+            </h3>
+            <p style={{ color: "#D5DFDB", fontSize: "16px", margin: "0 0 20px", lineHeight: 1.6 }}>
+              Bạn còn nhận những công cụ thực hành để giúp những gì vừa học dễ được mang vào cuộc sống hơn:
+            </p>
+            <div style={{ display: "grid", gap: "12px", fontSize: "15px", color: "#F5F2E9" }}>
+              <div style={{ background: "#171A18", padding: "14px 18px", borderRadius: "8px", borderLeft: "3px solid #D96732" }}>
+                <strong>SỔ THỰC HÀNH:</strong> Giúp bạn quan sát vòng lặp, ghi lại tác nhân, phản ứng và những gì đang xảy ra với chính mình.
+              </div>
+              <div style={{ background: "#171A18", padding: "14px 18px", borderRadius: "8px", borderLeft: "3px solid #D96732" }}>
+                <strong>BỘ THẺ ỨNG PHÓ NHANH:</strong> Dành cho những thời điểm bạn không cần thêm lý thuyết. Bạn chỉ cần biết: <em>“Bây giờ mình có thể làm gì?”</em>
+              </div>
+              <div style={{ background: "#171A18", padding: "14px 18px", borderRadius: "8px", borderLeft: "3px solid #D96732" }}>
+                <strong>NGHI THỨC CÀ PHÊ MỚI:</strong> Giúp bạn bắt đầu thay đổi một trong những liên kết quen thuộc nhất: Cà phê ➔ Thuốc lá.
+              </div>
+              <div style={{ background: "#171A18", padding: "14px 18px", borderRadius: "8px", borderLeft: "3px solid #D96732" }}>
+                <strong>DANH SÁCH NGHỈ XẢ STRESS:</strong> Thêm những lựa chọn cho những lúc thứ bạn thực sự đang cần là một khoảng nghỉ, một cách đổi trạng thái hoặc vài phút tách khỏi công việc.
+              </div>
+              <div style={{ background: "#171A18", padding: "14px 18px", borderRadius: "8px", borderLeft: "3px solid #D96732" }}>
+                <strong>KỊCH BẢN XỬ LÝ TÌNH HUỐNG XÃ GIAO:</strong> Chuẩn bị trước cho những câu quen thuộc như: <em>“Làm điếu không?”, “Bỏ thật à?”, “Một điếu có sao đâu?”</em> để tới lúc tình huống xảy ra, bạn không phải bắt đầu nghĩ cách xử lý từ con số 0.
+              </div>
+            </div>
+          </div>
+
+          {/* 7. FINAL REFLECTION & TRANSITION TO OFFER */}
+          <div style={{ background: "#E5DFD2", border: "1px solid #D5CEBF", padding: "32px", borderRadius: "14px", textAlign: "center" }}>
+            <h3 style={{ fontSize: "20px", color: "#D96732", margin: "0 0 12px", fontWeight: 800, textTransform: "uppercase" }}>
+              ĐIỂM HAY NHẤT LÀ:
+            </h3>
+            <p style={{ fontSize: "16px", color: "#191B19", lineHeight: 1.7, margin: "0 0 16px" }}>
+              Dù đây là lần đầu tiên bạn nghiêm túc muốn bỏ thuốc... hay bạn đã thử trước đây nhưng vẫn quay lại... bạn vẫn có thể bắt đầu từ chính nơi mình đang đứng.
+            </p>
+            <div style={{ background: "#252B25", color: "#F5F2E9", padding: "16px 20px", borderRadius: "8px", margin: "0 0 16px", fontWeight: 800, fontSize: "16px", letterSpacing: "0.05em" }}>
+              HIỂU → QUAN SÁT → THỰC HÀNH → ÁP DỤNG
+            </div>
+            <p style={{ fontSize: "15px", color: "#74766F", lineHeight: 1.7, margin: "0 0 20px" }}>
+              Không yêu cầu bạn phải hoàn hảo ngay từ đầu. Không yêu cầu bạn phải “có ý chí thép”. Điều quan trọng là bạn bắt đầu nhìn rõ hơn điều gì đang xảy ra với mình và có những lựa chọn cụ thể hơn để phản ứng khác đi.
+            </p>
+            <div style={{ color: "#191B19", fontSize: "18px", fontWeight: 800, margin: "0 0 12px", lineHeight: 1.5 }}>
+              Vì vậy, câu hỏi tiếp theo không còn là: <em>“Liệu tôi có đủ ý chí để làm được không?”</em><br />
+              Mà là: <span style={{ color: "#D96732", textTransform: "uppercase" }}>“CHƯƠNG TRÌNH NÀY CÓ PHẢI LÀ CÁCH TÔI MUỐN BẮT ĐẦU LẠI KHÔNG?”</span>
+            </div>
+            <span style={{ color: "#74766F", fontSize: "15px", fontStyle: "italic", fontWeight: 700 }}>
+              Nếu câu trả lời là Có... hãy đọc tiếp để xem toàn bộ những gì bạn sẽ nhận được khi tham gia chương trình.
+            </span>
+          </div>
+
+        </div>
+      </section>
+
       {/* SECTION: 3 CÔNG CỤ THỰC HÀNH (BONUS) */}
       <section className="letter-section" style={{ padding: "80px 0", background: "#F3F0E8", borderBottom: "1px solid #E5DFD2" }}>
         <div className="letter-wrap" style={{ maxWidth: "800px", margin: "0 auto" }}>
