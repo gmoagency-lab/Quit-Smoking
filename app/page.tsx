@@ -122,13 +122,8 @@ export default function Home() {
       </div>
 
       {/* HERO SECTION — THE YOUNG LOVE STYLE (CHARCOAL BLACK #171A18) */}
-      <header className="hero blueprint" style={{ background: "#171A18", color: "#F5F2E9", padding: "75px 0 80px" }}>
+      <header className="hero blueprint" style={{ background: "#171A18", color: "#F5F2E9", padding: "45px 0 65px" }}>
         <div className="wrap" style={{ maxWidth: "840px", margin: "0 auto", textAlign: "center" }}>
-          {/* Top Logo / Brand Badge */}
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#D96732", fontSize: "13px", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "28px" }}>
-            <span style={{ color: "#D96732", fontSize: "16px" }}>❤️</span> BẢN ĐỒ CAI THUỐC LÁ 7 NGÀY™
-          </div>
-
           {/* Main Headline */}
           <h1 style={{ fontSize: "clamp(26px, 4.2vw, 48px)", color: "#D96732", lineHeight: 1.25, fontWeight: 800, margin: "0 0 20px", letterSpacing: "-0.02em" }}>
             <span style={{ display: "block" }}>CÁCH TRỞ THÀNH NGƯỜI ĐÀN ÔNG</span>
