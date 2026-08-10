@@ -360,6 +360,24 @@ export default function Home() {
                 Lần đầu tiên tui dừng lại và quan sát một ngày của mình thật sự diễn ra thế nào: Tui ngủ lúc nào? Ăn lúc nào? Trì hoãn lúc nào? Mệt khi nào? Hút lúc nào? Và chuyện gì thường xảy ra ngay trước mỗi điếu thuốc?
               </p>
               <p>Và đây là lúc một thứ bắt đầu hiện ra.</p>
+
+              {/* DAT'S SPORTS / HEALTH RECOVERY VIDEO SHOWCASE */}
+              <div style={{ background: "#171A18", border: "1px solid #384238", borderRadius: "14px", padding: "20px", margin: "32px 0", boxShadow: "0 15px 35px rgba(0,0,0,0.3)" }}>
+                <div style={{ overflow: "hidden", borderRadius: "10px", background: "#000", border: "1px solid #252B25", marginBottom: "16px" }}>
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    style={{ width: "100%", maxHeight: "520px", display: "block" }}
+                    src="/videos/dat_sports_video.mp4"
+                  >
+                    Your browser does not support HTML5 video playback.
+                  </video>
+                </div>
+                <p style={{ margin: 0, fontSize: "14px", color: "#D5DFDB", fontStyle: "italic", lineHeight: 1.6, textAlign: "center" }}>
+                  “Tui không đăng để khoe khoang, chỉ là đây là thứ suốt thời gian đó tui không bao giờ có được, vận động mạnh một chút là đã buồn nôn chóng mặt chứ đừng nói sẽ có thể chơi các môn thể thao cường độ cao như hiện tại nó là 1 chiến thắng lớn tui đã lấy lại được từ khi bỏ thuốc kk”
+                </p>
+              </div>
             </div>
           </div>
         </div>
