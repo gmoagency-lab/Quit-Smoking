@@ -1,7 +1,7 @@
 "use me";
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -17,60 +17,14 @@ function CheckoutFormContent() {
 
   const [includeBump, setIncludeBump] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSepayPaid, setIsSepayPaid] = useState(false);
 
   const basePrice = 497000;
   const bumpPrice = 99000;
   const totalPrice = basePrice + (includeBump ? bumpPrice : 0);
 
-  const cleanPhone = formData.phone.replace(/\D/g, "") || "0912345678";
-  const sepayMemo = `NONSMOKER${cleanPhone}`;
-  
-  // SePAY Dynamic VietQR URL (Ngân hàng OCB - STK 0335046117)
-  const ocbAccountNumber = process.env.NEXT_PUBLIC_SEPAY_ACC_NUMBER || "0335046117";
-  const sepayQrUrl = `https://qr.sepay.vn/img?acc=${ocbAccountNumber}&bank=OCB&amount=${totalPrice}&des=${sepayMemo}`;
-  const vietqrFallbackUrl = `https://img.vietqr.io/image/OCB-${ocbAccountNumber}-compact2.png?amount=${totalPrice}&addInfo=${sepayMemo}&accountName=NGUYEN%20QUOC%20DAT`;
-
   const formatVND = (num: number) => {
     return num.toLocaleString("vi-VN") + "đ";
   };
-
-  const isPolling = Boolean(formData.phone && !isSepayPaid);
-
-  // Real-time SePAY Payment Polling Effect
-  useEffect(() => {
-    if (!formData.phone || isSepayPaid) return;
-
-    const interval = setInterval(async () => {
-      try {
-        const res = await fetch(`/api/check-payment?phone=${encodeURIComponent(formData.phone)}`);
-        const data = await res.json();
-
-        if (data && data.paid) {
-          setIsSepayPaid(true);
-          clearInterval(interval);
-          
-          // Auto-redirect to Thank You page upon SePAY payment verification
-          const query = new URLSearchParams({
-            name: formData.fullName || "Học viên",
-            phone: formData.phone,
-            email: formData.email,
-            hasBump: includeBump ? "true" : "false",
-            total: totalPrice.toString(),
-            sepayPaid: "true",
-          }).toString();
-
-          setTimeout(() => {
-            router.push(`/thank-you?${query}`);
-          }, 1200);
-        }
-      } catch (err) {
-        console.error("SePAY polling check error:", err);
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [formData.phone, formData.fullName, formData.email, includeBump, totalPrice, isSepayPaid, router]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -93,9 +47,10 @@ function CheckoutFormContent() {
       total: totalPrice.toString(),
     }).toString();
 
+    // Redirect to Step 3: Order Payment QR Page (/payment) matching reference flow
     setTimeout(() => {
-      router.push(`/thank-you?${query}`);
-    }, 600);
+      router.push(`/payment?${query}`);
+    }, 400);
   };
 
   return (
@@ -104,20 +59,20 @@ function CheckoutFormContent() {
       {/* TOP BANNER */}
       <div style={{ textAlign: "center", marginBottom: "36px" }}>
         <span style={{ color: "#D96732", fontWeight: 800, fontSize: "13px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-          THANH TOÁN TỰ ĐỘNG QUA SEPAY (NGÂN HÀNG OCB)
+          BƯỚC 1/2: ĐIỀN THÔNG TIN ĐĂNG KÝ
         </span>
         <h1 style={{ fontSize: "clamp(24px, 4vw, 36px)", margin: "8px 0 12px", color: "#F5F2E9", fontWeight: 900 }}>
           HOÀN TẤT ĐĂNG KÝ NON-SMOKER™ (2026)
         </h1>
         <p style={{ color: "#A9B2AC", fontSize: "16px", maxWidth: "600px", margin: "0 auto" }}>
-          Quét mã VietQR bên dưới bằng ứng dụng ngân hàng. Hệ thống tự động xác nhận qua SePAY và kích hoạt bài học ngay lập tức.
+          Nhập thông tin nhận tài khoản bên dưới để hệ thống tạo đơn hàng và tạo mã VietQR SePAY cho bạn.
         </p>
       </div>
 
       {/* TWO COLUMN LAYOUT */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px", alignItems: "start" }}>
         
-        {/* COLUMN 1: FORM & SEPAY QR PAYMENT */}
+        {/* COLUMN 1: FORM */}
         <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "16px", padding: "32px", boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}>
           
           <h2 style={{ fontSize: "20px", color: "#D96732", margin: "0 0 20px", fontWeight: 800, textTransform: "uppercase" }}>
@@ -195,72 +150,7 @@ function CheckoutFormContent() {
               </div>
             </div>
 
-            {/* SEPAY AUTOMATED VIETQR PAYMENT CARD (OCB BANK ONLY) */}
-            <div style={{ marginTop: "12px" }}>
-              <h2 style={{ fontSize: "20px", color: "#D96732", margin: "0 0 16px", fontWeight: 800, textTransform: "uppercase" }}>
-                2. QUÉT MÃ SEPAY VIETQR (NGÂN HÀNG OCB)
-              </h2>
-
-              <div style={{ background: "#171A18", border: "2px solid #D96732", padding: "24px", borderRadius: "14px", textAlign: "center" }}>
-                
-                {/* SEPAY STATUS BADGE */}
-                <div style={{ background: isSepayPaid ? "rgba(102, 115, 91, 0.3)" : "rgba(217, 103, 50, 0.15)", border: `1px solid ${isSepayPaid ? "#66735B" : "#D96732"}`, color: isSepayPaid ? "#FAD08B" : "#FAD08B", padding: "10px 14px", borderRadius: "8px", fontSize: "13px", fontWeight: 800, marginBottom: "16px", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}>
-                  <span>{isSepayPaid ? "🟢" : "🔴"}</span>
-                  <span>
-                    {isSepayPaid
-                      ? "ĐÃ NHẬN THANH TOÁN THÀNH CÔNG QUA SEPAY! ĐANG CHUYỂN HƯỚNG..."
-                      : isPolling
-                      ? "Đang chờ SePAY nhận tiền... Hệ thống tự động kiểm tra mỗi 3 giây"
-                      : "Nhập số điện thoại để kích hoạt kiểm tra tự động"}
-                  </span>
-                </div>
-
-                {/* DYNAMIC SEPAY QR IMAGE (OCB BANK) */}
-                <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
-                  <img
-                    src={sepayQrUrl}
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = vietqrFallbackUrl;
-                    }}
-                    alt="Mã QR SePAY Chuyển Khoản Tự Động OCB"
-                    style={{
-                      maxWidth: "280px",
-                      width: "100%",
-                      borderRadius: "12px",
-                      border: "2px solid #384238",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
-                    }}
-                  />
-                </div>
-
-                {/* BANK TRANSFER DETAILS TABLE (OCB BANK) */}
-                <div style={{ background: "#111311", border: "1px dashed #384238", padding: "16px", borderRadius: "10px", display: "grid", gap: "8px", fontSize: "14px", textAlign: "left" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span style={{ color: "#A9B2AC" }}>Ngân hàng:</span>
-                    <strong style={{ color: "#F5F2E9" }}>Phương Đông (OCB)</strong>
-                  </div>
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span style={{ color: "#A9B2AC" }}>Số tài khoản:</span>
-                    <strong style={{ color: "#FAD08B", fontSize: "16px" }}>{ocbAccountNumber}</strong>
-                  </div>
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span style={{ color: "#A9B2AC" }}>Chủ tài khoản:</span>
-                    <strong style={{ color: "#F5F2E9" }}>NGUYỄN QUỐC ĐẠT</strong>
-                  </div>
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span style={{ color: "#A9B2AC" }}>Số tiền:</span>
-                    <strong style={{ color: "#D96732", fontSize: "20px", fontWeight: 900 }}>{formatVND(totalPrice)}</strong>
-                  </div>
-                  <div style={{ display: "flex", justifyContent: "space-between", borderTop: "1px solid #2B332B", paddingTop: "8px", marginTop: "4px" }}>
-                    <span style={{ color: "#A9B2AC" }}>Nội dung CK chuẩn SePAY:</span>
-                    <strong style={{ color: "#FAD08B", fontSize: "15px" }}>{sepayMemo}</strong>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            {/* SINGLE PRIMARY SUBMIT BUTTON */}
+            {/* SUBMIT BUTTON */}
             <button
               type="submit"
               disabled={isSubmitting}
@@ -279,12 +169,12 @@ function CheckoutFormContent() {
                 textTransform: "uppercase",
               }}
             >
-              {isSubmitting ? "ĐANG XỬ LÝ ĐƠN HÀNG..." : `✔ ĐÃ CHUYỂN KHOẢN ${formatVND(totalPrice)} — VÀO HỌC NGAY`}
+              {isSubmitting ? "ĐANG TẠO MÃ THANH TOÁN..." : `HOÀN TẤT ĐẶT HÀNG & TẠO MÃ THANH TOÁN QR (${formatVND(totalPrice)}) →`}
             </button>
 
             <div style={{ textAlign: "center", color: "#A9B2AC", fontSize: "12px", lineHeight: 1.5 }}>
               🛡️ Cam kết hoàn tiền 100% nếu chương trình không phù hợp với bạn.<br />
-              Hệ thống tự động xác nhận qua SePAY Webhook API.
+              Bấm nút trên để tạo mã QR VietQR OCB thanh toán tự động qua SePAY.
             </div>
 
           </form>
@@ -367,8 +257,8 @@ function CheckoutFormContent() {
           </div>
 
           <div style={{ background: "#171A18", padding: "16px", borderRadius: "10px", fontSize: "13px", color: "#A9B2AC", lineHeight: 1.6 }}>
-            <strong style={{ color: "#F5F2E9", display: "block", marginBottom: "4px" }}>💡 Hướng dẫn nhận tài khoản:</strong>
-            Mở ứng dụng ngân hàng quét mã VietQR OCB bên cạnh. Sau khi thanh toán, hệ thống sẽ tự động gửi Email kích hoạt tài khoản và chuyển hướng bạn sang trang kích hoạt.
+            <strong style={{ color: "#F5F2E9", display: "block", marginBottom: "4px" }}>💡 Hướng dẫn bước tiếp theo:</strong>
+            Điền thông tin và bấm nút &quot;Hoàn tất đặt hàng&quot;. Hệ thống sẽ chuyển sang trang mã QR VietQR OCB để bạn quét thanh toán tự động.
           </div>
 
         </div>
@@ -389,12 +279,12 @@ export default function CheckoutPage() {
             NON-SMOKER™
           </Link>
           <span style={{ background: "rgba(217,103,50,0.15)", border: "1px solid #D96732", color: "#FAD08B", fontSize: "12px", fontWeight: 800, padding: "4px 10px", borderRadius: "4px" }}>
-            🔒 THANH TOÁN TỰ ĐỘNG QUA SEPAY (OCB)
+            🔒 ĐẶT HÀNG AN TOÀN & BẢO MẬT
           </span>
         </div>
       </header>
 
-      <Suspense fallback={<div style={{ textAlign: "center", padding: "60px 20px", color: "#A9B2AC" }}>Đang tải thông tin thanh toán SePAY...</div>}>
+      <Suspense fallback={<div style={{ textAlign: "center", padding: "60px 20px", color: "#A9B2AC" }}>Đang tải trang đặt hàng...</div>}>
         <CheckoutFormContent />
       </Suspense>
 
@@ -403,7 +293,7 @@ export default function CheckoutPage() {
         <div style={{ maxWidth: "1000px", margin: "0 auto", textAlign: "center", padding: "0 20px" }}>
           <b style={{ color: "#A9B2AC" }}>NON-SMOKER™ — HỆ THỐNG LẤY LẠI QUYỀN TỰ CHỦ</b>
           <p style={{ margin: "8px 0" }}>
-            Cổng thanh toán tự động SePAY. Tự động xác nhận giao dịch ngân hàng OCB 24/7.
+            Hệ thống đặt hàng và thanh toán tự động qua SePAY.
           </p>
           <span>© 2026 NON-SMOKER™. All rights reserved.</span>
         </div>
