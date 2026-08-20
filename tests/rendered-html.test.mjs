@@ -29,10 +29,10 @@ test("server-renders the landing page HTML correctly", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Bản Đồ Cai Thuốc Lá 7 Ngày/i);
-  assert.match(html, /QUYỀN TỰ CHỦ/i);
-  assert.match(html, /497\.000/i);
-  assert.match(html, /CÀ PHÊ/i);
+  assert.match(html, /IDENTITY DESIGN/i);
+  assert.match(html, /TÁI LẬP BẢN THÂN/i);
+  assert.match(html, /1\.499\.000/i);
+  assert.match(html, /BỨT PHÁ/i);
 });
 
 test("page and layout source files have valid configuration", async () => {
@@ -48,7 +48,7 @@ test("page and layout source files have valid configuration", async () => {
   ]);
 
   assert.match(layout, /export const metadata:\s*Metadata/);
-  assert.match(layout, /Bản Đồ Cai Thuốc Lá 7 Ngày/);
+  assert.match(layout, /IDENTITY DESIGN/);
   assert.match(layout, /lang="vi"/);
   assert.match(page, /export default function Home/);
   assert.match(checkoutPage, /export default function CheckoutPage/);

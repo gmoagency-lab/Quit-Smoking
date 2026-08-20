@@ -19,8 +19,8 @@ function CheckoutFormContent() {
   const [includeBump, setIncludeBump] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const basePrice = 497000;
-  const bumpPrice = 99000;
+  const basePrice = 1499000;
+  const bumpPrice = 199000;
   const totalPrice = basePrice + (includeBump ? bumpPrice : 0);
 
   const formatVND = (num: number) => {
@@ -30,7 +30,7 @@ function CheckoutFormContent() {
   // Meta Pixel Event: InitiateCheckout on page load
   useEffect(() => {
     fpixel.event("InitiateCheckout", {
-      content_name: "NON-SMOKER Program",
+      content_name: "IDENTITY DESIGN Program",
       currency: "VND",
       value: totalPrice,
     });
@@ -51,7 +51,7 @@ function CheckoutFormContent() {
 
     // Meta Pixel Event: AddPaymentInfo / Submit Form
     fpixel.event("AddPaymentInfo", {
-      content_name: "NON-SMOKER Program",
+      content_name: "IDENTITY DESIGN Program",
       currency: "VND",
       value: totalPrice,
     });
@@ -78,7 +78,7 @@ function CheckoutFormContent() {
           BƯỚC 1/2: ĐIỀN THÔNG TIN ĐĂNG KÝ
         </span>
         <h1 style={{ fontSize: "clamp(22px, 5.5vw, 36px)", margin: "6px 0 10px", color: "#F5F2E9", fontWeight: 900, lineHeight: 1.3 }}>
-          HOÀN TẤT ĐĂNG KÝ NON-SMOKER™ (2026)
+          HOÀN TẤT ĐĂNG KÝ IDENTITY DESIGN™ (2026)
         </h1>
         <p style={{ color: "#A9B2AC", fontSize: "15px", maxWidth: "600px", margin: "0 auto", lineHeight: 1.55 }}>
           Nhập thông tin nhận tài khoản bên dưới để hệ thống tạo đơn hàng và tạo mã VietQR SePAY cho bạn.
@@ -154,13 +154,13 @@ function CheckoutFormContent() {
                 />
                 <div>
                   <label htmlFor="bumpCheckbox" style={{ color: "#FAD08B", fontWeight: 900, fontSize: "14px", cursor: "pointer", display: "block", marginBottom: "4px", lineHeight: 1.4 }}>
-                    ⚡ CÓ! THÊM BỘ AUDIO SƠ CỨU CƠN THÈM THUỐC 3 PHÚT (VẠN NĂNG) — CHỈ +99.000Đ
+                    ⚡ CÓ! THÊM BỘ AUDIO DẪN THIỀN NẠP PIN & RESET NÃO BỘ 3 PHÚT (VẠN NĂNG) — CHỈ +199.000Đ
                   </label>
                   <div style={{ background: "#D96732", color: "white", fontSize: "11px", fontWeight: 800, padding: "2px 6px", borderRadius: "4px", display: "inline-block", marginBottom: "6px" }}>
-                    TIẾT KIỆM 80% (GIÁ GỐC 490.000Đ)
+                    TIẾT KIỆM 75% (GIÁ GỐC 790.000Đ)
                   </div>
                   <p style={{ color: "#D5DFDB", fontSize: "13px", lineHeight: 1.5, margin: 0 }}>
-                    Nghe trực tiếp trên điện thoại bất cứ khi nào cơn thèm xuất hiện đột ngột (khi cà phê, sau ăn, khi nhậu). Giúp bạn ngay lập tức làm dịu hệ thần kinh và vượt qua cơn thèm trong 180 giây mà không cần dùng ý chí.
+                    Nghe trực tiếp trên điện thoại bất cứ khi nào bạn cảm thấy quá tải, mất tập trung hoặc lo âu. Giúp bạn lập tức làm dịu hệ thần kinh và đưa não bộ về trạng thái tỉnh thức, minh mẫn chỉ sau 180 giây.
                   </p>
                 </div>
               </div>
@@ -190,7 +190,7 @@ function CheckoutFormContent() {
             </button>
 
             <div style={{ textAlign: "center", color: "#A9B2AC", fontSize: "12px", lineHeight: 1.5 }}>
-              🛡️ Cam kết hoàn tiền 100% nếu chương trình không phù hợp với bạn.<br />
+              🛡️ Cam kết hoàn tiền 100% trong 14 ngày nếu chương trình không hiệu quả.<br />
               Bấm nút trên để tạo mã QR VietQR OCB thanh toán tự động qua SePAY.
             </div>
 
@@ -209,50 +209,50 @@ function CheckoutFormContent() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start" }}>
               <div>
                 <strong style={{ color: "#F5F2E9", fontSize: "15px", display: "block" }}>
-                  Chương trình NON-SMOKER™ (2026)
+                  Chương trình IDENTITY DESIGN™ (2026)
                 </strong>
                 <span style={{ color: "#A9B2AC", fontSize: "12px" }}>
-                  Lộ trình 3 nền tảng + Video bài học online + Truy cập lâu dài
+                  Lộ trình 4 học phần + Action-Sheets 21 ngày + Truy cập trọn đời
                 </span>
               </div>
-              <span style={{ color: "#FAD08B", fontWeight: 800, whiteSpace: "nowrap", marginLeft: "8px" }}>497.000đ</span>
+              <span style={{ color: "#FAD08B", fontWeight: 800, whiteSpace: "nowrap", marginLeft: "8px" }}>1.499.000đ</span>
             </div>
 
             {includeBump && (
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", background: "rgba(217,103,50,0.1)", padding: "10px 12px", borderRadius: "6px", borderLeft: "3px solid #D96732" }}>
                 <div>
                   <strong style={{ color: "#FAD08B", fontSize: "13px", display: "block" }}>
-                    ⚡ Audio Sơ Cứu Cơn Thèm 3 Phút (Order Bump)
+                    ⚡ Audio Dẫn Thiền Nạp Pin 3 Phút (Order Bump)
                   </strong>
                   <span style={{ color: "#A9B2AC", fontSize: "12px" }}>
                     Tài liệu Audio MP3 độc quyền kích hoạt tức thì
                   </span>
                 </div>
-                <span style={{ color: "#FAD08B", fontWeight: 800, whiteSpace: "nowrap", marginLeft: "8px" }}>+99.000đ</span>
+                <span style={{ color: "#FAD08B", fontWeight: 800, whiteSpace: "nowrap", marginLeft: "8px" }}>+199.000đ</span>
               </div>
             )}
           </div>
 
           {/* INCLUDED BONUSES LIST */}
           <h3 style={{ fontSize: "14px", color: "#D96732", margin: "0 0 10px", fontWeight: 800, textTransform: "uppercase" }}>
-            🎁 ĐÃ BAO GỒM 3 BỘ QUÀ TẶNG (MIỄN PHÍ):
+            🎁 ĐÃ BAO GỒM 4 PHẦN QUÀ TẶNG (MIỄN PHÍ):
           </h3>
 
           <div style={{ display: "grid", gap: "10px", fontSize: "13px", borderBottom: "1px solid #384238", paddingBottom: "16px", marginBottom: "16px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", color: "#D5DFDB" }}>
-              <span>1. Bộ Nhật Ký Quan Sát Vòng Lặp Hút Thuốc™</span>
-              <span style={{ textDecoration: "line-through", color: "#74766F", marginLeft: "6px" }}>990.000đ</span>
+              <span>1. Template Nhật Ký Cài Đặt Bản Dạng 21 Ngày</span>
+              <span style={{ textDecoration: "line-through", color: "#74766F", marginLeft: "6px" }}>500.000đ</span>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", color: "#D5DFDB" }}>
-              <span>2. Hệ Thống Xử Lý Cơn Thèm Trong Thực Tế™</span>
-              <span style={{ textDecoration: "line-through", color: "#74766F", marginLeft: "6px" }}>1.500.000đ</span>
+              <span>2. Audio Dẫn Thiền Xóa Bỏ Neo Cảm Xúc Tiêu Cực</span>
+              <span style={{ textDecoration: "line-through", color: "#74766F", marginLeft: "6px" }}>700.000đ</span>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", color: "#D5DFDB" }}>
-              <span>3. Bộ Thiết Kế Lối Sống Không Thuốc Lá™</span>
-              <span style={{ textDecoration: "line-through", color: "#74766F", marginLeft: "6px" }}>2.100.000đ</span>
+              <span>3. Cẩm Nang Điều Chỉnh 4 Hormone Sinh Học</span>
+              <span style={{ textDecoration: "line-through", color: "#74766F", marginLeft: "6px" }}>400.000đ</span>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", color: "#D5DFDB" }}>
-              <span>4. Quyền lợi: Cộng đồng hỗ trợ & Cập nhật miễn phí</span>
+              <span>4. 1 Buổi Group Q&A trực tiếp cùng Đạt</span>
               <span style={{ color: "#66735B", fontWeight: 800, marginLeft: "6px" }}>MIỄN PHÍ</span>
             </div>
           </div>
@@ -261,11 +261,11 @@ function CheckoutFormContent() {
           <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", color: "#A9B2AC", fontSize: "13px" }}>
               <span>Tổng giá trị thực tế:</span>
-              <span style={{ textDecoration: "line-through" }}>{includeBump ? "5.577.000đ" : "5.087.000đ"}</span>
+              <span style={{ textDecoration: "line-through" }}>{includeBump ? "4.699.000đ" : "4.500.000đ"}</span>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", color: "#FAD08B", fontSize: "14px", fontWeight: 700 }}>
               <span>Ưu đãi áp dụng hôm nay:</span>
-              <span>-4.590.000đ</span>
+              <span>-3.001.000đ</span>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "2px solid #D96732", paddingTop: "12px", marginTop: "4px" }}>
               <strong style={{ color: "#F5F2E9", fontSize: "16px" }}>TỔNG THANH TOÁN:</strong>
@@ -293,7 +293,7 @@ export default function CheckoutPage() {
       <header style={{ background: "#111311", borderBottom: "1px solid #384238", padding: "14px 16px", textAlign: "center" }}>
         <div style={{ maxWidth: "1000px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <Link href="/" style={{ color: "#FAD08B", textDecoration: "none", fontWeight: 900, fontSize: "17px", letterSpacing: "0.05em" }}>
-            NON-SMOKER™
+            IDENTITY DESIGN™
           </Link>
           <span style={{ background: "rgba(217,103,50,0.15)", border: "1px solid #D96732", color: "#FAD08B", fontSize: "11px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px" }}>
             🔒 ĐẶT HÀNG AN TOÀN & BẢO MẬT
@@ -308,11 +308,11 @@ export default function CheckoutPage() {
       {/* FOOTER */}
       <footer style={{ background: "#111311", color: "#74766F", padding: "24px 0", fontSize: "12px", borderTop: "1px solid #2B332B" }}>
         <div style={{ maxWidth: "1000px", margin: "0 auto", textAlign: "center", padding: "0 16px" }}>
-          <b style={{ color: "#A9B2AC" }}>NON-SMOKER™ — HỆ THỐNG LẤY LẠI QUYỀN TỰ CHỦ</b>
+          <b style={{ color: "#A9B2AC" }}>IDENTITY DESIGN™ — TÁI LẬP BẢN THÂN, RESET HỆ ĐIỀU HÀNH</b>
           <p style={{ margin: "6px 0" }}>
             Hệ thống đặt hàng và thanh toán tự động qua SePAY.
           </p>
-          <span>© 2026 NON-SMOKER™. All rights reserved.</span>
+          <span>© 2026 IDENTITY DESIGN™. All rights reserved.</span>
         </div>
       </footer>
     </div>

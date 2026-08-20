@@ -14,13 +14,13 @@ function PaymentContent() {
   const phone = searchParams.get("phone") || "0912345678";
   const email = searchParams.get("email") || "";
   const hasBump = searchParams.get("hasBump") === "true";
-  const rawTotal = searchParams.get("total") || "497000";
+  const rawTotal = searchParams.get("total") || "1499000";
 
   const totalAmount = parseInt(rawTotal, 10);
   const formattedTotal = totalAmount.toLocaleString("vi-VN") + " đ";
 
   const cleanPhone = phone.replace(/\D/g, "") || "0912345678";
-  const sepayMemo = `NONSMOKER${cleanPhone}`;
+  const sepayMemo = `IDENTITY${cleanPhone}`;
   const ocbAccountNumber = process.env.NEXT_PUBLIC_SEPAY_ACC_NUMBER || "0335046117";
 
   const sepayQrUrl = `https://qr.sepay.vn/img?acc=${ocbAccountNumber}&bank=OCB&amount=${totalAmount}&des=${sepayMemo}`;
@@ -38,7 +38,7 @@ function PaymentContent() {
   // Meta Pixel Event: AddPaymentInfo on page load
   useEffect(() => {
     fpixel.event("AddPaymentInfo", {
-      content_name: "NON-SMOKER QR Payment",
+      content_name: "IDENTITY DESIGN QR Payment",
       currency: "VND",
       value: totalAmount,
     });
@@ -59,7 +59,7 @@ function PaymentContent() {
 
           // Trigger Meta/Facebook Pixel Purchase Event
           fpixel.event("Purchase", {
-            content_name: "NON-SMOKER Program",
+            content_name: "IDENTITY DESIGN Program",
             currency: "VND",
             value: totalAmount,
           });
@@ -98,7 +98,7 @@ function PaymentContent() {
         </p>
       </div>
 
-      {/* MAIN PAYMENT CARD (MOBILE RESPONSIVE CONTAINER) */}
+      {/* MAIN PAYMENT CARD */}
       <div style={{ background: "#FFFFFF", border: "1px solid #E5E7EB", borderRadius: "16px", padding: "24px 16px", color: "#1F2937", boxShadow: "0 15px 35px rgba(0,0,0,0.08)", boxSizing: "border-box" }}>
         
         <h2 style={{ fontSize: "clamp(17px, 4.5vw, 20px)", color: "#111827", fontWeight: 800, textAlign: "center", margin: "0 0 20px", borderBottom: "1px solid #F3F4F6", paddingBottom: "14px" }}>
@@ -128,7 +128,7 @@ function PaymentContent() {
             <div style={{ marginTop: "12px" }}>
               <a
                 href={sepayQrUrl}
-                download="SePAY_QR_NONSMOKER.png"
+                download="SePAY_QR_IDENTITY.png"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px", width: "100%", maxWidth: "230px", padding: "12px 18px", background: "#0284C7", color: "white", borderRadius: "8px", fontWeight: 700, fontSize: "14px", textDecoration: "none", boxSizing: "border-box" }}
@@ -138,7 +138,7 @@ function PaymentContent() {
             </div>
           </div>
 
-          {/* CÁCH 2: MANUAL TRANSFER TABLE (MOBILE FLEXWRAP OPTIMIZED) */}
+          {/* CÁCH 2: MANUAL TRANSFER TABLE */}
           <div>
             <h3 style={{ fontSize: "14px", color: "#4B5563", fontWeight: 700, margin: "0 0 14px" }}>
               Cách 2: Chuyển khoản <strong>thủ công</strong> theo thông tin
@@ -244,7 +244,7 @@ export default function PaymentPage() {
       <header style={{ background: "#111311", borderBottom: "1px solid #384238", padding: "14px 16px", textAlign: "center" }}>
         <div style={{ maxWidth: "1000px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <Link href="/" style={{ color: "#FAD08B", textDecoration: "none", fontWeight: 900, fontSize: "17px", letterSpacing: "0.05em" }}>
-            NON-SMOKER™
+            IDENTITY DESIGN™
           </Link>
           <span style={{ background: "rgba(217,103,50,0.15)", border: "1px solid #D96732", color: "#FAD08B", fontSize: "11px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px" }}>
             🔒 TRANG XÁC NHẬN THANH TOÁN QR SEPAY
@@ -259,11 +259,11 @@ export default function PaymentPage() {
       {/* FOOTER */}
       <footer style={{ background: "#111311", color: "#74766F", padding: "24px 0", fontSize: "12px", borderTop: "1px solid #2B332B" }}>
         <div style={{ maxWidth: "1000px", margin: "0 auto", textAlign: "center", padding: "0 16px" }}>
-          <b style={{ color: "#A9B2AC" }}>NON-SMOKER™ — HỆ THỐNG LẤY LẠI QUYỀN TỰ CHỦ</b>
+          <b style={{ color: "#A9B2AC" }}>IDENTITY DESIGN™ — TÁI LẬP BẢN THÂN, RESET HỆ ĐIỀU HÀNH</b>
           <p style={{ margin: "6px 0" }}>
             Hệ thống tự động xác nhận chuyển khoản ngân hàng OCB 24/7 qua SePAY.
           </p>
-          <span>© 2026 NON-SMOKER™. All rights reserved.</span>
+          <span>© 2026 IDENTITY DESIGN™. All rights reserved.</span>
         </div>
       </footer>
     </div>

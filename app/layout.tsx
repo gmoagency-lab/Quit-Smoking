@@ -8,19 +8,19 @@ const display = Manrope({ variable: "--font-display", subsets: ["latin","vietnam
 const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || "1675148560210565";
 
 export const metadata: Metadata = {
-  title: "Bản Đồ Cai Thuốc Lá 7 Ngày™ — Từ lời hứa mơ hồ thành kế hoạch có thể thực hiện",
-  description: "Lần này đừng hứa với bản thân rằng ông sẽ bỏ thuốc. Hãy có một kế hoạch cho lúc ông muốn hút: cà phê, stress, bàn nhậu và khi lỡ trượt.",
+  title: "IDENTITY DESIGN™ — Tái Lập Bản Thân, Reset Hệ Điều Hành",
+  description: "Bật mã nguồn căn tính mới: Tại sao bạn không thể bứt phá dù đã thử đủ mọi cách? 3 bước đơn giản giúp bạn thay đổi con người bên trong để đạt kết quả bền vững.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
-    title: "Bản Đồ Cai Thuốc Lá 7 Ngày™",
-    description: "Xây Bản Đồ Tác Chiến Cá Nhân trong 7 ngày để làm chủ cơn thèm thuốc lá khi uống cà phê, stress, bàn nhậu và xử lý khi lỡ trượt.",
+    title: "IDENTITY DESIGN™ — Tái Lập Bản Thân, Reset Hệ Điều Hành",
+    description: "Bật mã nguồn căn tính mới: Tại sao bạn không thể bứt phá dù đã thử đủ mọi cách? 3 bước đơn giản giúp bạn thay đổi con người bên trong để đạt kết quả bền vững.",
     type: "website",
-    images: [{ url: "/og-identity.png", width: 1730, height: 909, alt: "Bản Đồ Cai Thuốc Lá 7 Ngày™" }],
+    images: [{ url: "/og-identity.png", width: 1730, height: 909, alt: "IDENTITY DESIGN™" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bản Đồ Cai Thuốc Lá 7 Ngày™",
-    description: "Xây Bản Đồ Tác Chiến Cá Nhân trong 7 ngày để làm chủ cơn thèm thuốc lá khi uống cà phê, stress, bàn nhậu và xử lý khi lỡ trượt.",
+    title: "IDENTITY DESIGN™ — Tái Lập Bản Thân, Reset Hệ Điều Hành",
+    description: "Bật mã nguồn căn tính mới: Tại sao bạn không thể bứt phá dù đã thử đủ mọi cách? 3 bước đơn giản giúp bạn thay đổi con người bên trong để đạt kết quả bền vững.",
     images: ["/og-identity.png"],
   },
 };
