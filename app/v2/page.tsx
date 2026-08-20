@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import * as fpixel from "../lib/fpixel";
+import * as fpixel from "../../lib/fpixel";
 
 const fourModules = [
   {
@@ -84,7 +84,7 @@ const testimonials = [
   },
 ];
 
-export default function Home() {
+export default function V2Page() {
   const [showSticky, setShowSticky] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState({ name: "", email: "", phone: "" });
@@ -98,7 +98,7 @@ export default function Home() {
 
     // Trigger Meta/Facebook Pixel Lead Event
     fpixel.event("Lead", {
-      content_name: "IDENTITY DESIGN Lead Form",
+      content_name: "IDENTITY DESIGN V2 Lead Form",
       currency: "VND",
       value: 1499000,
     });
@@ -129,13 +129,35 @@ export default function Home() {
       style={{
         background: "#08090A",
         color: "#E2E8F0",
-        fontFamily: "var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        fontFamily: "var(--font-body), system-ui, -apple-system, sans-serif",
         lineHeight: 1.8,
         minHeight: "100vh",
         overflowX: "hidden",
       }}
     >
-      {/* TOP MINIMAL NAVIGATION BAR */}
+      {/* VERSION SWITCHER BANNER */}
+      <div
+        style={{
+          background: "rgba(232, 122, 62, 0.12)",
+          borderBottom: "1px solid rgba(232, 122, 62, 0.3)",
+          color: "#FDBA74",
+          padding: "10px 16px",
+          textAlign: "center",
+          fontSize: "12px",
+          fontWeight: 700,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "16px",
+        }}
+      >
+        <span>🌟 PHIÊN BẢN V2 (BEHANCE EDITION)</span>
+        <Link href="/" style={{ color: "#FFFFFF", textDecoration: "underline", fontSize: "12px" }}>
+          ← Chuyển sang Phiên bản V1
+        </Link>
+      </div>
+
+      {/* TOP STICKY NAV */}
       <nav
         style={{
           position: "sticky",
@@ -151,21 +173,18 @@ export default function Home() {
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#E87A3E", display: "inline-block", boxShadow: "0 0 10px #E87A3E" }}></span>
             <span style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "16px", letterSpacing: "0.06em" }}>
-              IDENTITY DESIGN™
+              IDENTITY DESIGN™ (V2)
             </span>
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-            <Link href="/v2" style={{ color: "#FDBA74", textDecoration: "none", fontSize: "12px", fontWeight: 700, background: "rgba(232, 122, 62, 0.15)", border: "1px solid rgba(232, 122, 62, 0.3)", padding: "4px 10px", borderRadius: "12px" }}>
-              🌟 Phiên bản V2
-            </Link>
-            <a href="#curriculum" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600, transition: "color 0.2s" }}>
+            <a href="#curriculum" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>
               Học phần
             </a>
-            <a href="#outcomes" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600, transition: "color 0.2s" }}>
+            <a href="#outcomes" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>
               Kết quả
             </a>
-            <a href="#offer" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600, transition: "color 0.2s" }}>
+            <a href="#offer" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>
               Học phí
             </a>
             <a
@@ -182,7 +201,6 @@ export default function Home() {
                 fontWeight: 800,
                 fontSize: "13px",
                 textDecoration: "none",
-                letterSpacing: "-0.01em",
               }}
             >
               Đăng ký ngay
@@ -191,63 +209,44 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO SECTION — FULL-BLEED POINTILLIST PARTICLE CANVAS (EXACT REFERENCE UI) */}
+      {/* HERO SECTION WITH BEHANCE INTERACTIVE EMBED */}
       <header
         style={{
           position: "relative",
-          minHeight: "92vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          backgroundImage: "url('/images/hero_identity_mesh.jpg')",
-          backgroundPosition: "center 15%",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
+          padding: "50px 20px 80px",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
-          padding: "60px 24px 70px",
-          boxSizing: "border-box",
+          background: "radial-gradient(circle at 50% 10%, rgba(232, 122, 62, 0.08) 0%, #08090A 70%)",
         }}
       >
-        {/* Ambient Dark Gradients (Top + Bottom Fade) */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "linear-gradient(to bottom, rgba(8,9,10,0.65) 0%, rgba(8,9,10,0.15) 35%, rgba(8,9,10,0.8) 75%, #08090A 100%)",
-            pointerEvents: "none",
-            zIndex: 1,
-          }}
-        />
-
-        {/* TOP SPACER / BADGE */}
-        <div style={{ position: "relative", zIndex: 2, maxWidth: "1140px", width: "100%", margin: "0 auto" }}>
+        <div style={{ maxWidth: "1140px", margin: "0 auto" }}>
+          
+          {/* BEHANCE INTERACTIVE VIEWER CONTAINER */}
           <div
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              border: "1px solid rgba(255, 255, 255, 0.18)",
-              background: "rgba(8, 9, 10, 0.6)",
-              backdropFilter: "blur(10px)",
-              padding: "6px 14px",
-              borderRadius: "20px",
-              fontSize: "12px",
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              color: "#E2E8F0",
-              textTransform: "uppercase",
+              position: "relative",
+              borderRadius: "16px",
+              overflow: "hidden",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
+              boxShadow: "0 25px 70px rgba(0, 0, 0, 0.8)",
+              background: "#000000",
+              marginBottom: "48px",
+              minHeight: "420px",
             }}
           >
-            <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#E87A3E", display: "inline-block" }}></span>
-            SYSTEM PROTOCOL 2026
+            <iframe
+              src="https://www.behance.net/embed/project/248063485?ilo0=1"
+              height="480"
+              width="100%"
+              allowFullScreen
+              loading="lazy"
+              frameBorder="0"
+              allow="clipboard-write"
+              referrerPolicy="strict-origin-when-cross-origin"
+              style={{ display: "block", width: "100%", border: "none" }}
+            />
           </div>
-        </div>
 
-        {/* BOTTOM HERO CONTENT: EDITORIAL HEADLINE (LEFT) + CRISP WHITE BUTTON (RIGHT) */}
-        <div style={{ position: "relative", zIndex: 2, maxWidth: "1140px", width: "100%", margin: "140px auto 0" }}>
+          {/* HEADLINE + CTA ROW */}
           <div
             style={{
               display: "grid",
@@ -256,7 +255,6 @@ export default function Home() {
               alignItems: "end",
             }}
           >
-            {/* LEFT: EDITORIAL LAYERED CONTRAST HEADLINE */}
             <div>
               <h1
                 style={{
@@ -287,7 +285,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* RIGHT: CLEAN MINIMAL WHITE BUTTON (MATCHING REFERENCE UI) */}
             <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "flex-start", justifyContent: "flex-end" }}>
               <a
                 href="/checkout"
@@ -308,7 +305,6 @@ export default function Home() {
                   textDecoration: "none",
                   boxShadow: "0 15px 40px rgba(255, 255, 255, 0.2)",
                   letterSpacing: "-0.01em",
-                  transition: "all 0.2s ease",
                   width: "100%",
                   maxWidth: "380px",
                   boxSizing: "border-box",
@@ -321,16 +317,14 @@ export default function Home() {
                 ⚡ Ưu đãi <strong style={{ color: "#FFFFFF" }}>1.499.000đ</strong> (100 suất đầu tiên) · Hoàn tiền 100% trong 14 ngày
               </div>
             </div>
-
           </div>
-        </div>
 
+        </div>
       </header>
 
       {/* SECTION 1: ATTENTION & HOOK */}
       <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 01 · ATTENTION & HOOK
           </span>
@@ -376,14 +370,12 @@ export default function Home() {
           <p style={{ fontSize: "17px", color: "#94A3B8", lineHeight: 1.8 }}>
             Bởi vì sự thật giải thoát nhất mà bạn sắp biết là: <strong style={{ color: "#FFFFFF" }}>Bạn không hề thiếu năng lực.</strong> Bạn chỉ đang là nạn nhân của một hiện tượng tâm lý ngầm chưa từng được ai chỉ ra.
           </p>
-
         </div>
       </section>
 
-      {/* SECTION 2: RESEARCH & PROBLEM SETUP — VÒNG XOÁY BẾ TẮC CỦA Ý CHÍ */}
+      {/* SECTION 2: RESEARCH & PROBLEM SETUP */}
       <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 02 · RESEARCH & PROBLEM SETUP
           </span>
@@ -432,14 +424,12 @@ export default function Home() {
           <p style={{ fontSize: "19px", fontWeight: 700, color: "#FFFFFF", marginTop: "24px" }}>
             Tại sao lại có nghịch lý này? Tại sao những người thông minh, chăm chỉ như bạn lại liên tục thất bại trong việc thay đổi chính mình?
           </p>
-
         </div>
       </section>
 
-      {/* SECTION 3: UMP — HIỆN TƯỢNG ĐOẢN MẠCH BỨC TRANH TỰ THÂN */}
+      {/* SECTION 3: UMP */}
       <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 03 · UNIQUE MECHANISM OF PROBLEM (UMP)
           </span>
@@ -462,7 +452,6 @@ export default function Home() {
           </h3>
 
           <div style={{ display: "grid", gap: "16px" }}>
-            
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "10px", padding: "22px 24px" }}>
               <strong style={{ color: "#FFFFFF", fontSize: "16px", display: "block", marginBottom: "6px" }}>
                 1. Não bộ luôn bắt hành động phải khớp với niềm tin bên trong:
@@ -489,7 +478,6 @@ export default function Home() {
                 Hành vi bên ngoài lệch pha với con người bên trong sẽ khiến não bộ báo động đỏ. Kết quả là đầu óc bạn tự sinh ra nỗi sợ và sự trì hoãn. Bạn tự bỏ cuộc ngay trước vạch đích chỉ để cảm thấy an toàn như trước đây.
               </span>
             </div>
-
           </div>
 
           <div style={{ marginTop: "32px", borderLeft: "2px solid #E87A3E", paddingLeft: "18px" }}>
@@ -497,14 +485,12 @@ export default function Home() {
               Kết luận: Hành vi không thể bền nếu chưa thay đổi được con người bên trong. Mọi nỗ lực gồng ép chỉ khiến bạn thêm mệt mỏi và nhanh bỏ cuộc.
             </p>
           </div>
-
         </div>
       </section>
 
-      {/* SECTION 4: UMS — QUY TRÌNH ĐỒNG BỘ HÓA BẢN DẠNG 3 CHIỀU (TIA) */}
+      {/* SECTION 4: UMS */}
       <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 04 · UNIQUE MECHANISM OF SOLUTION (UMS)
           </span>
@@ -517,8 +503,6 @@ export default function Home() {
           </p>
 
           <div style={{ display: "grid", gap: "20px" }}>
-            
-            {/* STEP 1 */}
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px", display: "grid", gridTemplateColumns: "48px 1fr", gap: "20px", alignItems: "start" }}>
               <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "rgba(255, 255, 255, 0.06)", border: "1px solid rgba(255, 255, 255, 0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#FFFFFF", fontSize: "18px" }}>
                 01
@@ -533,7 +517,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* STEP 2 */}
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px", display: "grid", gridTemplateColumns: "48px 1fr", gap: "20px", alignItems: "start" }}>
               <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "rgba(255, 255, 255, 0.06)", border: "1px solid rgba(255, 255, 255, 0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#FFFFFF", fontSize: "18px" }}>
                 02
@@ -548,7 +531,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* STEP 3 */}
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px", display: "grid", gridTemplateColumns: "48px 1fr", gap: "20px", alignItems: "start" }}>
               <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "rgba(255, 255, 255, 0.06)", border: "1px solid rgba(255, 255, 255, 0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#FFFFFF", fontSize: "18px" }}>
                 03
@@ -562,7 +544,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-
           </div>
 
           <div style={{ background: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "24px 28px", marginTop: "32px" }}>
@@ -570,14 +551,12 @@ export default function Home() {
               ✨ <strong style={{ color: "#FFFFFF" }}>Khi 3 trục này được đồng bộ, Bản Dạng Mới sẽ trở thành Cài Đặt Mặc Định.</strong> Bạn hành động dứt khoát, tự tin xuất hiện và đạt kết quả mà không cần tốn một giọt năng lượng nào để đấu tranh nội tâm.
             </p>
           </div>
-
         </div>
       </section>
 
-      {/* SECTION 5: KHÓA HỌC DÀNH CHO AI & KHÔNG DÀNH CHO AI? */}
+      {/* SECTION 5: KHÓA HỌC DÀNH CHO AI */}
       <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 05 · FIT CRITERIA
           </span>
@@ -586,8 +565,6 @@ export default function Home() {
           </h2>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
-            
-            {/* DÀNH CHO BẠN */}
             <div style={{ background: "#111317", border: "1px solid rgba(16, 185, 129, 0.3)", borderRadius: "12px", padding: "28px" }}>
               <div style={{ color: "#10B981", fontSize: "13px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "14px" }}>
                 ✓ DÀNH RIÊNG CHO BẠN NẾU:
@@ -599,7 +576,6 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* KHÔNG DÀNH CHO BẠN */}
             <div style={{ background: "#111317", border: "1px solid rgba(239, 68, 68, 0.3)", borderRadius: "12px", padding: "28px" }}>
               <div style={{ color: "#EF4444", fontSize: "13px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "14px" }}>
                 ✕ KHÔNG DÀNH CHO BẠN NẾU:
@@ -609,16 +585,13 @@ export default function Home() {
                 <li>Bạn chỉ muốn tích lũy thêm lý thuyết để phán xét người khác mà không muốn trung thực đối diện với các thói quen cũ của chính mình.</li>
               </ul>
             </div>
-
           </div>
-
         </div>
       </section>
 
-      {/* SECTION 6: GIỚI THIỆU SẢN PHẨM & CÁC OUTCOME CHUYỂN HÓA ĐỘT PHÁ */}
+      {/* SECTION 6: GIỚI THIỆU SẢN PHẨM & 4 OUTCOMES */}
       <section id="outcomes" style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 06 · SYSTEM OUTCOMES
           </span>
@@ -637,8 +610,6 @@ export default function Home() {
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: "20px" }}>
-            
-            {/* Outcome 1 */}
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px" }}>
               <h4 style={{ fontSize: "17px", color: "#FFFFFF", margin: "0 0 14px", fontWeight: 700 }}>
                 1. Về Năng Lượng & Thể Chất<br />
@@ -651,7 +622,6 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Outcome 2 */}
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px" }}>
               <h4 style={{ fontSize: "17px", color: "#FFFFFF", margin: "0 0 14px", fontWeight: 700 }}>
                 2. Về Hiệu Suất & Công Việc<br />
@@ -664,7 +634,6 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Outcome 3 */}
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px" }}>
               <h4 style={{ fontSize: "17px", color: "#FFFFFF", margin: "0 0 14px", fontWeight: 700 }}>
                 3. Về Tâm Trí & Nội Tâm<br />
@@ -677,7 +646,6 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Outcome 4 */}
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px" }}>
               <h4 style={{ fontSize: "17px", color: "#FFFFFF", margin: "0 0 14px", fontWeight: 700 }}>
                 4. Về Mối Quan Hệ & Lối Sống<br />
@@ -689,16 +657,13 @@ export default function Home() {
                 <li>Làm chủ thời gian biểu: Vừa bứt phá thu nhập, vừa thảnh thơi chăm sóc bản thân, gia đình và tận hưởng cuộc sống.</li>
               </ul>
             </div>
-
           </div>
-
         </div>
       </section>
 
-      {/* SECTION 7: CẤU TRÚC CHI TIẾT CÁC HỌC PHẦN & HÌNH THỨC HỌC */}
+      {/* SECTION 7: CURRICULUM */}
       <section id="curriculum" style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 07 · CURRICULUM ARCHITECTURE
           </span>
@@ -706,7 +671,6 @@ export default function Home() {
             Cấu trúc chi tiết các học phần & Hình thức học
           </h2>
 
-          {/* Formats Overview Grid */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px", marginBottom: "36px" }}>
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", padding: "20px", borderRadius: "10px" }}>
               <div style={{ color: "#E87A3E", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", marginBottom: "6px" }}>HÌNH THỨC HỌC</div>
@@ -727,7 +691,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 4 MODULES CARDS */}
           <div style={{ display: "grid", gap: "18px" }}>
             {fourModules.map((m, idx) => (
               <div
@@ -761,14 +724,12 @@ export default function Home() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* SECTION 8: BẰNG CHỨNG XÃ HỘI TỪ HỌC VIÊN THỰC TẾ */}
+      {/* SECTION 8: TESTIMONIALS */}
       <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 08 · SOCIAL PROOF & FEEDBACK
           </span>
@@ -819,14 +780,12 @@ export default function Home() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* SECTION 9: ĐẦU TƯ, BẢO HÀNH & ƯU ĐÃI KHAN HIẾM */}
+      {/* SECTION 9: OFFER */}
       <section id="offer" style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 09 · INVESTMENT & BONUSES
           </span>
@@ -837,7 +796,6 @@ export default function Home() {
             Để tự mình tìm ra và đóng gói hệ thống này, tôi đã phải trả giá bằng 10 năm va vấp, những lần trắng tay, vỡ nợ và kiệt quệ sức khỏe. Bạn không cần phải mất 10 năm chịu đựng những nỗi đau đó.
           </p>
 
-          {/* MAIN PRICE BOX */}
           <div
             style={{
               background: "#111317",
@@ -866,7 +824,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* BONUSES */}
             <div style={{ marginBottom: "28px" }}>
               <div style={{ color: "#FFFFFF", fontSize: "14px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "14px" }}>
                 QUÀ TẶNG KÈM THEO KHI ĐĂNG KÝ HÔM NAY:
@@ -892,7 +849,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 14-DAY GUARANTEE */}
             <div style={{ background: "rgba(255, 255, 255, 0.02)", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "10px", padding: "20px", marginBottom: "24px" }}>
               <strong style={{ color: "#FFFFFF", fontSize: "15px", display: "block", marginBottom: "4px" }}>
                 🛡️ CAM KẾT HOÀN TIỀN 100% TRONG 14 NGÀY:
@@ -902,7 +858,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* CLEAN WHITE CTA BUTTON */}
             <a
               href="/checkout"
               onClick={(e) => {
@@ -928,16 +883,13 @@ export default function Home() {
             >
               TÔI MUỐN TÁI THIẾT KẾ BẢN DẠNG & RESET HỆ ĐIỀU HÀNH NGAY →
             </a>
-
           </div>
-
         </div>
       </section>
 
-      {/* SECTION 10: NGÃ RẼ CUỘC ĐỜI (FORK IN THE ROAD) & P.S. */}
+      {/* SECTION 10: FORK IN THE ROAD */}
       <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             SECTION 10 · FORK IN THE ROAD
           </span>
@@ -950,7 +902,6 @@ export default function Home() {
           </p>
 
           <div style={{ display: "grid", gap: "16px", marginBottom: "36px" }}>
-            
             <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.06)", padding: "20px 24px", borderRadius: "10px" }}>
               <strong style={{ color: "#64748B", fontSize: "14px", display: "block", textTransform: "uppercase", marginBottom: "4px" }}>
                 ✕ LỰA CHỌN 1:
@@ -968,7 +919,6 @@ export default function Home() {
                 Bấm vào nút đăng ký, đầu tư 1.499k để nhận ngay quy trình cài lại con người mới, xóa sạch mông lung và bắt đầu một cuộc sống tự tin, thảnh thơi từ hôm nay.
               </p>
             </div>
-
           </div>
 
           <div style={{ textAlign: "center", marginBottom: "40px" }}>
@@ -1015,14 +965,12 @@ export default function Home() {
               [Bấm vào đây để nhận tài khoản học ngay lập tức →]
             </a>
           </div>
-
         </div>
       </section>
 
-      {/* MULTI-COLUMN EDITORIAL FOOTER (MATCHING REFERENCE UI) */}
+      {/* FOOTER */}
       <footer style={{ background: "#060708", color: "#64748B", padding: "80px 20px 40px", fontSize: "13px" }}>
         <div style={{ maxWidth: "1040px", margin: "0 auto" }}>
-          
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "36px", marginBottom: "60px" }}>
             <div>
               <span style={{ display: "block", color: "#94A3B8", fontWeight: 700, fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>
@@ -1032,7 +980,6 @@ export default function Home() {
                 <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Interactive Protocol</a></li>
                 <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Identity Shifting</a></li>
                 <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Energy Calibration</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Deep Work Routine</a></li>
               </ul>
             </div>
 
@@ -1044,7 +991,6 @@ export default function Home() {
                 <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Học phần 1: Bức tranh tự thân</a></li>
                 <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Học phần 2: Reset sinh học</a></li>
                 <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Học phần 3: Identity Shift</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Học phần 4: Flow State</a></li>
               </ul>
             </div>
 
@@ -1055,7 +1001,6 @@ export default function Home() {
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
                 <li><a href="https://zalo.me" target="_blank" rel="noopener noreferrer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Zalo Support 24/7</a></li>
                 <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Chính sách hoàn tiền 14 ngày</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Hướng dẫn thanh toán SePAY OCB</a></li>
               </ul>
             </div>
 
@@ -1065,7 +1010,6 @@ export default function Home() {
               </span>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
                 <li><a href="/checkout" style={{ color: "#CBD5E1", textDecoration: "none" }}>Đăng ký gói 1.499.000đ</a></li>
-                <li><a href="/checkout" style={{ color: "#CBD5E1", textDecoration: "none" }}>Tải Action-Sheet 21 Ngày</a></li>
                 <li><a href="/checkout" style={{ color: "#CBD5E1", textDecoration: "none" }}>Nhận 4 Quà Tặng Độc Quyền</a></li>
               </ul>
             </div>
@@ -1073,9 +1017,8 @@ export default function Home() {
 
           <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", fontSize: "12px" }}>
             <span>© 2026 IDENTITY DESIGN™. ALL RIGHTS RESERVED.</span>
-            <span style={{ color: "#475569" }}>Designed with Dark Stippled Minimalist System</span>
+            <span style={{ color: "#475569" }}>Behance Edition V2</span>
           </div>
-
         </div>
       </footer>
 
@@ -1099,7 +1042,7 @@ export default function Home() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <span style={{ fontSize: "12px", color: "#94A3B8", fontWeight: 600 }}>IDENTITY DESIGN™</span>
+            <span style={{ fontSize: "12px", color: "#94A3B8", fontWeight: 600 }}>IDENTITY DESIGN™ (V2)</span>
             <strong style={{ fontSize: "16px", color: "#FFFFFF" }}>1.499.000đ</strong>
           </div>
           <a
@@ -1155,7 +1098,6 @@ export default function Home() {
               boxSizing: "border-box",
             }}
           >
-            {/* CLOSE BUTTON */}
             <button
               onClick={() => setIsModalOpen(false)}
               style={{
