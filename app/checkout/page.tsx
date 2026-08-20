@@ -70,35 +70,35 @@ function CheckoutFormContent() {
   };
 
   return (
-    <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "24px 14px 60px", boxSizing: "border-box" }}>
+    <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "40px 16px 80px", boxSizing: "border-box" }}>
       
-      {/* TOP BANNER */}
-      <div style={{ textAlign: "center", marginBottom: "28px" }}>
-        <span style={{ color: "#D96732", fontWeight: 800, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-          BƯỚC 1/2: ĐIỀN THÔNG TIN ĐĂNG KÝ
+      {/* TOP HEADER */}
+      <div style={{ textAlign: "center", marginBottom: "36px" }}>
+        <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+          CHECKOUT STEP 01 · REGISTRATION
         </span>
-        <h1 style={{ fontSize: "clamp(22px, 5.5vw, 36px)", margin: "6px 0 10px", color: "#F5F2E9", fontWeight: 900, lineHeight: 1.3 }}>
-          HOÀN TẤT ĐĂNG KÝ IDENTITY DESIGN™ (2026)
+        <h1 style={{ fontSize: "clamp(24px, 4.5vw, 36px)", margin: "8px 0 10px", color: "#FFFFFF", fontWeight: 800, letterSpacing: "-0.02em" }}>
+          Hoàn tất đăng ký IDENTITY DESIGN™ (2026)
         </h1>
-        <p style={{ color: "#A9B2AC", fontSize: "15px", maxWidth: "600px", margin: "0 auto", lineHeight: 1.55 }}>
+        <p style={{ color: "#94A3B8", fontSize: "15px", maxWidth: "600px", margin: "0 auto", lineHeight: 1.6 }}>
           Nhập thông tin nhận tài khoản bên dưới để hệ thống tạo đơn hàng và tạo mã VietQR SePAY cho bạn.
         </p>
       </div>
 
-      {/* TWO COLUMN LAYOUT */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: "24px", alignItems: "start" }}>
+      {/* TWO COLUMN GRID */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(310px, 1fr))", gap: "24px", alignItems: "start" }}>
         
         {/* COLUMN 1: FORM */}
-        <div style={{ background: "#252B25", border: "1px solid #384238", borderRadius: "16px", padding: "24px 18px", boxShadow: "0 20px 50px rgba(0,0,0,0.3)", boxSizing: "border-box" }}>
+        <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "28px 24px", boxSizing: "border-box" }}>
           
-          <h2 style={{ fontSize: "18px", color: "#D96732", margin: "0 0 18px", fontWeight: 800, textTransform: "uppercase" }}>
-            1. THÔNG TIN KHÁCH HÀNG
+          <h2 style={{ fontSize: "15px", color: "#FFFFFF", margin: "0 0 20px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" }}>
+            1. Thông tin khách hàng
           </h2>
 
           <form onSubmit={handleSubmit} style={{ display: "grid", gap: "16px" }}>
             
             <div>
-              <label style={{ display: "block", color: "#F5F2E9", fontSize: "14px", fontWeight: 700, marginBottom: "6px" }}>
+              <label style={{ display: "block", color: "#CBD5E1", fontSize: "13px", fontWeight: 600, marginBottom: "6px" }}>
                 Họ và Tên của bạn *
               </label>
               <input
@@ -108,12 +108,12 @@ function CheckoutFormContent() {
                 value={formData.fullName}
                 onChange={handleChange}
                 required
-                style={{ width: "100%", padding: "14px", background: "#171A18", border: "1px solid #384238", borderRadius: "8px", color: "#F5F2E9", fontSize: "16px", boxSizing: "border-box", outline: "none" }}
+                style={{ width: "100%", padding: "14px", background: "#08090A", border: "1px solid rgba(255, 255, 255, 0.15)", borderRadius: "6px", color: "#FFFFFF", fontSize: "15px", boxSizing: "border-box", outline: "none" }}
               />
             </div>
 
             <div>
-              <label style={{ display: "block", color: "#F5F2E9", fontSize: "14px", fontWeight: 700, marginBottom: "6px" }}>
+              <label style={{ display: "block", color: "#CBD5E1", fontSize: "13px", fontWeight: 600, marginBottom: "6px" }}>
                 Số điện thoại (Dùng Zalo hỗ trợ) *
               </label>
               <input
@@ -123,12 +123,12 @@ function CheckoutFormContent() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                style={{ width: "100%", padding: "14px", background: "#171A18", border: "1px solid #384238", borderRadius: "8px", color: "#F5F2E9", fontSize: "16px", boxSizing: "border-box", outline: "none" }}
+                style={{ width: "100%", padding: "14px", background: "#08090A", border: "1px solid rgba(255, 255, 255, 0.15)", borderRadius: "6px", color: "#FFFFFF", fontSize: "15px", boxSizing: "border-box", outline: "none" }}
               />
             </div>
 
             <div>
-              <label style={{ display: "block", color: "#F5F2E9", fontSize: "14px", fontWeight: 700, marginBottom: "6px" }}>
+              <label style={{ display: "block", color: "#CBD5E1", fontSize: "13px", fontWeight: 600, marginBottom: "6px" }}>
                 Địa chỉ Email nhận bài học *
               </label>
               <input
@@ -138,29 +138,29 @@ function CheckoutFormContent() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                style={{ width: "100%", padding: "14px", background: "#171A18", border: "1px solid #384238", borderRadius: "8px", color: "#F5F2E9", fontSize: "16px", boxSizing: "border-box", outline: "none" }}
+                style={{ width: "100%", padding: "14px", background: "#08090A", border: "1px solid rgba(255, 255, 255, 0.15)", borderRadius: "6px", color: "#FFFFFF", fontSize: "15px", boxSizing: "border-box", outline: "none" }}
               />
             </div>
 
             {/* ORDER BUMP SECTION */}
-            <div style={{ marginTop: "8px", background: "rgba(217, 103, 50, 0.12)", border: "2px dashed #D96732", padding: "16px", borderRadius: "12px" }}>
-              <div style={{ display: "flex", alignItems: "start", gap: "10px", cursor: "pointer" }} onClick={() => setIncludeBump(!includeBump)}>
+            <div style={{ marginTop: "8px", background: "rgba(232, 122, 62, 0.08)", border: "1px solid rgba(232, 122, 62, 0.3)", padding: "16px", borderRadius: "8px" }}>
+              <div style={{ display: "flex", alignItems: "start", gap: "12px", cursor: "pointer" }} onClick={() => setIncludeBump(!includeBump)}>
                 <input
                   type="checkbox"
                   id="bumpCheckbox"
                   checked={includeBump}
                   onChange={(e) => setIncludeBump(e.target.checked)}
-                  style={{ width: "20px", height: "20px", marginTop: "2px", accentColor: "#D96732", cursor: "pointer" }}
+                  style={{ width: "18px", height: "18px", marginTop: "2px", accentColor: "#E87A3E", cursor: "pointer" }}
                 />
                 <div>
-                  <label htmlFor="bumpCheckbox" style={{ color: "#FAD08B", fontWeight: 900, fontSize: "14px", cursor: "pointer", display: "block", marginBottom: "4px", lineHeight: 1.4 }}>
-                    ⚡ CÓ! THÊM BỘ AUDIO DẪN THIỀN NẠP PIN & RESET NÃO BỘ 3 PHÚT (VẠN NĂNG) — CHỈ +199.000Đ
+                  <label htmlFor="bumpCheckbox" style={{ color: "#FFFFFF", fontWeight: 700, fontSize: "14px", cursor: "pointer", display: "block", marginBottom: "4px", lineHeight: 1.4 }}>
+                    ⚡ CÓ! THÊM BỘ AUDIO DẪN THIỀN NẠP PIN & RESET NÃO BỘ 3 PHÚT — CHỈ +199.000Đ
                   </label>
-                  <div style={{ background: "#D96732", color: "white", fontSize: "11px", fontWeight: 800, padding: "2px 6px", borderRadius: "4px", display: "inline-block", marginBottom: "6px" }}>
+                  <div style={{ background: "rgba(255, 255, 255, 0.1)", color: "#FDBA74", fontSize: "11px", fontWeight: 700, padding: "2px 6px", borderRadius: "4px", display: "inline-block", marginBottom: "6px" }}>
                     TIẾT KIỆM 75% (GIÁ GỐC 790.000Đ)
                   </div>
-                  <p style={{ color: "#D5DFDB", fontSize: "13px", lineHeight: 1.5, margin: 0 }}>
-                    Nghe trực tiếp trên điện thoại bất cứ khi nào bạn cảm thấy quá tải, mất tập trung hoặc lo âu. Giúp bạn lập tức làm dịu hệ thần kinh và đưa não bộ về trạng thái tỉnh thức, minh mẫn chỉ sau 180 giây.
+                  <p style={{ color: "#94A3B8", fontSize: "13px", lineHeight: 1.55, margin: 0 }}>
+                    Nghe trực tiếp trên điện thoại bất cứ khi nào bạn cảm thấy quá tải hoặc lo âu. Giúp lập tức làm dịu hệ thần kinh và đưa não bộ về trạng thái tỉnh thức, minh mẫn chỉ sau 180 giây.
                   </p>
                 </div>
               </div>
@@ -173,25 +173,23 @@ function CheckoutFormContent() {
               style={{
                 width: "100%",
                 padding: "16px 20px",
-                background: isSubmitting ? "#74766F" : "#D96732",
-                color: "white",
+                background: isSubmitting ? "#475569" : "#FFFFFF",
+                color: "#08090A",
                 border: "none",
-                borderRadius: "8px",
-                fontWeight: 900,
-                fontSize: "clamp(14px, 4vw, 17px)",
+                borderRadius: "4px",
+                fontWeight: 800,
+                fontSize: "15px",
                 cursor: isSubmitting ? "not-allowed" : "pointer",
-                boxShadow: "0 10px 30px rgba(217,103,50,0.4)",
-                marginTop: "10px",
-                textTransform: "uppercase",
-                lineHeight: 1.4,
+                boxShadow: "0 10px 30px rgba(255, 255, 255, 0.15)",
+                marginTop: "8px",
+                letterSpacing: "-0.01em",
               }}
             >
-              {isSubmitting ? "ĐANG TẠO MÃ THANH TOÁN..." : `HOÀN TẤT ĐẶT HÀNG & TẠO MÃ THANH TOÁN QR (${formatVND(totalPrice)}) →`}
+              {isSubmitting ? "ĐANG TẠO MÃ THANH TOÁN..." : `HOÀN TẤT & TẠO MÃ QR SEPAY (${formatVND(totalPrice)}) →`}
             </button>
 
-            <div style={{ textAlign: "center", color: "#A9B2AC", fontSize: "12px", lineHeight: 1.5 }}>
-              🛡️ Cam kết hoàn tiền 100% trong 14 ngày nếu chương trình không hiệu quả.<br />
-              Bấm nút trên để tạo mã QR VietQR OCB thanh toán tự động qua SePAY.
+            <div style={{ textAlign: "center", color: "#64748B", fontSize: "12px", lineHeight: 1.5 }}>
+              🛡️ Cam kết hoàn tiền 100% trong 14 ngày nếu chương trình không hiệu quả.
             </div>
 
           </form>
@@ -199,83 +197,83 @@ function CheckoutFormContent() {
         </div>
 
         {/* COLUMN 2: ORDER SUMMARY */}
-        <div style={{ background: "#252B25", border: "2px solid #D96732", borderRadius: "16px", padding: "24px 18px", boxShadow: "0 20px 50px rgba(0,0,0,0.4)", boxSizing: "border-box" }}>
+        <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.15)", borderRadius: "12px", padding: "28px 24px", boxSizing: "border-box" }}>
           
-          <h2 style={{ fontSize: "18px", color: "#FAD08B", margin: "0 0 16px", fontWeight: 800, textTransform: "uppercase" }}>
-            TÓM TẮT ĐƠN HÀNG
+          <h2 style={{ fontSize: "15px", color: "#FFFFFF", margin: "0 0 18px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase" }}>
+            Tóm tắt đơn hàng
           </h2>
 
-          <div style={{ display: "grid", gap: "14px", borderBottom: "1px solid #384238", paddingBottom: "16px", marginBottom: "16px" }}>
+          <div style={{ display: "grid", gap: "14px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", paddingBottom: "16px", marginBottom: "16px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start" }}>
               <div>
-                <strong style={{ color: "#F5F2E9", fontSize: "15px", display: "block" }}>
+                <strong style={{ color: "#FFFFFF", fontSize: "15px", display: "block" }}>
                   Chương trình IDENTITY DESIGN™ (2026)
                 </strong>
-                <span style={{ color: "#A9B2AC", fontSize: "12px" }}>
+                <span style={{ color: "#64748B", fontSize: "12px" }}>
                   Lộ trình 4 học phần + Action-Sheets 21 ngày + Truy cập trọn đời
                 </span>
               </div>
-              <span style={{ color: "#FAD08B", fontWeight: 800, whiteSpace: "nowrap", marginLeft: "8px" }}>1.499.000đ</span>
+              <span style={{ color: "#FFFFFF", fontWeight: 800, whiteSpace: "nowrap", marginLeft: "8px" }}>1.499.000đ</span>
             </div>
 
             {includeBump && (
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", background: "rgba(217,103,50,0.1)", padding: "10px 12px", borderRadius: "6px", borderLeft: "3px solid #D96732" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", background: "rgba(255, 255, 255, 0.03)", padding: "10px 12px", borderRadius: "6px" }}>
                 <div>
-                  <strong style={{ color: "#FAD08B", fontSize: "13px", display: "block" }}>
+                  <strong style={{ color: "#FDBA74", fontSize: "13px", display: "block" }}>
                     ⚡ Audio Dẫn Thiền Nạp Pin 3 Phút (Order Bump)
                   </strong>
-                  <span style={{ color: "#A9B2AC", fontSize: "12px" }}>
+                  <span style={{ color: "#64748B", fontSize: "12px" }}>
                     Tài liệu Audio MP3 độc quyền kích hoạt tức thì
                   </span>
                 </div>
-                <span style={{ color: "#FAD08B", fontWeight: 800, whiteSpace: "nowrap", marginLeft: "8px" }}>+199.000đ</span>
+                <span style={{ color: "#FDBA74", fontWeight: 800, whiteSpace: "nowrap", marginLeft: "8px" }}>+199.000đ</span>
               </div>
             )}
           </div>
 
           {/* INCLUDED BONUSES LIST */}
-          <h3 style={{ fontSize: "14px", color: "#D96732", margin: "0 0 10px", fontWeight: 800, textTransform: "uppercase" }}>
-            🎁 ĐÃ BAO GỒM 4 PHẦN QUÀ TẶNG (MIỄN PHÍ):
-          </h3>
+          <div style={{ fontSize: "12px", color: "#94A3B8", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "10px" }}>
+            ĐÃ BAO GỒM 4 PHẦN QUÀ TẶNG (MIỄN PHÍ):
+          </div>
 
-          <div style={{ display: "grid", gap: "10px", fontSize: "13px", borderBottom: "1px solid #384238", paddingBottom: "16px", marginBottom: "16px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", color: "#D5DFDB" }}>
+          <div style={{ display: "grid", gap: "10px", fontSize: "13px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", paddingBottom: "16px", marginBottom: "16px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", color: "#94A3B8" }}>
               <span>1. Template Nhật Ký Cài Đặt Bản Dạng 21 Ngày</span>
-              <span style={{ textDecoration: "line-through", color: "#74766F", marginLeft: "6px" }}>500.000đ</span>
+              <span style={{ textDecoration: "line-through", color: "#475569", marginLeft: "6px" }}>500.000đ</span>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between", color: "#D5DFDB" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", color: "#94A3B8" }}>
               <span>2. Audio Dẫn Thiền Xóa Bỏ Neo Cảm Xúc Tiêu Cực</span>
-              <span style={{ textDecoration: "line-through", color: "#74766F", marginLeft: "6px" }}>700.000đ</span>
+              <span style={{ textDecoration: "line-through", color: "#475569", marginLeft: "6px" }}>700.000đ</span>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between", color: "#D5DFDB" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", color: "#94A3B8" }}>
               <span>3. Cẩm Nang Điều Chỉnh 4 Hormone Sinh Học</span>
-              <span style={{ textDecoration: "line-through", color: "#74766F", marginLeft: "6px" }}>400.000đ</span>
+              <span style={{ textDecoration: "line-through", color: "#475569", marginLeft: "6px" }}>400.000đ</span>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between", color: "#D5DFDB" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", color: "#CBD5E1" }}>
               <span>4. 1 Buổi Group Q&A trực tiếp cùng Đạt</span>
-              <span style={{ color: "#66735B", fontWeight: 800, marginLeft: "6px" }}>MIỄN PHÍ</span>
+              <span style={{ color: "#10B981", fontWeight: 700, marginLeft: "6px" }}>MIỄN PHÍ</span>
             </div>
           </div>
 
           {/* TOTAL PRICE BREAKDOWN */}
           <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", color: "#A9B2AC", fontSize: "13px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", color: "#64748B", fontSize: "13px" }}>
               <span>Tổng giá trị thực tế:</span>
               <span style={{ textDecoration: "line-through" }}>{includeBump ? "4.699.000đ" : "4.500.000đ"}</span>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between", color: "#FAD08B", fontSize: "14px", fontWeight: 700 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", color: "#94A3B8", fontSize: "13px" }}>
               <span>Ưu đãi áp dụng hôm nay:</span>
               <span>-3.001.000đ</span>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "2px solid #D96732", paddingTop: "12px", marginTop: "4px" }}>
-              <strong style={{ color: "#F5F2E9", fontSize: "16px" }}>TỔNG THANH TOÁN:</strong>
-              <strong style={{ color: "#D96732", fontSize: "24px", fontWeight: 900 }}>{formatVND(totalPrice)}</strong>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(255, 255, 255, 0.1)", paddingTop: "12px", marginTop: "4px" }}>
+              <strong style={{ color: "#FFFFFF", fontSize: "15px" }}>TỔNG THANH TOÁN:</strong>
+              <strong style={{ color: "#FFFFFF", fontSize: "24px", fontWeight: 900 }}>{formatVND(totalPrice)}</strong>
             </div>
           </div>
 
-          <div style={{ background: "#171A18", padding: "14px", borderRadius: "10px", fontSize: "12px", color: "#A9B2AC", lineHeight: 1.55 }}>
-            <strong style={{ color: "#F5F2E9", display: "block", marginBottom: "4px" }}>💡 Hướng dẫn bước tiếp theo:</strong>
-            Điền thông tin và bấm nút &quot;Hoàn tất đặt hàng&quot;. Hệ thống sẽ chuyển sang trang mã QR VietQR OCB để bạn quét thanh toán tự động.
+          <div style={{ background: "rgba(255, 255, 255, 0.02)", padding: "14px", borderRadius: "8px", fontSize: "12px", color: "#64748B", lineHeight: 1.55 }}>
+            <strong style={{ color: "#CBD5E1", display: "block", marginBottom: "4px" }}>💡 Hướng dẫn bước tiếp theo:</strong>
+            Điền thông tin và bấm nút hoàn tất để tạo mã QR VietQR OCB quét thanh toán tự động qua SePAY.
           </div>
 
         </div>
@@ -288,30 +286,26 @@ function CheckoutFormContent() {
 
 export default function CheckoutPage() {
   return (
-    <div style={{ background: "#171A18", color: "#F5F2E9", minHeight: "100vh", fontFamily: "system-ui, -apple-system, sans-serif" }}>
-      {/* HEADER BAR */}
-      <header style={{ background: "#111311", borderBottom: "1px solid #384238", padding: "14px 16px", textAlign: "center" }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <Link href="/" style={{ color: "#FAD08B", textDecoration: "none", fontWeight: 900, fontSize: "17px", letterSpacing: "0.05em" }}>
+    <div style={{ background: "#08090A", color: "#E2E8F0", minHeight: "100vh", fontFamily: "system-ui, -apple-system, sans-serif" }}>
+      {/* HEADER */}
+      <header style={{ background: "#060708", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", padding: "14px 20px" }}>
+        <div style={{ maxWidth: "1040px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <Link href="/" style={{ color: "#FFFFFF", textDecoration: "none", fontWeight: 800, fontSize: "16px", letterSpacing: "0.05em" }}>
             IDENTITY DESIGN™
           </Link>
-          <span style={{ background: "rgba(217,103,50,0.15)", border: "1px solid #D96732", color: "#FAD08B", fontSize: "11px", fontWeight: 800, padding: "4px 8px", borderRadius: "4px" }}>
-            🔒 ĐẶT HÀNG AN TOÀN & BẢO MẬT
+          <span style={{ border: "1px solid rgba(255, 255, 255, 0.15)", background: "rgba(255, 255, 255, 0.04)", color: "#94A3B8", fontSize: "11px", fontWeight: 700, padding: "4px 10px", borderRadius: "20px" }}>
+            🔒 256-BIT ENCRYPTION
           </span>
         </div>
       </header>
 
-      <Suspense fallback={<div style={{ textAlign: "center", padding: "60px 20px", color: "#A9B2AC" }}>Đang tải trang đặt hàng...</div>}>
+      <Suspense fallback={<div style={{ textAlign: "center", padding: "60px 20px", color: "#64748B" }}>Đang tải trang đặt hàng...</div>}>
         <CheckoutFormContent />
       </Suspense>
 
       {/* FOOTER */}
-      <footer style={{ background: "#111311", color: "#74766F", padding: "24px 0", fontSize: "12px", borderTop: "1px solid #2B332B" }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto", textAlign: "center", padding: "0 16px" }}>
-          <b style={{ color: "#A9B2AC" }}>IDENTITY DESIGN™ — TÁI LẬP BẢN THÂN, RESET HỆ ĐIỀU HÀNH</b>
-          <p style={{ margin: "6px 0" }}>
-            Hệ thống đặt hàng và thanh toán tự động qua SePAY.
-          </p>
+      <footer style={{ background: "#060708", color: "#64748B", padding: "30px 20px", fontSize: "12px", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+        <div style={{ maxWidth: "1040px", margin: "0 auto", textAlign: "center" }}>
           <span>© 2026 IDENTITY DESIGN™. All rights reserved.</span>
         </div>
       </footer>
