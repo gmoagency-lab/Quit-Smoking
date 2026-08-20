@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Be_Vietnam_Pro, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import "./globals.css";
 
-const body = Be_Vietnam_Pro({ variable: "--font-body", subsets: ["latin", "vietnamese"], weight: ["400","500","600","700"] });
-const display = Manrope({ variable: "--font-display", subsets: ["latin","vietnamese"], weight: ["500","600","700","800"] });
+const sans = Plus_Jakarta_Sans({ variable: "--font-sans", subsets: ["latin", "vietnamese"], weight: ["400","500","600","700","800"] });
+const serif = Lora({ variable: "--font-serif", subsets: ["latin", "vietnamese"], style: ["normal", "italic"], weight: ["400","500","600","700"] });
 
 const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || "1675148560210565";
 
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           />
         </noscript>
       </head>
-      <body className={`${body.variable} ${display.variable}`}>{children}</body>
+      <body className={`${sans.variable} ${serif.variable}`}>{children}</body>
     </html>
   );
 }

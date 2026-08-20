@@ -1,16 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import * as fpixel from "../lib/fpixel";
 
 const fourModules = [
   {
     num: "01",
     label: "HỌC PHẦN 1",
-    title: "GIẢI PHẪU BỨC TRANH TỰ THÂN & BẺ GÃY ĐIỂM NGHẼN CĂN TÍNH",
+    title: "Giải phẫu Bức Tranh Tự Thân & Bẻ gãy Điểm Nghẽn Căn Tính",
     desc: "Nhận diện chính xác cơ chế tự hủy hoại vô thức đang kẹp giữ bạn. Xóa bỏ Hội chứng kẻ giả mạo và dọn sạch tiếng nói chỉ trích bên trong.",
-    outcomes: [
+    bullets: [
       "Nhận diện chính xác cơ chế tự hủy hoại vô thức đang kẹp giữ bạn",
       "Xóa bỏ Hội chứng kẻ giả mạo (Imposter Syndrome) và dọn sạch tiếng nói tự phán xét",
       "Bẻ gãy neo cảm xúc tiêu cực và sự tự ti tích tụ trong quá khứ",
@@ -19,9 +18,9 @@ const fourModules = [
   {
     num: "02",
     label: "HỌC PHẦN 2",
-    title: "RESET SINH HỌC & KÍCH HOẠT 4 LOẠI NĂNG LƯỢNG",
+    title: "Reset Sinh Học & Kích Hoạt 4 Loại Năng Lượng",
     desc: "Làm chủ Thể chất – Tinh thần – Cảm xúc – Ý nghĩa để chấm dứt tình trạng dậy lờ đờ, mất tập trung. Thiết lập nhịp sinh học tự nhiên: ngủ sâu, dậy tỉnh táo trước 7h sáng không cần báo thức.",
-    outcomes: [
+    bullets: [
       "Làm chủ 4 loại năng lượng: Thể chất – Tinh thần – Cảm xúc – Ý nghĩa",
       "Chấm dứt hoàn toàn tình trạng dậy lờ đờ, sụt pin buổi chiều và kiệt sức mãn tính",
       "Thiết lập nhịp sinh học tự nhiên: Ngủ sâu, tự động dậy trước 7h sáng tràn trề sinh lực",
@@ -30,9 +29,9 @@ const fourModules = [
   {
     num: "03",
     label: "HỌC PHẦN 3",
-    title: "CÔNG THỨC DỊCH CHUYỂN CĂN TÍNH (IDENTITY SHIFTING PROTOCOL)",
+    title: "Công Thức Dịch Chuyển Căn Tính (Identity Shifting Protocol)",
     desc: "Phương pháp thay đổi niềm tin cốt lõi chỉ bằng kỹ thuật tái định hình danh xưng. Quy trình khóa chặt bản dạng mới vào tiềm thức thông qua cấu trúc nhật ký 21 ngày.",
-    outcomes: [
+    bullets: [
       "Phương pháp thay đổi niềm tin cốt lõi bằng kỹ thuật tái định hình danh xưng",
       "Dạy cho tiềm thức tin rằng việc bứt phá và kỷ luật là điều hoàn toàn hiển nhiên",
       "Quy trình khóa chặt bản dạng mới vào tiềm thức qua cấu trúc nhật ký 21 ngày",
@@ -41,9 +40,9 @@ const fourModules = [
   {
     num: "04",
     label: "HỌC PHẦN 4",
-    title: "THIẾT KẾ TRẠNG THÁI DÒNG CHẢY & HÀNH ĐỘNG KHÔNG MA SÁT",
-    desc: "Kỹ thuật bước vào phiên làm việc sâu (Deep Work) 2–3 tiếng liên tục với hiệu suất gấp 3–5 lần bình thường. Chuyển hóa nội lực vững vàng thành kết quả tài chính, công việc và sự an tâm trong cuộc sống.",
-    outcomes: [
+    title: "Thiết Kế Trạng Thái Dòng Chảy & Hành Động Không Ma Sát",
+    desc: "Kỹ thuật bước vào phiên làm việc sâu (Deep Work) 2–3 tiếng liên tục với hiệu suất gấp 3–5 lần bình thường. Chuyển hóa nội lực vững vàng thành kết quả tài chính, công việc và sự an tâm.",
+    bullets: [
       "Kỹ thuật bước vào trạng thái dòng chảy (Flow State) 2–3 tiếng làm việc sâu mỗi ngày",
       "Xóa sạch ma sát tâm lý và thói quen trì hoãn: Thấy việc là làm ngay dứt khoát",
       "Chuyển hóa nội lực vững vàng thành kết quả tài chính, sự nghiệp và cuộc sống tự do",
@@ -84,677 +83,574 @@ const testimonials = [
   },
 ];
 
-export default function Home() {
-  const [showSticky, setShowSticky] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalData, setModalData] = useState({ name: "", email: "", phone: "" });
+const faqs = [
+  {
+    q: "Khóa học này có phù hợp với người chưa từng học phát triển bản thân không?",
+    a: "Hoàn toàn phù hợp. Toàn bộ phương pháp được đúc kết từ khoa học thần kinh nhận thức và thiết kế dưới dạng khung tư duy hình ảnh (Visual Frameworks) trực quan, đi thẳng vào nguyên nhân gốc rễ mà không dùng thuật ngữ khó hiểu hay lý thuyết suông.",
+  },
+  {
+    q: "Mỗi ngày tôi cần dành bao nhiêu thời gian để thực hành?",
+    a: "Chỉ từ 10 đến 15 phút mỗi ngày. Các bài học video được thiết kế ngắn gọn (10–15 phút/bài), kết hợp với Action-Sheet nhật ký tự điền 10 phút sáng/tối để người bận rộn nhất cũng dễ dàng duy trì.",
+  },
+  {
+    q: "Sau khi đăng ký tôi sẽ nhận bài học như thế nào?",
+    a: "Hệ thống sẽ gửi email tự động kích hoạt tài khoản học và link tải toàn bộ bộ công cụ, file Notion, Action-Sheet PDF và audio dẫn thiền ngay sau khi thanh toán thành công.",
+  },
+  {
+    q: "Chính sách cam kết hoàn tiền trong 14 ngày hoạt động ra sao?",
+    a: "Nếu bạn tham gia học và làm theo bài tập nhưng cảm thấy tư duy và năng lượng của mình không có gì thay đổi, bạn chỉ cần nhắn tin qua Zalo hoặc Email, chúng tôi sẽ hoàn lại 100% học phí cho bạn mà không hỏi thêm điều gì.",
+  },
+];
 
-  const handleModalSubmit = (e: React.FormEvent) => {
+export default function Home() {
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
+  const [showSticky, setShowSticky] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!modalData.name || !modalData.email || !modalData.phone) {
-      alert("Vui lòng điền đầy đủ Tên, Email và Số điện thoại.");
+    if (!formData.name || !formData.email || !formData.phone) {
+      alert("Vui lòng điền đầy đủ Họ tên, Email và Số điện thoại.");
       return;
     }
 
-    // Trigger Meta/Facebook Pixel Lead Event
+    // Trigger Meta Pixel Lead
     fpixel.event("Lead", {
-      content_name: "IDENTITY DESIGN Lead Form",
+      content_name: "IDENTITY DESIGN Rui Style Form",
       currency: "VND",
       value: 1499000,
     });
 
     const query = new URLSearchParams({
-      name: modalData.name,
-      email: modalData.email,
-      phone: modalData.phone,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
       total: "1499000",
     }).toString();
+
     window.location.href = `/checkout?${query}`;
   };
 
   useEffect(() => {
-    const onScroll = () => {
-      const offer = document.getElementById("offer");
-      const inOffer = offer
-        ? offer.getBoundingClientRect().top < window.innerHeight && offer.getBoundingClientRect().bottom > 0
-        : false;
-      setShowSticky(window.scrollY > window.innerHeight * 0.5 && !inOffer);
+    const handleScroll = () => {
+      setShowSticky(window.scrollY > 450);
     };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div
       style={{
-        background: "#08090A",
-        color: "#E2E8F0",
-        fontFamily: "var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-        lineHeight: 1.8,
-        minHeight: "100vh",
+        background: "#FFFFFF",
+        color: "#272727",
+        fontFamily: "var(--font-sans), 'Poppins', -apple-system, sans-serif",
+        lineHeight: 1.6,
         overflowX: "hidden",
       }}
     >
-      {/* TOP MINIMAL NAVIGATION BAR */}
-      <nav
+      {/* TOP ANNOUNCEMENT BADGE */}
+      <div
         style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 100,
-          background: "rgba(8, 9, 10, 0.85)",
-          backdropFilter: "blur(12px)",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
-          padding: "16px 24px",
+          background: "#1C1C1C",
+          color: "#FFFFFF",
+          textAlign: "center",
+          padding: "10px 16px",
+          fontSize: "12px",
+          fontWeight: 600,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
         }}
       >
-        <div style={{ maxWidth: "1140px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#E87A3E", display: "inline-block", boxShadow: "0 0 10px #E87A3E" }}></span>
-            <span style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "16px", letterSpacing: "0.06em" }}>
-              IDENTITY DESIGN™
-            </span>
-          </div>
+        <span style={{ color: "#E6D3A3", marginRight: "8px" }}>✦ ƯU ĐÃI ĐẶC BIỆT</span>
+        100 SUẤT ĐẦU TIÊN · TIẾT KIỆM 50% · BẢO HÀNH HOÀN TIỀN 14 NGÀY
+      </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-            <Link href="/v2" style={{ color: "#FDBA74", textDecoration: "none", fontSize: "12px", fontWeight: 700, background: "rgba(232, 122, 62, 0.15)", border: "1px solid rgba(232, 122, 62, 0.3)", padding: "4px 10px", borderRadius: "12px" }}>
-              🌟 Phiên bản V2
-            </Link>
-            <a href="#curriculum" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600, transition: "color 0.2s" }}>
-              Học phần
-            </a>
-            <a href="#outcomes" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600, transition: "color 0.2s" }}>
-              Kết quả
-            </a>
-            <a href="#offer" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600, transition: "color 0.2s" }}>
-              Học phí
-            </a>
-            <a
-              href="/checkout"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsModalOpen(true);
-              }}
-              style={{
-                background: "#FFFFFF",
-                color: "#08090A",
-                padding: "8px 18px",
-                borderRadius: "4px",
-                fontWeight: 800,
-                fontSize: "13px",
-                textDecoration: "none",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              Đăng ký ngay
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      {/* HERO SECTION — FULL-BLEED POINTILLIST PARTICLE CANVAS (EXACT REFERENCE UI) */}
-      <header
-        style={{
-          position: "relative",
-          minHeight: "92vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          backgroundImage: "url('/images/hero_identity_mesh.jpg')",
-          backgroundPosition: "center 15%",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
-          padding: "60px 24px 70px",
-          boxSizing: "border-box",
-        }}
-      >
-        {/* Ambient Dark Gradients (Top + Bottom Fade) */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "linear-gradient(to bottom, rgba(8,9,10,0.65) 0%, rgba(8,9,10,0.15) 35%, rgba(8,9,10,0.8) 75%, #08090A 100%)",
-            pointerEvents: "none",
-            zIndex: 1,
-          }}
-        />
-
-        {/* TOP SPACER / BADGE */}
-        <div style={{ position: "relative", zIndex: 2, maxWidth: "1140px", width: "100%", margin: "0 auto" }}>
-          <div
+      {/* BRAND HEADER */}
+      <header style={{ padding: "28px 20px 10px", textAlign: "center" }}>
+        <div style={{ maxWidth: "1120px", margin: "0 auto" }}>
+          <span
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              border: "1px solid rgba(255, 255, 255, 0.18)",
-              background: "rgba(8, 9, 10, 0.6)",
-              backdropFilter: "blur(10px)",
-              padding: "6px 14px",
-              borderRadius: "20px",
-              fontSize: "12px",
+              fontSize: "14px",
               fontWeight: 700,
-              letterSpacing: "0.1em",
-              color: "#E2E8F0",
+              letterSpacing: "0.22em",
+              color: "#1C1C1C",
               textTransform: "uppercase",
+              display: "inline-block",
             }}
           >
-            <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#E87A3E", display: "inline-block" }}></span>
-            SYSTEM PROTOCOL 2026
-          </div>
+            IDENTITY DESIGN™
+          </span>
         </div>
+      </header>
 
-        {/* BOTTOM HERO CONTENT: EDITORIAL HEADLINE (LEFT) + CRISP WHITE BUTTON (RIGHT) */}
-        <div style={{ position: "relative", zIndex: 2, maxWidth: "1140px", width: "100%", margin: "140px auto 0" }}>
+      {/* HERO SECTION — RUIDIGITAL 2-COLUMN LUXURY EDITORIAL STYLE */}
+      <section style={{ padding: "20px 20px 60px" }}>
+        <div style={{ maxWidth: "1120px", margin: "0 auto" }}>
+          
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
               gap: "40px",
-              alignItems: "end",
+              alignItems: "start",
             }}
           >
-            {/* LEFT: EDITORIAL LAYERED CONTRAST HEADLINE */}
+            {/* LEFT COLUMN: HERO HEADLINE & VALUE SUMMARY */}
             <div>
+              {/* TOP SUB-HEADING */}
+              <div style={{ fontSize: "14px", fontWeight: 600, color: "#797F97", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "12px" }}>
+                The 21-Day Identity Shift Protocol
+              </div>
+
+              {/* SERIF ITALIC HERO TITLE (LORA) */}
               <h1
                 style={{
-                  fontSize: "clamp(32px, 5.2vw, 62px)",
-                  lineHeight: 1.15,
-                  fontWeight: 300,
-                  color: "#7E8691",
-                  margin: "0 0 20px",
-                  letterSpacing: "-0.03em",
+                  fontFamily: "var(--font-serif), 'Lora', serif",
+                  fontStyle: "italic",
+                  fontWeight: 600,
+                  fontSize: "clamp(34px, 4.5vw, 48px)",
+                  lineHeight: 1.18,
+                  letterSpacing: "-1.5px",
+                  color: "#1C1C1C",
+                  margin: "0 0 16px",
                 }}
               >
-                Bật <span style={{ fontWeight: 900, color: "#FFFFFF" }}>mã nguồn căn tính</span> mới:
-                <br />
-                Tại sao bạn <span style={{ fontWeight: 900, color: "#FFFFFF" }}>không thể bứt phá</span> dù đã thử đủ mọi cách?
+                Bật Mã Nguồn Căn Tính Mới:
               </h1>
 
-              <p
+              {/* SANS SUB-HEADLINE */}
+              <h2
                 style={{
-                  fontSize: "clamp(16px, 2vw, 20px)",
-                  color: "#94A3B8",
-                  lineHeight: 1.65,
-                  margin: 0,
-                  maxWidth: "640px",
+                  fontFamily: "var(--font-sans), 'Poppins', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "clamp(20px, 2.8vw, 28px)",
+                  lineHeight: 1.3,
+                  color: "#272727",
+                  margin: "0 0 20px",
+                  letterSpacing: "-0.5px",
                 }}
               >
-                Tại sao <strong style={{ color: "#FFFFFF" }}>95% nỗ lực thay đổi</strong> của bạn đều thất bại?
-                Và 3 bước đơn giản giúp bạn thay đổi con người bên trong để đạt kết quả bền vững.
+                Tại sao bạn không thể bứt phá dù đã thử đủ mọi cách?
+              </h2>
+
+              <p style={{ fontSize: "16px", color: "#555555", lineHeight: 1.7, margin: "0 0 24px" }}>
+                Tại sao <strong style={{ color: "#1C1C1C" }}>95% nỗ lực thay đổi</strong> của bạn đều thất bại? Và 3 bước đơn giản giúp bạn thay đổi con người bên trong để đạt kết quả bền vững, x3 hiệu suất mà không bị kiệt sức.
               </p>
+
+              {/* PRICE HIGHLIGHT CARD */}
+              <div
+                style={{
+                  background: "#F8F9FA",
+                  border: "1px solid #E5E5E5",
+                  borderRadius: "12px",
+                  padding: "18px 24px",
+                  marginBottom: "28px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: "12px",
+                }}
+              >
+                <div>
+                  <span style={{ fontSize: "13px", color: "#797F97", textDecoration: "line-through", display: "block" }}>
+                    Giá gốc: 3.000.000đ
+                  </span>
+                  <span style={{ fontSize: "28px", fontWeight: 800, color: "#1C1C1C", letterSpacing: "-0.5px" }}>
+                    1.499.000đ
+                  </span>
+                </div>
+                <div style={{ background: "#E6D3A3", color: "#1C1C1C", fontWeight: 700, fontSize: "12px", padding: "6px 12px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  TIẾT KIỆM 50% HÔM NAY
+                </div>
+              </div>
+
+              {/* WHAT'S INCLUDED QUICK BULLETS */}
+              <div style={{ marginBottom: "20px" }}>
+                <div style={{ fontSize: "14px", fontWeight: 700, color: "#1C1C1C", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "12px" }}>
+                  BẠN SẼ NHẬN ĐƯỢC NGAY:
+                </div>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px", fontSize: "14px", color: "#444444" }}>
+                  <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                    <span style={{ color: "#1C1C1C", fontWeight: 700 }}>✓</span>
+                    <span><strong>Lộ trình 4 Học Phần Chuyển Hóa:</strong> Video cô đọng 10–15 phút/bài học trọn đời.</span>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                    <span style={{ color: "#1C1C1C", fontWeight: 700 }}>✓</span>
+                    <span><strong>Template Nhật Ký Cài Đặt Bản Dạng 21 Ngày:</strong> Định dạng Notion & Action-Sheet PDF (Trị giá 500k).</span>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                    <span style={{ color: "#1C1C1C", fontWeight: 700 }}>✓</span>
+                    <span><strong>Audio Dẫn Thiền Xóa Bỏ Neo Cảm Xúc Tiêu Cực:</strong> Trị giá 700k (Tặng kèm miễn phí).</span>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                    <span style={{ color: "#1C1C1C", fontWeight: 700 }}>✓</span>
+                    <span><strong>Cẩm Nang Điều Chỉnh 4 Hormone Sinh Học:</strong> Trị giá 400k (Tặng kèm miễn phí).</span>
+                  </li>
+                </ul>
+              </div>
+
             </div>
 
-            {/* RIGHT: CLEAN MINIMAL WHITE BUTTON (MATCHING REFERENCE UI) */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "flex-start", justifyContent: "flex-end" }}>
-              <a
-                href="/checkout"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsModalOpen(true);
-                }}
+            {/* RIGHT COLUMN: RUIDIGITAL QUICK CHECKOUT / LEAD FORM CARD */}
+            <div>
+              <div
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
                   background: "#FFFFFF",
-                  color: "#08090A",
-                  fontWeight: 800,
-                  padding: "20px 42px",
-                  borderRadius: "4px",
-                  fontSize: "16px",
-                  textDecoration: "none",
-                  boxShadow: "0 15px 40px rgba(255, 255, 255, 0.2)",
-                  letterSpacing: "-0.01em",
-                  transition: "all 0.2s ease",
-                  width: "100%",
-                  maxWidth: "380px",
-                  boxSizing: "border-box",
+                  border: "1px solid #E5E5E5",
+                  borderRadius: "16px",
+                  padding: "32px 28px",
+                  boxShadow: "0 15px 40px rgba(0, 0, 0, 0.06)",
                 }}
               >
-                TÔI MUỐN TÁI THIẾT KẾ BẢN DẠNG →
-              </a>
+                <div style={{ textAlign: "center", marginBottom: "20px" }}>
+                  <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", display: "block", marginBottom: "6px" }}>
+                    INSTANT DIGITAL ACCESS
+                  </span>
+                  <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#1C1C1C", margin: "0 0 6px" }}>
+                    Đăng Ký Tài Khoản Học Ngay
+                  </h3>
+                  <p style={{ fontSize: "13px", color: "#797F97", margin: 0 }}>
+                    Điền thông tin nhận mã kích hoạt và chuyển tiếp thanh toán QR SePAY:
+                  </p>
+                </div>
 
-              <div style={{ color: "#94A3B8", fontSize: "13px", lineHeight: 1.6, paddingLeft: "4px" }}>
-                ⚡ Ưu đãi <strong style={{ color: "#FFFFFF" }}>1.499.000đ</strong> (100 suất đầu tiên) · Hoàn tiền 100% trong 14 ngày
+                <form onSubmit={handleSubmit} style={{ display: "grid", gap: "16px" }}>
+                  <div>
+                    <label style={{ display: "block", fontSize: "13px", fontWeight: 600, color: "#333", marginBottom: "6px" }}>
+                      Họ và tên của bạn:
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Ví dụ: Nguyễn Văn A"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                      style={{
+                        width: "100%",
+                        padding: "14px 16px",
+                        border: "1px solid #D1D5DB",
+                        borderRadius: "8px",
+                        fontSize: "15px",
+                        boxSizing: "border-box",
+                        outline: "none",
+                        fontFamily: "inherit",
+                      }}
+                    />
+                  </div>
+
+                  <div>
+                    <label style={{ display: "block", fontSize: "13px", fontWeight: 600, color: "#333", marginBottom: "6px" }}>
+                      Email nhận tài liệu & bài học:
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="name@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                      style={{
+                        width: "100%",
+                        padding: "14px 16px",
+                        border: "1px solid #D1D5DB",
+                        borderRadius: "8px",
+                        fontSize: "15px",
+                        boxSizing: "border-box",
+                        outline: "none",
+                        fontFamily: "inherit",
+                      }}
+                    />
+                  </div>
+
+                  <div>
+                    <label style={{ display: "block", fontSize: "13px", fontWeight: 600, color: "#333", marginBottom: "6px" }}>
+                      Số điện thoại (có Zalo):
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="0912345678"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      required
+                      style={{
+                        width: "100%",
+                        padding: "14px 16px",
+                        border: "1px solid #D1D5DB",
+                        borderRadius: "8px",
+                        fontSize: "15px",
+                        boxSizing: "border-box",
+                        outline: "none",
+                        fontFamily: "inherit",
+                      }}
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    style={{
+                      width: "100%",
+                      padding: "16px 20px",
+                      background: "#1C1C1C",
+                      color: "#FFFFFF",
+                      border: "none",
+                      borderRadius: "6px",
+                      fontWeight: 700,
+                      fontSize: "16px",
+                      cursor: "pointer",
+                      marginTop: "6px",
+                      boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+                      transition: "background 0.2s ease",
+                    }}
+                  >
+                    TIẾP TỤC ĐẶT HÀNG (1.499.000Đ) →
+                  </button>
+
+                  <div style={{ textAlign: "center", fontSize: "12px", color: "#797F97", marginTop: "4px" }}>
+                    🛡️ Cam kết hoàn tiền 100% trong 14 ngày nếu không hiệu quả
+                  </div>
+                </form>
               </div>
             </div>
 
           </div>
-        </div>
-
-      </header>
-
-      {/* SECTION 1: ATTENTION & HOOK */}
-      <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 01 · ATTENTION & HOOK
-          </span>
-          <h2 style={{ fontSize: "clamp(24px, 3.6vw, 38px)", color: "#FFFFFF", margin: "12px 0 24px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.02em" }}>
-            Nếu bạn đang cảm thấy mình rơi vào một cái bẫy vô hình:
-          </h2>
-
-          <div
-            style={{
-              background: "rgba(255, 255, 255, 0.02)",
-              border: "1px solid rgba(255, 255, 255, 0.08)",
-              borderRadius: "12px",
-              padding: "30px",
-              margin: "28px 0",
-              display: "grid",
-              gap: "18px",
-            }}
-          >
-            <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-              <span style={{ color: "#E87A3E", fontSize: "18px", marginTop: "2px" }}>▹</span>
-              <p style={{ margin: 0, fontSize: "17px", color: "#CBD5E1", lineHeight: 1.7 }}>
-                Bạn ấp ủ rất nhiều dự định lớn, muốn đổi nghề, muốn bứt phá thu nhập, muốn xây dựng một sự nghiệp tự do.
-              </p>
-            </div>
-            <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-              <span style={{ color: "#E87A3E", fontSize: "18px", marginTop: "2px" }}>▹</span>
-              <p style={{ margin: 0, fontSize: "17px", color: "#CBD5E1", lineHeight: 1.7 }}>
-                Bạn bắt đầu hừng hực khí thế, nhưng chỉ sau vài ngày, cảm giác bất an và tiếng nói <em style={{ color: "#FFFFFF" }}>&ldquo;Mày chưa đủ giỏi đâu&rdquo;</em> lại kéo bạn sụp đổ.
-              </p>
-            </div>
-            <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-              <span style={{ color: "#E87A3E", fontSize: "18px", marginTop: "2px" }}>▹</span>
-              <p style={{ margin: 0, fontSize: "17px", color: "#CBD5E1", lineHeight: 1.7 }}>
-                Bạn nhìn bạn bè đồng trang lứa tiến xa, còn mình thì dậm chân tại chỗ trong sự mông lung và tự dằn vặt...
-              </p>
-            </div>
-          </div>
-
-          <p style={{ fontSize: "20px", fontWeight: 700, color: "#F8FAFC", margin: "32px 0 14px" }}>
-            Thì xin bạn hãy dừng lại một phút và đọc thật kỹ bài viết này.
-          </p>
-
-          <p style={{ fontSize: "17px", color: "#94A3B8", lineHeight: 1.8 }}>
-            Bởi vì sự thật giải thoát nhất mà bạn sắp biết là: <strong style={{ color: "#FFFFFF" }}>Bạn không hề thiếu năng lực.</strong> Bạn chỉ đang là nạn nhân của một hiện tượng tâm lý ngầm chưa từng được ai chỉ ra.
-          </p>
 
         </div>
       </section>
 
-      {/* SECTION 2: RESEARCH & PROBLEM SETUP — VÒNG XOÁY BẾ TẮC CỦA Ý CHÍ */}
-      <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+      {/* SECTION 1 & 2: THE PROBLEM (RUIDIGITAL BREAKAWAY STYLE) */}
+      <section style={{ padding: "70px 20px", background: "#FAF8FF", borderTop: "1px solid #EAEAEA", borderBottom: "1px solid #EAEAEA" }}>
+        <div style={{ maxWidth: "820px", margin: "0 auto", textAlign: "center" }}>
           
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 02 · RESEARCH & PROBLEM SETUP
+          <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.15em", color: "#797F97", textTransform: "uppercase" }}>
+            VÒNG XOÁY BẾ TẮC CỦA Ý CHÍ
           </span>
-          <h2 style={{ fontSize: "clamp(24px, 3.6vw, 38px)", color: "#FFFFFF", margin: "12px 0 24px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.02em" }}>
-            Vòng xoáy bế tắc của ý chí
-          </h2>
 
-          <p style={{ fontSize: "18px", color: "#E2E8F0", margin: "0 0 20px" }}>Tôi biết rất rõ cảm giác này.</p>
-
-          <div
+          <h2
             style={{
-              background: "rgba(255, 255, 255, 0.03)",
-              borderLeft: "2px solid #E87A3E",
-              padding: "24px 28px",
-              borderRadius: "0 10px 10px 0",
-              margin: "24px 0 32px",
+              fontFamily: "var(--font-serif), 'Lora', serif",
               fontStyle: "italic",
-              color: "#CBD5E1",
-              fontSize: "17px",
-              lineHeight: 1.8,
+              fontWeight: 600,
+              fontSize: "clamp(28px, 4vw, 40px)",
+              color: "#1C1C1C",
+              margin: "12px 0 24px",
+              lineHeight: 1.25,
             }}
           >
-            &ldquo;Cảm giác sáng thức dậy không muốn bước ra khỏi giường. Cảm giác ôm hàng tá việc, hút thuốc liên tục, thức xuyên đêm, làm việc 16–17 tiếng mỗi ngày chỉ để chứng minh giá trị của mình... nhưng đổi lại là cơ thể suy kiệt, công việc đổ vỡ và rơi vào trầm cảm suốt 3 tháng không dám gặp ai.&rdquo;
+            Bạn biết chính xác mình cần làm gì...<br />
+            Vậy tại sao bạn lại liên tục tự cản trở chính mình?
+          </h2>
+
+          <div style={{ textAlign: "left", background: "#FFFFFF", border: "1px solid #E5E5E5", borderRadius: "16px", padding: "32px", margin: "32px 0", boxShadow: "0 10px 30px rgba(0,0,0,0.03)" }}>
+            <p style={{ fontSize: "16px", color: "#444444", marginBottom: "16px", fontWeight: 600 }}>
+              Vấn đề của bạn không phải là thiếu một hệ thống mới:
+            </p>
+
+            <div style={{ display: "grid", gap: "12px", fontSize: "15px", color: "#555" }}>
+              <div style={{ display: "flex", gap: "12px" }}>
+                <span>💔</span>
+                <span>Bạn đã từng mua hàng chục khóa học kỹ năng, đọc hàng chồng sách self-help, đổi qua hàng loạt ứng dụng quản lý công việc và thói quen.</span>
+              </div>
+              <div style={{ display: "flex", gap: "12px" }}>
+                <span>💔</span>
+                <span>Bạn đã từng lên kế hoạch hoàn hảo để thức dậy lúc 6h sáng, tràn trề khí thế trong vài ngày đầu tiên... rồi sau đó mọi thứ lại sụp đổ.</span>
+              </div>
+              <div style={{ display: "flex", gap: "12px" }}>
+                <span>🔁</span>
+                <span>Ngay trước khi bạn chuẩn bị ra mắt sản phẩm hoặc xuất hiện trước đám đông: tiếng nói <em>“Mày chưa đủ giỏi đâu”</em> lại kéo bạn dừng lại.</span>
+              </div>
+            </div>
+
+            <div style={{ marginTop: "24px", paddingTop: "20px", borderTop: "1px solid #EEEEEE", fontStyle: "italic", color: "#1C1C1C", fontWeight: 600, fontSize: "16px" }}>
+              “Đây không phải là vấn đề về kỷ luật. Đây là một khuôn mẫu tiềm thức đã chạy ngầm trong bạn suốt nhiều năm trước khi bạn kịp nhận ra.”
+            </div>
           </div>
-
-          <h3 style={{ fontSize: "19px", color: "#FFFFFF", fontWeight: 700, margin: "28px 0 16px" }}>
-            Khi đó, phản xạ tự nhiên của chúng ta là gì?
-          </h3>
-
-          <div style={{ display: "grid", gap: "14px", marginBottom: "30px" }}>
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.06)", padding: "16px 20px", borderRadius: "8px", fontSize: "16px", color: "#94A3B8" }}>
-              <strong style={{ color: "#FFFFFF" }}>1. Mua thêm một khóa học kỹ năng cứng</strong> (marketing, sales, quản trị).
-            </div>
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.06)", padding: "16px 20px", borderRadius: "8px", fontSize: "16px", color: "#94A3B8" }}>
-              <strong style={{ color: "#FFFFFF" }}>2. Đọc thêm sách self-help</strong> để tìm động lực ngắn hạn.
-            </div>
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.06)", padding: "16px 20px", borderRadius: "8px", fontSize: "16px", color: "#94A3B8" }}>
-              <strong style={{ color: "#FFFFFF" }}>3. Ép bản thân phải kỷ luật sắt đá:</strong> dậy sớm, ghi chép, làm việc điên cuồng.
-            </div>
-          </div>
-
-          <p style={{ fontSize: "17px", color: "#CBD5E1", lineHeight: 1.8 }}>
-            Nhưng chuyện gì xảy ra sau đó? Chỉ được dăm ba bữa, bạn lại quay về lối sống cũ. Bạn cảm thấy tội lỗi, mất niềm tin vào chính mình và bắt đầu tin vào lời nguyền: <em style={{ color: "#E87A3E" }}>&ldquo;Chắc số mình sinh ra chỉ đến thế thôi&rdquo;</em>.
-          </p>
-
-          <p style={{ fontSize: "19px", fontWeight: 700, color: "#FFFFFF", marginTop: "24px" }}>
-            Tại sao lại có nghịch lý này? Tại sao những người thông minh, chăm chỉ như bạn lại liên tục thất bại trong việc thay đổi chính mình?
-          </p>
 
         </div>
       </section>
 
-      {/* SECTION 3: UMP — HIỆN TƯỢNG ĐOẢN MẠCH BỨC TRANH TỰ THÂN */}
-      <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
+      {/* SECTION 3: UMP — THE ROOT CAUSE */}
+      <section style={{ padding: "80px 20px" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 03 · UNIQUE MECHANISM OF PROBLEM (UMP)
-          </span>
-          <h2 style={{ fontSize: "clamp(24px, 3.6vw, 38px)", color: "#FFFFFF", margin: "12px 0 20px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.02em" }}>
-            Hiện tượng đoản mạch Bức Tranh Tự Thân
-          </h2>
-
-          <div style={{ background: "rgba(232, 122, 62, 0.08)", border: "1px solid rgba(232, 122, 62, 0.25)", padding: "20px 24px", borderRadius: "10px", marginBottom: "32px" }}>
-            <p style={{ margin: 0, fontSize: "17px", color: "#FDBA74", fontWeight: 600, lineHeight: 1.6 }}>
-              Các phương pháp ngoài kia thất bại vì chỉ sửa 5% Ý thức (kỹ năng, hành vi), nhưng bỏ quên 95% Tiềm thức (bản dạng cốt lõi).
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.15em", color: "#E87A3E", textTransform: "uppercase" }}>
+              CƠ CHẾ GỐC RỄ (UMP)
+            </span>
+            <h2
+              style={{
+                fontFamily: "var(--font-serif), 'Lora', serif",
+                fontStyle: "italic",
+                fontWeight: 600,
+                fontSize: "clamp(26px, 3.8vw, 38px)",
+                color: "#1C1C1C",
+                margin: "10px 0 16px",
+              }}
+            >
+              Hiện Tượng Đoản Mạch Bức Tranh Tự Thân
+            </h2>
+            <p style={{ fontSize: "16px", color: "#666", maxWidth: "680px", margin: "0 auto" }}>
+              Các phương pháp ngoài kia thất bại vì chỉ cố sửa <strong>5% Ý thức</strong> (hành vi, kỹ năng), nhưng bỏ quên <strong>95% Tiềm thức</strong> (bản dạng cốt lõi).
             </p>
           </div>
 
-          <p style={{ fontSize: "17px", color: "#CBD5E1", lineHeight: 1.8, marginBottom: "28px" }}>
-            Theo khoa học thần kinh nhận thức, bên trong tiềm thức của bạn luôn lưu giữ một <strong style={{ color: "#FFFFFF" }}>Bức Tranh Tự Thân (Self-Image)</strong>. Bức tranh này được vẽ nên từ những tổn thương thời thơ ấu, định kiến gia đình và những lần vấp ngã trong quá khứ. Nó âm thầm định nghĩa: <span style={{ color: "#FFFFFF" }}>Bạn là ai, bạn xứng đáng với điều gì, và giới hạn an toàn của bạn ở đâu.</span>
-          </p>
-
-          <h3 style={{ fontSize: "18px", color: "#FFFFFF", fontWeight: 700, marginBottom: "16px" }}>
-            Và đây là cơ chế khiến bạn luôn thất bại:
-          </h3>
-
-          <div style={{ display: "grid", gap: "16px" }}>
-            
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "10px", padding: "22px 24px" }}>
-              <strong style={{ color: "#FFFFFF", fontSize: "16px", display: "block", marginBottom: "6px" }}>
+          <div style={{ display: "grid", gap: "18px" }}>
+            <div style={{ background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: "12px", padding: "24px" }}>
+              <strong style={{ fontSize: "16px", color: "#1C1C1C", display: "block", marginBottom: "6px" }}>
                 1. Não bộ luôn bắt hành động phải khớp với niềm tin bên trong:
               </strong>
-              <span style={{ color: "#94A3B8", fontSize: "15px" }}>
-                Bạn không bao giờ vượt qua được giới hạn mà tiềm thức tự gán cho mình.
-              </span>
+              <p style={{ margin: 0, fontSize: "15px", color: "#555" }}>
+                Bạn không bao giờ vượt qua được giới hạn mà tiềm thức tự gán cho chính mình.
+              </p>
             </div>
 
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "10px", padding: "22px 24px" }}>
-              <strong style={{ color: "#FFFFFF", fontSize: "16px", display: "block", marginBottom: "6px" }}>
+            <div style={{ background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: "12px", padding: "24px" }}>
+              <strong style={{ fontSize: "16px", color: "#1C1C1C", display: "block", marginBottom: "6px" }}>
                 2. Sự đoản mạch giữa hành động và niềm tin:
               </strong>
-              <span style={{ color: "#94A3B8", fontSize: "15px" }}>
-                Bạn muốn bứt phá ra ngoài đời thực. Nhưng tiềm thức của bạn lại chỉ tin vào những thất bại và sự tự ti trong quá khứ.
-              </span>
+              <p style={{ margin: 0, fontSize: "15px", color: "#555" }}>
+                Bạn muốn bứt phá ra ngoài đời thực. Nhưng tiềm thức của bạn lại chỉ lưu giữ những thất bại và sự tự ti trong quá khứ.
+              </p>
             </div>
 
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "10px", padding: "22px 24px" }}>
-              <strong style={{ color: "#FFFFFF", fontSize: "16px", display: "block", marginBottom: "6px" }}>
-                3. Hội chứng kẻ giả mạo & Tự hủy hoại:
+            <div style={{ background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: "12px", padding: "24px" }}>
+              <strong style={{ fontSize: "16px", color: "#1C1C1C", display: "block", marginBottom: "6px" }}>
+                3. Hội chứng kẻ giả mạo & Cơ chế tự hủy hoại:
               </strong>
-              <span style={{ color: "#94A3B8", fontSize: "15px" }}>
-                Hành vi bên ngoài lệch pha với con người bên trong sẽ khiến não bộ báo động đỏ. Kết quả là đầu óc bạn tự sinh ra nỗi sợ và sự trì hoãn. Bạn tự bỏ cuộc ngay trước vạch đích chỉ để cảm thấy an toàn như trước đây.
-              </span>
+              <p style={{ margin: 0, fontSize: "15px", color: "#555" }}>
+                Hành vi bên ngoài lệch pha với con người bên trong sẽ khiến não bộ báo động đỏ. Bạn tự sinh ra nỗi sợ và sự trì hoãn ngay trước vạch đích để kéo bạn về lại vùng an toàn.
+              </p>
             </div>
-
-          </div>
-
-          <div style={{ marginTop: "32px", borderLeft: "2px solid #E87A3E", paddingLeft: "18px" }}>
-            <p style={{ margin: 0, fontSize: "17px", color: "#FFFFFF", fontWeight: 700 }}>
-              Kết luận: Hành vi không thể bền nếu chưa thay đổi được con người bên trong. Mọi nỗ lực gồng ép chỉ khiến bạn thêm mệt mỏi và nhanh bỏ cuộc.
-            </p>
           </div>
 
         </div>
       </section>
 
-      {/* SECTION 4: UMS — QUY TRÌNH ĐỒNG BỘ HÓA BẢN DẠNG 3 CHIỀU (TIA) */}
-      <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
+      {/* SECTION 4: UMS — THE 3-STEP SOLUTION */}
+      <section style={{ padding: "80px 20px", background: "#FAF8FF", borderTop: "1px solid #EAEAEA", borderBottom: "1px solid #EAEAEA" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 04 · UNIQUE MECHANISM OF SOLUTION (UMS)
-          </span>
-          <h2 style={{ fontSize: "clamp(24px, 3.6vw, 38px)", color: "#FFFFFF", margin: "12px 0 20px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.02em" }}>
-            Quy trình đồng bộ hóa bản dạng 3 chiều (TIA™)
-          </h2>
-
-          <p style={{ fontSize: "17px", color: "#94A3B8", lineHeight: 1.8, marginBottom: "32px" }}>
-            Đừng cố ép bản thân thay đổi hành vi trong kiệt sức nữa. Giải pháp thực sự là Quy trình 3 bước giúp bạn cài đặt lại chính xác 3 điểm nghẽn bên trong tiềm thức:
-          </p>
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.15em", color: "#797F97", textTransform: "uppercase" }}>
+              GIẢI PHÁP ĐỘT PHÁ (UMS)
+            </span>
+            <h2
+              style={{
+                fontFamily: "var(--font-serif), 'Lora', serif",
+                fontStyle: "italic",
+                fontWeight: 600,
+                fontSize: "clamp(26px, 3.8vw, 38px)",
+                color: "#1C1C1C",
+                margin: "10px 0 16px",
+              }}
+            >
+              Quy Trình Đồng Bộ Hóa Bản Dạng 3 Chiều (TIA™)
+            </h2>
+            <p style={{ fontSize: "16px", color: "#666" }}>
+              3 bước chính xác giúp bạn cài đặt lại tiềm thức để hành động dứt khoát không ma sát:
+            </p>
+          </div>
 
           <div style={{ display: "grid", gap: "20px" }}>
-            
-            {/* STEP 1 */}
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px", display: "grid", gridTemplateColumns: "48px 1fr", gap: "20px", alignItems: "start" }}>
-              <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "rgba(255, 255, 255, 0.06)", border: "1px solid rgba(255, 255, 255, 0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#FFFFFF", fontSize: "18px" }}>
+            <div style={{ background: "#FFFFFF", border: "1px solid #E5E5E5", borderRadius: "12px", padding: "28px", display: "grid", gridTemplateColumns: "48px 1fr", gap: "20px", alignItems: "start" }}>
+              <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "#1C1C1C", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "18px" }}>
                 01
               </div>
               <div>
-                <h3 style={{ fontSize: "18px", color: "#FFFFFF", margin: "0 0 8px", fontWeight: 800 }}>
-                  Bước 1: Dọn sạch cảm xúc và nhổ bỏ niềm tin giới hạn.
+                <h3 style={{ fontSize: "18px", color: "#1C1C1C", margin: "0 0 6px", fontWeight: 700 }}>
+                  Bước 1: Dọn sạch cảm xúc và nhổ bỏ niềm tin giới hạn
                 </h3>
-                <p style={{ margin: 0, color: "#94A3B8", fontSize: "15px", lineHeight: 1.65 }}>
+                <p style={{ margin: 0, color: "#666", fontSize: "15px", lineHeight: 1.6 }}>
                   Gỡ bỏ những nỗi sợ, sự tự ti và ký ức thất bại trong quá khứ mà không cần phải nhắc lại nỗi đau hay trị liệu phức tạp.
                 </p>
               </div>
             </div>
 
-            {/* STEP 2 */}
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px", display: "grid", gridTemplateColumns: "48px 1fr", gap: "20px", alignItems: "start" }}>
-              <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "rgba(255, 255, 255, 0.06)", border: "1px solid rgba(255, 255, 255, 0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#FFFFFF", fontSize: "18px" }}>
+            <div style={{ background: "#FFFFFF", border: "1px solid #E5E5E5", borderRadius: "12px", padding: "28px", display: "grid", gridTemplateColumns: "48px 1fr", gap: "20px", alignItems: "start" }}>
+              <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "#1C1C1C", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "18px" }}>
                 02
               </div>
               <div>
-                <h3 style={{ fontSize: "18px", color: "#FFFFFF", margin: "0 0 8px", fontWeight: 800 }}>
-                  Bước 2: Cài lại tiếng nói trong đầu và đổi danh xưng con người mới.
+                <h3 style={{ fontSize: "18px", color: "#1C1C1C", margin: "0 0 6px", fontWeight: 700 }}>
+                  Bước 2: Cài lại tiếng nói trong đầu & Đổi danh xưng con người mới
                 </h3>
-                <p style={{ margin: 0, color: "#94A3B8", fontSize: "15px", lineHeight: 1.65 }}>
+                <p style={{ margin: 0, color: "#666", fontSize: "15px", lineHeight: 1.6 }}>
                   Tự định vị mình là người tự tin, kỷ luật và bản lĩnh — dạy cho tiềm thức tin rằng việc bứt phá là điều hoàn toàn hiển nhiên.
                 </p>
               </div>
             </div>
 
-            {/* STEP 3 */}
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px", display: "grid", gridTemplateColumns: "48px 1fr", gap: "20px", alignItems: "start" }}>
-              <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "rgba(255, 255, 255, 0.06)", border: "1px solid rgba(255, 255, 255, 0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#FFFFFF", fontSize: "18px" }}>
+            <div style={{ background: "#FFFFFF", border: "1px solid #E5E5E5", borderRadius: "12px", padding: "28px", display: "grid", gridTemplateColumns: "48px 1fr", gap: "20px", alignItems: "start" }}>
+              <div style={{ width: "48px", height: "48px", borderRadius: "8px", background: "#1C1C1C", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "18px" }}>
                 03
               </div>
               <div>
-                <h3 style={{ fontSize: "18px", color: "#FFFFFF", margin: "0 0 8px", fontWeight: 800 }}>
-                  Bước 3: Nạp đầy pin và thiết lập nhịp sinh học tràn trề năng lượng.
+                <h3 style={{ fontSize: "18px", color: "#1C1C1C", margin: "0 0 6px", fontWeight: 700 }}>
+                  Bước 3: Nạp đầy pin & Thiết lập nhịp sinh học tràn trề năng lượng
                 </h3>
-                <p style={{ margin: 0, color: "#94A3B8", fontSize: "15px", lineHeight: 1.65 }}>
-                  Cân bằng lại nhịp sinh học tự nhiên: Sáng dậy tỉnh táo, làm việc tập trung sâu mà không còn bị kiệt sức.
+                <p style={{ margin: 0, color: "#666", fontSize: "15px", lineHeight: 1.6 }}>
+                  Cân bằng lại nhịp sinh học tự nhiên: Sáng dậy tỉnh táo, làm việc tập trung sâu suốt ngày dài mà không còn bị kiệt sức.
                 </p>
               </div>
             </div>
-
           </div>
 
-          <div style={{ background: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "24px 28px", marginTop: "32px" }}>
-            <p style={{ margin: 0, color: "#E2E8F0", fontSize: "16px", lineHeight: 1.75 }}>
-              ✨ <strong style={{ color: "#FFFFFF" }}>Khi 3 trục này được đồng bộ, Bản Dạng Mới sẽ trở thành Cài Đặt Mặc Định.</strong> Bạn hành động dứt khoát, tự tin xuất hiện và đạt kết quả mà không cần tốn một giọt năng lượng nào để đấu tranh nội tâm.
+        </div>
+      </section>
+
+      {/* SECTION 6 & 7: 4 MODULES ARCHITECTURE */}
+      <section style={{ padding: "80px 20px" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+          
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.15em", color: "#797F97", textTransform: "uppercase" }}>
+              CURRICULUM ARCHITECTURE
+            </span>
+            <h2
+              style={{
+                fontFamily: "var(--font-serif), 'Lora', serif",
+                fontStyle: "italic",
+                fontWeight: 600,
+                fontSize: "clamp(26px, 3.8vw, 38px)",
+                color: "#1C1C1C",
+                margin: "10px 0 16px",
+              }}
+            >
+              Cấu Trúc Chi Tiết 4 Học Phần
+            </h2>
+            <p style={{ fontSize: "15px", color: "#666" }}>
+              Thiết kế tinh gọn trong 21 ngày · Video 10–15 phút/bài · Action-Sheet thực hành 10 phút/ngày
             </p>
           </div>
 
-        </div>
-      </section>
-
-      {/* SECTION 5: KHÓA HỌC DÀNH CHO AI & KHÔNG DÀNH CHO AI? */}
-      <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 05 · FIT CRITERIA
-          </span>
-          <h2 style={{ fontSize: "clamp(24px, 3.6vw, 38px)", color: "#FFFFFF", margin: "12px 0 32px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.02em" }}>
-            Khóa học dành cho ai & Không dành cho ai?
-          </h2>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
-            
-            {/* DÀNH CHO BẠN */}
-            <div style={{ background: "#111317", border: "1px solid rgba(16, 185, 129, 0.3)", borderRadius: "12px", padding: "28px" }}>
-              <div style={{ color: "#10B981", fontSize: "13px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "14px" }}>
-                ✓ DÀNH RIÊNG CHO BẠN NẾU:
-              </div>
-              <ul style={{ paddingLeft: "18px", margin: 0, display: "grid", gap: "12px", fontSize: "15px", color: "#CBD5E1", lineHeight: 1.6 }}>
-                <li>Bạn đang ở độ tuổi <strong>23–35</strong>, cảm thấy bị kẹt trong vùng an toàn, bất an vô định hoặc đang trải qua khủng hoảng 1/4 cuộc đời.</li>
-                <li>Bạn từng thử dậy sớm, lập kế hoạch, mua nhiều khóa học kỹ năng nhưng chỉ duy trì được vài ngày rồi bỏ cuộc do <strong>cạn pin ý chí</strong>.</li>
-                <li>Bạn cần một phương pháp chuyển hóa <strong>chuẩn khoa học và thực chiến</strong> — không lý thuyết suông, không thần thánh hóa tâm linh.</li>
-              </ul>
-            </div>
-
-            {/* KHÔNG DÀNH CHO BẠN */}
-            <div style={{ background: "#111317", border: "1px solid rgba(239, 68, 68, 0.3)", borderRadius: "12px", padding: "28px" }}>
-              <div style={{ color: "#EF4444", fontSize: "13px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "14px" }}>
-                ✕ KHÔNG DÀNH CHO BẠN NẾU:
-              </div>
-              <ul style={{ paddingLeft: "18px", margin: 0, display: "grid", gap: "12px", fontSize: "15px", color: "#CBD5E1", lineHeight: 1.6 }}>
-                <li>Bạn đang tìm một <strong>&ldquo;viên thuốc thần&rdquo;</strong> để đổi đời sau một đêm, mà không chịu dành thời gian rèn luyện và sửa đổi lối sống.</li>
-                <li>Bạn chỉ muốn tích lũy thêm lý thuyết để phán xét người khác mà không muốn trung thực đối diện với các thói quen cũ của chính mình.</li>
-              </ul>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* SECTION 6: GIỚI THIỆU SẢN PHẨM & CÁC OUTCOME CHUYỂN HÓA ĐỘT PHÁ */}
-      <section id="outcomes" style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 06 · SYSTEM OUTCOMES
-          </span>
-          <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", color: "#FFFFFF", margin: "12px 0 10px", fontWeight: 800, letterSpacing: "-0.02em" }}>
-            IDENTITY DESIGN™
-          </h2>
-          <h3 style={{ fontSize: "clamp(17px, 2.5vw, 22px)", color: "#94A3B8", margin: "0 0 16px", fontWeight: 400 }}>
-            Tái Lập Bản Thân, Reset Hệ Điều Hành
-          </h3>
-          <p style={{ color: "#64748B", fontSize: "16px", margin: "0 0 36px" }}>
-            Hệ thống chuyển giao toàn diện giúp bạn bẻ gãy bản dạng kẹp giữ cũ và thiết lập phiên bản hiệu suất cao.
-          </p>
-
-          <div style={{ fontSize: "14px", color: "#FFFFFF", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "20px" }}>
-            ĐÂY LÀ NHỮNG OUTCOME CỤ THỂ BẠN SẼ NHẬN ĐƯỢC:
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: "20px" }}>
-            
-            {/* Outcome 1 */}
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px" }}>
-              <h4 style={{ fontSize: "17px", color: "#FFFFFF", margin: "0 0 14px", fontWeight: 700 }}>
-                1. Về Năng Lượng & Thể Chất<br />
-                <span style={{ fontSize: "12px", color: "#E87A3E", fontWeight: 600 }}>(Health & Biology Reset)</span>
-              </h4>
-              <ul style={{ paddingLeft: "18px", margin: 0, display: "grid", gap: "10px", fontSize: "14px", color: "#94A3B8", lineHeight: 1.6 }}>
-                <li>Tự động thức dậy trước 7h sáng với đầu óc tỉnh táo, sảng khoái — không cần chuông báo thức hay cảm giác uể oải.</li>
-                <li>Chấm dứt hoàn toàn tình trạng kiệt sức mãn tính (burnout) và lờ đờ buổi chiều; năng lượng duy trì ổn định suốt 14 tiếng mỗi ngày.</li>
-                <li>Chấm dứt cảnh thức khuya lướt điện thoại, ăn uống thất thường hay lạm dụng chất kích thích — nhờ cài đặt lại con người bên trong.</li>
-              </ul>
-            </div>
-
-            {/* Outcome 2 */}
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px" }}>
-              <h4 style={{ fontSize: "17px", color: "#FFFFFF", margin: "0 0 14px", fontWeight: 700 }}>
-                2. Về Hiệu Suất & Công Việc<br />
-                <span style={{ fontSize: "12px", color: "#E87A3E", fontWeight: 600 }}>(Wealth & Peak Performance)</span>
-              </h4>
-              <ul style={{ paddingLeft: "18px", margin: 0, display: "grid", gap: "10px", fontSize: "14px", color: "#94A3B8", lineHeight: 1.6 }}>
-                <li>X3 hiệu suất: Chỉ 2–3 tiếng tập trung sâu mỗi ngày để giải quyết lượng việc cả tuần, trả lại bạn thời gian thảnh thơi.</li>
-                <li>Xóa bỏ thói quen trì hoãn: Thấy việc là làm ngay — không do dự, không ngại ngùng, không nghĩ ngợi lung tung.</li>
-                <li>Tự tin xuất hiện, xây thương hiệu cá nhân và triển khai dự án ấp ủ bấy lâu — không còn sợ hãi ánh nhìn hay phán xét của người khác.</li>
-              </ul>
-            </div>
-
-            {/* Outcome 3 */}
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px" }}>
-              <h4 style={{ fontSize: "17px", color: "#FFFFFF", margin: "0 0 14px", fontWeight: 700 }}>
-                3. Về Tâm Trí & Nội Tâm<br />
-                <span style={{ fontSize: "12px", color: "#E87A3E", fontWeight: 600 }}>(Self & Mindset Mastery)</span>
-              </h4>
-              <ul style={{ paddingLeft: "18px", margin: 0, display: "grid", gap: "10px", fontSize: "14px", color: "#94A3B8", lineHeight: 1.6 }}>
-                <li>Tắt hẳn tiếng nói tự chỉ trích và hội chứng kẻ giả mạo; xác lập niềm tin vững chắc vào năng lực chính mình.</li>
-                <li>Vững vàng, điềm đạm trước mọi biến cố công việc hay áp lực tài chính — không còn bị cảm xúc chi phối hay hoảng loạn vô cớ.</li>
-                <li>Sở hữu lộ trình cuộc sống sáng rõ: biết mình là ai, muốn gì và từng bước tiến tới mục tiêu trong sự thong dong, bình an.</li>
-              </ul>
-            </div>
-
-            {/* Outcome 4 */}
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "12px", padding: "26px" }}>
-              <h4 style={{ fontSize: "17px", color: "#FFFFFF", margin: "0 0 14px", fontWeight: 700 }}>
-                4. Về Mối Quan Hệ & Lối Sống<br />
-                <span style={{ fontSize: "12px", color: "#E87A3E", fontWeight: 600 }}>(Love & Lifestyle Design)</span>
-              </h4>
-              <ul style={{ paddingLeft: "18px", margin: 0, display: "grid", gap: "10px", fontSize: "14px", color: "#94A3B8", lineHeight: 1.6 }}>
-                <li>Tự tin thiết lập ranh giới lành mạnh, dứt bỏ cảm giác cả nể và không còn bị chi phối bởi kỳ vọng của người khác.</li>
-                <li>Nâng cao vị thế cá nhân trong mắt gia đình, bạn bè và đối tác; trở thành chỗ dựa vững chãi, đáng tin cậy.</li>
-                <li>Làm chủ thời gian biểu: Vừa bứt phá thu nhập, vừa thảnh thơi chăm sóc bản thân, gia đình và tận hưởng cuộc sống.</li>
-              </ul>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* SECTION 7: CẤU TRÚC CHI TIẾT CÁC HỌC PHẦN & HÌNH THỨC HỌC */}
-      <section id="curriculum" style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 07 · CURRICULUM ARCHITECTURE
-          </span>
-          <h2 style={{ fontSize: "clamp(24px, 3.6vw, 38px)", color: "#FFFFFF", margin: "12px 0 32px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.02em" }}>
-            Cấu trúc chi tiết các học phần & Hình thức học
-          </h2>
-
-          {/* Formats Overview Grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px", marginBottom: "36px" }}>
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", padding: "20px", borderRadius: "10px" }}>
-              <div style={{ color: "#E87A3E", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", marginBottom: "6px" }}>HÌNH THỨC HỌC</div>
-              <div style={{ color: "#FFFFFF", fontSize: "15px", fontWeight: 600, marginBottom: "4px" }}>Video bài giảng ngắn gọn</div>
-              <span style={{ color: "#94A3B8", fontSize: "13px" }}>10–15 phút/video, đi thẳng vào bản chất, không lan man lý thuyết.</span>
-            </div>
-
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", padding: "20px", borderRadius: "10px" }}>
-              <div style={{ color: "#E87A3E", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", marginBottom: "6px" }}>CÔNG CỤ ĐI KÈM</div>
-              <div style={{ color: "#FFFFFF", fontSize: "15px", fontWeight: 600, marginBottom: "4px" }}>Hệ thống Action-Sheet</div>
-              <span style={{ color: "#94A3B8", fontSize: "13px" }}>Nhật ký tự điền mỗi ngày (chỉ mất 10 phút sáng/tối).</span>
-            </div>
-
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.08)", padding: "20px", borderRadius: "10px" }}>
-              <div style={{ color: "#E87A3E", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", marginBottom: "6px" }}>THỜI GIAN HOÀN THÀNH</div>
-              <div style={{ color: "#FFFFFF", fontSize: "15px", fontWeight: 600, marginBottom: "4px" }}>Lộ trình 21 ngày</div>
-              <span style={{ color: "#94A3B8", fontSize: "13px" }}>Thiết kế tinh gọn, tích hợp mượt mà cho người bận rộn nhất.</span>
-            </div>
-          </div>
-
-          {/* 4 MODULES CARDS */}
           <div style={{ display: "grid", gap: "18px" }}>
             {fourModules.map((m, idx) => (
               <div
                 key={idx}
                 style={{
-                  background: "#111317",
-                  border: "1px solid rgba(255, 255, 255, 0.08)",
-                  borderRadius: "12px",
-                  padding: "26px",
+                  background: "#FFFFFF",
+                  border: "1px solid #E5E5E5",
+                  borderRadius: "14px",
+                  padding: "26px 28px",
+                  boxShadow: "0 4px 15px rgba(0,0,0,0.02)",
                 }}
               >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
                   <span style={{ color: "#E87A3E", fontSize: "12px", fontWeight: 800, letterSpacing: "0.1em" }}>
                     {m.label}
                   </span>
-                  <span style={{ color: "#64748B", fontSize: "12px", fontFamily: "monospace" }}>MODULE {m.num}</span>
+                  <span style={{ color: "#888888", fontSize: "12px", fontFamily: "monospace" }}>MODULE {m.num}</span>
                 </div>
-                <h3 style={{ fontSize: "18px", color: "#FFFFFF", margin: "0 0 10px", fontWeight: 700 }}>
+                <h3 style={{ fontSize: "18px", color: "#1C1C1C", margin: "0 0 8px", fontWeight: 700 }}>
                   {m.title}
                 </h3>
-                <p style={{ color: "#94A3B8", fontSize: "14px", margin: "0 0 16px", lineHeight: 1.65 }}>
+                <p style={{ color: "#666666", fontSize: "14px", margin: "0 0 14px", lineHeight: 1.6 }}>
                   {m.desc}
                 </p>
-                <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.06)", paddingTop: "12px" }}>
-                  <ul style={{ paddingLeft: "16px", margin: 0, display: "grid", gap: "6px", fontSize: "13px", color: "#CBD5E1" }}>
-                    {m.outcomes.map((item, oIdx) => (
-                      <li key={oIdx}>{item}</li>
+                <div style={{ borderTop: "1px solid #F0F0F0", paddingTop: "12px" }}>
+                  <ul style={{ paddingLeft: "16px", margin: 0, display: "grid", gap: "6px", fontSize: "13px", color: "#444444" }}>
+                    {m.bullets.map((b, bIdx) => (
+                      <li key={bIdx}>{b}</li>
                     ))}
                   </ul>
                 </div>
@@ -765,55 +661,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 8: BẰNG CHỨNG XÃ HỘI TỪ HỌC VIÊN THỰC TẾ */}
-      <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
+      {/* SECTION 8: SOCIAL PROOF & CLIENT REVIEWS */}
+      <section style={{ padding: "80px 20px", background: "#FAF8FF", borderTop: "1px solid #EAEAEA", borderBottom: "1px solid #EAEAEA" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 08 · SOCIAL PROOF & FEEDBACK
-          </span>
-          <h2 style={{ fontSize: "clamp(24px, 3.6vw, 38px)", color: "#FFFFFF", margin: "12px 0 16px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.02em" }}>
-            Bằng chứng xã hội từ học viên thực tế
-          </h2>
-          <p style={{ color: "#94A3B8", fontSize: "16px", margin: "0 0 36px" }}>
-            Những người từng loay hoay, tự ti và hoang mang nhất đã chuyển hóa như thế nào sau khi làm việc cùng Đạt và áp dụng hệ thống này:
-          </p>
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.15em", color: "#797F97", textTransform: "uppercase" }}>
+              PAST STUDENTS & CLIENTS
+            </span>
+            <h2
+              style={{
+                fontFamily: "var(--font-serif), 'Lora', serif",
+                fontStyle: "italic",
+                fontWeight: 600,
+                fontSize: "clamp(26px, 3.8vw, 38px)",
+                color: "#1C1C1C",
+                margin: "10px 0 16px",
+              }}
+            >
+              Bằng Chứng Xã Hội Từ Học Viên Thực Tế
+            </h2>
+          </div>
 
-          <div style={{ display: "grid", gap: "18px" }}>
+          <div style={{ display: "grid", gap: "16px" }}>
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
                 style={{
-                  background: "#111317",
-                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  background: "#FFFFFF",
+                  border: "1px solid #E5E5E5",
                   borderRadius: "12px",
                   padding: "24px 28px",
                 }}
               >
-                <p style={{ color: "#E2E8F0", fontSize: "15px", fontStyle: "italic", margin: "0 0 16px", lineHeight: 1.75 }}>
+                <p style={{ color: "#333333", fontSize: "15px", fontStyle: "italic", margin: "0 0 14px", lineHeight: 1.7 }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <div
                     style={{
-                      width: "36px",
-                      height: "36px",
+                      width: "32px",
+                      height: "32px",
                       borderRadius: "50%",
-                      background: "rgba(255, 255, 255, 0.08)",
-                      border: "1px solid rgba(255, 255, 255, 0.15)",
+                      background: "#1C1C1C",
+                      color: "#FFFFFF",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      fontWeight: 800,
-                      color: "#FFFFFF",
-                      fontSize: "14px",
+                      fontWeight: 700,
+                      fontSize: "13px",
                     }}
                   >
                     {t.name[0]}
                   </div>
                   <div>
-                    <strong style={{ color: "#FFFFFF", fontSize: "14px", display: "block" }}>{t.name}</strong>
-                    <span style={{ color: "#64748B", fontSize: "12px" }}>{t.role}</span>
+                    <strong style={{ color: "#1C1C1C", fontSize: "14px", display: "block" }}>{t.name}</strong>
+                    <span style={{ color: "#797F97", fontSize: "12px" }}>{t.role}</span>
                   </div>
                 </div>
               </div>
@@ -823,259 +726,165 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 9: ĐẦU TƯ, BẢO HÀNH & ƯU ĐÃI KHAN HIẾM */}
-      <section id="offer" style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
+      {/* SECTION 9: INVESTMENT & GUARANTEE */}
+      <section id="offer" style={{ padding: "80px 20px" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 09 · INVESTMENT & BONUSES
-          </span>
-          <h2 style={{ fontSize: "clamp(26px, 4vw, 42px)", color: "#FFFFFF", margin: "12px 0 16px", fontWeight: 800, letterSpacing: "-0.02em" }}>
-            Đầu tư, Bảo hành & Ưu đãi khan hiếm
-          </h2>
-          <p style={{ color: "#94A3B8", fontSize: "16px", margin: "0 0 36px", lineHeight: 1.7 }}>
-            Để tự mình tìm ra và đóng gói hệ thống này, tôi đã phải trả giá bằng 10 năm va vấp, những lần trắng tay, vỡ nợ và kiệt quệ sức khỏe. Bạn không cần phải mất 10 năm chịu đựng những nỗi đau đó.
-          </p>
-
-          {/* MAIN PRICE BOX */}
           <div
             style={{
-              background: "#111317",
-              border: "1px solid rgba(255, 255, 255, 0.15)",
+              background: "#FFFFFF",
+              border: "2px solid #1C1C1C",
               borderRadius: "16px",
-              padding: "36px 30px",
-              boxShadow: "0 30px 80px rgba(0, 0, 0, 0.6)",
-              marginBottom: "36px",
+              padding: "40px 32px",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.06)",
+              textAlign: "center",
             }}
           >
-            <div style={{ textAlign: "center", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", paddingBottom: "24px", marginBottom: "28px" }}>
-              <span style={{ color: "#64748B", fontSize: "14px" }}>Giá trị thực tế của toàn bộ chương trình: </span>
-              <span style={{ textDecoration: "line-through", color: "#64748B", fontSize: "16px" }}>4.500.000đ</span>
-              
-              <div style={{ margin: "12px 0 6px" }}>
-                <span style={{ fontSize: "12px", color: "#E87A3E", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: "4px" }}>
-                  ƯU ĐÃI ÁP DỤNG HÔM NAY:
-                </span>
-                <div style={{ fontSize: "clamp(44px, 6vw, 64px)", color: "#FFFFFF", fontWeight: 900, lineHeight: 1, letterSpacing: "-0.03em" }}>
-                  1.499.000đ
-                </div>
-              </div>
-
-              <div style={{ color: "#94A3B8", fontSize: "13px", marginTop: "8px" }}>
-                ⚠️ Chỉ dành cho 100 suất đầu tiên, sau đó tăng về giá gốc 3.000.000đ
-              </div>
+            <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+              ƯU ĐÃI KHAN HIẾM HÔM NAY
+            </span>
+            <h2
+              style={{
+                fontFamily: "var(--font-serif), 'Lora', serif",
+                fontStyle: "italic",
+                fontWeight: 600,
+                fontSize: "clamp(30px, 4.5vw, 44px)",
+                color: "#1C1C1C",
+                margin: "12px 0 8px",
+              }}
+            >
+              IDENTITY DESIGN™
+            </h2>
+            <div style={{ fontSize: "15px", color: "#797F97", marginBottom: "20px" }}>
+              Tái Lập Bản Thân · Reset Hệ Điều Hành · Lộ Trình 21 Ngày
             </div>
 
-            {/* BONUSES */}
-            <div style={{ marginBottom: "28px" }}>
-              <div style={{ color: "#FFFFFF", fontSize: "14px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "14px" }}>
-                QUÀ TẶNG KÈM THEO KHI ĐĂNG KÝ HÔM NAY:
-              </div>
-
-              <div style={{ display: "grid", gap: "10px", fontSize: "14px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", color: "#CBD5E1", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", paddingBottom: "8px" }}>
-                  <span>• <strong>Bonus 1:</strong> Template Nhật Ký Cài Đặt Bản Dạng 21 Ngày trên Notion/PDF</span>
-                  <span style={{ color: "#94A3B8", whiteSpace: "nowrap", marginLeft: "8px" }}>Trị giá 500k</span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between", color: "#CBD5E1", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", paddingBottom: "8px" }}>
-                  <span>• <strong>Bonus 2:</strong> Audio Dẫn Thiền Xóa Bỏ Neo Cảm Xúc Tiêu Cực Trước Khi Ngủ</span>
-                  <span style={{ color: "#94A3B8", whiteSpace: "nowrap", marginLeft: "8px" }}>Trị giá 700k</span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between", color: "#CBD5E1", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", paddingBottom: "8px" }}>
-                  <span>• <strong>Bonus 3:</strong> Cẩm Nang Điều Chỉnh 4 Hormone Sinh Học Tự Nhiên</span>
-                  <span style={{ color: "#94A3B8", whiteSpace: "nowrap", marginLeft: "8px" }}>Trị giá 400k</span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between", color: "#FFFFFF", paddingTop: "4px" }}>
-                  <span>• <strong>Fast-Action Bonus:</strong> 1 Buổi Group Q&A trực tiếp giải đáp điểm nghẽn cùng Đạt (50 người đầu)</span>
-                  <span style={{ color: "#10B981", fontWeight: 700, whiteSpace: "nowrap", marginLeft: "8px" }}>VÔ GIÁ</span>
-                </div>
-              </div>
+            <div style={{ margin: "20px 0" }}>
+              <span style={{ textDecoration: "line-through", color: "#888888", fontSize: "18px", marginRight: "10px" }}>
+                3.000.000đ
+              </span>
+              <span style={{ fontSize: "clamp(42px, 6vw, 56px)", fontWeight: 900, color: "#1C1C1C", letterSpacing: "-1px" }}>
+                1.499.000đ
+              </span>
             </div>
 
-            {/* 14-DAY GUARANTEE */}
-            <div style={{ background: "rgba(255, 255, 255, 0.02)", border: "1px solid rgba(255, 255, 255, 0.08)", borderRadius: "10px", padding: "20px", marginBottom: "24px" }}>
-              <strong style={{ color: "#FFFFFF", fontSize: "15px", display: "block", marginBottom: "4px" }}>
-                🛡️ CAM KẾT HOÀN TIỀN 100% TRONG 14 NGÀY:
+            <div style={{ background: "#FAF8FF", border: "1px solid #EAEAEA", borderRadius: "10px", padding: "20px", margin: "28px 0", textAlign: "left" }}>
+              <strong style={{ color: "#1C1C1C", fontSize: "15px", display: "block", marginBottom: "6px" }}>
+                🛡️ Cam Kết Hoàn Tiền 100% Trong 14 Ngày:
               </strong>
-              <p style={{ margin: 0, color: "#94A3B8", fontSize: "14px", lineHeight: 1.6 }}>
+              <p style={{ margin: 0, color: "#555", fontSize: "14px", lineHeight: 1.6 }}>
                 Nếu sau khi học và làm theo bài tập, bạn thấy tư duy và năng lượng của mình không có gì thay đổi: Chỉ cần nhắn một tin, tôi sẽ hoàn lại 100% học phí cho bạn ngay lập tức. Không hỏi khó, không lý do.
               </p>
             </div>
 
-            {/* CLEAN WHITE CTA BUTTON */}
             <a
               href="/checkout"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsModalOpen(true);
-              }}
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "#FFFFFF",
-                color: "#08090A",
-                fontWeight: 800,
+                display: "inline-block",
+                width: "100%",
+                maxWidth: "460px",
+                background: "#1C1C1C",
+                color: "#FFFFFF",
+                fontWeight: 700,
                 padding: "20px 32px",
-                borderRadius: "4px",
+                borderRadius: "6px",
                 fontSize: "16px",
                 textDecoration: "none",
-                boxShadow: "0 10px 30px rgba(255, 255, 255, 0.15)",
-                width: "100%",
-                boxSizing: "border-box",
-                textAlign: "center",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+                letterSpacing: "-0.01em",
               }}
             >
-              TÔI MUỐN TÁI THIẾT KẾ BẢN DẠNG & RESET HỆ ĐIỀU HÀNH NGAY →
+              TÔI MUỐN TÁI THIẾT KẾ BẢN DẠNG NGAY →
             </a>
-
           </div>
 
         </div>
       </section>
 
-      {/* SECTION 10: NGÃ RẼ CUỘC ĐỜI (FORK IN THE ROAD) & P.S. */}
-      <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
+      {/* SECTION: FREQUENTLY ASKED QUESTIONS (ACCORDION STYLE) */}
+      <section style={{ padding: "70px 20px", background: "#FAF8FF", borderTop: "1px solid #EAEAEA" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           
-          <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            SECTION 10 · FORK IN THE ROAD
-          </span>
-          <h2 style={{ fontSize: "clamp(24px, 3.6vw, 38px)", color: "#FFFFFF", margin: "12px 0 24px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.02em" }}>
-            Ngã rẽ cuộc đời (Fork in the road)
-          </h2>
-
-          <p style={{ fontSize: "18px", color: "#E2E8F0", margin: "0 0 24px" }}>
-            Bạn luôn có 2 sự lựa chọn:
-          </p>
-
-          <div style={{ display: "grid", gap: "16px", marginBottom: "36px" }}>
-            
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.06)", padding: "20px 24px", borderRadius: "10px" }}>
-              <strong style={{ color: "#64748B", fontSize: "14px", display: "block", textTransform: "uppercase", marginBottom: "4px" }}>
-                ✕ LỰA CHỌN 1:
-              </strong>
-              <p style={{ margin: 0, color: "#94A3B8", fontSize: "15px" }}>
-                Đóng trang này lại, tiếp tục dùng 5% ý chí để đánh vật với 95% tiềm thức cũ. Chấp nhận vòng lặp kiệt sức, trì hoãn và nhìn thêm vài năm tuổi trẻ trôi qua trong vô định.
-              </p>
-            </div>
-
-            <div style={{ background: "#111317", border: "1px solid rgba(255, 255, 255, 0.15)", padding: "20px 24px", borderRadius: "10px" }}>
-              <strong style={{ color: "#E87A3E", fontSize: "14px", display: "block", textTransform: "uppercase", marginBottom: "4px" }}>
-                ✓ LỰA CHỌN 2:
-              </strong>
-              <p style={{ margin: 0, color: "#FFFFFF", fontSize: "15px", fontWeight: 600 }}>
-                Bấm vào nút đăng ký, đầu tư 1.499k để nhận ngay quy trình cài lại con người mới, xóa sạch mông lung và bắt đầu một cuộc sống tự tin, thảnh thơi từ hôm nay.
-              </p>
-            </div>
-
-          </div>
-
-          <div style={{ textAlign: "center", marginBottom: "40px" }}>
-            <a
-              href="/checkout"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsModalOpen(true);
-              }}
+          <div style={{ textAlign: "center", marginBottom: "36px" }}>
+            <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.15em", color: "#797F97", textTransform: "uppercase" }}>
+              FREQUENTLY ASKED QUESTIONS
+            </span>
+            <h2
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "#FFFFFF",
-                color: "#08090A",
-                fontWeight: 800,
-                padding: "18px 36px",
-                borderRadius: "4px",
-                fontSize: "15px",
-                textDecoration: "none",
-                boxShadow: "0 10px 30px rgba(255, 255, 255, 0.15)",
+                fontFamily: "var(--font-serif), 'Lora', serif",
+                fontStyle: "italic",
+                fontWeight: 600,
+                fontSize: "clamp(24px, 3.5vw, 36px)",
+                color: "#1C1C1C",
+                margin: "8px 0 0",
               }}
             >
-              TÔI MUỐN TÁI THIẾT KẾ BẢN DẠNG & RESET HỆ ĐIỀU HÀNH NGAY BÂY GIỜ →
-            </a>
+              Câu Hỏi Thường Gặp
+            </h2>
           </div>
 
-          {/* P.S. BOX */}
-          <div style={{ background: "rgba(255, 255, 255, 0.02)", border: "1px solid rgba(255, 255, 255, 0.08)", padding: "24px 28px", borderRadius: "12px", fontSize: "15px", lineHeight: 1.75 }}>
-            <strong style={{ color: "#FFFFFF", display: "block", marginBottom: "6px" }}>
-              P.S.: Nếu bạn lướt thẳng xuống đây:
-            </strong>
-            <p style={{ margin: "0 0 12px", color: "#94A3B8" }}>
-              Bạn không cần mất 10 năm trả giá bằng kiệt sức, trầm cảm hay nợ nần như tôi. Chỉ với <strong style={{ color: "#FFFFFF" }}>1.499k</strong>, bạn có ngay quy trình từng bước để đổi mới con người bên trong, lấy lại năng lượng và làm việc tập trung mỗi ngày. Khóa học có bảo hành hoàn tiền 100% trong 14 ngày nếu không mang lại hiệu quả, nên bạn hoàn toàn không có rủi ro nào cả.
-            </p>
-            <a
-              href="/checkout"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsModalOpen(true);
-              }}
-              style={{ color: "#E87A3E", fontWeight: 700, textDecoration: "underline", fontSize: "14px" }}
-            >
-              [Bấm vào đây để nhận tài khoản học ngay lập tức →]
-            </a>
+          <div style={{ display: "grid", gap: "10px" }}>
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  style={{
+                    background: "#FFFFFF",
+                    border: "1px solid #E5E5E5",
+                    borderRadius: "8px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    style={{
+                      width: "100%",
+                      padding: "18px 20px",
+                      background: "none",
+                      border: "none",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      cursor: "pointer",
+                      textAlign: "left",
+                      fontFamily: "inherit",
+                      fontSize: "15px",
+                      fontWeight: 600,
+                      color: "#1C1C1C",
+                    }}
+                  >
+                    <span>{faq.q}</span>
+                    <span style={{ fontSize: "18px", color: "#797F97", marginLeft: "12px" }}>
+                      {isOpen ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div style={{ padding: "0 20px 18px", fontSize: "14px", color: "#555", lineHeight: 1.65, borderTop: "1px solid #F0F0F0" }}>
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
         </div>
       </section>
 
-      {/* MULTI-COLUMN EDITORIAL FOOTER (MATCHING REFERENCE UI) */}
-      <footer style={{ background: "#060708", color: "#64748B", padding: "80px 20px 40px", fontSize: "13px" }}>
-        <div style={{ maxWidth: "1040px", margin: "0 auto" }}>
-          
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "36px", marginBottom: "60px" }}>
-            <div>
-              <span style={{ display: "block", color: "#94A3B8", fontWeight: 700, fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>
-                SYSTEM
-              </span>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Interactive Protocol</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Identity Shifting</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Energy Calibration</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Deep Work Routine</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <span style={{ display: "block", color: "#94A3B8", fontWeight: 700, fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>
-                CURRICULUM
-              </span>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Học phần 1: Bức tranh tự thân</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Học phần 2: Reset sinh học</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Học phần 3: Identity Shift</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Học phần 4: Flow State</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <span style={{ display: "block", color: "#94A3B8", fontWeight: 700, fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>
-                HELP CENTER
-              </span>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
-                <li><a href="https://zalo.me" target="_blank" rel="noopener noreferrer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Zalo Support 24/7</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Chính sách hoàn tiền 14 ngày</a></li>
-                <li><a href="#offer" style={{ color: "#CBD5E1", textDecoration: "none" }}>Hướng dẫn thanh toán SePAY OCB</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <span style={{ display: "block", color: "#94A3B8", fontWeight: 700, fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>
-                GET STARTED TODAY
-              </span>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
-                <li><a href="/checkout" style={{ color: "#CBD5E1", textDecoration: "none" }}>Đăng ký gói 1.499.000đ</a></li>
-                <li><a href="/checkout" style={{ color: "#CBD5E1", textDecoration: "none" }}>Tải Action-Sheet 21 Ngày</a></li>
-                <li><a href="/checkout" style={{ color: "#CBD5E1", textDecoration: "none" }}>Nhận 4 Quà Tặng Độc Quyền</a></li>
-              </ul>
-            </div>
+      {/* FOOTER */}
+      <footer style={{ background: "#1C1C1C", color: "#94A3B8", padding: "60px 20px 30px", fontSize: "13px" }}>
+        <div style={{ maxWidth: "1040px", margin: "0 auto", textAlign: "center" }}>
+          <div style={{ fontWeight: 800, color: "#FFFFFF", fontSize: "16px", letterSpacing: "0.1em", marginBottom: "12px" }}>
+            IDENTITY DESIGN™
           </div>
-
-          <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", fontSize: "12px" }}>
-            <span>© 2026 IDENTITY DESIGN™. ALL RIGHTS RESERVED.</span>
-            <span style={{ color: "#475569" }}>Designed with Dark Stippled Minimalist System</span>
+          <p style={{ color: "#797F97", maxWidth: "500px", margin: "0 auto 24px", fontSize: "13px" }}>
+            Hệ thống chuyển giao toàn diện giúp tái lập bản thân, bẻ gãy điểm nghẽn căn tính và thiết lập nhịp sinh học năng lượng đỉnh cao.
+          </p>
+          <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.1)", paddingTop: "20px", fontSize: "12px", color: "#64748B" }}>
+            © 2026 IDENTITY DESIGN™. All Rights Reserved.
           </div>
-
         </div>
       </footer>
 
@@ -1087,30 +896,25 @@ export default function Home() {
             bottom: 0,
             left: 0,
             right: 0,
-            background: "rgba(11, 13, 15, 0.95)",
-            borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+            background: "rgba(28, 28, 28, 0.96)",
+            backdropFilter: "blur(10px)",
             padding: "12px 20px",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             zIndex: 9999,
-            backdropFilter: "blur(10px)",
-            boxShadow: "0 -10px 30px rgba(0,0,0,0.5)",
+            boxShadow: "0 -5px 25px rgba(0,0,0,0.15)",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <span style={{ fontSize: "12px", color: "#94A3B8", fontWeight: 600 }}>IDENTITY DESIGN™</span>
+            <span style={{ fontSize: "13px", color: "#E6D3A3", fontWeight: 600 }}>IDENTITY DESIGN™</span>
             <strong style={{ fontSize: "16px", color: "#FFFFFF" }}>1.499.000đ</strong>
           </div>
           <a
             href="/checkout"
-            onClick={(e) => {
-              e.preventDefault();
-              setIsModalOpen(true);
-            }}
             style={{
-              background: "#FFFFFF",
-              color: "#08090A",
+              background: "#E6D3A3",
+              color: "#1C1C1C",
               padding: "10px 22px",
               fontSize: "13px",
               fontWeight: 800,
@@ -1123,150 +927,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* LEAD CAPTURE MODAL */}
-      {isModalOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "rgba(0, 0, 0, 0.85)",
-            zIndex: 999999,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "20px",
-            backdropFilter: "blur(8px)",
-          }}
-        >
-          <div
-            style={{
-              background: "#111317",
-              border: "1px solid rgba(255, 255, 255, 0.15)",
-              color: "#FFFFFF",
-              borderRadius: "14px",
-              padding: "36px 30px",
-              maxWidth: "440px",
-              width: "100%",
-              position: "relative",
-              boxShadow: "0 25px 60px rgba(0,0,0,0.8)",
-              boxSizing: "border-box",
-            }}
-          >
-            {/* CLOSE BUTTON */}
-            <button
-              onClick={() => setIsModalOpen(false)}
-              style={{
-                position: "absolute",
-                top: "16px",
-                right: "16px",
-                background: "none",
-                border: "none",
-                fontSize: "22px",
-                color: "#64748B",
-                cursor: "pointer",
-                padding: "4px 8px",
-              }}
-            >
-              ✕
-            </button>
-
-            <h3 style={{ fontSize: "20px", margin: "0 0 6px", fontWeight: 800, textAlign: "center", color: "#FFFFFF" }}>
-              Nhập thông tin của bạn
-            </h3>
-            <p style={{ color: "#94A3B8", fontSize: "13px", textAlign: "center", margin: "0 0 22px" }}>
-              Nhận tài khoản học IDENTITY DESIGN™ & Bộ 4 quà tặng
-            </p>
-
-            <form onSubmit={handleModalSubmit} style={{ display: "grid", gap: "14px" }}>
-              <div>
-                <input
-                  type="text"
-                  placeholder="Tên của bạn"
-                  value={modalData.name}
-                  onChange={(e) => setModalData({ ...modalData, name: e.target.value })}
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "14px 16px",
-                    background: "#08090A",
-                    border: "1px solid rgba(255, 255, 255, 0.15)",
-                    borderRadius: "6px",
-                    fontSize: "15px",
-                    boxSizing: "border-box",
-                    outline: "none",
-                    color: "#FFFFFF",
-                  }}
-                />
-              </div>
-
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email của bạn"
-                  value={modalData.email}
-                  onChange={(e) => setModalData({ ...modalData, email: e.target.value })}
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "14px 16px",
-                    background: "#08090A",
-                    border: "1px solid rgba(255, 255, 255, 0.15)",
-                    borderRadius: "6px",
-                    fontSize: "15px",
-                    boxSizing: "border-box",
-                    outline: "none",
-                    color: "#FFFFFF",
-                  }}
-                />
-              </div>
-
-              <div>
-                <input
-                  type="tel"
-                  placeholder="Số điện thoại (có Zalo)"
-                  value={modalData.phone}
-                  onChange={(e) => setModalData({ ...modalData, phone: e.target.value })}
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "14px 16px",
-                    background: "#08090A",
-                    border: "1px solid rgba(255, 255, 255, 0.15)",
-                    borderRadius: "6px",
-                    fontSize: "15px",
-                    boxSizing: "border-box",
-                    outline: "none",
-                    color: "#FFFFFF",
-                  }}
-                />
-              </div>
-
-              <button
-                type="submit"
-                style={{
-                  width: "100%",
-                  padding: "16px 20px",
-                  background: "#FFFFFF",
-                  color: "#08090A",
-                  border: "none",
-                  borderRadius: "4px",
-                  fontWeight: 800,
-                  fontSize: "15px",
-                  cursor: "pointer",
-                  boxShadow: "0 8px 25px rgba(255,255,255,0.15)",
-                  marginTop: "6px",
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                TIẾP TỤC ĐẶT HÀNG (1.499.000Đ) →
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
