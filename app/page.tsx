@@ -134,153 +134,157 @@ export default function Home() {
         overflowX: "hidden",
       }}
     >
-      {/* TOP ANNOUNCEMENT TICKER */}
-      <div
+      {/* TOP MINIMAL NAVIGATION BAR */}
+      <nav
         style={{
-          background: "rgba(18, 20, 24, 0.9)",
+          position: "sticky",
+          top: 0,
+          zIndex: 100,
+          background: "rgba(8, 9, 10, 0.85)",
+          backdropFilter: "blur(12px)",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
-          color: "#94A3B8",
-          padding: "10px 16px",
-          textAlign: "center",
-          fontSize: "12px",
-          fontWeight: 600,
-          letterSpacing: "0.06em",
-          textTransform: "uppercase",
-          backdropFilter: "blur(8px)",
+          padding: "16px 24px",
         }}
       >
-        <span style={{ color: "#E87A3E", fontWeight: 700, marginRight: "8px" }}>● SYSTEM PROTOCOL</span>
-        Bật mã nguồn căn tính mới — Tái lập bản thân & Reset hệ điều hành 2026
-      </div>
+        <div style={{ maxWidth: "1140px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#E87A3E", display: "inline-block", boxShadow: "0 0 10px #E87A3E" }}></span>
+            <span style={{ color: "#FFFFFF", fontWeight: 800, fontSize: "16px", letterSpacing: "0.06em" }}>
+              IDENTITY DESIGN™
+            </span>
+          </div>
 
-      {/* HERO SECTION WITH POINTILLIST / STIPPLED PARTICLES ARTWORK */}
+          <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+            <a href="#curriculum" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600, transition: "color 0.2s" }}>
+              Học phần
+            </a>
+            <a href="#outcomes" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600, transition: "color 0.2s" }}>
+              Kết quả
+            </a>
+            <a href="#offer" style={{ color: "#94A3B8", textDecoration: "none", fontSize: "13px", fontWeight: 600, transition: "color 0.2s" }}>
+              Học phí
+            </a>
+            <a
+              href="/checkout"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsModalOpen(true);
+              }}
+              style={{
+                background: "#FFFFFF",
+                color: "#08090A",
+                padding: "8px 18px",
+                borderRadius: "4px",
+                fontWeight: 800,
+                fontSize: "13px",
+                textDecoration: "none",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Đăng ký ngay
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* HERO SECTION — FULL-BLEED POINTILLIST PARTICLE CANVAS (EXACT REFERENCE UI) */}
       <header
         style={{
           position: "relative",
-          background: "#08090A",
-          padding: "60px 20px 100px",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
-          overflow: "hidden",
+          minHeight: "92vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          backgroundImage: "url('/images/hero_identity_mesh.jpg')",
+          backgroundPosition: "center 15%",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+          padding: "60px 24px 70px",
+          boxSizing: "border-box",
         }}
       >
-        {/* Background glow radial */}
+        {/* Ambient Dark Gradients (Top + Bottom Fade) */}
         <div
           style={{
             position: "absolute",
             top: 0,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "900px",
-            height: "500px",
-            background: "radial-gradient(circle at 50% 20%, rgba(217, 103, 50, 0.12) 0%, rgba(8, 9, 10, 0) 70%)",
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "linear-gradient(to bottom, rgba(8,9,10,0.65) 0%, rgba(8,9,10,0.15) 35%, rgba(8,9,10,0.8) 75%, #08090A 100%)",
             pointerEvents: "none",
             zIndex: 1,
           }}
         />
 
-        <div style={{ maxWidth: "1040px", margin: "0 auto", position: "relative", zIndex: 2 }}>
-          
-          {/* ARTWORK DISPLAY: STIPPLED DUAL ENTITIES / MESH OF CONSCIOUSNESS */}
+        {/* TOP SPACER / BADGE */}
+        <div style={{ position: "relative", zIndex: 2, maxWidth: "1140px", width: "100%", margin: "0 auto" }}>
           <div
             style={{
-              position: "relative",
-              borderRadius: "16px",
-              overflow: "hidden",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              marginBottom: "48px",
-              boxShadow: "0 25px 60px rgba(0, 0, 0, 0.8)",
-              background: "#000000",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              border: "1px solid rgba(255, 255, 255, 0.18)",
+              background: "rgba(8, 9, 10, 0.6)",
+              backdropFilter: "blur(10px)",
+              padding: "6px 14px",
+              borderRadius: "20px",
+              fontSize: "12px",
+              fontWeight: 700,
+              letterSpacing: "0.1em",
+              color: "#E2E8F0",
+              textTransform: "uppercase",
             }}
           >
-            <img
-              src="/images/hero_identity_mesh.jpg"
-              alt="Identity Design Mesh of Particles - Dual Consciousness Reconnection"
-              style={{
-                width: "100%",
-                height: "auto",
-                maxHeight: "520px",
-                objectFit: "cover",
-                objectPosition: "center top",
-                display: "block",
-                opacity: 0.95,
-              }}
-            />
-            
-            {/* Subtle bottom gradient fade */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: "120px",
-                background: "linear-gradient(to top, #08090A 0%, rgba(8,9,10,0) 100%)",
-              }}
-            />
+            <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#E87A3E", display: "inline-block" }}></span>
+            SYSTEM PROTOCOL 2026
           </div>
+        </div>
 
-          {/* HEADLINE GRID (STYLE OF THE REFERENCE UI) */}
+        {/* BOTTOM HERO CONTENT: EDITORIAL HEADLINE (LEFT) + CRISP WHITE BUTTON (RIGHT) */}
+        <div style={{ position: "relative", zIndex: 2, maxWidth: "1140px", width: "100%", margin: "140px auto 0" }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "36px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+              gap: "40px",
               alignItems: "end",
             }}
           >
-            {/* LEFT: LAYERED CONTRAST TYPOGRAPHY */}
+            {/* LEFT: EDITORIAL LAYERED CONTRAST HEADLINE */}
             <div>
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  background: "rgba(255, 255, 255, 0.04)",
-                  padding: "6px 14px",
-                  borderRadius: "20px",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
-                  color: "#94A3B8",
-                  textTransform: "uppercase",
-                  marginBottom: "20px",
-                }}
-              >
-                <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#E87A3E", display: "inline-block" }}></span>
-                IDENTITY DESIGN™ PROTOCOL
-              </div>
-
               <h1
                 style={{
-                  fontSize: "clamp(30px, 4.8vw, 56px)",
-                  lineHeight: 1.18,
+                  fontSize: "clamp(32px, 5.2vw, 62px)",
+                  lineHeight: 1.15,
                   fontWeight: 300,
                   color: "#7E8691",
-                  margin: "0 0 16px",
+                  margin: "0 0 20px",
                   letterSpacing: "-0.03em",
                 }}
               >
-                Bật <span style={{ fontWeight: 800, color: "#FFFFFF" }}>mã nguồn căn tính</span> mới:
+                Bật <span style={{ fontWeight: 900, color: "#FFFFFF" }}>mã nguồn căn tính</span> mới:
                 <br />
-                Tại sao bạn <span style={{ fontWeight: 800, color: "#FFFFFF" }}>không thể bứt phá</span> dù đã thử đủ mọi cách?
+                Tại sao bạn <span style={{ fontWeight: 900, color: "#FFFFFF" }}>không thể bứt phá</span> dù đã thử đủ mọi cách?
               </h1>
 
               <p
                 style={{
-                  fontSize: "clamp(16px, 2vw, 19px)",
+                  fontSize: "clamp(16px, 2vw, 20px)",
                   color: "#94A3B8",
                   lineHeight: 1.65,
                   margin: 0,
+                  maxWidth: "640px",
                 }}
               >
-                Tại sao <strong style={{ color: "#F8FAFC" }}>95% nỗ lực thay đổi</strong> của bạn đều thất bại?
+                Tại sao <strong style={{ color: "#FFFFFF" }}>95% nỗ lực thay đổi</strong> của bạn đều thất bại?
                 Và 3 bước đơn giản giúp bạn thay đổi con người bên trong để đạt kết quả bền vững.
               </p>
             </div>
 
-            {/* RIGHT: CLEAN WHITE HERO CTA BUTTON */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "flex-start" }}>
+            {/* RIGHT: CLEAN MINIMAL WHITE BUTTON (MATCHING REFERENCE UI) */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "flex-start", justifyContent: "flex-end" }}>
               <a
                 href="/checkout"
                 onClick={(e) => {
@@ -294,29 +298,29 @@ export default function Home() {
                   background: "#FFFFFF",
                   color: "#08090A",
                   fontWeight: 800,
-                  padding: "18px 36px",
+                  padding: "20px 42px",
                   borderRadius: "4px",
                   fontSize: "16px",
                   textDecoration: "none",
-                  boxShadow: "0 10px 30px rgba(255, 255, 255, 0.15)",
+                  boxShadow: "0 15px 40px rgba(255, 255, 255, 0.2)",
                   letterSpacing: "-0.01em",
                   transition: "all 0.2s ease",
                   width: "100%",
-                  maxWidth: "420px",
+                  maxWidth: "380px",
                   boxSizing: "border-box",
                 }}
               >
                 TÔI MUỐN TÁI THIẾT KẾ BẢN DẠNG →
               </a>
 
-              <div style={{ color: "#64748B", fontSize: "13px", lineHeight: 1.5 }}>
-                ⚡ Ưu đãi 1.499.000đ cho 100 suất đầu tiên · Cam kết hoàn tiền 100% trong 14 ngày
+              <div style={{ color: "#94A3B8", fontSize: "13px", lineHeight: 1.6, paddingLeft: "4px" }}>
+                ⚡ Ưu đãi <strong style={{ color: "#FFFFFF" }}>1.499.000đ</strong> (100 suất đầu tiên) · Hoàn tiền 100% trong 14 ngày
               </div>
             </div>
 
           </div>
-
         </div>
+
       </header>
 
       {/* SECTION 1: ATTENTION & HOOK */}
@@ -608,7 +612,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 6: GIỚI THIỆU SẢN PHẨM & CÁC OUTCOME CHUYỂN HÓA ĐỘT PHÁ */}
-      <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
+      <section id="outcomes" style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#08090A" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
@@ -688,7 +692,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 7: CẤU TRÚC CHI TIẾT CÁC HỌC PHẦN & HÌNH THỨC HỌC */}
-      <section style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
+      <section id="curriculum" style={{ padding: "90px 20px", borderBottom: "1px solid rgba(255, 255, 255, 0.06)", background: "#0B0D0F" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           
           <span style={{ color: "#E87A3E", fontWeight: 700, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase" }}>
